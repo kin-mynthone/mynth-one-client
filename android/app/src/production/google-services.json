@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "718285559839",
+    "project_id": "mynth-one-client-prd",
+    "storage_bucket": "mynth-one-client-prd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718285559839:android:58f6d53a1862dcbdf75d2a",
+        "android_client_info": {
+          "package_name": "com.example.mynth_one_client"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718285559839-nktbcm8b12iqmnqtkr0j6rd7e1q6e48o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf4uBUTdC6bweSXXNcwcsTX-j-ZW7V4js"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718285559839-nktbcm8b12iqmnqtkr0j6rd7e1q6e48o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "718285559839-j2i93sqad0hds1mv8m6psjdtfnv04ftu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mynthOneClient.stg"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

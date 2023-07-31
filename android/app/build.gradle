@@ -22,6 +22,10 @@ if (flutterVersionName == null) {
 }
 
 apply plugin: 'com.android.application'
+// START: FlutterFire Configuration
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+// END: FlutterFire Configuration
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
@@ -53,6 +57,27 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
+
+       flavorDimensions "default"
+    productFlavors { 
+        production {
+            dimension "default"
+            resValue "string", "app_name", "MYNTHONE"
+            applicationIdSuffix ""
+        }
+        staging {
+            dimension "default"
+            resValue "string", "app_name", "STG MYNTHONE"
+            applicationIdSuffix ".stg"
+           
+        }        
+        development {
+            dimension "default"
+            resValue "string", "app_name", "DEVMYNTHONE"
+            applicationIdSuffix ".dev"
+        }
+    }
+
 
     buildTypes {
         release {
