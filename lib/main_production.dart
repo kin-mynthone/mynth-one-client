@@ -9,7 +9,6 @@ import 'package:mynth_one_client/app/helpers/my_logger_helper.dart';
 import 'package:mynth_one_client/app/helpers/persistent_storage_helper.dart';
 import 'package:mynth_one_client/app/instances/firebase_instances.dart';
 import 'package:mynth_one_client/mynth_one_app.dart';
-import 'package:sendbird_sdk/sendbird_sdk.dart';
 
 Future<void> main() async {
   await runZonedGuarded<Future<void>>(

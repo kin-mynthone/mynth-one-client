@@ -1,38 +1,47 @@
 import 'dart:async';
 import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart' show PlatformDispatcher, kDebugMode;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:mynth_one_client/app/enums/flavor_enum.dart';
 import 'package:mynth_one_client/app/helpers/my_logger_helper.dart';
 import 'package:mynth_one_client/app/helpers/persistent_storage_helper.dart';
 import 'package:mynth_one_client/app/instances/firebase_instances.dart';
 import 'package:mynth_one_client/mynth_one_app.dart';
-import 'package:sendbird_sdk/sendbird_sdk.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 Future<void> main() async {
   await runZonedGuarded<Future<void>>(
     () async {
       WidgetsFlutterBinding.ensureInitialized();
-      await Firebase.initializeApp();
+      final orientations = [DeviceOrientation.portraitUp];
+      await SystemChrome.setPreferredOrientations(orientations);
+      await Firebase.initializeApp()
+          .then((_) => MyLogger.printInfo('FIREBASE INITIALIZED'));
 
       // Kill all used ports and restart firebase emulators
       // To install the kill-port npm package, run npm install --global kill-port
-      // kill-port --port 9099,5001,8080,8085,9199 && firebase emulators:start --project dev
+      // kill-port --port 9099,5001,8080,8085,9199 && firebase emulators:start --project dev --only functions
       // Temporarily toggle this to true if you want to use firebase emulators
       const isUsingFirebaseEmulator = false;
       if (isUsingFirebaseEmulator) {
-        await _connectToFirebaseEmulator();
+        await _connectToFirebaseEmulator(
+          isLocalCloudFunction: false,
+          isLocalFirebaseAuth: false,
+          isLocalFirebaseStorage: false,
+          isLocalFirestore: false,
+        );
         MyLogger.printInfo('FIREBASE EMULATOR IS IN USE');
       }
 
       if (kDebugMode) {
         // Force disable Crashlytics collection while doing every day development.
         // Temporarily toggle this to true if you want to test crash reporting.
-        await crashlytics.setCrashlyticsCollectionEnabled(true);
+        await crashlytics.setCrashlyticsCollectionEnabled(false);
       }
       FlutterError.onError = crashlytics.recordFlutterFatalError;
       // Pass all uncaught asynchronous errors that aren't handled by the Flutter framework to Crashlytics
@@ -67,19 +76,34 @@ Future<void> main() async {
 }
 
 // https://firebase.google.com/docs/emulator-suite/connect_and_prototype
-Future<void> _connectToFirebaseEmulator() async {
+Future<void> _connectToFirebaseEmulator({
+  required bool isLocalCloudFunction,
+  required bool isLocalFirebaseAuth,
+  required bool isLocalFirebaseStorage,
+  required bool isLocalFirestore,
+}) async {
   final localHost = Platform.isAndroid ? '10.0.2.2' : 'localhost';
 
   // You can get these port numbers from firebase.json
-  await firebaseAuth.useAuthEmulator(localHost, 9099);
-  await firebaseStorage.useStorageEmulator(localHost, 9199);
-  functions.useFunctionsEmulator(localHost, 5001);
+  if (isLocalFirebaseAuth) {
+    await firebaseAuth.useAuthEmulator(localHost, 9099);
+  }
 
-  firestore.settings = Settings(
-    host: '$localHost:8080',
-    persistenceEnabled: false,
-    sslEnabled: false,
-  );
+  if (isLocalFirebaseStorage) {
+    await firebaseStorage.useStorageEmulator(localHost, 9199);
+  }
+
+  if (isLocalCloudFunction) {
+    functions.useFunctionsEmulator(localHost, 5001);
+  }
+
+  if (isLocalFirestore) {
+    firestore.settings = Settings(
+      host: '$localHost:8080',
+      persistenceEnabled: false,
+      sslEnabled: false,
+    );
+  }
 }
 
 /*
