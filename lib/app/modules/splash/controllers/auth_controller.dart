@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:mynth_one_client/app/helpers/my_logger_helper.dart';
 import 'package:mynth_one_client/app/instances/firebase_instances.dart';
+import 'package:mynth_one_client/app/routes/app_pages.dart';
 
 enum AuthStatus { unauthenticated, authenticated }
 
@@ -48,10 +49,12 @@ class AuthController extends GetxController {
         switch (value) {
           case AuthStatus.unauthenticated:
             MyLogger.printInfo(currentState());
+            Get.offAllNamed(AppPages.LOGIN);
 
             break;
           case AuthStatus.authenticated:
             MyLogger.printInfo(currentState());
+            Get.offAllNamed(AppPages.DASHBOARD);
 
             break;
         }

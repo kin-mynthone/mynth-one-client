@@ -1,8 +1,10 @@
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:mynth_one_client/app/constants/app_strings.dart';
 import 'package:mynth_one_client/app/helpers/asset_path_helper.dart';
+import 'package:mynth_one_client/app/modules/introduction/controllers/introduction_controller.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
 import 'package:mynth_one_client/app/widgets/gradient_text_widget.dart';
 import 'package:mynth_one_client/app/widgets/text_widget.dart';
@@ -11,7 +13,7 @@ part '../widgets/background_painter.dart';
 part '../widgets/button_arrow_widget.dart';
 part '../widgets/center_circle_painter.dart';
 
-class IntroductionView extends StatelessWidget {
+class IntroductionView extends GetView<IntroductionController> {
   const IntroductionView({Key? key}) : super(key: key);
 
   @override
@@ -157,8 +159,11 @@ class IntroductionView extends StatelessWidget {
             Positioned.fill(
               bottom: 50,
               child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: _ButtonArrowWidget(onPressed: () => {})),
+                alignment: Alignment.bottomCenter,
+                child: _ButtonArrowWidget(
+                  onPressed: () => {controller.goToLogin()},
+                ),
+              ),
             ),
           ],
         ),

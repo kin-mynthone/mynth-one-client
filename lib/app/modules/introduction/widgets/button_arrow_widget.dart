@@ -3,28 +3,29 @@ part of '../views/introduction_view.dart';
 class _ButtonArrowWidget extends StatelessWidget {
   final Function onPressed;
 
-  const _ButtonArrowWidget({super.key, required this.onPressed});
+  const _ButtonArrowWidget({required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => onPressed(),
-      child: Container(
-        width: 85,
-        height: 85,
-        decoration: BoxDecoration(
-          gradient: const LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              colors: [AppColors.hD9D3F9, AppColors.hE4F9F6],
-              stops: [0.2, 1]),
-          borderRadius: BorderRadius.circular(30),
+    const borderRadius = 30.0;
+
+    return Material(
+      color: AppColors.hF1F0FF,
+      borderRadius: BorderRadius.circular(borderRadius),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(borderRadius),
+        splashColor: AppColors.hF4F4F4.withOpacity(0.30),
+        highlightColor: AppColors.h031223.withOpacity(0.15),
+        onTap: () => onPressed(),
+        child: const SizedBox(
+          width: 85,
+          height: 85,
+          child: Center(
+              child: FaIcon(
+            FontAwesomeIcons.arrowRight,
+            color: AppColors.h4A495E,
+          )),
         ),
-        child: const Center(
-            child: FaIcon(
-          FontAwesomeIcons.arrowRight,
-          color: AppColors.h4A495E,
-        )),
       ),
     );
   }

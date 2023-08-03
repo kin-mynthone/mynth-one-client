@@ -1,4 +1,6 @@
 //Copy this CustomPainter code to the Bottom of the File
+// ignore_for_file: unused_element
+
 part of '../views/introduction_view.dart';
 
 class _CenterCirclePainter extends CustomPainter {

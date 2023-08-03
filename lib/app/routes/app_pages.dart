@@ -1,6 +1,12 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:get/get.dart';
+import 'package:mynth_one_client/app/modules/dashboard/bindings/dashboard_binding.dart';
+import 'package:mynth_one_client/app/modules/dashboard/views/dashboard_view.dart';
 import 'package:mynth_one_client/app/modules/introduction/bindings/introduction_binding.dart';
 import 'package:mynth_one_client/app/modules/introduction/views/introduction_view.dart';
+import 'package:mynth_one_client/app/modules/login/bindings/login_binding.dart';
+import 'package:mynth_one_client/app/modules/login/views/login_view.dart';
 
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
@@ -9,18 +15,40 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
+
   static const SPLASH = Routes.SPLASH;
   static const INTRODUCTION = Routes.INTRODUCTION;
+  static const LOGIN = Routes.LOGIN;
+  static const DASHBOARD = Routes.DASHBOARD;
+
   static final routes = [
     GetPage(
       name: _Paths.SPLASH,
       page: () => const SplashView(),
       binding: SplashBinding(),
+      transition: Transition.fadeIn,
+      fullscreenDialog: true,
     ),
     GetPage(
       name: _Paths.INTRODUCTION,
       page: () => const IntroductionView(),
       binding: IntroductionBinding(),
+      transition: Transition.fadeIn,
+      fullscreenDialog: true,
+    ),
+    GetPage(
+      name: _Paths.LOGIN,
+      page: () => const LoginView(),
+      binding: LoginBinding(),
+      transition: Transition.fadeIn,
+      fullscreenDialog: true,
+    ),
+    GetPage(
+      name: _Paths.DASHBOARD,
+      page: () => const DashboardView(),
+      binding: DashboardBinding(),
+      transition: Transition.fadeIn,
+      fullscreenDialog: true,
     ),
   ];
 }

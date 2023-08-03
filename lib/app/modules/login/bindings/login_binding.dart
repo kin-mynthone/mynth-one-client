@@ -4,6 +4,6 @@ import 'package:mynth_one_client/app/modules/login/controllers/login_controller.
 class LoginBinding extends Bindings {
   @override
   void dependencies() {
-    Get.put(loginController());
+    Get.put(LoginController());
   }
 }

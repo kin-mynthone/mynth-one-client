@@ -28,6 +28,7 @@ Future<void> main() async {
       // kill-port --port 9099,5001,8080,8085,9199 && firebase emulators:start --project dev --only functions
       // Temporarily toggle this to true if you want to use firebase emulators
       const isUsingFirebaseEmulator = false;
+      // ignore: dead_code
       if (isUsingFirebaseEmulator) {
         await _connectToFirebaseEmulator(
           isLocalCloudFunction: false,

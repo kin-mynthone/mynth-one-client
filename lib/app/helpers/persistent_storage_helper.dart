@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:get_storage/get_storage.dart';
 import 'package:mynth_one_client/app/helpers/my_logger_helper.dart';
 
