@@ -18,6 +18,7 @@ class AppColors {
   static const Color hFFFCF8 = Color(0xFFFFFCF8);
   static const Color hE4F9F6 = Color(0xFFE4F9F6);
   static const Color hF1F0FF = Color(0xFFF1F0FF);
+  static const Color hFBB810 = Color(0xFFFBB810);
 
   static const Map<int, Color> _prussianBlueColorMap = {
     50: Color.fromRGBO(50, 45, 90, .1),
