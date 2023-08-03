@@ -1,11 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:mynth_one_client/app/themes/app_colors.dart';
+part of '../views/introduction_view.dart';
 
-class ButtonArrowWidget extends StatelessWidget {
+class _ButtonArrowWidget extends StatelessWidget {
   final Function onPressed;
 
-  const ButtonArrowWidget({super.key, required this.onPressed});
+  const _ButtonArrowWidget({super.key, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {

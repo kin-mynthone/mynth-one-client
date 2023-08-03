@@ -1,18 +1,15 @@
-import 'dart:ui';
-
+import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mynth_one_client/app/constants/app_strings.dart';
 import 'package:mynth_one_client/app/helpers/asset_path_helper.dart';
-import 'package:mynth_one_client/app/modules/introduction/controllers/introduction_controller.dart';
-import 'package:mynth_one_client/app/modules/introduction/widgets/background_painter.dart';
-import 'package:mynth_one_client/app/modules/introduction/widgets/button_arrow_widget.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
 import 'package:mynth_one_client/app/widgets/gradient_text_widget.dart';
-import 'package:mynth_one_client/app/widgets/rounded_corner_button_widget.dart';
 import 'package:mynth_one_client/app/widgets/text_widget.dart';
 
-part '../widgets/text_and_navigation_widget.dart';
+part '../widgets/background_painter.dart';
+part '../widgets/button_arrow_widget.dart';
+part '../widgets/center_circle_painter.dart';
 
 class IntroductionView extends StatelessWidget {
   const IntroductionView({Key? key}) : super(key: key);
@@ -39,7 +36,7 @@ class IntroductionView extends StatelessWidget {
                   width: size.width * 0.95,
                   height: size.height * 0.5,
                   child: CustomPaint(
-                    painter: BackgroundPainter(),
+                    painter: _BackgroundPainter(),
                   ),
                 ),
               ),
@@ -161,7 +158,7 @@ class IntroductionView extends StatelessWidget {
               bottom: 50,
               child: Align(
                   alignment: Alignment.bottomCenter,
-                  child: ButtonArrowWidget(onPressed: () => {})),
+                  child: _ButtonArrowWidget(onPressed: () => {})),
             ),
           ],
         ),

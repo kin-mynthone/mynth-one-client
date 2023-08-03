@@ -1,10 +1,7 @@
-import 'dart:ui' as ui;
-
-import 'package:flutter/cupertino.dart';
-import 'package:mynth_one_client/app/themes/app_colors.dart';
+part of '../views/introduction_view.dart';
 
 //Copy this CustomPainter code to the Bottom of the File
-class BackgroundPainter extends CustomPainter {
+class _BackgroundPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Path path_0 = Path();
