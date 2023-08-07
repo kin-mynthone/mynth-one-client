@@ -1,14 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:mynth_one_client/app/modules/dashboard_home/controllers/partial_activities_controller.dart';
-import 'package:mynth_one_client/app/themes/app_colors.dart';
-import 'package:mynth_one_client/app/widgets/text_widget.dart';
+part of '../views/home_view.dart';
 
-import '../../../models/activity_model.dart';
-import 'activity_card_widget.dart';
-
-class ActivityListWidget extends GetView<PartialActivitiesController> {
-  const ActivityListWidget({super.key});
+class _ActivityListWidget extends GetView<PartialActivitiesController> {
+  const _ActivityListWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

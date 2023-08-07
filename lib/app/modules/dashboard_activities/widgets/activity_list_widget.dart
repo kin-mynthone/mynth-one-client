@@ -1,34 +1,28 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:mynth_one_client/app/helpers/asset_path_helper.dart';
-import 'package:mynth_one_client/app/models/activity_model.dart';
-import 'package:mynth_one_client/app/themes/app_colors.dart';
-import 'package:mynth_one_client/app/widgets/text_widget.dart';
-import 'activity_card_data_holder_widget.dart';
+part of '../views/activities_view.dart';
 
-class ActivityListWidget extends StatelessWidget {
-  final List<Data> partialActivities;
-  final int itemCount;
-
-  const ActivityListWidget(
-      {super.key, required this.partialActivities, required this.itemCount});
-
+class _ActivityListWidget extends GetView<ActivitiesController> {
+  final String status;
+  const _ActivityListWidget({
+    required this.status,
+  });
   @override
   Widget build(BuildContext context) {
-    return Obx(
-      () => Container(
-        child: itemCount.isEqual(0)
-            ? const EmptyData()
-            : ListView.builder(
-                scrollDirection: Axis.vertical,
-                itemCount: itemCount,
-                itemBuilder: (BuildContext context, int index) {
-                  return ActivityCardDataHolderWidget(
-                    activityOnGoingModel: partialActivities[index],
-                  );
-                },
-              ),
-      ),
+    return Container(
+      height: 250,
+      padding: const EdgeInsets.only(bottom: 5),
+      child: controller.activitiesData
+              .where((element) => element.status == status)
+              .length
+              .isEqual(0)
+          ? const EmptyData()
+          : FadingListViewWidget(
+              dataLength: controller.activitiesData
+                  .where((element) => element.status == status)
+                  .length,
+              activities: controller.activitiesData
+                  .where((element) => element.status == status)
+                  .toList(),
+            ),
     );
   }
 }
@@ -38,39 +32,66 @@ class EmptyData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        TextWidget(
+          stringData: 'No Activity to show',
+          fontSize: 15,
+          boldValue: true,
+          color: AppColors.h9E9CAD,
+          centerAlignment: false,
+        ),
+        TextWidget(
+          stringData: 'Start your first activity now',
+          fontSize: 10,
+          boldValue: false,
+          color: AppColors.h9E9CAD,
+          centerAlignment: false,
+        ),
+      ],
+    );
+  }
+}
 
-    return Container(
-      padding: const EdgeInsets.only(bottom: 50),
-      width: size.width,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SizedBox(
-            width: size.width * 0.42,
-            height: size.height * 0.25,
-            child: const Image(
-              image: AssetImage(AssetPath.aSearchingRobot),
-              height: 100,
-              width: 100,
-            ),
-          ),
-          TextWidget(
-            stringData: 'Nothing’s happening now',
-            fontSize: 18,
-            boldValue: true,
-            color: AppColors.h9E9CAD,
-            centerAlignment: false,
-          ),
-          TextWidget(
-            stringData: 'Discover what’s new on the app',
-            fontSize: 13,
-            boldValue: false,
-            color: AppColors.h9E9CAD,
-            centerAlignment: false,
-          ),
-        ],
+class FadingListViewWidget extends StatelessWidget {
+  final int dataLength;
+  final List<Data> activities;
+  const FadingListViewWidget(
+      {super.key, required this.dataLength, required this.activities});
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ShaderMask(
+        shaderCallback: (Rect rect) {
+          return const LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Colors.purple,
+              Colors.transparent,
+              Colors.transparent,
+              Colors.purple
+            ],
+            stops: [
+              0.0,
+              0.1,
+              0.9,
+              1.0
+            ], // 10% purple, 80% transparent, 10% purple
+          ).createShader(rect);
+        },
+        blendMode: BlendMode.dstOut,
+        child: ListView.builder(
+          scrollDirection: Axis.vertical,
+          itemCount: dataLength,
+          itemBuilder: (BuildContext context, int index) {
+            return ActivityCardWidget(
+              activityModel: activities[index],
+            );
+          },
+        ),
       ),
     );
   }

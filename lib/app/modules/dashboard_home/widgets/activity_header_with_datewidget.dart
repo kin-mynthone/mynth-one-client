@@ -1,14 +1,13 @@
 part of '../views/home_view.dart';
 
-class ActivityHeaderWithDateWidget
+class _ActivityHeaderWithDateWidget
     extends GetView<PartialActivitiesController> {
   final bool showTime;
   final String headerTitle;
   final bool showButton;
   final Function onPressed;
 
-  const ActivityHeaderWithDateWidget({
-    super.key,
+  const _ActivityHeaderWithDateWidget({
     required this.showTime,
     required this.headerTitle,
     required this.showButton,

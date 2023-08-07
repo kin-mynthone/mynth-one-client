@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:mynth_one_client/app/constants/isometric_icon.dart';
-import 'package:mynth_one_client/app/models/activity_model.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
 import 'package:mynth_one_client/app/widgets/gradient_text_widget.dart';
 import 'package:mynth_one_client/app/widgets/text_widget.dart';
 
-class ActivityCardDataHolderWidget extends StatelessWidget {
-  final Data activityOnGoingModel;
+import '../../../models/activity_model.dart';
 
-  const ActivityCardDataHolderWidget(
-      {super.key, required this.activityOnGoingModel});
+class ActivityCardWidget extends StatelessWidget {
+  final Data activityModel;
+
+  const ActivityCardWidget({super.key, required this.activityModel});
 
   @override
   Widget build(BuildContext context) {
@@ -50,8 +50,7 @@ class ActivityCardDataHolderWidget extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               GradientTextWidget(
-                                stringData:
-                                    activityOnGoingModel.merchant.toString(),
+                                stringData: activityModel.merchant.toString(),
                                 fontSize: 18,
                                 boldValue: true,
                                 centerAlignment: false,
@@ -70,8 +69,7 @@ class ActivityCardDataHolderWidget extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(right: 50),
                             child: TextWidget(
-                              stringData:
-                                  activityOnGoingModel.description.toString(),
+                              stringData: activityModel.description.toString(),
                               fontSize: 12,
                               boldValue: false,
                               color: AppColors.hF1F0FF,
@@ -80,8 +78,7 @@ class ActivityCardDataHolderWidget extends StatelessWidget {
                           ),
                           const SizedBox(height: 10),
                           TextWidget(
-                            stringData:
-                                getTime(activityOnGoingModel.timeStamp!),
+                            stringData: getTime(activityModel.timeStamp!),
                             fontSize: 12,
                             boldValue: false,
                             color: AppColors.hA9B9F2,
@@ -102,7 +99,7 @@ class ActivityCardDataHolderWidget extends StatelessWidget {
               width: 100,
               height: 100,
               IsometricIcon.myIcons[int.parse(
-                activityOnGoingModel.icon.toString(),
+                activityModel.icon.toString(),
               )],
             ),
           )

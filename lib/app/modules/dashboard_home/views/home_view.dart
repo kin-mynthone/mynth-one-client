@@ -3,14 +3,17 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:mynth_one_client/app/constants/app_numbers.dart';
 import 'package:mynth_one_client/app/constants/app_strings.dart';
+import 'package:mynth_one_client/app/modules/dashboard/controllers/dashboard_controller.dart';
 import 'package:mynth_one_client/app/modules/dashboard_home/controllers/partial_activities_controller.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
 import 'package:mynth_one_client/app/widgets/debit_cards/debit_card_widget.dart';
 import 'package:mynth_one_client/app/widgets/debit_cards/debit_card_swiper_widget.dart';
 import 'package:mynth_one_client/app/widgets/text_widget.dart';
 
+import '../../../models/activity_model.dart';
 import '../controllers/home_controller.dart';
-import '../widgets/activity_list_widget.dart';
+import '../widgets/activity_card_widget.dart';
+part '../widgets/activity_list_widget.dart';
 
 part '../widgets/header_widget.dart';
 part '../widgets/activity_header_with_datewidget.dart';
@@ -50,14 +53,16 @@ class HomeView extends GetView<HomeController> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    ActivityHeaderWithDateWidget(
+                    _ActivityHeaderWithDateWidget(
                       showButton: true,
-                      onPressed: () => null,
+                      onPressed: () => {
+                        DashboardController.instance.setCurrentIndexValue(1)
+                      },
                       headerTitle: 'Activity',
                       showTime: true,
                     ),
                     const SizedBox(height: 5),
-                    const ActivityListWidget(),
+                    const _ActivityListWidget(),
                   ],
                 ),
               ),
