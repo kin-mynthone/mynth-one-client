@@ -24,7 +24,7 @@ class _EmailFormOutlineWidget extends StatelessWidget {
     return FormBuilderTextField(
       name: name,
       onChanged: onChanged,
-      autofocus: true,
+      autofocus: false,
       style: const TextStyle(color: AppColors.hF1F0FF),
       validator: (String? value) {
         if (value == null || value.trim().isEmpty) {

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
 import 'package:mynth_one_client/app/helpers/my_logger_helper.dart';
-import 'package:mynth_one_client/app/utils/app_snackbar_util.dart';
+import 'package:mynth_one_client/app/routes/app_pages.dart';
 
-enum LoginStatus { initial, loading, succeeded, error }
+enum LoginStatus { initial, loading, succeeded, failed, error, invalid }
 
 class LoginController extends GetxController {
   static LoginController get instance => Get.find();
@@ -23,6 +23,9 @@ class LoginController extends GetxController {
   bool get obscuredPassword => _obscuredPassword.value;
 
   bool get isLoading => _status.value == LoginStatus.loading;
+  bool get hasSucceeded => _status.value == LoginStatus.succeeded;
+  bool get hasFailed => _status.value == LoginStatus.failed;
+  bool get isInvalid => _status.value == LoginStatus.invalid;
 
   final tooltipkey = GlobalKey<TooltipState>();
 
@@ -58,7 +61,11 @@ class LoginController extends GetxController {
             break;
           case LoginStatus.succeeded:
             MyLogger.printInfo(currentState());
-//TODO: add event here
+            //TODO: add event here
+            break;
+          case LoginStatus.failed:
+            break;
+          case LoginStatus.invalid:
             break;
         }
       },
@@ -80,7 +87,27 @@ class LoginController extends GetxController {
     MyLogger.printInfo(currentState());
   }
 
+  Future<void> checkIfCredentialsAreValid() async {
+    // _status.value = LoginStatus.loading;
+    try {
+      goToDashboard();
+    } catch (e) {
+      MyLogger.printError(e);
+
+      _status.value = LoginStatus.error;
+    }
+  }
+
   openToolTip() {
     tooltipkey.currentState?.ensureTooltipVisible();
+  }
+
+  goToForgotPassword() {}
+  goToRegistration() {
+    Get.toNamed(AppPages.REGISTRATION);
+  }
+
+  goToDashboard() {
+    Get.offAllNamed(AppPages.DASHBOARD);
   }
 }

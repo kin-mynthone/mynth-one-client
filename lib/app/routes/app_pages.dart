@@ -7,6 +7,8 @@ import 'package:mynth_one_client/app/modules/introduction/bindings/introduction_
 import 'package:mynth_one_client/app/modules/introduction/views/introduction_view.dart';
 import 'package:mynth_one_client/app/modules/login/bindings/login_binding.dart';
 import 'package:mynth_one_client/app/modules/login/views/login_view.dart';
+import 'package:mynth_one_client/app/modules/registration/bindings/registration_binding.dart';
+import 'package:mynth_one_client/app/modules/registration/views/registration_view.dart';
 
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
@@ -19,6 +21,8 @@ class AppPages {
   static const SPLASH = Routes.SPLASH;
   static const INTRODUCTION = Routes.INTRODUCTION;
   static const LOGIN = Routes.LOGIN;
+  static const REGISTRATION = Routes.REGISTRATION;
+
   static const DASHBOARD = Routes.DASHBOARD;
 
   static final routes = [
@@ -40,6 +44,13 @@ class AppPages {
       name: _Paths.LOGIN,
       page: () => const LoginView(),
       binding: LoginBinding(),
+      transition: Transition.fadeIn,
+      fullscreenDialog: true,
+    ),
+    GetPage(
+      name: _Paths.REGISTRATION,
+      page: () => const RegistrationView(),
+      binding: RegistrationBinding(),
       transition: Transition.fadeIn,
       fullscreenDialog: true,
     ),
