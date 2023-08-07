@@ -25,7 +25,7 @@ class _PasswordFormOutlineWidget extends GetView<LoginController> {
           name: name,
           onChanged: onChanged,
           obscureText: controller.obscuredPassword,
-          autofocus: true,
+          autofocus: false,
           style: const TextStyle(color: AppColors.hF1F0FF),
           autocorrect: false,
           decoration: InputDecoration(
@@ -43,12 +43,12 @@ class _PasswordFormOutlineWidget extends GetView<LoginController> {
               onPressed: () => controller.toggleObscuredPasswordValue(),
               icon: controller.obscuredPassword
                   ? const Icon(
-                      LineIcons.eye,
+                      LineIcons.eyeSlash,
                       color: AppColors.hF1F0FF,
                     )
                   : const Icon(
-                      LineIcons.eyeSlash,
-                      color: AppColors.hF1F0FF,
+                      LineIcons.eye,
+                      color: AppColors.hFBB810,
                     ),
             ),
             hintText: hintText.tr,

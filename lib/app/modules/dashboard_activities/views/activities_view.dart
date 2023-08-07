@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mynth_one_client/app/modules/dashboard_activities/controllers/activities_controller.dart';
+
+import '../controllers/activities_controller.dart';
 
 class ActivitiesView extends GetView<ActivitiesController> {
   const ActivitiesView({Key? key}) : super(key: key);
