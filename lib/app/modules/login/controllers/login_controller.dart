@@ -90,7 +90,7 @@ class LoginController extends GetxController {
   Future<void> checkIfCredentialsAreValid() async {
     // _status.value = LoginStatus.loading;
     try {
-      goToDashboard();
+      goToOtp();
     } catch (e) {
       MyLogger.printError(e);
 
@@ -107,7 +107,7 @@ class LoginController extends GetxController {
     Get.toNamed(AppPages.REGISTRATION);
   }
 
-  goToDashboard() {
-    Get.offAllNamed(AppPages.DASHBOARD);
+  goToOtp() {
+    Get.offAllNamed(AppPages.OTP);
   }
 }
