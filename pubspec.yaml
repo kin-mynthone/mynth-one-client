@@ -70,6 +70,7 @@ flutter:
     - assets/icons/isometric/
     - assets/icons/nav_bar/
     - assets/icons/robots/
+    - assets/icons/logo/
     - assets/images/introduction/
     - assets/images/login/
     - assets/mock_data/

@@ -20,12 +20,12 @@ class _EmailFormOutlineWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final defaultBorder = OutlineInputBorder(
         borderRadius: BorderRadius.circular(15),
-        borderSide: const BorderSide(color: AppColors.hF1F0FF, width: 0.3));
+        borderSide: const BorderSide(color: AppColors.darkPrimary, width: 0.3));
     return FormBuilderTextField(
       name: name,
       onChanged: onChanged,
       autofocus: false,
-      style: const TextStyle(color: AppColors.hF1F0FF),
+      style: const TextStyle(color: AppColors.darkPrimary),
       validator: (String? value) {
         if (value == null || value.trim().isEmpty) {
           return 'email is required'.tr;
@@ -52,7 +52,7 @@ class _EmailFormOutlineWidget extends StatelessWidget {
           textStyle: const TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w400,
-            color: AppColors.hBDBDBD,
+            color: AppColors.darkPrimary,
           ),
         ),
         focusedBorder: defaultBorder,
@@ -60,8 +60,8 @@ class _EmailFormOutlineWidget extends StatelessWidget {
         errorBorder: defaultBorder,
         focusedErrorBorder: defaultBorder,
         filled: true,
-        fillColor: AppColors.h4A495E,
-        errorStyle: const TextStyle(color: AppColors.hFBB810, fontSize: 13),
+        fillColor: AppColors.darkPrimary,
+        errorStyle: const TextStyle(color: AppColors.darkPrimary, fontSize: 13),
       ),
       textInputAction: TextInputAction.next,
       textCapitalization: TextCapitalization.none,

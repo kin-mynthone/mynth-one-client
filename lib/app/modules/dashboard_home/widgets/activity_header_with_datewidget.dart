@@ -27,7 +27,7 @@ class _ActivityHeaderWithDateWidget
                 stringData: headerTitle,
                 fontSize: 22,
                 boldValue: true,
-                color: AppColors.hF1F0FF,
+                color: AppColors.darkPrimary, //TODO CHANGE COLOR,
                 centerAlignment: false,
               ),
               Container(
@@ -36,7 +36,7 @@ class _ActivityHeaderWithDateWidget
                         stringData: 'Today, ${controller.getDate()}',
                         fontSize: 13,
                         boldValue: false,
-                        color: AppColors.hF1F0FF,
+                        color: AppColors.darkPrimary, //TODO CHANGE COLOR,
                         centerAlignment: false,
                       )
                     : null,
@@ -51,7 +51,7 @@ class _ActivityHeaderWithDateWidget
                   alignment: Alignment.center,
                   icon: const FaIcon(
                     FontAwesomeIcons.arrowRight,
-                    color: AppColors.hF1F0FF,
+                    color: AppColors.darkPrimary, //TODO CHANGE COLOR,
                   ),
                 )
               : null,

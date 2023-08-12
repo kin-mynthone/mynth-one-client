@@ -7,8 +7,8 @@ class PrimaryButtonWidget extends StatelessWidget {
   bool? boldValue = false;
   double? fontSize = 10;
   double? height = 10;
-  Color? fontColor = AppColors.h031223;
-  Color? buttonColor = AppColors.hF1F0FF;
+  Color? fontColor = AppColors.darkPrimary;
+  Color? buttonColor = AppColors.darkPrimary;
   Function onTap;
 
   PrimaryButtonWidget(
@@ -31,8 +31,8 @@ class PrimaryButtonWidget extends StatelessWidget {
       borderRadius: BorderRadius.circular(borderRadius),
       child: InkWell(
         borderRadius: BorderRadius.circular(borderRadius),
-        splashColor: AppColors.hF4F4F4.withOpacity(0.30),
-        highlightColor: AppColors.h031223.withOpacity(0.15),
+        splashColor: AppColors.darkPrimary.withOpacity(0.30),
+        highlightColor: AppColors.darkPrimary.withOpacity(0.15),
         onTap: () => onTap(),
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
@@ -59,7 +59,7 @@ class PrimaryButtonWidget extends StatelessWidget {
   //                       height: 60,
   //                       fontSize: 20,
   //                       boldValue: true,
-  //                       fontColor: AppColors.h403E51,
-  //                       buttonColor: AppColors.hF4F4F4,
+  //                       fontColor: AppColors.darkPrimary,
+  //                       buttonColor: AppColors.darkPrimary,
   //                       onTap: () => {controller.goToRegister()},
   //                     ),

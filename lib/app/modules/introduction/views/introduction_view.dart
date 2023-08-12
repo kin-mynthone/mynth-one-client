@@ -1,16 +1,19 @@
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:mynth_one_client/app/constants/app_strings.dart';
 import 'package:mynth_one_client/app/helpers/asset_path_helper.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
-import 'package:mynth_one_client/app/widgets/gradient_text_widget.dart';
+import 'package:mynth_one_client/app/widgets/gradient_text_dark_widget.dart';
+import 'package:mynth_one_client/app/widgets/gradient_text_light_widget.dart';
 import 'package:mynth_one_client/app/widgets/text_widget.dart';
 
 import '../controllers/introduction_controller.dart';
 
-part '../widgets/background_painter.dart';
+part '../widgets/background_painter_dark.dart';
+part '../widgets/background_painter_light.dart';
+
 part '../widgets/button_arrow_widget.dart';
 part '../widgets/center_circle_painter.dart';
 
@@ -23,9 +26,11 @@ class IntroductionView extends GetView<IntroductionController> {
 
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(AssetPath.introductionBackground),
+            image: AssetImage(controller.checkSystemTheme(context)
+                ? AssetPath.introductionBackgroundLight
+                : AssetPath.introductionBackgroundDark),
             fit: BoxFit.cover,
           ),
         ),
@@ -39,7 +44,9 @@ class IntroductionView extends GetView<IntroductionController> {
                   width: size.width * 0.95,
                   height: size.height * 0.5,
                   child: CustomPaint(
-                    painter: _BackgroundPainter(),
+                    painter: (controller.checkSystemTheme(context)
+                        ? _BackgroundPainterLight()
+                        : _BackgroundPainterDark()),
                   ),
                 ),
               ),
@@ -52,18 +59,26 @@ class IntroductionView extends GetView<IntroductionController> {
                   width: size.width * 0.42,
                   height: size.height * 0.5,
                   child: Container(
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         gradient: LinearGradient(
                             begin: Alignment.topRight,
                             end: Alignment.bottomLeft,
                             colors: [
-                              AppColors.hD9D3F9,
-                              AppColors.hD9D3F9,
-                              AppColors.hE4F9F6,
-                              AppColors.hE4F9F6
+                              controller.checkSystemTheme(context)
+                                  ? AppColors.darkPrimary
+                                  : AppColors.lightPurple,
+                              controller.checkSystemTheme(context)
+                                  ? AppColors.darkPrimary
+                                  : AppColors.lightPurple,
+                              controller.checkSystemTheme(context)
+                                  ? AppColors.darkPrimaryVariant
+                                  : AppColors.cyan,
+                              controller.checkSystemTheme(context)
+                                  ? AppColors.darkPrimaryVariant
+                                  : AppColors.cyan,
                             ],
-                            stops: [
+                            stops: const [
                               0.1,
                               0.3,
                               0.8,
@@ -82,22 +97,19 @@ class IntroductionView extends GetView<IntroductionController> {
                   height: size.height * 0.5,
                   child: Container(
                     decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        gradient: LinearGradient(
-                            begin: Alignment.bottomLeft,
-                            end: Alignment.topRight,
-                            colors: [
-                              Colors.transparent,
-                              Colors.transparent,
-                              AppColors.hD9D3F9,
-                              AppColors.hD9D3F9,
-                            ],
-                            stops: [
-                              0.1,
-                              0.5,
-                              0.9,
-                              1
-                            ])),
+                      shape: BoxShape.circle,
+                      gradient: LinearGradient(
+                        begin: Alignment.bottomLeft,
+                        end: Alignment.topRight,
+                        colors: [
+                          Colors.transparent,
+                          Colors.transparent,
+                          AppColors.darkPrimary,
+                          AppColors.darkPrimary,
+                        ],
+                        stops: [0.1, 0.5, 0.9, 1],
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -121,26 +133,32 @@ class IntroductionView extends GetView<IntroductionController> {
               top: 50,
               child: Align(
                 alignment: Alignment.topCenter,
-                child: TextWidget(
-                  stringData: AppStrings.title,
-                  fontSize: 25,
-                  boldValue: true,
-                  color: AppColors.h4A495E,
-                  centerAlignment: true,
+                child: SvgPicture.asset(
+                  controller.checkSystemTheme(context)
+                      ? AssetPath.lightLogo
+                      : AssetPath.darkLogo,
                 ),
               ),
             ),
-            const Positioned.fill(
+            Positioned.fill(
               top: 300,
               child: Align(
                 alignment: Alignment.center,
-                child: GradientTextWidget(
-                  stringData: 'Hassle free\npayment method',
-                  fontSize: 35,
-                  boldValue: true,
-                  heightValue: 1.2,
-                  centerAlignment: true,
-                ),
+                child: controller.checkSystemTheme(context)
+                    ? const GradientTextLightWidget(
+                        stringData: 'Hassle free\npayment method',
+                        fontSize: 35,
+                        boldValue: true,
+                        heightValue: 1.2,
+                        centerAlignment: true,
+                      )
+                    : const GradientTextDarkWidget(
+                        stringData: 'Hassle free\npayment method',
+                        fontSize: 35,
+                        boldValue: true,
+                        heightValue: 1.2,
+                        centerAlignment: true,
+                      ),
               ),
             ),
             Positioned.fill(
@@ -152,7 +170,9 @@ class IntroductionView extends GetView<IntroductionController> {
                       'Connect your money to your friends\nfamily and Brands',
                   fontSize: 15,
                   boldValue: false,
-                  color: AppColors.hF1F0FF,
+                  color: controller.checkSystemTheme(context)
+                      ? AppColors.lightTextPrimary
+                      : AppColors.darkTextPrimary,
                   centerAlignment: true,
                 ),
               ),

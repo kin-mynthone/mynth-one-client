@@ -1,6 +1,6 @@
 part of '../views/introduction_view.dart';
 
-class _ButtonArrowWidget extends StatelessWidget {
+class _ButtonArrowWidget extends GetView<IntroductionController> {
   final Function onPressed;
 
   const _ButtonArrowWidget({required this.onPressed});
@@ -10,20 +10,28 @@ class _ButtonArrowWidget extends StatelessWidget {
     const borderRadius = 30.0;
 
     return Material(
-      color: AppColors.hF1F0FF,
+      color: controller.checkSystemTheme(context)
+          ? AppColors.lightPrimary
+          : AppColors.darkPrimary,
       borderRadius: BorderRadius.circular(borderRadius),
       child: InkWell(
         borderRadius: BorderRadius.circular(borderRadius),
-        splashColor: AppColors.hF4F4F4.withOpacity(0.30),
-        highlightColor: AppColors.h031223.withOpacity(0.15),
+        splashColor: controller.checkSystemTheme(context)
+            ? AppColors.lightSecondary.withOpacity(0.30)
+            : AppColors.darkSecondary.withOpacity(0.30),
+        highlightColor: controller.checkSystemTheme(context)
+            ? AppColors.lightSecondary.withOpacity(0.15)
+            : AppColors.darkSecondary.withOpacity(0.15),
         onTap: () => onPressed(),
-        child: const SizedBox(
+        child: SizedBox(
           width: 85,
           height: 85,
           child: Center(
               child: FaIcon(
             FontAwesomeIcons.arrowRight,
-            color: AppColors.h4A495E,
+            color: controller.checkSystemTheme(context)
+                ? AppColors.lightSecondary
+                : AppColors.darkSecondary,
           )),
         ),
       ),

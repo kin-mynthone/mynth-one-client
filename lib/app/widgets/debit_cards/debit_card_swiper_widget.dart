@@ -14,7 +14,7 @@ class DebitCardSwiperWidget extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Container(
-      color: AppColors.h4A495E,
+      color: AppColors.darkPrimary,
       height: 245,
       width: size.width,
       child: Swiper(

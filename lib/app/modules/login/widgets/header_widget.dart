@@ -1,6 +1,6 @@
 part of '../views/login_view.dart';
 
-class _HeaderWidget extends StatelessWidget {
+class _HeaderWidget extends GetView<LoginController> {
   const _HeaderWidget();
 
   @override
@@ -10,17 +10,46 @@ class _HeaderWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextWidget(
-          stringData: 'Sign in your acount',
-          fontSize: 25,
+          stringData: 'Sign In',
+          fontSize: 20,
           boldValue: true,
-          color: AppColors.hF1F0FF,
+          color: controller.checkSystemTheme(context)
+              ? AppColors.lightTextPrimary
+              : AppColors.darkTextPrimary,
           centerAlignment: false,
         ),
+        RichText(
+          textDirection: TextDirection.rtl,
+          maxLines: 1,
+          textScaleFactor: 1,
+          text: TextSpan(
+            text: 'Hi, ',
+            style: TextStyle(
+                color: controller.checkSystemTheme(context)
+                    ? AppColors.lightTextPrimary
+                    : AppColors.darkTextPrimary,
+                fontSize: 28,
+                fontWeight: FontWeight.w800),
+            children: <TextSpan>[
+              TextSpan(
+                text: 'Good Day',
+                style: TextStyle(
+                    color: controller.checkSystemTheme(context)
+                        ? AppColors.lightPrimary
+                        : AppColors.darkPrimary,
+                    fontSize: 28,
+                    fontWeight: FontWeight.w800),
+              )
+            ],
+          ),
+        ),
         TextWidget(
-          stringData: 'Hello, Welcome back to MynthOne',
-          fontSize: 14,
+          stringData: 'Please sign in to continue',
+          fontSize: 15,
           boldValue: false,
-          color: AppColors.hF1F0FF,
+          color: controller.checkSystemTheme(context)
+              ? AppColors.lightTextPrimary
+              : AppColors.darkTextPrimary,
           centerAlignment: false,
         ),
       ],

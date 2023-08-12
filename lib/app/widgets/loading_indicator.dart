@@ -5,7 +5,7 @@ import 'package:mynth_one_client/app/themes/app_colors.dart';
 class LoadingIndicator extends StatelessWidget {
   const LoadingIndicator({
     Key? key,
-    this.color = AppColors.h031223,
+    this.color = AppColors.darkPrimary,
     this.size = 60.0,
   }) : super(key: key);
 
@@ -14,7 +14,7 @@ class LoadingIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SpinKitCircle(
+    return SpinKitFadingCircle(
       color: color,
       size: size,
     );

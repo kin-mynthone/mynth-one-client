@@ -7,7 +7,7 @@ class GoBackButton extends StatelessWidget {
   const GoBackButton({
     Key? key,
     required this.onPressed,
-    this.iconColor = AppColors.hF1F0FF,
+    this.iconColor = AppColors.darkPrimary,
   }) : super(key: key);
 
   final VoidCallback onPressed;

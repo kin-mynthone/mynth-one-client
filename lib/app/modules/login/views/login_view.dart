@@ -25,79 +25,69 @@ class LoginView extends GetView<LoginController> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: SafeArea(
-        bottom: false,
+      body: Container(
+        width: size.width,
+        padding: const EdgeInsets.only(
+          top: 40,
+        ),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(controller.checkSystemTheme(context)
+                ? AssetPath.introductionBackgroundLight
+                : AssetPath.introductionBackgroundDark),
+            fit: BoxFit.cover,
+          ),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.all(AppNumbers.screenPadding),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const _HeaderWidget(),
-                  const SizedBox(height: 30),
-                  _EmailFormOutlineWidget(
-                    name: 'email',
-                    iconPath: AssetPath.envelope,
-                    onChanged: (value) => controller.setEmailValue(value!),
-                    hintText: 'Enter your email',
-                    onPress: () => {},
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  _PasswordFormOutlineWidget(
-                    name: 'password',
-                    iconPath: AssetPath.lock,
-                    onChanged: (value) => controller.setPasswordValue(value!),
-                    hintText: 'Enter your password',
-                    onPress: () => {},
-                  ),
-                  const SizedBox(height: 1),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: TextButton(
-                      onPressed: () {
-                        FocusScope.of(context).unfocus();
-                        controller.goToForgotPassword();
-                      },
-                      child: Text(
-                        'forgot password'.tr,
-                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                              color: AppColors.hF1F0FF,
-                              fontWeight: FontWeight.w500,
-                            ),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  PrimaryButtonWidget(
-                    buttonText: 'Login',
-                    height: 50,
-                    fontSize: 18,
-                    boldValue: true,
-                    fontColor: AppColors.h403E51,
-                    buttonColor: AppColors.hF4F4F4,
-                    onTap: () => {controller.checkIfCredentialsAreValid()},
-                  ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  _NoAccountWidget(onPressed: controller.goToRegistration)
-                ],
+              padding: const EdgeInsets.symmetric(
+                  horizontal: AppNumbers.screenPadding, vertical: 10),
+              child: SizedBox(
+                width: 170,
+                child: SvgPicture.asset(
+                  controller.checkSystemTheme(context)
+                      ? AssetPath.lightLogo1
+                      : AssetPath.darkLogo1,
+                ),
               ),
             ),
-            const Spacer(),
-            Obx(() => controller.isLoading
-                ? const LoadingOverlay()
-                : const SizedBox()),
+            Expanded(
+              child: Container(
+                width: size.width,
+                padding: const EdgeInsets.all(
+                  30,
+                ),
+                decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(40),
+                        topRight: Radius.circular(40)),
+                    color: controller.checkSystemTheme(context)
+                        ? Colors.white
+                        : AppColors.darkbackgroundvariant),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const _HeaderWidget(),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    _EmailFormOutlineWidget(
+                      name: 'email',
+                      hintText: 'enter your email',
+                      onChanged: (value) => controller.setEmailValue(value!),
+                    )
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),

@@ -30,14 +30,15 @@ class ActivitiesView extends GetView<ActivitiesController> {
               ButtonsTabBar(
                 radius: 12,
                 contentPadding: const EdgeInsets.symmetric(horizontal: 60),
-                unselectedBackgroundColor: AppColors.h403E51,
+                unselectedBackgroundColor:
+                    AppColors.darkPrimary, //TODO CHANGE COLOR,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                       begin: Alignment.topRight,
                       end: Alignment.bottomLeft,
                       colors: [
-                        AppColors.hD9D3F9,
-                        AppColors.hE4F9F6,
+                        AppColors.darkPrimary, //TODO CHANGE COLOR,
+                        AppColors.darkPrimary //TODO CHANGE COLOR,
                       ],
                       stops: [
                         0.1,
@@ -45,12 +46,12 @@ class ActivitiesView extends GetView<ActivitiesController> {
                       ]),
                 ),
                 unselectedLabelStyle: const TextStyle(
-                    color: AppColors.hF1F0FF,
+                    color: AppColors.darkPrimary, //TODO CHANGE COLOR
                     fontWeight: FontWeight.w700,
                     fontFamily: 'Poppins',
                     fontSize: 12),
                 labelStyle: const TextStyle(
-                  color: AppColors.h403E51,
+                  color: AppColors.darkPrimary, //TODO CHANGE COLOR,
                   fontWeight: FontWeight.w700,
                   fontSize: 12,
                   fontFamily: 'Poppins',

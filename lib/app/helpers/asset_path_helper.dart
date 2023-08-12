@@ -2,9 +2,18 @@ class AssetPath {
   static const _imageMainPath = 'assets/images';
   static const _iconMainPath = 'assets/icons';
 
+  //------------------LOGO------------------
+  static const lightLogo = '$_iconMainPath/logo/logo_light.svg';
+  static const darkLogo = '$_iconMainPath/logo/logo_dark.svg';
+
+  static const lightLogo1 = '$_iconMainPath/logo/logo_light1.svg';
+  static const darkLogo1 = '$_iconMainPath/logo/logo_dark1.svg';
+
 //------------------INTRODUCTION------------------
-  static const introductionBackground =
-      '$_imageMainPath/introduction/introduction_background.png';
+  static const introductionBackgroundDark =
+      '$_imageMainPath/introduction/introduction_background_dark.png';
+  static const introductionBackgroundLight =
+      '$_imageMainPath/introduction/introduction_background_light.png';
   static const handCard = '$_imageMainPath/introduction/hand_card.png';
 
 //-----------------LOGIN/REGISTRATION------------------

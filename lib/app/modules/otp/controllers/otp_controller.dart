@@ -74,4 +74,11 @@ class OtpController extends GetxController {
   }
 
   goToPage() {}
+
+  bool checkSystemTheme(context) {
+    var brightness = MediaQuery.of(context).platformBrightness;
+    MyLogger.printInfo(brightness.toString());
+
+    return brightness == Brightness.light;
+  }
 }

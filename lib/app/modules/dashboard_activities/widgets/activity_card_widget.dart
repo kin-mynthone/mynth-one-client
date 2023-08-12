@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:mynth_one_client/app/constants/isometric_icon.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
-import 'package:mynth_one_client/app/widgets/gradient_text_widget.dart';
 import 'package:mynth_one_client/app/widgets/text_widget.dart';
 
 import '../../../models/activity_model.dart';
@@ -35,7 +34,7 @@ class ActivityCardWidget extends StatelessWidget {
                   vertical: size.height * 0.03,
                 ),
                 decoration: BoxDecoration(
-                  color: AppColors.h403E51,
+                  color: AppColors.darkPrimary, //TODO CHANGE COLOR,
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: Row(
@@ -49,18 +48,12 @@ class ActivityCardWidget extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              GradientTextWidget(
-                                stringData: activityModel.merchant.toString(),
-                                fontSize: 18,
-                                boldValue: true,
-                                centerAlignment: false,
-                                heightValue: 1.5,
-                              ),
                               TextWidget(
                                 stringData: '1min',
                                 fontSize: 15,
                                 boldValue: true,
-                                color: AppColors.hF1F0FF,
+                                color:
+                                    AppColors.darkPrimary, //TODO CHANGE COLOR,
                                 centerAlignment: false,
                               ),
                             ],
@@ -72,7 +65,7 @@ class ActivityCardWidget extends StatelessWidget {
                               stringData: activityModel.description.toString(),
                               fontSize: 12,
                               boldValue: false,
-                              color: AppColors.hF1F0FF,
+                              color: AppColors.darkPrimary, //TODO CHANGE COLOR,
                               centerAlignment: false,
                             ),
                           ),
@@ -81,7 +74,7 @@ class ActivityCardWidget extends StatelessWidget {
                             stringData: getTime(activityModel.timeStamp!),
                             fontSize: 12,
                             boldValue: false,
-                            color: AppColors.hA9B9F2,
+                            color: AppColors.darkPrimary, //TODO CHANGE COLOR,
                             centerAlignment: false,
                           ),
                         ],

@@ -10,7 +10,7 @@ class RoundedCornerButton extends StatelessWidget {
     this.width = double.infinity,
     this.fontSize,
     this.height = 50,
-    this.backgroundColor = AppColors.h031223,
+    this.backgroundColor = AppColors.darkPrimary,
     this.textColor = Colors.white,
     this.fontWeight = FontWeight.w600,
     this.isLoading = false,

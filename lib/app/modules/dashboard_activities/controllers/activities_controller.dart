@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mynth_one_client/app/helpers/my_logger_helper.dart';
 import 'package:mynth_one_client/app/models/activity_model.dart';
@@ -85,5 +86,12 @@ class ActivitiesController extends GetxController {
         .format(convertedTimeStamp); //DateFormat() is from intl package
 
     return formatedDateTime;
+  }
+
+  bool checkSystemTheme(context) {
+    var brightness = MediaQuery.of(context).platformBrightness;
+    MyLogger.printInfo(brightness.toString());
+
+    return brightness == Brightness.light;
   }
 }

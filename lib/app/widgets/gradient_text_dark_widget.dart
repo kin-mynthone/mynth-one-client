@@ -1,37 +1,39 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
+import 'package:mynth_one_client/app/themes/app_colors.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 
-// ignore: must_be_immutable
-class TextWidget extends StatelessWidget {
+class GradientTextDarkWidget extends StatelessWidget {
   final String stringData;
   final bool boldValue;
+  final double heightValue;
   final double fontSize;
-  double? letterSpacing = 10;
-  final Color color;
   final bool centerAlignment;
 
-  TextWidget(
+  const GradientTextDarkWidget(
       {Key? key,
       required this.stringData,
       required this.fontSize,
       required this.boldValue,
-      required this.color,
       required this.centerAlignment,
-      this.letterSpacing})
+      required this.heightValue})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Text(
+    return GradientText(
       stringData,
       style: TextStyle(
+          height: heightValue,
           fontSize: fontSize,
-          color: color,
-          letterSpacing: letterSpacing,
           fontFamily: 'Poppins', // Set the font family to 'Poppins'
-          fontWeight: boldValue ? FontWeight.w800 : FontWeight.normal),
+          fontWeight: boldValue ? FontWeight.bold : FontWeight.normal),
       textAlign: centerAlignment ? TextAlign.center : TextAlign.left,
+      colors: const [
+        AppColors.cyan, AppColors.lightPurple
+        //add mroe colors here.
+      ],
     );
   }
 }

@@ -20,13 +20,13 @@ class _PasswordFormOutlineWidget extends GetView<RegistrationController> {
   Widget build(BuildContext context) {
     final defaultBorder = OutlineInputBorder(
         borderRadius: BorderRadius.circular(15),
-        borderSide: const BorderSide(color: AppColors.hF1F0FF, width: 0.3));
+        borderSide: const BorderSide(color: AppColors.darkPrimary, width: 0.3));
     return Obx(() => FormBuilderTextField(
           name: name,
           onChanged: onChanged,
           obscureText: controller.obscuredPassword,
           autofocus: false,
-          style: const TextStyle(color: AppColors.hF1F0FF),
+          style: const TextStyle(color: AppColors.darkPrimary),
           validator: (String? value) {
             if (value == null || value.trim().isEmpty) {
               return 'password is required'.tr;
@@ -64,11 +64,11 @@ class _PasswordFormOutlineWidget extends GetView<RegistrationController> {
               icon: controller.obscuredPassword
                   ? const Icon(
                       LineIcons.eyeSlash,
-                      color: AppColors.hF1F0FF,
+                      color: AppColors.darkPrimary,
                     )
                   : const Icon(
                       LineIcons.eye,
-                      color: AppColors.hFBB810,
+                      color: AppColors.darkPrimary,
                     ),
             ),
             hintText: hintText.tr,
@@ -76,7 +76,7 @@ class _PasswordFormOutlineWidget extends GetView<RegistrationController> {
               textStyle: const TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.w400,
-                color: AppColors.hBDBDBD,
+                color: AppColors.darkPrimary,
               ),
             ),
             focusedBorder: defaultBorder,
@@ -84,8 +84,9 @@ class _PasswordFormOutlineWidget extends GetView<RegistrationController> {
             errorBorder: defaultBorder,
             focusedErrorBorder: defaultBorder,
             filled: true,
-            fillColor: AppColors.h4A495E,
-            errorStyle: const TextStyle(color: AppColors.hFBB810, fontSize: 13),
+            fillColor: AppColors.darkPrimary,
+            errorStyle:
+                const TextStyle(color: AppColors.darkPrimary, fontSize: 13),
           ),
           textInputAction: TextInputAction.next,
           textCapitalization: TextCapitalization.none,

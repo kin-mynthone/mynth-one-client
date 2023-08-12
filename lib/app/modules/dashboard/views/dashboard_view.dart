@@ -42,17 +42,17 @@ class DashboardView extends GetView<DashboardController> {
             ? const EdgeInsets.only(bottom: 20)
             : const EdgeInsets.only(bottom: 5),
         decoration: const BoxDecoration(
-          color: AppColors.h403E51,
+          color: AppColors.darkPrimary, //TODO CHANGE COLOR
         ),
         height: !Platform.isAndroid ? 100 : 60,
         child: CustomNavigationBar(
           currentIndex: controller.currentIndex,
           iconSize: 25.0,
-          selectedColor: AppColors.hFBB810,
-          strokeColor: AppColors.hFBB810,
+          selectedColor: AppColors.darkPrimary, //TODO CHANGE COLOR,
+          strokeColor: AppColors.darkPrimary, //TODO CHANGE COLOR,
           blurEffect: false,
           elevation: 0,
-          unSelectedColor: AppColors.h9E9CAD,
+          unSelectedColor: AppColors.darkPrimary, //TODO CHANGE COLOR,
           backgroundColor: Colors.transparent,
           onTap: (index) {
             controller.setCurrentIndexValue(index);
@@ -66,8 +66,8 @@ class DashboardView extends GetView<DashboardController> {
                 child: SvgPicture.asset(
                   AssetPath.dHome,
                   color: controller.currentIndex.isEqual(0)
-                      ? AppColors.hFBB810
-                      : AppColors.h9E9CAD,
+                      ? AppColors.darkPrimary //TODO CHANGE COLOR
+                      : AppColors.darkPrimary, //TODO CHANGE COLOR,
                 ),
               ),
               // title: const Text('Dashboard'),
@@ -76,12 +76,11 @@ class DashboardView extends GetView<DashboardController> {
               icon: SizedBox(
                 width: 150,
                 height: 150,
-                child: SvgPicture.asset(
-                  AssetPath.dActivities,
-                  color: controller.currentIndex.isEqual(1)
-                      ? AppColors.hFBB810
-                      : AppColors.h9E9CAD,
-                ),
+                child: SvgPicture.asset(AssetPath.dActivities,
+                    color: controller.currentIndex.isEqual(1)
+                        ? AppColors.darkPrimary //TODO CHANGE COLOR
+                        : AppColors.darkPrimary //TODO CHANGE COLOR,
+                    ),
               ),
               // title: const Text('Dashboard'),
             ),
@@ -89,12 +88,11 @@ class DashboardView extends GetView<DashboardController> {
               icon: SizedBox(
                 width: 150,
                 height: 150,
-                child: SvgPicture.asset(
-                  AssetPath.dBanking,
-                  color: controller.currentIndex.isEqual(2)
-                      ? AppColors.hFBB810
-                      : AppColors.h9E9CAD,
-                ),
+                child: SvgPicture.asset(AssetPath.dBanking,
+                    color: controller.currentIndex.isEqual(2)
+                        ? AppColors.darkPrimary //TODO CHANGE COLOR
+                        : AppColors.darkPrimary //TODO CHANGE COLOR,
+                    ),
               ),
               // title: const Text('Dashboard'),
             ),
@@ -105,8 +103,8 @@ class DashboardView extends GetView<DashboardController> {
                 child: SvgPicture.asset(
                   AssetPath.dNotifications,
                   color: controller.currentIndex.isEqual(3)
-                      ? AppColors.hFBB810
-                      : AppColors.h9E9CAD,
+                      ? AppColors.darkPrimary //TODO CHANGE COLOR
+                      : AppColors.darkPrimary, //TODO CHANGE COLOR,
                 ),
               ),
               // title: const Text('Dashboard'),
@@ -115,12 +113,11 @@ class DashboardView extends GetView<DashboardController> {
               icon: SizedBox(
                 width: 150,
                 height: 150,
-                child: SvgPicture.asset(
-                  AssetPath.dProfile,
-                  color: controller.currentIndex.isEqual(4)
-                      ? AppColors.hFBB810
-                      : AppColors.h9E9CAD,
-                ),
+                child: SvgPicture.asset(AssetPath.dProfile,
+                    color: controller.currentIndex.isEqual(4)
+                        ? AppColors.darkPrimary //TODO CHANGE COLOR
+                        : AppColors.darkPrimary //TODO CHANGE COLOR,
+                    ),
               ),
               // title: const Text('Dashboard'),
             ),

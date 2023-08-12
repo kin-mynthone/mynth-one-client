@@ -105,4 +105,11 @@ class RegistrationController extends GetxController {
   goToDashboard() {
     Get.offAllNamed(AppPages.DASHBOARD);
   }
+
+  bool checkSystemTheme(context) {
+    var brightness = MediaQuery.of(context).platformBrightness;
+    MyLogger.printInfo(brightness.toString());
+
+    return brightness == Brightness.light;
+  }
 }

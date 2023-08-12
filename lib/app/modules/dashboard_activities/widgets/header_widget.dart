@@ -13,7 +13,7 @@ class _HeaderWidget extends StatelessWidget {
           stringData: 'Activities',
           fontSize: 20,
           boldValue: true,
-          color: AppColors.hF1F0FF,
+          color: AppColors.darkPrimary, //TODO CHANGE COLOR,
           centerAlignment: false,
         ),
       ],

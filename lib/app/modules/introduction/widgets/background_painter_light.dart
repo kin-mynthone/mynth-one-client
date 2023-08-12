@@ -1,7 +1,7 @@
 part of '../views/introduction_view.dart';
 
 //Copy this CustomPainter code to the Bottom of the File
-class _BackgroundPainter extends CustomPainter {
+class _BackgroundPainterLight extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Path path_0 = Path();
@@ -50,8 +50,11 @@ class _BackgroundPainter extends CustomPainter {
     path_0.close();
 
     Paint paint0Fill = Paint()..style = PaintingStyle.fill;
-    paint0Fill.shader = ui.Gradient.linear(Offset(size.width + 100, 0),
-        Offset(0, size.height), [AppColors.hD9D3F9, AppColors.hE4F9F6], [0, 1]);
+    paint0Fill.shader = ui.Gradient.linear(
+        Offset(size.width + 100, 0),
+        Offset(0, size.height),
+        [AppColors.darkPrimary, AppColors.darkPrimaryVariant],
+        [0, 1]); //TODO CHANGE COLOR
     canvas.drawPath(path_0, paint0Fill);
   }
 

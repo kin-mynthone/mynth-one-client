@@ -17,7 +17,7 @@ class _NoAccountWidget extends StatelessWidget {
                 margin: const EdgeInsets.only(left: 5, right: 15),
                 child: const Divider(
                   thickness: 1,
-                  color: AppColors.h9F9F9F,
+                  color: AppColors.darkPrimary,
                   height: 50,
                 ),
               ),
@@ -33,7 +33,7 @@ class _NoAccountWidget extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       fontWeight: FontWeight.w500,
-                      color: AppColors.hF4F4F4,
+                      color: AppColors.darkPrimary,
                       fontSize: 15,
                     ),
               ),
@@ -43,7 +43,7 @@ class _NoAccountWidget extends StatelessWidget {
                 margin: const EdgeInsets.only(left: 15, right: 5),
                 child: const Divider(
                   thickness: 1,
-                  color: AppColors.h9F9F9F,
+                  color: AppColors.darkPrimary,
                   height: 50,
                 ),
               ),

@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
-class GradientTextWidget extends StatelessWidget {
+class GradientTextLightWidget extends StatelessWidget {
   final String stringData;
   final bool boldValue;
   final double heightValue;
   final double fontSize;
   final bool centerAlignment;
 
-  const GradientTextWidget(
+  const GradientTextLightWidget(
       {Key? key,
       required this.stringData,
       required this.fontSize,
@@ -31,7 +31,7 @@ class GradientTextWidget extends StatelessWidget {
           fontWeight: boldValue ? FontWeight.bold : FontWeight.normal),
       textAlign: centerAlignment ? TextAlign.center : TextAlign.left,
       colors: const [
-        AppColors.hE4F9F6, AppColors.hD9D3F9
+        AppColors.darkPrimaryVariant, AppColors.darkPrimary
         //add mroe colors here.
       ],
     );
