@@ -1,12 +1,12 @@
 part of '../views/registration_view.dart';
 
-class _EmailTextFormWidget extends StatelessWidget {
+class _PhoneNumberTextFormWidget extends StatelessWidget {
   final String hintText;
   final String name;
 
   final void Function(String?)? onChanged;
 
-  const _EmailTextFormWidget({
+  const _PhoneNumberTextFormWidget({
     required this.name,
     required this.hintText,
     required this.onChanged,
@@ -49,11 +49,7 @@ class _EmailTextFormWidget extends StatelessWidget {
           ),
           validator: (String? value) {
             if (value == null || value.trim().isEmpty) {
-              return 'email is required'.tr;
-            } else if (value.isNotEmpty) {
-              final isEmailValid =
-                  RegExp(AppStrings.emailRegExp).hasMatch(value);
-              return isEmailValid ? null : 'invalid email format'.tr;
+              return 'phone number is required'.tr;
             }
             return null;
           },

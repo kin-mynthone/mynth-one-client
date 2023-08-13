@@ -6,7 +6,7 @@ import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class GradientTextLightWidget extends StatelessWidget {
   final String stringData;
-  final bool boldValue;
+  final FontWeight boldValue;
   final double heightValue;
   final double fontSize;
   final bool centerAlignment;
@@ -28,7 +28,7 @@ class GradientTextLightWidget extends StatelessWidget {
           height: heightValue,
           fontSize: fontSize,
           fontFamily: 'Poppins', // Set the font family to 'Poppins'
-          fontWeight: boldValue ? FontWeight.bold : FontWeight.normal),
+          fontWeight: boldValue),
       textAlign: centerAlignment ? TextAlign.center : TextAlign.left,
       colors: const [
         AppColors.darkPrimaryVariant, AppColors.darkPrimary

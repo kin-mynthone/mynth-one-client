@@ -10,16 +10,16 @@ class _ButtonArrowWidget extends GetView<IntroductionController> {
     const borderRadius = 30.0;
 
     return Material(
-      color: controller.checkSystemTheme(context)
+      color: controller.getSystemTheme(context)
           ? AppColors.lightPrimary
           : AppColors.darkPrimary,
       borderRadius: BorderRadius.circular(borderRadius),
       child: InkWell(
         borderRadius: BorderRadius.circular(borderRadius),
-        splashColor: controller.checkSystemTheme(context)
+        splashColor: controller.getSystemTheme(context)
             ? AppColors.lightSecondary.withOpacity(0.30)
             : AppColors.darkSecondary.withOpacity(0.30),
-        highlightColor: controller.checkSystemTheme(context)
+        highlightColor: controller.getSystemTheme(context)
             ? AppColors.lightSecondary.withOpacity(0.15)
             : AppColors.darkSecondary.withOpacity(0.15),
         onTap: () => onPressed(),
@@ -29,7 +29,7 @@ class _ButtonArrowWidget extends GetView<IntroductionController> {
           child: Center(
               child: FaIcon(
             FontAwesomeIcons.arrowRight,
-            color: controller.checkSystemTheme(context)
+            color: controller.getSystemTheme(context)
                 ? AppColors.lightSecondary
                 : AppColors.darkSecondary,
           )),

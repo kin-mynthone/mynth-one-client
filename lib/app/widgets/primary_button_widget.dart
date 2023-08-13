@@ -4,11 +4,14 @@ import 'package:mynth_one_client/app/themes/app_colors.dart';
 // ignore: must_be_immutable
 class PrimaryButtonWidget extends StatelessWidget {
   String? buttonText = "Button Text";
-  bool? boldValue = false;
+  FontWeight? boldValue = FontWeight.w500;
   double? fontSize = 10;
   double? height = 10;
-  Color? fontColor = AppColors.darkPrimary;
+  Color? fontColor = AppColors.darkSecondary;
   Color? buttonColor = AppColors.darkPrimary;
+  Color? splashColor = AppColors.darkSecondary;
+  Color? highlightColor = AppColors.darkSecondary;
+
   Function onTap;
 
   PrimaryButtonWidget(
@@ -16,23 +19,25 @@ class PrimaryButtonWidget extends StatelessWidget {
       this.buttonText,
       this.fontSize,
       this.boldValue,
-      this.fontColor,
       this.height,
+      this.fontColor,
       this.buttonColor,
+      this.splashColor,
+      this.highlightColor,
       required this.onTap})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    const borderRadius = 15.0;
+    const borderRadius = 10.0;
 
     return Material(
       color: buttonColor,
       borderRadius: BorderRadius.circular(borderRadius),
       child: InkWell(
         borderRadius: BorderRadius.circular(borderRadius),
-        splashColor: AppColors.darkPrimary.withOpacity(0.30),
-        highlightColor: AppColors.darkPrimary.withOpacity(0.15),
+        splashColor: splashColor,
+        highlightColor: splashColor,
         onTap: () => onTap(),
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
@@ -44,7 +49,7 @@ class PrimaryButtonWidget extends StatelessWidget {
                   fontSize: fontSize,
                   color: fontColor,
                   fontFamily: 'Poppins', // Set the font family to 'Poppins'
-                  fontWeight: boldValue! ? FontWeight.w600 : FontWeight.normal),
+                  fontWeight: boldValue),
             ),
           ),
         ),
@@ -58,7 +63,7 @@ class PrimaryButtonWidget extends StatelessWidget {
   //                       buttonText: 'Register',
   //                       height: 60,
   //                       fontSize: 20,
-  //                       boldValue: true,
+  //                       FontWeight.w800 ,
   //                       fontColor: AppColors.darkPrimary,
   //                       buttonColor: AppColors.darkPrimary,
   //                       onTap: () => {controller.goToRegister()},

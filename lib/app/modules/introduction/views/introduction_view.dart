@@ -28,7 +28,7 @@ class IntroductionView extends GetView<IntroductionController> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(controller.checkSystemTheme(context)
+            image: AssetImage(controller.getSystemTheme(context)
                 ? AssetPath.introductionBackgroundLight
                 : AssetPath.introductionBackgroundDark),
             fit: BoxFit.cover,
@@ -44,7 +44,7 @@ class IntroductionView extends GetView<IntroductionController> {
                   width: size.width * 0.95,
                   height: size.height * 0.5,
                   child: CustomPaint(
-                    painter: (controller.checkSystemTheme(context)
+                    painter: (controller.getSystemTheme(context)
                         ? _BackgroundPainterLight()
                         : _BackgroundPainterDark()),
                   ),
@@ -65,16 +65,16 @@ class IntroductionView extends GetView<IntroductionController> {
                             begin: Alignment.topRight,
                             end: Alignment.bottomLeft,
                             colors: [
-                              controller.checkSystemTheme(context)
+                              controller.getSystemTheme(context)
                                   ? AppColors.darkPrimary
                                   : AppColors.lightPurple,
-                              controller.checkSystemTheme(context)
+                              controller.getSystemTheme(context)
                                   ? AppColors.darkPrimary
                                   : AppColors.lightPurple,
-                              controller.checkSystemTheme(context)
+                              controller.getSystemTheme(context)
                                   ? AppColors.darkPrimaryVariant
                                   : AppColors.cyan,
-                              controller.checkSystemTheme(context)
+                              controller.getSystemTheme(context)
                                   ? AppColors.darkPrimaryVariant
                                   : AppColors.cyan,
                             ],
@@ -134,7 +134,7 @@ class IntroductionView extends GetView<IntroductionController> {
               child: Align(
                 alignment: Alignment.topCenter,
                 child: SvgPicture.asset(
-                  controller.checkSystemTheme(context)
+                  controller.getSystemTheme(context)
                       ? AssetPath.lightLogo
                       : AssetPath.darkLogo,
                 ),
@@ -144,18 +144,18 @@ class IntroductionView extends GetView<IntroductionController> {
               top: 300,
               child: Align(
                 alignment: Alignment.center,
-                child: controller.checkSystemTheme(context)
+                child: controller.getSystemTheme(context)
                     ? const GradientTextLightWidget(
                         stringData: 'Hassle free\npayment method',
                         fontSize: 35,
-                        boldValue: true,
+                        boldValue: FontWeight.w800,
                         heightValue: 1.2,
                         centerAlignment: true,
                       )
                     : const GradientTextDarkWidget(
                         stringData: 'Hassle free\npayment method',
                         fontSize: 35,
-                        boldValue: true,
+                        boldValue: FontWeight.w800,
                         heightValue: 1.2,
                         centerAlignment: true,
                       ),
@@ -169,8 +169,8 @@ class IntroductionView extends GetView<IntroductionController> {
                   stringData:
                       'Connect your money to your friends\nfamily and Brands',
                   fontSize: 15,
-                  boldValue: false,
-                  color: controller.checkSystemTheme(context)
+                  boldValue: FontWeight.normal,
+                  color: controller.getSystemTheme(context)
                       ? AppColors.lightTextPrimary
                       : AppColors.darkTextPrimary,
                   centerAlignment: true,

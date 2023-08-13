@@ -56,7 +56,7 @@ class DebitCardWidget extends StatelessWidget {
                       .toString()
                       .replaceRange(0, 3, '***'),
                   fontSize: 15,
-                  boldValue: false,
+                  boldValue: FontWeight.normal,
                   letterSpacing: 8,
                   color: AppColors.darkPrimary,
                   centerAlignment: false,
@@ -71,7 +71,7 @@ class DebitCardWidget extends StatelessWidget {
                   child: TextWidget(
                     stringData: '€',
                     fontSize: 25,
-                    boldValue: true,
+                    boldValue: FontWeight.w800,
                     letterSpacing: 8,
                     color: AppColors.darkPrimary,
                     centerAlignment: false,
@@ -80,7 +80,7 @@ class DebitCardWidget extends StatelessWidget {
                 TextWidget(
                   stringData: cardModel.amount.toString(),
                   fontSize: 35,
-                  boldValue: true,
+                  boldValue: FontWeight.w800,
                   color: AppColors.darkPrimary,
                   centerAlignment: false,
                 ),
@@ -93,14 +93,14 @@ class DebitCardWidget extends StatelessWidget {
                 TextWidget(
                   stringData: cardModel.accountName.toString(),
                   fontSize: 15,
-                  boldValue: true,
+                  boldValue: FontWeight.w800,
                   color: AppColors.darkPrimary,
                   centerAlignment: false,
                 ),
                 TextWidget(
                   stringData: cardModel.expiration.toString(),
                   fontSize: 15,
-                  boldValue: false,
+                  boldValue: FontWeight.normal,
                   color: AppColors.darkPrimary,
                   centerAlignment: false,
                 ),

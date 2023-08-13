@@ -9,7 +9,6 @@ import 'package:mynth_one_client/app/constants/app_numbers.dart';
 import 'package:mynth_one_client/app/constants/app_strings.dart';
 import 'package:mynth_one_client/app/helpers/asset_path_helper.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
-import 'package:mynth_one_client/app/widgets/loading_overlay_widget.dart';
 import 'package:mynth_one_client/app/widgets/primary_button_widget.dart';
 import 'package:mynth_one_client/app/widgets/text_widget.dart';
 
@@ -19,6 +18,7 @@ part '../widgets/header_widget.dart';
 part '../widgets/email_text_form_widget.dart';
 part '../widgets/password_text_form_widget.dart';
 part '../widgets/no_account_widget.dart';
+part '../widgets/forgot_password.dart';
 
 class LoginView extends GetView<LoginController> {
   const LoginView({Key? key}) : super(key: key);
@@ -36,7 +36,7 @@ class LoginView extends GetView<LoginController> {
         ),
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(controller.checkSystemTheme(context)
+            image: AssetImage(controller.getSystemTheme(context)
                 ? AssetPath.introductionBackgroundLight
                 : AssetPath.introductionBackgroundDark),
             fit: BoxFit.cover,
@@ -52,7 +52,7 @@ class LoginView extends GetView<LoginController> {
               child: SizedBox(
                 width: 170,
                 child: SvgPicture.asset(
-                  controller.checkSystemTheme(context)
+                  controller.getSystemTheme(context)
                       ? AssetPath.lightLogo1
                       : AssetPath.darkLogo1,
                 ),
@@ -68,9 +68,9 @@ class LoginView extends GetView<LoginController> {
                     borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(40),
                         topRight: Radius.circular(40)),
-                    color: controller.checkSystemTheme(context)
-                        ? Colors.white
-                        : AppColors.darkbackgroundvariant),
+                    color: controller.getSystemTheme(context)
+                        ? AppColors.lightBackgroundVariant
+                        : AppColors.darkBackgroundVariant),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,11 +79,53 @@ class LoginView extends GetView<LoginController> {
                     const SizedBox(
                       height: 40,
                     ),
-                    _EmailFormOutlineWidget(
-                      name: 'email',
+                    _EmailTextFormWidget(
+                      name: 'Email',
                       hintText: 'enter your email',
                       onChanged: (value) => controller.setEmailValue(value!),
-                    )
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    _PasswordTextFormWidget(
+                      name: 'Password',
+                      hintText: 'enter your password',
+                      onChanged: (value) => controller.setPasswordValue(value!),
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: _ForgotPassword(
+                        onPressed: () => controller.goToForgotPassword(),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    PrimaryButtonWidget(
+                      buttonText: 'PROCEED',
+                      height: 50,
+                      fontSize: 15,
+                      boldValue: FontWeight.w800,
+                      fontColor: controller.getSystemTheme(context)
+                          ? AppColors.lightSecondary
+                          : AppColors.darkSecondary,
+                      buttonColor: controller.getSystemTheme(context)
+                          ? AppColors.lightPrimary
+                          : AppColors.darkPrimary,
+                      splashColor: controller.getSystemTheme(context)
+                          ? AppColors.lightSecondary.withOpacity(0.30)
+                          : AppColors.darkSecondary.withOpacity(0.30),
+                      highlightColor: controller.getSystemTheme(context)
+                          ? AppColors.lightSecondary.withOpacity(0.15)
+                          : AppColors.darkSecondary.withOpacity(0.15),
+                      onTap: () => {controller.checkIfCredentialsAreValid()},
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    _NoAccountWidget(
+                      onPressed: () => controller.goToRegistration(),
+                    ),
                   ],
                 ),
               ),

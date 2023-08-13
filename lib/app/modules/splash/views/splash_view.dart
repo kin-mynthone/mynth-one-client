@@ -18,7 +18,7 @@ class SplashView extends GetView<SplashController> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SvgPicture.asset(
-              controller.checkSystemTheme(context)
+              controller.getSystemTheme(context)
                   ? AssetPath.lightLogo1
                   : AssetPath.darkLogo1,
             ),
@@ -26,7 +26,7 @@ class SplashView extends GetView<SplashController> {
               height: 30,
             ),
             LoadingIndicator(
-              color: controller.checkSystemTheme(context)
+              color: controller.getSystemTheme(context)
                   ? AppColors.lightPrimary
                   : AppColors.darkSecondary,
             ),

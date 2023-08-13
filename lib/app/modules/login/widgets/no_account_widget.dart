@@ -10,45 +10,21 @@ class _NoAccountWidget extends StatelessWidget {
     return Center(
       child: SizedBox(
         width: MediaQuery.of(context).size.width * 0.80,
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              child: Container(
-                margin: const EdgeInsets.only(left: 5, right: 15),
-                child: const Divider(
-                  thickness: 1,
-                  color: AppColors.darkPrimary,
-                  height: 50,
+        child: TextButton(
+          onPressed: () {
+            FocusScope.of(context).unfocus();
+            onPressed();
+          },
+          child: Text(
+            'do not have an account'.tr,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.gray,
+                  fontSize: 13,
                 ),
-              ),
-            ),
-            TextButton(
-              onPressed: () {
-                FocusScope.of(context).unfocus();
-                onPressed();
-              },
-              child: Text(
-                'do not have an account'.tr,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.darkPrimary,
-                      fontSize: 15,
-                    ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                margin: const EdgeInsets.only(left: 15, right: 5),
-                child: const Divider(
-                  thickness: 1,
-                  color: AppColors.darkPrimary,
-                  height: 50,
-                ),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );

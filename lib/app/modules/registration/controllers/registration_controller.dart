@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
 import 'package:mynth_one_client/app/helpers/my_logger_helper.dart';
 import 'package:mynth_one_client/app/routes/app_pages.dart';
@@ -11,14 +10,22 @@ class RegistrationController extends GetxController {
   late Worker _statusEverWorker;
 
   final _status = RegistrationStatus.initial.obs;
-  final GlobalKey<FormBuilderState> _formKey = GlobalKey<FormBuilderState>();
   final _email = ''.obs;
+  final _givenName = ''.obs;
+  final _surname = ''.obs;
+  final _phoneNumber = ''.obs;
+  final _initialCountry = 'NLD'.obs;
+
   final _password = ''.obs;
   final _obscuredPassword = true.obs;
 
   RegistrationStatus get status => _status.value;
-  GlobalKey<FormBuilderState> get formKey => _formKey;
   String get email => _email.value;
+  String get givenName => _givenName.value;
+  String get surname => _surname.value;
+  String get initialCountry => _initialCountry.value;
+  String get phoneNumber => _phoneNumber.value;
+
   String get password => _password.value;
   bool get obscuredPassword => _obscuredPassword.value;
 
@@ -59,13 +66,13 @@ class RegistrationController extends GetxController {
           case RegistrationStatus.initial:
             MyLogger.printInfo(currentState());
             break;
-          case RegistrationStatus.succeeded:
-            MyLogger.printInfo(currentState());
-            //TODO: add event here
-            break;
           case RegistrationStatus.failed:
             break;
           case RegistrationStatus.invalid:
+            break;
+          case RegistrationStatus.succeeded:
+            MyLogger.printInfo(currentState());
+            //TODO: add event here
             break;
         }
       },
@@ -74,6 +81,21 @@ class RegistrationController extends GetxController {
 
   void setEmailValue(String email) {
     _email.value = email.trim();
+    MyLogger.printInfo(currentState());
+  }
+
+  void setGivenNameValue(String value) {
+    _givenName.value = email.trim();
+    MyLogger.printInfo(currentState());
+  }
+
+  void setSurnameValue(String value) {
+    _surname.value = email.trim();
+    MyLogger.printInfo(currentState());
+  }
+
+  void setPhoneNumberValue(String value) {
+    _phoneNumber.value = email.trim();
     MyLogger.printInfo(currentState());
   }
 
@@ -106,9 +128,8 @@ class RegistrationController extends GetxController {
     Get.offAllNamed(AppPages.DASHBOARD);
   }
 
-  bool checkSystemTheme(context) {
+  bool getSystemTheme(context) {
     var brightness = MediaQuery.of(context).platformBrightness;
-    MyLogger.printInfo(brightness.toString());
 
     return brightness == Brightness.light;
   }

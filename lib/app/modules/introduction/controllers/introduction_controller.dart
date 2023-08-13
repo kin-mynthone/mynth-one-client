@@ -10,9 +10,8 @@ class IntroductionController extends GetxController {
     Get.offAllNamed(AppPages.LOGIN);
   }
 
-  bool checkSystemTheme(context) {
+  bool getSystemTheme(context) {
     var brightness = MediaQuery.of(context).platformBrightness;
-    MyLogger.printInfo(brightness.toString());
 
     return brightness == Brightness.light;
   }

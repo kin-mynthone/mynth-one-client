@@ -10,27 +10,37 @@ class _HeaderWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         GoBackButton(
-          iconColor: Colors.white,
+          iconColor: RegistrationController.instance.getSystemTheme(context)
+              ? AppColors.lightPrimary
+              : AppColors.darkPrimary,
           onPressed: () {
-            FocusScope.of(context).unfocus();
-            Get.back(closeOverlays: true);
+            if (RegistrationPageController.instance.currentIndex.isEqual(0)) {
+              FocusScope.of(context).unfocus();
+              Get.back(closeOverlays: true);
+            } else {
+              RegistrationPageController.instance.setCurrentIndexValue(0);
+            }
           },
         ),
         const SizedBox(
           height: 15,
         ),
         TextWidget(
-          stringData: 'Create a new Account',
-          fontSize: 25,
-          boldValue: true,
-          color: AppColors.darkPrimary,
+          stringData: 'quick sign up'.tr,
+          fontSize: 30,
+          boldValue: FontWeight.w800,
+          color: RegistrationController.instance.getSystemTheme(context)
+              ? AppColors.lightTextPrimary
+              : AppColors.darkTextPrimary,
           centerAlignment: false,
         ),
         TextWidget(
-          stringData: 'Hello, be part of MynthOne',
-          fontSize: 14,
-          boldValue: false,
-          color: AppColors.darkPrimary,
+          stringData: 'please provide all necessary information'.tr,
+          fontSize: 16,
+          boldValue: FontWeight.normal,
+          color: RegistrationController.instance.getSystemTheme(context)
+              ? AppColors.lightTextPrimary
+              : AppColors.darkTextPrimary,
           centerAlignment: false,
         ),
       ],

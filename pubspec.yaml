@@ -22,7 +22,6 @@ dependencies:
     sdk: flutter
   flutter_form_builder: ^9.1.0
   flutter_otp_text_field: ^1.1.1
-  flutter_rating_bar: ^4.0.1
   flutter_spinkit: ^5.1.0
   flutter_svg: ^1.1.6
   get: 4.6.5
@@ -36,7 +35,6 @@ dependencies:
   ntp: ^2.0.0
   permission_handler: ^10.3.0
   responsive_framework: ^0.2.0
-  sendbird_sdk: ^3.2.11
   smooth_page_indicator: ^1.0.1
   uuid: ^3.0.7
   flutter_launcher_icons: ^0.13.1
@@ -73,4 +71,5 @@ flutter:
     - assets/icons/logo/
     - assets/images/introduction/
     - assets/images/login/
+    - assets/images/otp/
     - assets/mock_data/

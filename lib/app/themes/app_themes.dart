@@ -4,7 +4,7 @@ import 'package:mynth_one_client/app/themes/app_colors.dart';
 
 class AppThemes {
   static final lightTheme = ThemeData(
-    scaffoldBackgroundColor: AppColors.lightbackground,
+    scaffoldBackgroundColor: AppColors.lightBackground,
     colorScheme: ColorScheme.fromSwatch().copyWith(
       primary: AppColors.lightPrimary,
       secondary: AppColors.lightSecondary,
@@ -65,7 +65,7 @@ class AppThemes {
   );
 
   static final darkTheme = ThemeData(
-    scaffoldBackgroundColor: AppColors.darkbackground,
+    scaffoldBackgroundColor: AppColors.darkBackground,
     colorScheme: ColorScheme.fromSwatch().copyWith(
       primary: AppColors.darkPrimary,
       secondary: AppColors.darkSecondary,

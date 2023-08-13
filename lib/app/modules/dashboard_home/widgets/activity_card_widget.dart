@@ -40,14 +40,14 @@ class ActivityCardDataWidget extends StatelessWidget {
                   TextWidget(
                     stringData: activityCompleteModel.merchant.toString(),
                     fontSize: 13,
-                    boldValue: true,
+                    boldValue: FontWeight.w800,
                     color: AppColors.darkPrimary, //TODO CHANGE COLOR,
                     centerAlignment: false,
                   ),
                   TextWidget(
                     stringData: activityCompleteModel.status.toString(),
                     fontSize: 12,
-                    boldValue: false,
+                    boldValue: FontWeight.normal,
                     color: AppColors.darkPrimary, //TODO CHANGE COLOR,
                     centerAlignment: false,
                   ),
@@ -63,14 +63,14 @@ class ActivityCardDataWidget extends StatelessWidget {
                       ? '-${activityCompleteModel.amount}'
                       : '+${activityCompleteModel.amount}',
                   fontSize: 13,
-                  boldValue: true,
+                  boldValue: FontWeight.w800,
                   color: AppColors.darkPrimary, //TODO CHANGE COLOR,
                   centerAlignment: false,
                 ),
                 TextWidget(
                   stringData: getTime(activityCompleteModel.timeStamp!),
                   fontSize: 12,
-                  boldValue: false,
+                  boldValue: FontWeight.normal,
                   color: AppColors.darkPrimary, //TODO CHANGE COLOR,
                   centerAlignment: false,
                 ),

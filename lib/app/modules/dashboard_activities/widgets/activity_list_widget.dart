@@ -39,14 +39,14 @@ class EmptyData extends StatelessWidget {
         TextWidget(
           stringData: 'No Activity to show',
           fontSize: 15,
-          boldValue: true,
+          boldValue: FontWeight.w800,
           color: AppColors.darkPrimary, //TODO CHANGE COLOR,
           centerAlignment: false,
         ),
         TextWidget(
           stringData: 'Start your first activity now',
           fontSize: 10,
-          boldValue: false,
+          boldValue: FontWeight.normal,
           color: AppColors.darkPrimary, //TODO CHANGE COLOR,
           centerAlignment: false,
         ),

@@ -22,6 +22,7 @@ class GoBackButton extends StatelessWidget {
       constraints: const BoxConstraints(),
       icon: Icon(
         LineIcons.arrowLeft,
+        size: 30,
         color: iconColor,
       ),
     );

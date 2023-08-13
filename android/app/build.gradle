@@ -52,7 +52,7 @@ android {
         applicationId "com.example.mynth_one_client"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdkVersion flutter.minSdkVersion
+        minSdkVersion 21
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
@@ -73,7 +73,7 @@ android {
         }        
         development {
             dimension "default"
-            resValue "string", "app_name", "DEVMYNTHONE"
+            resValue "string", "app_name", "DEV MYNTHONE"
             applicationIdSuffix ".dev"
         }
     }

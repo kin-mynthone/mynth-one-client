@@ -51,7 +51,7 @@ class ActivityCardWidget extends StatelessWidget {
                               TextWidget(
                                 stringData: '1min',
                                 fontSize: 15,
-                                boldValue: true,
+                                boldValue: FontWeight.w800,
                                 color:
                                     AppColors.darkPrimary, //TODO CHANGE COLOR,
                                 centerAlignment: false,
@@ -64,7 +64,7 @@ class ActivityCardWidget extends StatelessWidget {
                             child: TextWidget(
                               stringData: activityModel.description.toString(),
                               fontSize: 12,
-                              boldValue: false,
+                              boldValue: FontWeight.normal,
                               color: AppColors.darkPrimary, //TODO CHANGE COLOR,
                               centerAlignment: false,
                             ),
@@ -73,7 +73,7 @@ class ActivityCardWidget extends StatelessWidget {
                           TextWidget(
                             stringData: getTime(activityModel.timeStamp!),
                             fontSize: 12,
-                            boldValue: false,
+                            boldValue: FontWeight.normal,
                             color: AppColors.darkPrimary, //TODO CHANGE COLOR,
                             centerAlignment: false,
                           ),

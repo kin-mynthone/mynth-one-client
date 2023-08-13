@@ -19,14 +19,14 @@ class _HeaderWidget extends StatelessWidget {
               TextWidget(
                 stringData: 'Hello 👋🏻 ',
                 fontSize: 15,
-                boldValue: false,
+                boldValue: FontWeight.normal,
                 color: AppColors.darkPrimary, //TODO CHANGE COLOR,
                 centerAlignment: false,
               ),
               TextWidget(
                 stringData: 'Kindred',
                 fontSize: 20,
-                boldValue: true,
+                boldValue: FontWeight.w800,
                 color: AppColors.darkPrimary, //TODO CHANGE COLOR,
                 centerAlignment: false,
               ),

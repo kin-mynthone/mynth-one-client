@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:337509060980:android:0d9007b1428819901e5c21",
         "android_client_info": {
-          "package_name": "com.example.mynth_one_client"
+          "package_name": "com.example.mynth_one_client.staging"
         }
       },
       "oauth_client": [

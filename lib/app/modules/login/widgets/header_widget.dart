@@ -12,8 +12,8 @@ class _HeaderWidget extends GetView<LoginController> {
         TextWidget(
           stringData: 'Sign In',
           fontSize: 20,
-          boldValue: true,
-          color: controller.checkSystemTheme(context)
+          boldValue: FontWeight.w800,
+          color: controller.getSystemTheme(context)
               ? AppColors.lightTextPrimary
               : AppColors.darkTextPrimary,
           centerAlignment: false,
@@ -25,7 +25,7 @@ class _HeaderWidget extends GetView<LoginController> {
           text: TextSpan(
             text: 'Hi, ',
             style: TextStyle(
-                color: controller.checkSystemTheme(context)
+                color: controller.getSystemTheme(context)
                     ? AppColors.lightTextPrimary
                     : AppColors.darkTextPrimary,
                 fontSize: 28,
@@ -34,7 +34,7 @@ class _HeaderWidget extends GetView<LoginController> {
               TextSpan(
                 text: 'Good Day',
                 style: TextStyle(
-                    color: controller.checkSystemTheme(context)
+                    color: controller.getSystemTheme(context)
                         ? AppColors.lightPrimary
                         : AppColors.darkPrimary,
                     fontSize: 28,
@@ -46,8 +46,8 @@ class _HeaderWidget extends GetView<LoginController> {
         TextWidget(
           stringData: 'Please sign in to continue',
           fontSize: 15,
-          boldValue: false,
-          color: controller.checkSystemTheme(context)
+          boldValue: FontWeight.normal,
+          color: controller.getSystemTheme(context)
               ? AppColors.lightTextPrimary
               : AppColors.darkTextPrimary,
           centerAlignment: false,

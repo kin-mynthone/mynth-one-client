@@ -29,4 +29,9 @@ class AssetPath {
 
 //-------------------ACTIVITIES--------------------
   static const aSearchingRobot = "$_iconMainPath/robots/searching_robot.png";
+
+//-------------------OTP--------------------
+  static const oIllustrationDark = "$_imageMainPath/otp/illustration_dark.png";
+  static const oIllustrationLight =
+      "$_imageMainPath/otp/illustration_light.png";
 }

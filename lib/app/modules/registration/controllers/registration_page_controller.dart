@@ -1,9 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mynth_one_client/app/helpers/my_logger_helper.dart';
 
-class DashboardController extends GetxController {
-  static DashboardController get instance => Get.find();
+class RegistrationPageController extends GetxController {
+  static RegistrationPageController get instance => Get.find();
   late Worker _currentIndexEverWorker;
 
   final _currentIndex = 0.obs;
@@ -11,7 +10,7 @@ class DashboardController extends GetxController {
   int get currentIndex => _currentIndex.value;
 
   String currentState() =>
-      'DashboardController(_currentIndex: ${_currentIndex.value})';
+      'RegistrationPageController(_currentIndex: ${_currentIndex.value})';
 
   @override
   void onInit() {
@@ -50,10 +49,4 @@ class DashboardController extends GetxController {
   }
 
   void setCurrentIndexValue(int index) => _currentIndex.value = index;
-
-  bool getSystemTheme(context) {
-    var brightness = MediaQuery.of(context).platformBrightness;
-
-    return brightness == Brightness.light;
-  }
 }

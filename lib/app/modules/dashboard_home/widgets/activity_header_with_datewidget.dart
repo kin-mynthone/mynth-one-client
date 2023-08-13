@@ -26,7 +26,7 @@ class _ActivityHeaderWithDateWidget
               TextWidget(
                 stringData: headerTitle,
                 fontSize: 22,
-                boldValue: true,
+                boldValue: FontWeight.w800,
                 color: AppColors.darkPrimary, //TODO CHANGE COLOR,
                 centerAlignment: false,
               ),
@@ -35,7 +35,7 @@ class _ActivityHeaderWithDateWidget
                     ? TextWidget(
                         stringData: 'Today, ${controller.getDate()}',
                         fontSize: 13,
-                        boldValue: false,
+                        boldValue: FontWeight.normal,
                         color: AppColors.darkPrimary, //TODO CHANGE COLOR,
                         centerAlignment: false,
                       )

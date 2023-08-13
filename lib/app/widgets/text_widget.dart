@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class TextWidget extends StatelessWidget {
   final String stringData;
-  final bool boldValue;
+  final FontWeight boldValue;
   final double fontSize;
   double? letterSpacing = 10;
   final Color color;
@@ -30,7 +30,7 @@ class TextWidget extends StatelessWidget {
           color: color,
           letterSpacing: letterSpacing,
           fontFamily: 'Poppins', // Set the font family to 'Poppins'
-          fontWeight: boldValue ? FontWeight.w800 : FontWeight.normal),
+          fontWeight: boldValue),
       textAlign: centerAlignment ? TextAlign.center : TextAlign.left,
     );
   }
