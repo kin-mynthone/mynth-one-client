@@ -41,18 +41,26 @@ class DashboardView extends GetView<DashboardController> {
         padding: !Platform.isAndroid
             ? const EdgeInsets.only(bottom: 20)
             : const EdgeInsets.only(bottom: 5),
-        decoration: const BoxDecoration(
-          color: AppColors.darkPrimary, //TODO CHANGE COLOR
+        decoration: BoxDecoration(
+          color: controller.getSystemTheme(context)
+              ? AppColors.lightBackgroundVariant
+              : AppColors.darkBackgroundVariant,
         ),
         height: !Platform.isAndroid ? 100 : 60,
         child: CustomNavigationBar(
           currentIndex: controller.currentIndex,
           iconSize: 25.0,
-          selectedColor: AppColors.darkPrimary, //TODO CHANGE COLOR,
-          strokeColor: AppColors.darkPrimary, //TODO CHANGE COLOR,
+          selectedColor: controller.getSystemTheme(context)
+              ? AppColors.lightPrimary
+              : AppColors.darkPrimary,
+          strokeColor: controller.getSystemTheme(context)
+              ? AppColors.lightPrimary
+              : AppColors.darkPrimary,
           blurEffect: false,
           elevation: 0,
-          unSelectedColor: AppColors.darkPrimary, //TODO CHANGE COLOR,
+          unSelectedColor: controller.getSystemTheme(context)
+              ? AppColors.lightSecondary
+              : AppColors.darkSecondary,
           backgroundColor: Colors.transparent,
           onTap: (index) {
             controller.setCurrentIndexValue(index);
@@ -66,8 +74,12 @@ class DashboardView extends GetView<DashboardController> {
                 child: SvgPicture.asset(
                   AssetPath.dHome,
                   color: controller.currentIndex.isEqual(0)
-                      ? AppColors.darkPrimary //TODO CHANGE COLOR
-                      : AppColors.darkPrimary, //TODO CHANGE COLOR,
+                      ? controller.getSystemTheme(context)
+                          ? AppColors.lightPrimary
+                          : AppColors.darkPrimary //TODO CHANGE COLOR
+                      : controller.getSystemTheme(context)
+                          ? AppColors.secondaryTranslucent
+                          : AppColors.secondaryTranslucent,
                 ),
               ),
               // title: const Text('Dashboard'),
@@ -76,11 +88,16 @@ class DashboardView extends GetView<DashboardController> {
               icon: SizedBox(
                 width: 150,
                 height: 150,
-                child: SvgPicture.asset(AssetPath.dActivities,
-                    color: controller.currentIndex.isEqual(1)
-                        ? AppColors.darkPrimary //TODO CHANGE COLOR
-                        : AppColors.darkPrimary //TODO CHANGE COLOR,
-                    ),
+                child: SvgPicture.asset(
+                  AssetPath.dActivities,
+                  color: controller.currentIndex.isEqual(1)
+                      ? controller.getSystemTheme(context)
+                          ? AppColors.lightPrimary
+                          : AppColors.darkPrimary //TODO CHANGE COLOR
+                      : controller.getSystemTheme(context)
+                          ? AppColors.secondaryTranslucent
+                          : AppColors.secondaryTranslucent,
+                ),
               ),
               // title: const Text('Dashboard'),
             ),
@@ -88,11 +105,16 @@ class DashboardView extends GetView<DashboardController> {
               icon: SizedBox(
                 width: 150,
                 height: 150,
-                child: SvgPicture.asset(AssetPath.dBanking,
-                    color: controller.currentIndex.isEqual(2)
-                        ? AppColors.darkPrimary //TODO CHANGE COLOR
-                        : AppColors.darkPrimary //TODO CHANGE COLOR,
-                    ),
+                child: SvgPicture.asset(
+                  AssetPath.dBanking,
+                  color: controller.currentIndex.isEqual(2)
+                      ? controller.getSystemTheme(context)
+                          ? AppColors.lightPrimary
+                          : AppColors.darkPrimary //TODO CHANGE COLOR
+                      : controller.getSystemTheme(context)
+                          ? AppColors.secondaryTranslucent
+                          : AppColors.secondaryTranslucent,
+                ),
               ),
               // title: const Text('Dashboard'),
             ),
@@ -103,8 +125,12 @@ class DashboardView extends GetView<DashboardController> {
                 child: SvgPicture.asset(
                   AssetPath.dNotifications,
                   color: controller.currentIndex.isEqual(3)
-                      ? AppColors.darkPrimary //TODO CHANGE COLOR
-                      : AppColors.darkPrimary, //TODO CHANGE COLOR,
+                      ? controller.getSystemTheme(context)
+                          ? AppColors.lightPrimary
+                          : AppColors.darkPrimary //TODO CHANGE COLOR
+                      : controller.getSystemTheme(context)
+                          ? AppColors.secondaryTranslucent
+                          : AppColors.secondaryTranslucent,
                 ),
               ),
               // title: const Text('Dashboard'),
@@ -113,11 +139,16 @@ class DashboardView extends GetView<DashboardController> {
               icon: SizedBox(
                 width: 150,
                 height: 150,
-                child: SvgPicture.asset(AssetPath.dProfile,
-                    color: controller.currentIndex.isEqual(4)
-                        ? AppColors.darkPrimary //TODO CHANGE COLOR
-                        : AppColors.darkPrimary //TODO CHANGE COLOR,
-                    ),
+                child: SvgPicture.asset(
+                  AssetPath.dProfile,
+                  color: controller.currentIndex.isEqual(4)
+                      ? controller.getSystemTheme(context)
+                          ? AppColors.lightPrimary
+                          : AppColors.darkPrimary //TODO CHANGE COLOR
+                      : controller.getSystemTheme(context)
+                          ? AppColors.secondaryTranslucent
+                          : AppColors.secondaryTranslucent,
+                ),
               ),
               // title: const Text('Dashboard'),
             ),

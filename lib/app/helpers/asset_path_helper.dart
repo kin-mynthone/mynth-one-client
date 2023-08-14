@@ -38,4 +38,7 @@ class AssetPath {
 //-------------------COMMON--------------------
   static const cNotification = '$_iconMainPath/common/notification.svg';
   static const cVisa = '$_iconMainPath/common/visa.svg';
+  static const cMore = '$_iconMainPath/common/more.svg';
+  static const cTransfer = '$_iconMainPath/common/transfer.svg';
+  static const cReceive = '$_iconMainPath/common/receive.svg';
 }

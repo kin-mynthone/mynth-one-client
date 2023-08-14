@@ -36,6 +36,7 @@ class AppColors {
   static const Color gray = Color(0xFFA6ABB4);
   static const Color lightGray = Color(0xFFD9D9D9);
   static const Color primaryTranslucent = Color.fromARGB(43, 123, 116, 255);
+  static const Color secondaryTranslucent = Color.fromARGB(70, 222, 227, 248);
 
   static const Color cyan = Color(0xFFE4F9F6);
   static const Color lightPurple = Color(0xFFD9D3F9);
