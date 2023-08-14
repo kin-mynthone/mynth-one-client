@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mynth_one_client/app/helpers/my_logger_helper.dart';
 import 'package:mynth_one_client/app/models/card_model.dart';
@@ -62,6 +63,12 @@ class HomeController extends GetxController {
         }
       },
     );
+  }
+
+  bool getSystemTheme(context) {
+    var brightness = MediaQuery.of(context).platformBrightness;
+
+    return brightness == Brightness.light;
   }
 
   Future<void> getCard() async {

@@ -3,11 +3,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:mynth_one_client/app/constants/app_numbers.dart';
 import 'package:mynth_one_client/app/constants/app_strings.dart';
+import 'package:mynth_one_client/app/helpers/asset_path_helper.dart';
 import 'package:mynth_one_client/app/modules/dashboard/controllers/dashboard_controller.dart';
 import 'package:mynth_one_client/app/modules/dashboard_home/controllers/partial_activities_controller.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
-import 'package:mynth_one_client/app/widgets/debit_cards/debit_card_widget.dart';
-import 'package:mynth_one_client/app/widgets/debit_cards/debit_card_swiper_widget.dart';
+import 'package:mynth_one_client/app/widgets/button_icon_widget.dart';
+import 'package:mynth_one_client/app/widgets/cards/card_widget.dart';
+import 'package:mynth_one_client/app/widgets/cards/swiper_widget.dart';
 import 'package:mynth_one_client/app/widgets/text_widget.dart';
 
 import '../../../models/activity_model.dart';
@@ -38,11 +40,10 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
               Obx(
-                () => DebitCardSwiperWidget(
+                () => SwiperWidget(
                   itemCount: controller.cardData.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return DebitCardWidget(
-                        cardModel: controller.cardData[index]);
+                    return CardWidget(cardModel: controller.cardData[index]);
                   },
                 ),
               ),

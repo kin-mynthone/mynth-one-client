@@ -21,13 +21,13 @@ class _OtpTextFieldWidget extends GetView<OtpController> {
           : AppColors.darkBackground,
       showFieldAsBox: true,
       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-      textStyle: Theme.of(context).textTheme.bodyLarge?.copyWith(
-            fontSize: 22,
-            color: controller.getSystemTheme(context)
-                ? AppColors.lightPrimary
-                : AppColors.darkPrimary,
-            fontWeight: FontWeight.w500,
-          ),
+      textStyle: GoogleFonts.poppins(
+        fontSize: 22,
+        color: controller.getSystemTheme(context)
+            ? AppColors.lightPrimary
+            : AppColors.darkPrimary,
+        fontWeight: FontWeight.w500,
+      ),
       onSubmit: (String value) {
         // Will run when all 6 fields are filled in
         controller.setOtpInputValue(value);

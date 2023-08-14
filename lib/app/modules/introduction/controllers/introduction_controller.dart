@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mynth_one_client/app/helpers/my_logger_helper.dart';
 import 'package:mynth_one_client/app/routes/app_pages.dart';
 
 class IntroductionController extends GetxController {

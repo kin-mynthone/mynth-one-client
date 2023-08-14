@@ -42,7 +42,7 @@ class _PhoneNumberTextFormWidget extends StatelessWidget {
           name: name,
           onChanged: onChanged,
           autofocus: false,
-          style: TextStyle(
+          style: GoogleFonts.poppins(
             color: RegistrationController.instance.getSystemTheme(context)
                 ? AppColors.lightPrimary
                 : AppColors.darkPrimary,
@@ -57,13 +57,11 @@ class _PhoneNumberTextFormWidget extends StatelessWidget {
           decoration: InputDecoration(
             hintText: hintText.tr,
             hintStyle: GoogleFonts.poppins(
-              textStyle: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w400,
-                color: RegistrationController.instance.getSystemTheme(context)
-                    ? AppColors.lightTextHint
-                    : AppColors.darkTextHint,
-              ),
+              fontSize: 15,
+              fontWeight: FontWeight.w400,
+              color: RegistrationController.instance.getSystemTheme(context)
+                  ? AppColors.lightTextHint
+                  : AppColors.darkTextHint,
             ),
             focusedBorder: defaultBorder,
             enabledBorder: defaultBorder,
@@ -73,7 +71,7 @@ class _PhoneNumberTextFormWidget extends StatelessWidget {
             fillColor: RegistrationController.instance.getSystemTheme(context)
                 ? AppColors.lightBackground
                 : AppColors.darkBackground,
-            errorStyle: const TextStyle(color: AppColors.red, fontSize: 13),
+            errorStyle: GoogleFonts.poppins(color: AppColors.red, fontSize: 13),
           ),
           textInputAction: TextInputAction.next,
           textCapitalization: TextCapitalization.none,

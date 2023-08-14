@@ -24,7 +24,7 @@ class _HeaderWidget extends GetView<LoginController> {
           textScaleFactor: 1,
           text: TextSpan(
             text: 'Hi, ',
-            style: TextStyle(
+            style: GoogleFonts.poppins(
                 color: controller.getSystemTheme(context)
                     ? AppColors.lightTextPrimary
                     : AppColors.darkTextPrimary,
@@ -33,7 +33,7 @@ class _HeaderWidget extends GetView<LoginController> {
             children: <TextSpan>[
               TextSpan(
                 text: 'Good Day',
-                style: TextStyle(
+                style: GoogleFonts.poppins(
                     color: controller.getSystemTheme(context)
                         ? AppColors.lightPrimary
                         : AppColors.darkPrimary,

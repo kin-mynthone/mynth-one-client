@@ -125,7 +125,7 @@ class RegistrationController extends GetxController {
   }
 
   goToDashboard() {
-    Get.offAllNamed(AppPages.DASHBOARD);
+    Get.offAllNamed(AppPages.OTP);
   }
 
   bool getSystemTheme(context) {

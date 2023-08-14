@@ -12,7 +12,7 @@ class _PageIndicatorWidget extends GetView<RegistrationPageController> {
         TextWidget(
           stringData: 'personal info'.tr,
           fontSize: 15,
-          boldValue: FontWeight.w800,
+          boldValue: FontWeight.w700,
           color: RegistrationController.instance.getSystemTheme(context)
               ? AppColors.lightTextPrimary
               : AppColors.darkTextPrimary,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
 
 // ignore: must_be_immutable
@@ -45,11 +46,8 @@ class PrimaryButtonWidget extends StatelessWidget {
           child: Center(
             child: Text(
               buttonText!,
-              style: TextStyle(
-                  fontSize: fontSize,
-                  color: fontColor,
-                  fontFamily: 'Poppins', // Set the font family to 'Poppins'
-                  fontWeight: boldValue),
+              style: GoogleFonts.poppins(
+                  fontSize: fontSize, color: fontColor, fontWeight: boldValue),
             ),
           ),
         ),

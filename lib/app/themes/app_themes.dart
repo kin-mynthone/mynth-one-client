@@ -11,28 +11,28 @@ class AppThemes {
       brightness: Brightness.light,
     ),
     textTheme: TextTheme(
-      bodyLarge: GoogleFonts.inter(
+      bodyLarge: GoogleFonts.poppins(
         textStyle: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.normal,
           color: AppColors.lightTextPrimary,
         ),
       ),
-      bodyMedium: GoogleFonts.montserrat(
+      bodyMedium: GoogleFonts.poppins(
         textStyle: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.normal,
           color: AppColors.lightTextPrimary,
         ),
       ),
-      bodySmall: GoogleFonts.jost(
+      bodySmall: GoogleFonts.poppins(
         textStyle: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.normal,
           color: AppColors.lightTextPrimary,
         ),
       ),
-      labelLarge: GoogleFonts.inter(
+      labelLarge: GoogleFonts.poppins(
         textStyle: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.normal,
@@ -50,7 +50,7 @@ class AppThemes {
       elevation: 0,
       centerTitle: false,
       foregroundColor: AppColors.lightTextPrimary,
-      titleTextStyle: GoogleFonts.montserrat(
+      titleTextStyle: GoogleFonts.poppins(
         textStyle: const TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w500,
@@ -72,28 +72,28 @@ class AppThemes {
       brightness: Brightness.dark,
     ),
     textTheme: TextTheme(
-      bodyLarge: GoogleFonts.inter(
+      bodyLarge: GoogleFonts.poppins(
         textStyle: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.normal,
           color: AppColors.darkTextPrimary,
         ),
       ),
-      bodyMedium: GoogleFonts.montserrat(
+      bodyMedium: GoogleFonts.poppins(
         textStyle: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.normal,
           color: AppColors.darkTextPrimary,
         ),
       ),
-      bodySmall: GoogleFonts.jost(
+      bodySmall: GoogleFonts.poppins(
         textStyle: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.normal,
           color: AppColors.darkTextPrimary,
         ),
       ),
-      labelLarge: GoogleFonts.inter(
+      labelLarge: GoogleFonts.poppins(
         textStyle: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.normal,
@@ -111,7 +111,7 @@ class AppThemes {
       elevation: 0,
       centerTitle: false,
       foregroundColor: AppColors.darkTextPrimary,
-      titleTextStyle: GoogleFonts.montserrat(
+      titleTextStyle: GoogleFonts.poppins(
         textStyle: const TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w500,

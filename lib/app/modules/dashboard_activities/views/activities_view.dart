@@ -1,6 +1,7 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
 import 'package:mynth_one_client/app/widgets/text_widget.dart';
 
@@ -45,17 +46,14 @@ class ActivitiesView extends GetView<ActivitiesController> {
                         0.5
                       ]),
                 ),
-                unselectedLabelStyle: const TextStyle(
+                unselectedLabelStyle: GoogleFonts.poppins(
                     color: AppColors.darkPrimary, //TODO CHANGE COLOR
                     fontWeight: FontWeight.w700,
-                    fontFamily: 'Poppins',
                     fontSize: 12),
-                labelStyle: const TextStyle(
-                  color: AppColors.darkPrimary, //TODO CHANGE COLOR,
-                  fontWeight: FontWeight.w700,
-                  fontSize: 12,
-                  fontFamily: 'Poppins',
-                ),
+                labelStyle: GoogleFonts.poppins(
+                    color: AppColors.darkPrimary, //TODO CHANGE COLOR,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 12),
                 height: 56,
                 onTap: (index) => {},
                 tabs: const [

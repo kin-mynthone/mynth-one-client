@@ -43,7 +43,7 @@ class _PasswordTextFormWidget extends GetView<LoginController> {
               onChanged: onChanged,
               obscureText: controller.obscuredPassword,
               autofocus: false,
-              style: TextStyle(
+              style: GoogleFonts.poppins(
                 color: LoginController.instance.getSystemTheme(context)
                     ? AppColors.lightPrimary
                     : AppColors.darkPrimary,
@@ -70,13 +70,11 @@ class _PasswordTextFormWidget extends GetView<LoginController> {
                 ),
                 hintText: hintText.tr,
                 hintStyle: GoogleFonts.poppins(
-                  textStyle: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400,
-                    color: LoginController.instance.getSystemTheme(context)
-                        ? AppColors.lightTextHint
-                        : AppColors.darkTextHint,
-                  ),
+                  fontSize: 15,
+                  fontWeight: FontWeight.w400,
+                  color: LoginController.instance.getSystemTheme(context)
+                      ? AppColors.lightTextHint
+                      : AppColors.darkTextHint,
                 ),
                 focusedBorder: defaultBorder,
                 enabledBorder: defaultBorder,
@@ -86,7 +84,8 @@ class _PasswordTextFormWidget extends GetView<LoginController> {
                 fillColor: LoginController.instance.getSystemTheme(context)
                     ? AppColors.lightBackground
                     : AppColors.darkBackground,
-                errorStyle: const TextStyle(color: AppColors.red, fontSize: 13),
+                errorStyle:
+                    GoogleFonts.poppins(color: AppColors.red, fontSize: 13),
               ),
               textInputAction: TextInputAction.next,
               textCapitalization: TextCapitalization.none,

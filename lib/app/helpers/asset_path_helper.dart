@@ -34,4 +34,8 @@ class AssetPath {
   static const oIllustrationDark = "$_imageMainPath/otp/illustration_dark.png";
   static const oIllustrationLight =
       "$_imageMainPath/otp/illustration_light.png";
+
+//-------------------COMMON--------------------
+  static const cNotification = '$_iconMainPath/common/notification.svg';
+  static const cVisa = '$_iconMainPath/common/visa.svg';
 }

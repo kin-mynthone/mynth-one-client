@@ -58,7 +58,7 @@ class TextFormWidget extends StatelessWidget {
           name: name,
           onChanged: onChanged,
           autofocus: false,
-          style: TextStyle(
+          style: GoogleFonts.poppins(
             color: textColor,
           ),
           validator: (String? value) {
@@ -74,11 +74,9 @@ class TextFormWidget extends StatelessWidget {
           decoration: InputDecoration(
             hintText: hintText.tr,
             hintStyle: GoogleFonts.poppins(
-              textStyle: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w400,
-                color: hintColor,
-              ),
+              fontSize: 15,
+              fontWeight: FontWeight.w400,
+              color: hintColor,
             ),
             focusedBorder: defaultBorder,
             enabledBorder: defaultBorder,
@@ -86,7 +84,7 @@ class TextFormWidget extends StatelessWidget {
             focusedErrorBorder: defaultBorder,
             filled: true,
             fillColor: fillColor,
-            errorStyle: const TextStyle(color: AppColors.red, fontSize: 13),
+            errorStyle: GoogleFonts.poppins(color: AppColors.red, fontSize: 13),
           ),
           textInputAction: TextInputAction.next,
           textCapitalization: TextCapitalization.none,

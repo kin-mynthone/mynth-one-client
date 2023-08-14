@@ -166,8 +166,6 @@ class OtpController extends GetxController {
     //todo add loading
 
     try {
-      print('asdadasd ' + _otpInput.value);
-
       if (_otpInput.value.length != 4) {
         return _status.value = OtpStatus.invalid;
       }
@@ -178,7 +176,6 @@ class OtpController extends GetxController {
         //todo change this to real condition  ---> _otpInput.value != _otpSent.value
         return _status.value = OtpStatus.rejected;
       }
-      print('asdadasd ' + _otpInput.value);
 
       await Future.delayed(const Duration(seconds: 1));
       _timer.cancel();

@@ -27,7 +27,7 @@ class _HeaderWidget extends StatelessWidget {
         ),
         TextWidget(
           stringData: 'quick sign up'.tr,
-          fontSize: 30,
+          fontSize: 28,
           boldValue: FontWeight.w800,
           color: RegistrationController.instance.getSystemTheme(context)
               ? AppColors.lightTextPrimary
@@ -36,7 +36,7 @@ class _HeaderWidget extends StatelessWidget {
         ),
         TextWidget(
           stringData: 'please provide all necessary information'.tr,
-          fontSize: 16,
+          fontSize: 15,
           boldValue: FontWeight.normal,
           color: RegistrationController.instance.getSystemTheme(context)
               ? AppColors.lightTextPrimary

@@ -1,6 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 // ignore: must_be_immutable
 class TextWidget extends StatelessWidget {
@@ -25,11 +26,11 @@ class TextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       stringData,
-      style: TextStyle(
+      style: GoogleFonts.poppins(
           fontSize: fontSize,
           color: color,
           letterSpacing: letterSpacing,
-          fontFamily: 'Poppins', // Set the font family to 'Poppins'
+          // Set the font family to 'Poppins'
           fontWeight: boldValue),
       textAlign: centerAlignment ? TextAlign.center : TextAlign.left,
     );
