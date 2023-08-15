@@ -87,4 +87,21 @@ class PartialActivitiesController extends GetxController {
 
     return formatedDateTime;
   }
+
+  getTime(int timestamp) {
+    var dateTime = DateTime.fromMillisecondsSinceEpoch(timestamp * 1000);
+    var formattedDateTime = DateFormat('hh:mm aa').format(dateTime);
+    return formattedDateTime;
+  }
+
+  getTitle(String name, bool received) {
+    var split = name.split(' ');
+    var lastInitial = split[1][0];
+
+    if (received) {
+      return 'From ${split[0]} $lastInitial.';
+    } else {
+      return 'To ${split[0]} $lastInitial.';
+    }
+  }
 }

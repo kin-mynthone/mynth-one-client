@@ -78,8 +78,8 @@ class DashboardView extends GetView<DashboardController> {
                           ? AppColors.lightPrimary
                           : AppColors.darkPrimary //TODO CHANGE COLOR
                       : controller.getSystemTheme(context)
-                          ? AppColors.secondaryTranslucent
-                          : AppColors.secondaryTranslucent,
+                          ? AppColors.lightsecondaryTranslucent
+                          : AppColors.darksecondaryTranslucent,
                 ),
               ),
               // title: const Text('Dashboard'),
@@ -95,8 +95,8 @@ class DashboardView extends GetView<DashboardController> {
                           ? AppColors.lightPrimary
                           : AppColors.darkPrimary //TODO CHANGE COLOR
                       : controller.getSystemTheme(context)
-                          ? AppColors.secondaryTranslucent
-                          : AppColors.secondaryTranslucent,
+                          ? AppColors.lightsecondaryTranslucent
+                          : AppColors.darksecondaryTranslucent,
                 ),
               ),
               // title: const Text('Dashboard'),
@@ -112,8 +112,8 @@ class DashboardView extends GetView<DashboardController> {
                           ? AppColors.lightPrimary
                           : AppColors.darkPrimary //TODO CHANGE COLOR
                       : controller.getSystemTheme(context)
-                          ? AppColors.secondaryTranslucent
-                          : AppColors.secondaryTranslucent,
+                          ? AppColors.lightsecondaryTranslucent
+                          : AppColors.darksecondaryTranslucent,
                 ),
               ),
               // title: const Text('Dashboard'),
@@ -129,8 +129,8 @@ class DashboardView extends GetView<DashboardController> {
                           ? AppColors.lightPrimary
                           : AppColors.darkPrimary //TODO CHANGE COLOR
                       : controller.getSystemTheme(context)
-                          ? AppColors.secondaryTranslucent
-                          : AppColors.secondaryTranslucent,
+                          ? AppColors.lightsecondaryTranslucent
+                          : AppColors.darksecondaryTranslucent,
                 ),
               ),
               // title: const Text('Dashboard'),
@@ -146,8 +146,8 @@ class DashboardView extends GetView<DashboardController> {
                           ? AppColors.lightPrimary
                           : AppColors.darkPrimary //TODO CHANGE COLOR
                       : controller.getSystemTheme(context)
-                          ? AppColors.secondaryTranslucent
-                          : AppColors.secondaryTranslucent,
+                          ? AppColors.lightsecondaryTranslucent
+                          : AppColors.darksecondaryTranslucent,
                 ),
               ),
               // title: const Text('Dashboard'),

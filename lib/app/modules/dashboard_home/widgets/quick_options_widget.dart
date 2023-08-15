@@ -13,45 +13,52 @@ class _QuickOptionsWidget extends GetView<HomeController> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          PrimaryButtonWidget(
-            buttonText: 'Request',
-            height: 50,
-            fontSize: 15,
-            boldValue: FontWeight.w500,
-            iconPath: AssetPath.cReceive,
-            fontColor: controller.getSystemTheme(context)
-                ? AppColors.lightTextPrimary
-                : AppColors.darkTextPrimary,
-            buttonColor: controller.getSystemTheme(context)
-                ? AppColors.lightBackgroundVariant
-                : AppColors.darkBackgroundVariant,
-            splashColor: controller.getSystemTheme(context)
-                ? AppColors.green.withOpacity(0.30)
-                : AppColors.green.withOpacity(0.30),
-            highlightColor: controller.getSystemTheme(context)
-                ? AppColors.green.withOpacity(0.15)
-                : AppColors.green.withOpacity(0.15),
-            onTap: () => {},
-          ),
-          PrimaryButtonWidget(
-            buttonText: 'Transfer',
-            height: 50,
-            fontSize: 15,
-            boldValue: FontWeight.w500,
-            iconPath: AssetPath.cTransfer,
-            fontColor: controller.getSystemTheme(context)
-                ? AppColors.lightTextPrimary
-                : AppColors.darkTextPrimary,
-            buttonColor: controller.getSystemTheme(context)
-                ? AppColors.lightBackgroundVariant
-                : AppColors.darkBackgroundVariant,
-            splashColor: controller.getSystemTheme(context)
-                ? AppColors.red.withOpacity(0.30)
-                : AppColors.red.withOpacity(0.30),
-            highlightColor: controller.getSystemTheme(context)
-                ? AppColors.red.withOpacity(0.15)
-                : AppColors.red.withOpacity(0.15),
-            onTap: () => {},
+          Row(
+            children: [
+              PrimaryButtonWidget(
+                buttonText: 'Request',
+                height: 50,
+                fontSize: 16,
+                boldValue: FontWeight.w500,
+                iconPath: AssetPath.cReceive,
+                fontColor: controller.getSystemTheme(context)
+                    ? AppColors.lightTextPrimary
+                    : AppColors.darkTextPrimary,
+                buttonColor: controller.getSystemTheme(context)
+                    ? AppColors.lightBackgroundVariant
+                    : AppColors.darkBackgroundVariant,
+                splashColor: controller.getSystemTheme(context)
+                    ? AppColors.green.withOpacity(0.30)
+                    : AppColors.green.withOpacity(0.30),
+                highlightColor: controller.getSystemTheme(context)
+                    ? AppColors.green.withOpacity(0.15)
+                    : AppColors.green.withOpacity(0.15),
+                onTap: () => {},
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              PrimaryButtonWidget(
+                buttonText: 'Transfer',
+                height: 50,
+                fontSize: 16,
+                boldValue: FontWeight.w500,
+                iconPath: AssetPath.cTransfer,
+                fontColor: controller.getSystemTheme(context)
+                    ? AppColors.lightTextPrimary
+                    : AppColors.darkTextPrimary,
+                buttonColor: controller.getSystemTheme(context)
+                    ? AppColors.lightBackgroundVariant
+                    : AppColors.darkBackgroundVariant,
+                splashColor: controller.getSystemTheme(context)
+                    ? AppColors.red.withOpacity(0.30)
+                    : AppColors.red.withOpacity(0.30),
+                highlightColor: controller.getSystemTheme(context)
+                    ? AppColors.red.withOpacity(0.15)
+                    : AppColors.red.withOpacity(0.15),
+                onTap: () => {},
+              ),
+            ],
           ),
           ButtonIconWidget(
             onPressed: () => {},

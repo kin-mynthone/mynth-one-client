@@ -85,17 +85,6 @@ class ActivityCardWidget extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            bottom: 0,
-            right: 10,
-            child: Image.asset(
-              width: 100,
-              height: 100,
-              IsometricIcon.myIcons[int.parse(
-                activityModel.icon.toString(),
-              )],
-            ),
-          )
         ],
       ),
     );

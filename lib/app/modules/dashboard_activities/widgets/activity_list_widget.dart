@@ -10,18 +10,11 @@ class _ActivityListWidget extends GetView<ActivitiesController> {
     return Container(
       height: 250,
       padding: const EdgeInsets.only(bottom: 5),
-      child: controller.activitiesData
-              .where((element) => element.status == status)
-              .length
-              .isEqual(0)
+      child: controller.activitiesData.length.isEqual(0)
           ? const EmptyData()
           : FadingListViewWidget(
-              dataLength: controller.activitiesData
-                  .where((element) => element.status == status)
-                  .length,
-              activities: controller.activitiesData
-                  .where((element) => element.status == status)
-                  .toList(),
+              dataLength: controller.activitiesData.length,
+              activities: controller.activitiesData.toList(),
             ),
     );
   }

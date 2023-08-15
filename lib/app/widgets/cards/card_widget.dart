@@ -22,8 +22,8 @@ class CardWidget extends StatelessWidget {
       child: Container(
         height: 500,
         padding: EdgeInsets.symmetric(
-          horizontal: size.width * 0.05,
-          vertical: size.height * 0.03,
+          horizontal: size.width * 0.04,
+          vertical: size.height * 0.022,
         ),
         decoration: BoxDecoration(
           boxShadow: const [
@@ -72,13 +72,13 @@ class CardWidget extends StatelessWidget {
                   children: [
                     TextWidget(
                       stringData: 'Your balance',
-                      fontSize: 15,
+                      fontSize: 14,
                       boldValue: FontWeight.w300,
                       color: AppColors.lightTextPrimary,
                       centerAlignment: false,
                     ),
                     const SizedBox(
-                      height: 3,
+                      height: 1,
                     ),
                     TextWidget(
                       stringData: '€ ${cardModel.amount}',
@@ -90,7 +90,7 @@ class CardWidget extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 8,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -100,7 +100,7 @@ class CardWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         TextWidget(
-                          stringData: 'Account number',
+                          stringData: 'A/c Number',
                           fontSize: 12,
                           boldValue: FontWeight.w300,
                           color: AppColors.lightTextPrimary,

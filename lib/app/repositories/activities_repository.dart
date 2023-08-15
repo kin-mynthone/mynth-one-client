@@ -11,10 +11,7 @@ class ActivitiesRepository {
 
     List<dynamic> parsedJsonData = jsonDecode(response)['data'];
 
-    return parsedJsonData
-        .map((e) => Data.fromJson(e))
-        .where((element) => element.status == 'OnGoing')
-        .toList();
+    return parsedJsonData.map((e) => Data.fromJson(e)).toList();
   }
 
   static Future<List<Data>> getAllActivities(

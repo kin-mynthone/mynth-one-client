@@ -45,7 +45,7 @@ class PrimaryButtonWidget extends StatelessWidget {
         highlightColor: splashColor,
         onTap: () => onTap(),
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
           height: height,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
