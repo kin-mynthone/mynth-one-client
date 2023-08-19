@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mynth_one_client/app/constants/app_numbers.dart';
 import 'package:mynth_one_client/app/helpers/asset_path_helper.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
 
@@ -34,7 +35,7 @@ class PrimaryButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const borderRadius = 15.0;
+    const borderRadius = AppNumbers.borderRadius;
 
     return Material(
       color: buttonColor,

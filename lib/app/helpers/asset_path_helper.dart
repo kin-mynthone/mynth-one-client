@@ -19,6 +19,8 @@ class AssetPath {
 //-----------------LOGIN/REGISTRATION------------------
   static const envelope = '$_imageMainPath/login/envelope.svg';
   static const lock = '$_imageMainPath/login/lock.svg';
+  static const lEyeOpen = '$_iconMainPath/login/eye_open.svg';
+  static const lEyeClose = '$_iconMainPath/login/eye_close.svg';
 
 //-------------------DASHBOARD--------------------
   static const dHome = '$_iconMainPath/nav_bar/home.svg';
@@ -41,4 +43,7 @@ class AssetPath {
   static const cMore = '$_iconMainPath/common/more.svg';
   static const cTransfer = '$_iconMainPath/common/transfer.svg';
   static const cReceive = '$_iconMainPath/common/receive.svg';
+
+  static const cCopy = '$_iconMainPath/common/copy.svg';
+  static const cTurn = '$_iconMainPath/common/turn.svg';
 }

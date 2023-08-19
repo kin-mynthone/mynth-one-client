@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mynth_one_client/app/constants/app_numbers.dart';
 import 'package:mynth_one_client/app/helpers/asset_path_helper.dart';
 import 'package:mynth_one_client/app/models/card_model.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
@@ -20,7 +21,7 @@ class CardWidget extends StatelessWidget {
       child: Card(
         color: Colors.transparent,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(AppNumbers.cardBorderRadius),
         ),
         child: Container(
           height: 500,
@@ -47,7 +48,7 @@ class CardWidget extends StatelessWidget {
                   0.2,
                   1
                 ]),
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(AppNumbers.cardBorderRadius),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

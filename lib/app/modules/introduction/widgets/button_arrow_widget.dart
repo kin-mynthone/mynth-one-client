@@ -7,15 +7,13 @@ class _ButtonArrowWidget extends GetView<IntroductionController> {
 
   @override
   Widget build(BuildContext context) {
-    const borderRadius = 30.0;
-
     return Material(
       color: controller.getSystemTheme(context)
           ? AppColors.lightPrimary
           : AppColors.darkPrimary,
-      borderRadius: BorderRadius.circular(borderRadius),
+      borderRadius: BorderRadius.circular(AppNumbers.cornerRadius),
       child: InkWell(
-        borderRadius: BorderRadius.circular(borderRadius),
+        borderRadius: BorderRadius.circular(AppNumbers.cornerRadius),
         splashColor: controller.getSystemTheme(context)
             ? AppColors.lightSecondary.withOpacity(0.30)
             : AppColors.darkSecondary.withOpacity(0.30),

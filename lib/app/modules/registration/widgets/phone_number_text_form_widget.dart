@@ -15,7 +15,7 @@ class _PhoneNumberTextFormWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final defaultBorder = OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(AppNumbers.inputBorderRadius),
       borderSide: BorderSide(
           color: RegistrationController.instance.getSystemTheme(context)
               ? AppColors.lightPrimary

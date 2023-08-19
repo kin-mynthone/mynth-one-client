@@ -4,7 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get_utils/get_utils.dart';
 import 'package:get/state_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:line_icons/line_icons.dart';
 import 'package:mynth_one_client/app/constants/app_numbers.dart';
 import 'package:mynth_one_client/app/constants/app_strings.dart';
 import 'package:mynth_one_client/app/helpers/asset_path_helper.dart';
@@ -66,8 +65,8 @@ class LoginView extends GetView<LoginController> {
                 ),
                 decoration: BoxDecoration(
                     borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(40),
-                        topRight: Radius.circular(40)),
+                        topLeft: Radius.circular(AppNumbers.cornerRadius),
+                        topRight: Radius.circular(AppNumbers.cornerRadius)),
                     color: controller.getSystemTheme(context)
                         ? AppColors.lightBackgroundVariant
                         : AppColors.darkBackgroundVariant),

@@ -1,6 +1,6 @@
-part of '../views/activities_view.dart';
+part of '../views/dashboard_activities_view.dart';
 
-class _ActivityListWidget extends GetView<ActivitiesController> {
+class _ActivityListWidget extends GetView<DashboardActivitiesController> {
   final String status;
   const _ActivityListWidget({
     required this.status,
@@ -13,8 +13,12 @@ class _ActivityListWidget extends GetView<ActivitiesController> {
       child: controller.activitiesData.length.isEqual(0)
           ? const EmptyData()
           : FadingListViewWidget(
-              dataLength: controller.activitiesData.length,
-              activities: controller.activitiesData.toList(),
+              dataLength: controller.activitiesData
+                  .where((element) => element.typeOfActivity == status)
+                  .length,
+              activities: controller.activitiesData
+                  .where((element) => element.typeOfActivity == status)
+                  .toList(),
             ),
     );
   }
@@ -76,14 +80,19 @@ class FadingListViewWidget extends StatelessWidget {
           ).createShader(rect);
         },
         blendMode: BlendMode.dstOut,
-        child: ListView.builder(
-          scrollDirection: Axis.vertical,
-          itemCount: dataLength,
-          itemBuilder: (BuildContext context, int index) {
-            return ActivityCardWidget(
-              activityModel: activities[index],
-            );
-          },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          child: ListView.separated(
+            scrollDirection: Axis.vertical,
+            itemCount: dataLength,
+            itemBuilder: (context, index) {
+              return ActivityListTileWidget(
+                activityModel: activities[index],
+                tileOnTap: () {},
+              );
+            },
+            separatorBuilder: (context, index) => const SizedBox(height: 5),
+          ),
         ),
       ),
     );

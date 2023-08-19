@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mynth_one_client/app/constants/app_numbers.dart';
 import 'package:mynth_one_client/app/helpers/asset_path_helper.dart';
 import 'package:mynth_one_client/app/models/activity_model.dart';
-import 'package:mynth_one_client/app/modules/dashboard_home/controllers/home_controller.dart';
-import 'package:mynth_one_client/app/modules/dashboard_home/controllers/partial_activities_controller.dart';
+import 'package:mynth_one_client/app/modules/dashboard/controllers/dashboard_controller.dart';
+import 'package:mynth_one_client/app/modules/dashboard_home/controllers/snippet_activities_controller.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
 import 'package:mynth_one_client/app/widgets/text_widget.dart';
 
 class ActivityListTileWidget extends StatelessWidget {
-  final Data activityCompleteModel;
+  final Data activityModel;
   final VoidCallback tileOnTap;
 
   const ActivityListTileWidget({
     super.key,
-    required this.activityCompleteModel,
+    required this.activityModel,
     required this.tileOnTap,
   });
 
@@ -25,8 +26,8 @@ class ActivityListTileWidget extends StatelessWidget {
       leading: Container(
         padding: const EdgeInsets.all(10.0),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(13),
-            color: activityCompleteModel.typeOfActivity.toString() == 'received'
+            borderRadius: BorderRadius.circular(AppNumbers.borderRadius),
+            color: activityModel.typeOfActivity.toString() == 'received'
                 ? AppColors.lightGreen
                 : AppColors.lightRed),
         child: SizedBox(
@@ -35,7 +36,7 @@ class ActivityListTileWidget extends StatelessWidget {
           child: Center(
             child: SizedBox(
               child: SvgPicture.asset(
-                activityCompleteModel.typeOfActivity.toString() == 'received'
+                activityModel.typeOfActivity.toString() == 'received'
                     ? AssetPath.cReceive
                     : AssetPath.cTransfer,
               ),
@@ -44,44 +45,42 @@ class ActivityListTileWidget extends StatelessWidget {
         ),
       ),
       title: TextWidget(
-          stringData:
-              activityCompleteModel.typeOfActivity.toString() == 'received'
-                  ? PartialActivitiesController.instance
-                      .getTitle(activityCompleteModel.receiver.toString(), true)
-                  : PartialActivitiesController.instance
-                      .getTitle(activityCompleteModel.sender.toString(), false),
+          stringData: activityModel.typeOfActivity.toString() == 'received'
+              ? SnippetActivitiesController.instance
+                  .getTitle(activityModel.receiver.toString(), true)
+              : SnippetActivitiesController.instance
+                  .getTitle(activityModel.sender.toString(), false),
           fontSize: 16,
           boldValue: FontWeight.w500,
-          color: HomeController.instance.getSystemTheme(context)
+          color: DashboardController.instance.getSystemTheme(context)
               ? AppColors.lightTextPrimary
               : AppColors.darkTextPrimary,
           centerAlignment: false),
       subtitle: TextWidget(
-          stringData: PartialActivitiesController.instance
-              .getTime(activityCompleteModel.timeStamp!),
+          stringData: SnippetActivitiesController.instance
+              .getTime(activityModel.timeStamp!),
           fontSize: 13,
           boldValue: FontWeight.w300,
-          color: HomeController.instance.getSystemTheme(context)
+          color: DashboardController.instance.getSystemTheme(context)
               ? AppColors.lightTextSecondary
               : AppColors.darkTextSecondary,
           centerAlignment: false),
       trailing: RichText(
         text: TextSpan(
-          text: activityCompleteModel.typeOfActivity.toString() == 'received'
+          text: activityModel.typeOfActivity.toString() == 'received'
               ? '+ '
               : '- ',
           style: GoogleFonts.poppins(
-              color:
-                  activityCompleteModel.typeOfActivity.toString() == 'received'
-                      ? AppColors.green
-                      : AppColors.red,
+              color: activityModel.typeOfActivity.toString() == 'received'
+                  ? AppColors.green
+                  : AppColors.red,
               fontSize: 16,
               fontWeight: FontWeight.w600),
           children: <TextSpan>[
             TextSpan(
-              text: activityCompleteModel.amount,
+              text: activityModel.amount,
               style: GoogleFonts.poppins(
-                  color: HomeController.instance.getSystemTheme(context)
+                  color: DashboardController.instance.getSystemTheme(context)
                       ? AppColors.lightTextPrimary
                       : AppColors.darkTextPrimary,
                   fontSize: 16,

@@ -4,28 +4,28 @@ import 'package:mynth_one_client/app/models/activity_model.dart';
 import 'package:mynth_one_client/app/repositories/activities_repository.dart';
 import 'package:intl/intl.dart';
 
-enum PartialActivitiesStatus { initial, loading, succeeded, failed, error }
+enum SnippetActivitiesStatus { initial, loading, succeeded, failed, error }
 
-class PartialActivitiesController extends GetxController {
-  static PartialActivitiesController get instance => Get.find();
+class SnippetActivitiesController extends GetxController {
+  static SnippetActivitiesController get instance => Get.find();
 
   late Worker _statusEverWorker;
 
-  final _status = PartialActivitiesStatus.initial.obs;
+  final _status = SnippetActivitiesStatus.initial.obs;
 
   final _activitiesData = <Data>[].obs;
   static RxBool isVerifying = false.obs;
 
-  PartialActivitiesStatus get status => _status.value;
+  SnippetActivitiesStatus get status => _status.value;
 
-  bool get isLoading => _status.value == PartialActivitiesStatus.loading;
-  bool get hasSucceeded => _status.value == PartialActivitiesStatus.succeeded;
-  bool get hasFailed => _status.value == PartialActivitiesStatus.failed;
+  bool get isLoading => _status.value == SnippetActivitiesStatus.loading;
+  bool get hasSucceeded => _status.value == SnippetActivitiesStatus.succeeded;
+  bool get hasFailed => _status.value == SnippetActivitiesStatus.failed;
 
   List<Data> get activitiesData => _activitiesData;
 
   String currentState() =>
-      'PartialActivitiesController(_status: ${_status.value}, ';
+      'SnippetActivitiesController(_status: ${_status.value}, ';
 
   @override
   void onInit() {
@@ -33,7 +33,7 @@ class PartialActivitiesController extends GetxController {
     MyLogger.printInfo(currentState());
     getActivities();
 
-    _monitorPartialActivitiesStatus();
+    _monitorSnippetActivitiesStatus();
   }
 
   @override
@@ -42,25 +42,25 @@ class PartialActivitiesController extends GetxController {
     super.onClose();
   }
 
-  void _monitorPartialActivitiesStatus() {
+  void _monitorSnippetActivitiesStatus() {
     _statusEverWorker = ever(
       _status,
       (value) {
         switch (value) {
-          case PartialActivitiesStatus.error:
+          case SnippetActivitiesStatus.error:
             MyLogger.printError(currentState());
             break;
-          case PartialActivitiesStatus.loading:
+          case SnippetActivitiesStatus.loading:
             MyLogger.printInfo(currentState());
             break;
-          case PartialActivitiesStatus.initial:
+          case SnippetActivitiesStatus.initial:
             MyLogger.printInfo(currentState());
             break;
-          case PartialActivitiesStatus.succeeded:
+          case SnippetActivitiesStatus.succeeded:
             MyLogger.printInfo(currentState());
             //TODO: add event here
             break;
-          case PartialActivitiesStatus.failed:
+          case SnippetActivitiesStatus.failed:
             break;
         }
       },
@@ -68,7 +68,7 @@ class PartialActivitiesController extends GetxController {
   }
 
   Future<void> getActivities() async {
-    // _status.value = PartialActivitiesStatus.loading;
+    // _status.value = SnippetActivitiesStatus.loading;
 
     try {
       _activitiesData.value = await ActivitiesRepository.getPartialActivities(
@@ -76,7 +76,7 @@ class PartialActivitiesController extends GetxController {
     } catch (e) {
       MyLogger.printError(e);
 
-      _status.value = PartialActivitiesStatus.error;
+      _status.value = SnippetActivitiesStatus.error;
     }
   }
 

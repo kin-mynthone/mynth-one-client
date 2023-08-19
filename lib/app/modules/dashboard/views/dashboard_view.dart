@@ -3,12 +3,13 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
+import 'package:mynth_one_client/app/constants/app_numbers.dart';
 import 'package:mynth_one_client/app/helpers/asset_path_helper.dart';
 import 'package:mynth_one_client/app/modules/dashboard/controllers/dashboard_controller.dart';
-import 'package:mynth_one_client/app/modules/dashboard_activities/views/activities_view.dart';
-import 'package:mynth_one_client/app/modules/dashboard_home/views/home_view.dart';
-import 'package:mynth_one_client/app/modules/dashboard_notification/views/notification_view.dart';
-import 'package:mynth_one_client/app/modules/dashboard_profile/views/profile_view.dart';
+import 'package:mynth_one_client/app/modules/dashboard_activities/views/dashboard_activities_view.dart';
+import 'package:mynth_one_client/app/modules/dashboard_cards/views/dashboard_cards_view.dart';
+import 'package:mynth_one_client/app/modules/dashboard_home/views/dashboard_home_view.dart';
+import 'package:mynth_one_client/app/modules/dashboard_settings/views/dashboard_settings_view.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
 
 part '../widgets/bottom_navigation_bar_widget.dart';
@@ -18,11 +19,11 @@ class DashboardView extends GetView<DashboardController> {
   const DashboardView({Key? key}) : super(key: key);
 
   static final _views = <Widget>[
-    const HomeView(),
-    const ActivitiesView(),
+    const DashboardHomeView(),
+    const DashboardCardView(),
     Container(),
-    const NotificationView(),
-    const ProfileView(),
+    const DashboardActivitiesView(),
+    const DashboardSettingsView(),
   ];
 
   @override

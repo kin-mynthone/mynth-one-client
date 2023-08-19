@@ -5,27 +5,28 @@ import 'package:mynth_one_client/app/models/activity_model.dart';
 import 'package:mynth_one_client/app/repositories/activities_repository.dart';
 import 'package:intl/intl.dart';
 
-enum ActivitiesStatus { initial, loading, succeeded, failed, error }
+enum DashboardActivitiesStatus { initial, loading, succeeded, failed, error }
 
-class ActivitiesController extends GetxController {
-  static ActivitiesController get instance => Get.find();
+class DashboardActivitiesController extends GetxController {
+  static DashboardActivitiesController get instance => Get.find();
 
   late Worker _statusEverWorker;
 
-  final _status = ActivitiesStatus.initial.obs;
+  final _status = DashboardActivitiesStatus.initial.obs;
 
   final _activitiesData = <Data>[].obs;
   static RxBool isVerifying = false.obs;
 
-  ActivitiesStatus get status => _status.value;
+  DashboardActivitiesStatus get status => _status.value;
 
-  bool get isLoading => _status.value == ActivitiesStatus.loading;
-  bool get hasSucceeded => _status.value == ActivitiesStatus.succeeded;
-  bool get hasFailed => _status.value == ActivitiesStatus.failed;
+  bool get isLoading => _status.value == DashboardActivitiesStatus.loading;
+  bool get hasSucceeded => _status.value == DashboardActivitiesStatus.succeeded;
+  bool get hasFailed => _status.value == DashboardActivitiesStatus.failed;
 
   List<Data> get activitiesData => _activitiesData;
 
-  String currentState() => 'ActivitiesController(_status: ${_status.value}, ';
+  String currentState() =>
+      'DashboardActivitiesController(_status: ${_status.value}, ';
 
   @override
   void onInit() {
@@ -33,7 +34,7 @@ class ActivitiesController extends GetxController {
     MyLogger.printInfo(currentState());
     getActivities();
 
-    _monitorActivitiesStatus();
+    _monitorDashboardActivitiesStatus();
   }
 
   @override
@@ -42,25 +43,25 @@ class ActivitiesController extends GetxController {
     super.onClose();
   }
 
-  void _monitorActivitiesStatus() {
+  void _monitorDashboardActivitiesStatus() {
     _statusEverWorker = ever(
       _status,
       (value) {
         switch (value) {
-          case ActivitiesStatus.error:
+          case DashboardActivitiesStatus.error:
             MyLogger.printError(currentState());
             break;
-          case ActivitiesStatus.loading:
+          case DashboardActivitiesStatus.loading:
             MyLogger.printInfo(currentState());
             break;
-          case ActivitiesStatus.initial:
+          case DashboardActivitiesStatus.initial:
             MyLogger.printInfo(currentState());
             break;
-          case ActivitiesStatus.succeeded:
+          case DashboardActivitiesStatus.succeeded:
             MyLogger.printInfo(currentState());
             //TODO: add event here
             break;
-          case ActivitiesStatus.failed:
+          case DashboardActivitiesStatus.failed:
             break;
         }
       },
@@ -68,7 +69,7 @@ class ActivitiesController extends GetxController {
   }
 
   Future<void> getActivities() async {
-    // _status.value = ActivitiesStatus.loading;
+    // _status.value = DashboardActivitiesStatus.loading;
 
     try {
       _activitiesData.value =
@@ -76,7 +77,7 @@ class ActivitiesController extends GetxController {
     } catch (e) {
       MyLogger.printError(e);
 
-      _status.value = ActivitiesStatus.error;
+      _status.value = DashboardActivitiesStatus.error;
     }
   }
 

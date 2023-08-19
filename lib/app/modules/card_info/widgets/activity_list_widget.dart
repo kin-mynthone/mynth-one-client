@@ -20,7 +20,8 @@ class _ActivityListWidget extends StatelessWidget {
         width: size.width,
         decoration: BoxDecoration(
             borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+                topLeft: Radius.circular(AppNumbers.cornerRadius),
+                topRight: Radius.circular(AppNumbers.cornerRadius)),
             color: CardInfoController.instance.getSystemTheme(context)
                 ? AppColors.lightBackgroundVariant
                 : AppColors.darkBackgroundVariant),
@@ -35,7 +36,7 @@ class _ActivityListWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   TextWidget(
-                      stringData: 'Transactions',
+                      stringData: 'Activities',
                       fontSize: 20,
                       boldValue: FontWeight.w700,
                       color: CardInfoController.instance.getSystemTheme(context)
@@ -100,7 +101,7 @@ class FadingListViewWidget extends StatelessWidget {
             itemCount: dataLength,
             itemBuilder: (context, index) {
               return ActivityListTileWidget(
-                activityCompleteModel: activities[index],
+                activityModel: activities[index],
                 tileOnTap: () {},
               );
             },

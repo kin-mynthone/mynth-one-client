@@ -1,6 +1,6 @@
-part of '../views/home_view.dart';
+part of '../views/dashboard_home_view.dart';
 
-class _QuickOptionsWidget extends GetView<HomeController> {
+class _QuickOptionsWidget extends GetView<DashboardHomeController> {
   const _QuickOptionsWidget({
     Key? key,
   }) : super(key: key);
@@ -76,7 +76,7 @@ class _QuickOptionsWidget extends GetView<HomeController> {
             iconColor: controller.getSystemTheme(context)
                 ? AppColors.lightSecondaryVariant
                 : AppColors.darkSecondaryVariant,
-            borderRadius: 15,
+            borderRadius: AppNumbers.borderRadius,
           )
         ],
       ),

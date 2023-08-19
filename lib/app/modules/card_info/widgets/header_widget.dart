@@ -10,7 +10,7 @@ class _HeaderWidget extends GetView<CardInfoController> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         GoBackButton(
-          iconColor: CardInfoController.instance.getSystemTheme(context)
+          iconColor: controller.getSystemTheme(context)
               ? AppColors.lightPrimary
               : AppColors.darkPrimary,
           onPressed: () {
@@ -21,9 +21,9 @@ class _HeaderWidget extends GetView<CardInfoController> {
           stringData: controller.cardInfo.accountName.toString(),
           fontSize: 20,
           boldValue: FontWeight.w500,
-          color: CardInfoController.instance.getSystemTheme(context)
+          color: controller.getSystemTheme(context)
               ? AppColors.lightTextPrimary
-              : AppColors.darkTextPrimary, //TODO CHANGE COLOR,
+              : AppColors.darkTextPrimary,
           centerAlignment: false,
         ),
         IconButton(
@@ -34,7 +34,7 @@ class _HeaderWidget extends GetView<CardInfoController> {
           icon: Icon(
             LineIcons.edit,
             size: 30,
-            color: CardInfoController.instance.getSystemTheme(context)
+            color: controller.getSystemTheme(context)
                 ? AppColors.lightPrimary
                 : AppColors.darkPrimary,
           ),

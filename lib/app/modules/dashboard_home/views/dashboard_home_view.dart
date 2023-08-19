@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:mynth_one_client/app/constants/app_numbers.dart';
 import 'package:mynth_one_client/app/constants/app_strings.dart';
 import 'package:mynth_one_client/app/helpers/asset_path_helper.dart';
-import 'package:mynth_one_client/app/modules/dashboard_home/controllers/partial_activities_controller.dart';
+import 'package:mynth_one_client/app/modules/dashboard_home/controllers/snippet_activities_controller.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
 import 'package:mynth_one_client/app/widgets/activity/activity_list_widget.dart';
 import 'package:mynth_one_client/app/widgets/button_icon_widget.dart';
@@ -12,12 +12,12 @@ import 'package:mynth_one_client/app/widgets/cards/swiper_widget.dart';
 import 'package:mynth_one_client/app/widgets/primary_button_widget.dart';
 import 'package:mynth_one_client/app/widgets/text_widget.dart';
 
-import '../controllers/home_controller.dart';
+import '../controllers/dashboard_home_controller.dart';
 part '../widgets/header_widget.dart';
 part '../widgets/quick_options_widget.dart';
 
-class HomeView extends GetView<HomeController> {
-  const HomeView({Key? key}) : super(key: key);
+class DashboardHomeView extends GetView<DashboardHomeController> {
+  const DashboardHomeView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -102,8 +102,8 @@ class HomeView extends GetView<HomeController> {
                     () => ActivityListWidget(
                       showViewAll: true,
                       activitiesData:
-                          PartialActivitiesController.instance.activitiesData,
-                      itemCount: PartialActivitiesController
+                          SnippetActivitiesController.instance.activitiesData,
+                      itemCount: SnippetActivitiesController
                           .instance.activitiesData.length,
                     ),
                   ),

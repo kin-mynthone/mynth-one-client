@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mynth_one_client/app/constants/app_numbers.dart';
 
 import 'package:mynth_one_client/app/modules/dashboard/controllers/dashboard_controller.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
@@ -32,7 +33,8 @@ class ActivityListWidget extends StatelessWidget {
       width: size.width,
       decoration: BoxDecoration(
           borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+              topLeft: Radius.circular(AppNumbers.cornerRadius),
+              topRight: Radius.circular(AppNumbers.cornerRadius)),
           color: DashboardController.instance.getSystemTheme(context)
               ? AppColors.lightBackgroundVariant
               : AppColors.darkBackgroundVariant),
@@ -47,7 +49,7 @@ class ActivityListWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 TextWidget(
-                    stringData: 'Transactions',
+                    stringData: 'Activities',
                     fontSize: 20,
                     boldValue: FontWeight.w700,
                     color: DashboardController.instance.getSystemTheme(context)
@@ -128,7 +130,7 @@ class FadingListViewWidget extends StatelessWidget {
             itemCount: dataLength,
             itemBuilder: (context, index) {
               return ActivityListTileWidget(
-                activityCompleteModel: activities[index],
+                activityModel: activities[index],
                 tileOnTap: () {},
               );
             },

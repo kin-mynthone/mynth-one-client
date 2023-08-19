@@ -11,11 +11,11 @@ class _BottomNavigationBarWidget extends GetView<DashboardController> {
             ? const EdgeInsets.only(bottom: 20)
             : const EdgeInsets.only(bottom: 5),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(AppNumbers.cornerRadius),
           boxShadow: const [
             BoxShadow(
               color: Color.fromARGB(20, 0, 0, 0),
-              blurRadius: 15.0,
+              blurRadius: AppNumbers.borderRadius,
               spreadRadius: 1,
             ),
           ],

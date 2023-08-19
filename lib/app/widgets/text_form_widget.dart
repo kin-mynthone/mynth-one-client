@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get_utils/get_utils.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mynth_one_client/app/constants/app_numbers.dart';
 
 import 'package:mynth_one_client/app/themes/app_colors.dart';
 import 'package:mynth_one_client/app/widgets/text_widget.dart';
@@ -37,7 +38,7 @@ class TextFormWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final defaultBorder = OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(AppNumbers.inputBorderRadius),
       borderSide: BorderSide(color: borderColor, width: 0.3),
     );
     return Column(

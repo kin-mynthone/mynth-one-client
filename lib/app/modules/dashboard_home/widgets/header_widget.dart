@@ -1,6 +1,6 @@
-part of '../views/home_view.dart';
+part of '../views/dashboard_home_view.dart';
 
-class _HeaderWidget extends GetView<HomeController> {
+class _HeaderWidget extends GetView<DashboardHomeController> {
   final String? profilePath;
   const _HeaderWidget({Key? key, required this.profilePath}) : super(key: key);
 
@@ -20,7 +20,7 @@ class _HeaderWidget extends GetView<HomeController> {
                 width: 45,
                 height: 45,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(13),
+                  borderRadius: BorderRadius.circular(AppNumbers.borderRadius),
                   child: Image.network(
                     profilePath!,
                     loadingBuilder: (context, child, loadingProgress) {
@@ -86,7 +86,7 @@ class _HeaderWidget extends GetView<HomeController> {
             iconColor: controller.getSystemTheme(context)
                 ? AppColors.lightPrimary
                 : AppColors.darkPrimary,
-            borderRadius: 15,
+            borderRadius: AppNumbers.borderRadius,
           )
         ],
       ),

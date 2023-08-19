@@ -15,7 +15,7 @@ class _OtpTextFieldWidget extends GetView<OtpController> {
       focusedBorderColor: controller.getSystemTheme(context)
           ? AppColors.lightPrimary
           : AppColors.darkPrimary,
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadius.circular(AppNumbers.inputBorderRadius),
       enabledBorderColor: controller.getSystemTheme(context)
           ? AppColors.lightBackground
           : AppColors.darkBackground,

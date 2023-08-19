@@ -15,9 +15,9 @@ class _PasswordTextFormWidget extends GetView<RegistrationController> {
   @override
   Widget build(BuildContext context) {
     final defaultBorder = OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(AppNumbers.inputBorderRadius),
       borderSide: BorderSide(
-          color: RegistrationController.instance.getSystemTheme(context)
+          color: controller.getSystemTheme(context)
               ? AppColors.lightPrimary
               : AppColors.darkPrimary,
           width: 0.3),
@@ -30,7 +30,7 @@ class _PasswordTextFormWidget extends GetView<RegistrationController> {
           stringData: name,
           fontSize: 15,
           boldValue: FontWeight.normal,
-          color: RegistrationController.instance.getSystemTheme(context)
+          color: controller.getSystemTheme(context)
               ? AppColors.lightTextPrimary
               : AppColors.darkTextPrimary,
           centerAlignment: false,
@@ -44,7 +44,7 @@ class _PasswordTextFormWidget extends GetView<RegistrationController> {
               obscureText: controller.obscuredPassword,
               autofocus: false,
               style: GoogleFonts.poppins(
-                color: RegistrationController.instance.getSystemTheme(context)
+                color: controller.getSystemTheme(context)
                     ? AppColors.lightPrimary
                     : AppColors.darkPrimary,
               ),
@@ -53,26 +53,24 @@ class _PasswordTextFormWidget extends GetView<RegistrationController> {
                 suffixIcon: IconButton(
                   onPressed: () => controller.toggleObscuredPasswordValue(),
                   icon: controller.obscuredPassword
-                      ? Icon(
-                          LineIcons.eyeSlash,
-                          color: RegistrationController.instance
-                                  .getSystemTheme(context)
+                      ? SvgPicture.asset(
+                          color: controller.getSystemTheme(context)
                               ? AppColors.lightPrimary
                               : AppColors.darkPrimary,
+                          AssetPath.lEyeClose,
                         )
-                      : Icon(
-                          LineIcons.eye,
-                          color: RegistrationController.instance
-                                  .getSystemTheme(context)
+                      : SvgPicture.asset(
+                          color: controller.getSystemTheme(context)
                               ? AppColors.lightPrimary
                               : AppColors.darkPrimary,
+                          AssetPath.lEyeOpen,
                         ),
                 ),
                 hintText: hintText.tr,
                 hintStyle: GoogleFonts.poppins(
                   fontSize: 15,
                   fontWeight: FontWeight.w400,
-                  color: RegistrationController.instance.getSystemTheme(context)
+                  color: controller.getSystemTheme(context)
                       ? AppColors.lightTextHint
                       : AppColors.darkTextHint,
                 ),
@@ -81,10 +79,9 @@ class _PasswordTextFormWidget extends GetView<RegistrationController> {
                 errorBorder: defaultBorder,
                 focusedErrorBorder: defaultBorder,
                 filled: true,
-                fillColor:
-                    RegistrationController.instance.getSystemTheme(context)
-                        ? AppColors.lightBackground
-                        : AppColors.darkBackground,
+                fillColor: controller.getSystemTheme(context)
+                    ? AppColors.lightBackground
+                    : AppColors.darkBackground,
                 errorStyle:
                     GoogleFonts.poppins(color: AppColors.red, fontSize: 13),
               ),

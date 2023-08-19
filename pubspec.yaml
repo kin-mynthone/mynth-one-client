@@ -71,6 +71,7 @@ flutter:
     - assets/icons/nav_bar/
     - assets/icons/robots/
     - assets/icons/logo/
+    - assets/icons/login/
     - assets/images/introduction/
     - assets/images/login/
     - assets/images/otp/

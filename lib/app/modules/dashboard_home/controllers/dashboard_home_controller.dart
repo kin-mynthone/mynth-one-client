@@ -5,26 +5,27 @@ import 'package:mynth_one_client/app/models/card_model.dart';
 import 'package:mynth_one_client/app/repositories/card_repository.dart';
 import 'package:mynth_one_client/app/routes/app_pages.dart';
 
-enum HomeStatus { initial, loading, succeeded, failed, error }
+enum DashboardHomeStatus { initial, loading, succeeded, failed, error }
 
-class HomeController extends GetxController {
-  static HomeController get instance => Get.find();
+class DashboardHomeController extends GetxController {
+  static DashboardHomeController get instance => Get.find();
   late Worker _statusEverWorker;
 
-  final _status = HomeStatus.initial.obs;
+  final _status = DashboardHomeStatus.initial.obs;
 
   final _cardData = <Data>[].obs;
   static RxBool isVerifying = false.obs;
 
-  HomeStatus get status => _status.value;
+  DashboardHomeStatus get status => _status.value;
 
-  bool get isLoading => _status.value == HomeStatus.loading;
-  bool get hasSucceeded => _status.value == HomeStatus.succeeded;
-  bool get hasFailed => _status.value == HomeStatus.failed;
+  bool get isLoading => _status.value == DashboardHomeStatus.loading;
+  bool get hasSucceeded => _status.value == DashboardHomeStatus.succeeded;
+  bool get hasFailed => _status.value == DashboardHomeStatus.failed;
 
   List<Data> get cardData => _cardData;
 
-  String currentState() => 'HomeController(_status: ${_status.value}, ';
+  String currentState() =>
+      'DashboardHomeController(_status: ${_status.value}, ';
 
   @override
   void onInit() {
@@ -32,7 +33,7 @@ class HomeController extends GetxController {
     MyLogger.printInfo(currentState());
     getCard();
 
-    _monitorHomeStatus();
+    _monitorDashboardHomeStatus();
   }
 
   @override
@@ -41,25 +42,25 @@ class HomeController extends GetxController {
     super.onClose();
   }
 
-  void _monitorHomeStatus() {
+  void _monitorDashboardHomeStatus() {
     _statusEverWorker = ever(
       _status,
       (value) {
         switch (value) {
-          case HomeStatus.error:
+          case DashboardHomeStatus.error:
             MyLogger.printError(currentState());
             break;
-          case HomeStatus.loading:
+          case DashboardHomeStatus.loading:
             MyLogger.printInfo(currentState());
             break;
-          case HomeStatus.initial:
+          case DashboardHomeStatus.initial:
             MyLogger.printInfo(currentState());
             break;
-          case HomeStatus.succeeded:
+          case DashboardHomeStatus.succeeded:
             MyLogger.printInfo(currentState());
             //TODO: add event here
             break;
-          case HomeStatus.failed:
+          case DashboardHomeStatus.failed:
             break;
         }
       },
@@ -73,13 +74,13 @@ class HomeController extends GetxController {
   }
 
   Future<void> getCard() async {
-    // _status.value = HomeStatus.loading;
+    // _status.value = DashboardHomeStatus.loading;
     try {
       _cardData.value = await CardRepository.getCards(accessToken: 'sample');
     } catch (e) {
       MyLogger.printError(e);
 
-      _status.value = HomeStatus.error;
+      _status.value = DashboardHomeStatus.error;
     }
   }
 
