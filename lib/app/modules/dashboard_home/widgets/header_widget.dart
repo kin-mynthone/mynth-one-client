@@ -54,7 +54,7 @@ class _HeaderWidget extends GetView<DashboardHomeController> {
                     boldValue: FontWeight.normal,
                     color: controller.getSystemTheme(context)
                         ? AppColors.lightTextPrimary
-                        : AppColors.darkTextPrimary, //TODO CHANGE COLOR,
+                        : AppColors.darkTextPrimary,
                     centerAlignment: false,
                   ),
                   TextWidget(
@@ -63,7 +63,7 @@ class _HeaderWidget extends GetView<DashboardHomeController> {
                     boldValue: FontWeight.w500,
                     color: controller.getSystemTheme(context)
                         ? AppColors.lightTextPrimary
-                        : AppColors.darkTextPrimary, //TODO CHANGE COLOR,
+                        : AppColors.darkTextPrimary,
                     centerAlignment: false,
                   ),
                 ],

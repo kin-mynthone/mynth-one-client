@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 part of '../views/card_info_view.dart';
 
 class _ActivityListWidget extends StatelessWidget {
@@ -53,8 +54,13 @@ class _ActivityListWidget extends StatelessWidget {
                 right: 10,
               ),
               child: itemCount.isEqual(0)
-                  ? const Center(child: EmptyData())
-                  : FadingListViewWidget(
+                  ? Center(
+                      child: _EmptyData(
+                      color: CardInfoController.instance.getSystemTheme(context)
+                          ? AppColors.lightTextPrimary
+                          : AppColors.darkTextPrimary,
+                    ))
+                  : _FadingListViewWidget(
                       dataLength: itemCount,
                       activities: activitiesData,
                     ),
@@ -66,11 +72,11 @@ class _ActivityListWidget extends StatelessWidget {
   }
 }
 
-class FadingListViewWidget extends StatelessWidget {
+class _FadingListViewWidget extends StatelessWidget {
   final int dataLength;
   final List<Data> activities;
-  const FadingListViewWidget(
-      {super.key, required this.dataLength, required this.activities});
+  const _FadingListViewWidget(
+      {required this.dataLength, required this.activities});
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -113,9 +119,11 @@ class FadingListViewWidget extends StatelessWidget {
   }
 }
 
-class EmptyData extends StatelessWidget {
-  const EmptyData({super.key});
-
+class _EmptyData extends StatelessWidget {
+  final Color color;
+  const _EmptyData({
+    required this.color,
+  });
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -126,14 +134,14 @@ class EmptyData extends StatelessWidget {
           stringData: 'No Activity to show',
           fontSize: 15,
           boldValue: FontWeight.w800,
-          color: AppColors.darkPrimary, //TODO CHANGE COLOR,
+          color: color,
           centerAlignment: false,
         ),
         TextWidget(
           stringData: 'Start your first activity now',
           fontSize: 10,
           boldValue: FontWeight.normal,
-          color: AppColors.darkPrimary, //TODO CHANGE COLOR,
+          color: color,
           centerAlignment: false,
         ),
       ],

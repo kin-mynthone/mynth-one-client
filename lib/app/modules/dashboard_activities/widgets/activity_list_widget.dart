@@ -11,8 +11,13 @@ class _ActivityListWidget extends GetView<DashboardActivitiesController> {
       height: 250,
       padding: const EdgeInsets.only(bottom: 5),
       child: controller.activitiesData.length.isEqual(0)
-          ? const EmptyData()
-          : FadingListViewWidget(
+          ? Center(
+              child: _EmptyData(
+              color: controller.getSystemTheme(context)
+                  ? AppColors.lightTextPrimary
+                  : AppColors.darkTextPrimary,
+            ))
+          : _FadingListViewWidget(
               dataLength: controller.activitiesData
                   .where((element) => element.typeOfActivity == status)
                   .length,
@@ -24,39 +29,11 @@ class _ActivityListWidget extends GetView<DashboardActivitiesController> {
   }
 }
 
-class EmptyData extends StatelessWidget {
-  const EmptyData({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        TextWidget(
-          stringData: 'No Activity to show',
-          fontSize: 15,
-          boldValue: FontWeight.w800,
-          color: AppColors.darkPrimary, //TODO CHANGE COLOR,
-          centerAlignment: false,
-        ),
-        TextWidget(
-          stringData: 'Start your first activity now',
-          fontSize: 10,
-          boldValue: FontWeight.normal,
-          color: AppColors.darkPrimary, //TODO CHANGE COLOR,
-          centerAlignment: false,
-        ),
-      ],
-    );
-  }
-}
-
-class FadingListViewWidget extends StatelessWidget {
+class _FadingListViewWidget extends StatelessWidget {
   final int dataLength;
   final List<Data> activities;
-  const FadingListViewWidget(
-      {super.key, required this.dataLength, required this.activities});
+  const _FadingListViewWidget(
+      {required this.dataLength, required this.activities});
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -95,6 +72,36 @@ class FadingListViewWidget extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class _EmptyData extends StatelessWidget {
+  final Color color;
+  const _EmptyData({
+    required this.color,
+  });
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        TextWidget(
+          stringData: 'No Activity to show',
+          fontSize: 15,
+          boldValue: FontWeight.w800,
+          color: color,
+          centerAlignment: false,
+        ),
+        TextWidget(
+          stringData: 'Start your first activity now',
+          fontSize: 10,
+          boldValue: FontWeight.normal,
+          color: color,
+          centerAlignment: false,
+        ),
+      ],
     );
   }
 }

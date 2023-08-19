@@ -54,7 +54,7 @@ class _BackgroundPainterDark extends CustomPainter {
         Offset(size.width + 100, 0),
         Offset(0, size.height),
         [AppColors.lightPurple, AppColors.cyan],
-        [0, 1]); //TODO CHANGE COLOR
+        [0, 1]);
     canvas.drawPath(path_0, paint0Fill);
   }
 
