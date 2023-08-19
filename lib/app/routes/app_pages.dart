@@ -1,6 +1,8 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:get/get.dart';
+import 'package:mynth_one_client/app/modules/card_info/bindings/card_info_binding.dart';
+import 'package:mynth_one_client/app/modules/card_info/views/card_info_view.dart';
 import 'package:mynth_one_client/app/modules/dashboard/bindings/dashboard_binding.dart';
 import 'package:mynth_one_client/app/modules/dashboard/views/dashboard_view.dart';
 import 'package:mynth_one_client/app/modules/introduction/bindings/introduction_binding.dart';
@@ -27,6 +29,7 @@ class AppPages {
   static const OTP = Routes.OTP;
 
   static const DASHBOARD = Routes.DASHBOARD;
+  static const CARDINFO = Routes.CARDINFO;
 
   static final routes = [
     GetPage(
@@ -68,6 +71,13 @@ class AppPages {
       name: _Paths.OTP,
       page: () => const OtpView(),
       binding: OtpBinding(),
+      transition: Transition.fadeIn,
+      fullscreenDialog: true,
+    ),
+    GetPage(
+      name: _Paths.CARDINFO,
+      page: () => const CardInfoView(),
+      binding: CardInfoBinding(),
       transition: Transition.fadeIn,
       fullscreenDialog: true,
     ),

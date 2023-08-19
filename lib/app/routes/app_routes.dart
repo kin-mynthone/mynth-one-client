@@ -12,6 +12,7 @@ abstract class Routes {
   static const OTP = _Paths.OTP;
 
   static const DASHBOARD = _Paths.DASHBOARD;
+  static const CARDINFO = _Paths.CARDINFO;
 }
 
 abstract class _Paths {
@@ -23,4 +24,5 @@ abstract class _Paths {
   static const OTP = '/otp';
 
   static const DASHBOARD = '/dashboard';
+  static const CARDINFO = '/cardInfo';
 }

@@ -1,72 +1,65 @@
-part of '../views/home_view.dart';
+part of '../views/card_info_view.dart';
 
-class _ActivityWidget extends GetView<PartialActivitiesController> {
-  const _ActivityWidget({
+class _ActivityListWidget extends StatelessWidget {
+  final int itemCount;
+
+  final List<Data> activitiesData;
+
+  const _ActivityListWidget({
     Key? key,
+    required this.itemCount,
+    required this.activitiesData,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return Container(
-      width: size.width,
-      decoration: BoxDecoration(
-          borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(30), topRight: Radius.circular(30)),
-          color: HomeController.instance.getSystemTheme(context)
-              ? AppColors.lightBackgroundVariant
-              : AppColors.darkBackgroundVariant),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 20, left: 30, right: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                TextWidget(
-                    stringData: 'Transactions',
-                    fontSize: 20,
-                    boldValue: FontWeight.w700,
-                    color: HomeController.instance.getSystemTheme(context)
-                        ? AppColors.lightTextPrimary
-                        : AppColors.darkTextPrimary,
-                    centerAlignment: false),
-                TextButton(
-                  onPressed: () async {
-                    FocusScope.of(context).unfocus();
-                  },
-                  child: TextWidget(
-                      stringData: 'View All',
-                      fontSize: 13,
-                      boldValue: FontWeight.w300,
-                      color: HomeController.instance.getSystemTheme(context)
-                          ? AppColors.lightTextSecondary
-                          : AppColors.darkTextSecondary,
+    return Expanded(
+      child: Container(
+        width: size.width,
+        decoration: BoxDecoration(
+            borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(30), topRight: Radius.circular(30)),
+            color: CardInfoController.instance.getSystemTheme(context)
+                ? AppColors.lightBackgroundVariant
+                : AppColors.darkBackgroundVariant),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 30, left: 30, right: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  TextWidget(
+                      stringData: 'Transactions',
+                      fontSize: 20,
+                      boldValue: FontWeight.w700,
+                      color: CardInfoController.instance.getSystemTheme(context)
+                          ? AppColors.lightTextPrimary
+                          : AppColors.darkTextPrimary,
                       centerAlignment: false),
-                )
-              ],
+                ],
+              ),
             ),
-          ),
-          Obx(
-            () => Container(
-              height: 300,
+            Container(
+              height: 350,
               padding: const EdgeInsets.only(
                 left: 10,
                 right: 10,
               ),
-              child: controller.activitiesData.length.isEqual(0)
-                  ? const EmptyData()
+              child: itemCount.isEqual(0)
+                  ? const Center(child: EmptyData())
                   : FadingListViewWidget(
-                      dataLength: controller.activitiesData.length,
-                      activities: controller.activitiesData,
+                      dataLength: itemCount,
+                      activities: activitiesData,
                     ),
             ),
-          )
-        ],
+          ],
+        ),
       ),
     );
   }

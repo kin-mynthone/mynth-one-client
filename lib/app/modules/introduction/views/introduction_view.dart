@@ -146,15 +146,15 @@ class IntroductionView extends GetView<IntroductionController> {
                 alignment: Alignment.center,
                 child: controller.getSystemTheme(context)
                     ? const GradientTextLightWidget(
-                        stringData: 'Hassle free\npayment method',
-                        fontSize: 35,
+                        stringData: 'The Digital wallet that connects global',
+                        fontSize: 30,
                         boldValue: FontWeight.w800,
                         heightValue: 1.2,
                         centerAlignment: true,
                       )
                     : const GradientTextDarkWidget(
-                        stringData: 'Hassle free\npayment method',
-                        fontSize: 35,
+                        stringData: 'The Digital wallet that connects global',
+                        fontSize: 30,
                         boldValue: FontWeight.w800,
                         heightValue: 1.2,
                         centerAlignment: true,
@@ -162,12 +162,12 @@ class IntroductionView extends GetView<IntroductionController> {
               ),
             ),
             Positioned.fill(
-              top: 450,
+              top: 440,
               child: Align(
                 alignment: Alignment.center,
                 child: TextWidget(
                   stringData:
-                      'Connect your money to your friends\nfamily and Brands',
+                      'Banking Beyond, Welcome\nto the super experience',
                   fontSize: 15,
                   boldValue: FontWeight.normal,
                   color: controller.getSystemTheme(context)

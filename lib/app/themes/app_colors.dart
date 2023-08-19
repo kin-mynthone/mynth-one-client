@@ -11,6 +11,7 @@ class AppColors {
 
   static const Color lightBackground = Color(0xFFF2F4FE);
   static const Color lightBackgroundVariant = Color(0xFFFFFFFF);
+  static const Color lightBackgroundNav = Color.fromARGB(255, 255, 255, 255);
 
   static const Color lightTextPrimary = Color(0xFF4A495E);
   static const Color lightTextSecondary = Color(0xFFA7A6AF);
@@ -26,6 +27,7 @@ class AppColors {
 
   static const Color darkBackground = Color(0xFF4A495E);
   static const Color darkBackgroundVariant = Color(0xFF313044);
+  static const Color darkBackgroundNav = Color.fromARGB(255, 55, 53, 76);
 
   static const Color darkTextPrimary = Color(0xFFE5EAFF);
   static const Color darkTextSecondary = Color(0xFF9194A8);

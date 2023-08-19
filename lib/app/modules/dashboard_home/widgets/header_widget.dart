@@ -59,7 +59,7 @@ class _HeaderWidget extends GetView<HomeController> {
                   ),
                   TextWidget(
                     stringData: 'Kindred',
-                    fontSize: 20,
+                    fontSize: 22,
                     boldValue: FontWeight.w500,
                     color: controller.getSystemTheme(context)
                         ? AppColors.lightTextPrimary

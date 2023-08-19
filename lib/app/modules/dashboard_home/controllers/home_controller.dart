@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:mynth_one_client/app/helpers/my_logger_helper.dart';
 import 'package:mynth_one_client/app/models/card_model.dart';
 import 'package:mynth_one_client/app/repositories/card_repository.dart';
+import 'package:mynth_one_client/app/routes/app_pages.dart';
 
 enum HomeStatus { initial, loading, succeeded, failed, error }
 
@@ -80,5 +81,12 @@ class HomeController extends GetxController {
 
       _status.value = HomeStatus.error;
     }
+  }
+
+  goToCardInfo(Data data) {
+    Get.toNamed(
+      AppPages.CARDINFO,
+      arguments: data,
+    );
   }
 }

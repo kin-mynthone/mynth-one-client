@@ -23,9 +23,9 @@ class AssetPath {
 //-------------------DASHBOARD--------------------
   static const dHome = '$_iconMainPath/nav_bar/home.svg';
   static const dActivities = '$_iconMainPath/nav_bar/activities.svg';
-  static const dBanking = '$_iconMainPath/nav_bar/banking.svg';
-  static const dNotifications = '$_iconMainPath/nav_bar/notifications.svg';
-  static const dProfile = '$_iconMainPath/nav_bar/profile.svg';
+  static const dQr = '$_iconMainPath/nav_bar/qr.svg';
+  static const dCards = '$_iconMainPath/nav_bar/cards.svg';
+  static const dSettings = '$_iconMainPath/nav_bar/settings.svg';
 
 //-------------------ACTIVITIES--------------------
   static const aSearchingRobot = "$_iconMainPath/robots/searching_robot.png";

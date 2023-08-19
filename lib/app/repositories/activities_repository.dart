@@ -23,4 +23,14 @@ class ActivitiesRepository {
 
     return parsedJsonData.map((e) => Data.fromJson(e)).toList();
   }
+
+  static Future<List<Data>> getCardActivities(
+      {required String accessToken}) async {
+    final String response =
+        await rootBundle.loadString('assets/mock_data/activity_data.json');
+
+    List<dynamic> parsedJsonData = jsonDecode(response)['data'];
+
+    return parsedJsonData.map((e) => Data.fromJson(e)).toList();
+  }
 }
