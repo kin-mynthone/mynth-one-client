@@ -1,0 +1,10 @@
+{
+  "projects": {
+    "default": "afex-mobile-dev",
+    "staging": "afex-mobile-stg",
+    "production": "afex-mobile-prod",
+    "dev": "afex-mobile-dev"
+  },
+  "targets": {},
+  "etags": {}
+}

@@ -1,0 +1,64 @@
+{
+    "data": [
+        {
+            "id": "0",
+            "icon": "0",
+            "start_color": "0xFFE9E5FF",
+            "end_color": "0xFFE4F9F6",
+            "amount": "20,000.00",
+            "type_of_activity": "online",
+            "merchant": "Spotify",
+            "debit": true,
+            "account_number": "123 290",
+            "account_name": "Kindred Inocencio",
+            "time_stamp": 1685515248,
+            "description": "description",
+            "status": "Complete"
+        },
+        {
+            "id": "1",
+            "icon": "1",
+            "start_color": "0xFFE9E5FF",
+            "end_color": "0xFFE4F9F6",
+            "amount": "20,000.00",
+            "type_of_activity": "online",
+            "merchant": "Starbucks",
+            "debit": true,
+            "account_number": "123 290",
+            "account_name": "Kindred Inocencio",
+            "time_stamp": 1685515248,
+            "description": "description",
+            "status": "Complete"
+        },
+        {
+            "id": "2",
+            "icon": "2",
+            "start_color": "0xFFE9E5FF",
+            "end_color": "0xFFE4F9F6",
+            "amount": "20,000.00",
+            "type_of_activity": "online",
+            "merchant": "HSBC",
+            "debit": false,
+            "account_number": "123 290",
+            "account_name": "Kindred Inocencio",
+            "time_stamp": 1685515248,
+            "description": "description",
+            "status": "Complete"
+        },
+        {
+            "id": "3",
+            "icon": "3",
+            "start_color": "0xFFE9E5FF",
+            "end_color": "0xFFE4F9F6",
+            "amount": "20,000.00",
+            "type_of_activity": "online",
+            "merchant": "HSBC",
+            "debit": false,
+            "account_number": "123 290",
+            "account_name": "Kindred Inocencio",
+            "time_stamp": 1685515248,
+            "description": "description",
+            "status": "Complete"
+        }
+    ]
+}

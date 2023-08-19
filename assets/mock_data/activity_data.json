@@ -1,0 +1,100 @@
+{
+    "data": [
+        {
+            "id": "0",
+            "amount": "20,000.00",
+            "type_of_activity": "transfer",
+            "receiver": "Kindred Inocencio",
+            "sender": "Kindred Inocencio",
+            "debit": true,
+            "account_number": "123 290",
+            "account_name": "My Personal Savings",
+            "time_stamp": 1685945514,
+            "description": "description"
+        },
+        {
+            "id": "1",
+            "amount": "20,000.00",
+            "type_of_activity": "received",
+            "receiver": "Kindred Inocencio",
+            "sender": "Kindred Inocencio",
+            "debit": true,
+            "account_number": "123 290",
+            "account_name": "My Personal Savings",
+            "time_stamp": 1685945514,
+            "description": "description"
+        },
+        {
+            "id": "2",
+            "amount": "20,000.00",
+            "type_of_activity": "transfer",
+            "receiver": "Kindred Inocencio",
+            "sender": "Kindred Inocencio",
+            "debit": true,
+            "account_number": "123 290",
+            "account_name": "My Personal Savings",
+            "time_stamp": 1685945514,
+            "description": "description"
+        },
+        {
+            "id": "3",
+            "amount": "20,000.00",
+            "type_of_activity": "received",
+            "receiver": "Kindred Inocencio",
+            "sender": "Kindred Inocencio",
+            "debit": true,
+            "account_number": "123 290",
+            "account_name": "My Personal Savings",
+            "time_stamp": 1685945514,
+            "description": "description"
+        },
+        {
+            "id": "4",
+            "amount": "20,000.00",
+            "type_of_activity": "received",
+            "receiver": "Kindred Inocencio",
+            "sender": "Kindred Inocencio",
+            "debit": true,
+            "account_number": "123 290",
+            "account_name": "My Personal Savings",
+            "time_stamp": 1685945514,
+            "description": "description"
+        },
+        {
+            "id": "5",
+            "amount": "20,000.00",
+            "type_of_activity": "transfer",
+            "receiver": "Kindred Inocencio",
+            "sender": "Kindred Inocencio",
+            "debit": true,
+            "account_number": "123 290",
+            "account_name": "My Personal Savings",
+            "time_stamp": 1685945514,
+            "description": "description"
+        },
+        {
+            "id": "6",
+            "amount": "20,000.00",
+            "type_of_activity": "transfer",
+            "receiver": "Kindred Inocencio",
+            "sender": "Kindred Inocencio",
+            "debit": true,
+            "account_number": "123 290",
+            "account_name": "My Personal Savings",
+            "time_stamp": 1685945514,
+            "description": "description"
+        },
+        {
+            "id": "7",
+            "amount": "20,000.00",
+            "type_of_activity": "received",
+            "receiver": "Kindred Inocencio",
+            "sender": "Kindred Inocencio",
+            "debit": true,
+            "account_number": "123 290",
+            "account_name": "My Personal Savings",
+            "time_stamp": 1685945514,
+            "description": "description"
+        }
+    ]
+}
