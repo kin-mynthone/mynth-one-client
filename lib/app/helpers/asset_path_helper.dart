@@ -46,4 +46,6 @@ class AssetPath {
 
   static const cCopy = '$_iconMainPath/common/copy.svg';
   static const cTurn = '$_iconMainPath/common/turn.svg';
+  static const cCross = '$_iconMainPath/common/cross.svg';
+  static const cInfo = '$_iconMainPath/common/info.svg';
 }

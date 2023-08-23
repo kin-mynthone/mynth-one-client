@@ -1,5 +1,7 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:mynth_one_client/app/constants/app_numbers.dart';
 import 'package:mynth_one_client/app/helpers/asset_path_helper.dart';
 import 'package:mynth_one_client/app/models/card_model.dart';
@@ -10,7 +12,11 @@ class CardWidget extends StatelessWidget {
   final Data cardModel;
   final VoidCallback? onTap;
 
-  const CardWidget({super.key, required this.cardModel, this.onTap});
+  const CardWidget({
+    Key? key,
+    required this.cardModel,
+    this.onTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +32,7 @@ class CardWidget extends StatelessWidget {
         child: Container(
           height: 500,
           padding: EdgeInsets.symmetric(
-            horizontal: size.width * 0.04,
+            horizontal: size.width * 0.05,
             vertical: size.height * 0.022,
           ),
           decoration: BoxDecoration(
@@ -116,7 +122,8 @@ class CardWidget extends StatelessWidget {
                           TextWidget(
                             stringData: cardModel.accountNumber
                                 .toString()
-                                .replaceRange(0, 3, '****'),
+                                .substring(8)
+                                .replaceRange(0, 3, '***'),
                             fontSize: 13,
                             letterSpacing: 3,
                             boldValue: FontWeight.w400,

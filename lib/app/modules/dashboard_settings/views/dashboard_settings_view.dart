@@ -20,8 +20,9 @@ class DashboardSettingsView extends GetView<DashboardSettingsController> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding:
-                  EdgeInsets.symmetric(horizontal: AppNumbers.screenPadding),
+              padding: EdgeInsets.symmetric(
+                  horizontal: AppNumbers.screenPadding,
+                  vertical: AppNumbers.screenPadding),
               child: _HeaderWidget(),
             ),
             SizedBox(
