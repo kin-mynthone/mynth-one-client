@@ -7,13 +7,13 @@ class ActivityModel {
     if (json['data'] != null) {
       data = <Data>[];
       json['data'].forEach((v) {
-        data!.add(new Data.fromJson(v));
+        data!.add(Data.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     if (this.data != null) {
       data['data'] = this.data!.map((v) => v.toJson()).toList();
     }
@@ -59,17 +59,17 @@ class Data {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['amount'] = this.amount;
-    data['type_of_activity'] = this.typeOfActivity;
-    data['receiver'] = this.receiver;
-    data['sender'] = this.sender;
-    data['debit'] = this.debit;
-    data['account_number'] = this.accountNumber;
-    data['account_name'] = this.accountName;
-    data['time_stamp'] = this.timeStamp;
-    data['description'] = this.description;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['amount'] = amount;
+    data['type_of_activity'] = typeOfActivity;
+    data['receiver'] = receiver;
+    data['sender'] = sender;
+    data['debit'] = debit;
+    data['account_number'] = accountNumber;
+    data['account_name'] = accountName;
+    data['time_stamp'] = timeStamp;
+    data['description'] = description;
     return data;
   }
 }

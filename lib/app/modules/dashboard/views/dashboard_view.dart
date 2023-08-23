@@ -32,11 +32,15 @@ class DashboardView extends GetView<DashboardController> {
       body: _buildBody(),
       floatingActionButton: const _QrButtonWidget(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: Container(
-        color: controller.getSystemTheme(context)
-            ? AppColors.lightBackgroundVariant
-            : AppColors.darkBackgroundVariant,
-        child: const _BottomNavigationBarWidget(),
+      bottomNavigationBar: Obx(
+        () => Container(
+          color: controller.currentIndex == 0
+              ? controller.getSystemTheme(context)
+                  ? AppColors.lightBackgroundVariant
+                  : AppColors.darkBackgroundVariant
+              : Colors.transparent,
+          child: const _BottomNavigationBarWidget(),
+        ),
       ),
     );
   }

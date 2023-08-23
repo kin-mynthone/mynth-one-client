@@ -1,3 +1,4 @@
+import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mynth_one_client/app/helpers/my_logger_helper.dart';
@@ -8,10 +9,14 @@ enum CardInfoStatus { initial, loading, succeeded, failed, error, invalid }
 class CardInfoController extends GetxController {
   static CardInfoController get instance => Get.find();
 
+  GlobalKey<FlipCardState> cardKey = GlobalKey<FlipCardState>();
+
   final _cardInfo = Get.arguments as Data;
   late Worker _statusEverWorker;
 
   final _status = CardInfoStatus.initial.obs;
+  final _isDetailsShown = false.obs;
+  final _isBackCardShown = false.obs;
 
   CardInfoStatus get status => _status.value;
 
@@ -19,6 +24,8 @@ class CardInfoController extends GetxController {
   bool get hasSucceeded => _status.value == CardInfoStatus.succeeded;
   bool get hasFailed => _status.value == CardInfoStatus.failed;
   bool get isInvalid => _status.value == CardInfoStatus.invalid;
+  bool get isDetailsShown => _isDetailsShown.value;
+  bool get isBackCardShown => _isBackCardShown.value;
 
   Data get cardInfo => _cardInfo;
 
@@ -70,5 +77,13 @@ class CardInfoController extends GetxController {
     var brightness = MediaQuery.of(context).platformBrightness;
 
     return brightness == Brightness.light;
+  }
+
+  void setIsDetailsShown() {
+    _isDetailsShown.value = !_isDetailsShown.value;
+  }
+
+  void setIsBackCardShown(bool value) {
+    _isBackCardShown.value = value;
   }
 }

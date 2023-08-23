@@ -78,7 +78,7 @@ class AppPages {
       name: _Paths.CARDINFO,
       page: () => const CardInfoView(),
       binding: CardInfoBinding(),
-      transition: Transition.fadeIn,
+      transition: Transition.rightToLeftWithFade,
       fullscreenDialog: true,
     ),
   ];
