@@ -5,6 +5,7 @@ class AppNumbers {
 
   static const double borderRadius = 15;
   static const double cornerRadius = 30;
+  static const double cornerHeaderRadius = 30;
 
   static const int paginationLimit = 6;
 }

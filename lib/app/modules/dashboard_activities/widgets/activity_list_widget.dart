@@ -8,15 +8,13 @@ class _ActivityListWidget extends GetView<DashboardActivitiesController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 250,
       padding: const EdgeInsets.only(bottom: 5),
       child: controller.activitiesData.length.isEqual(0)
-          ? Center(
-              child: _EmptyData(
+          ? _EmptyData(
               color: controller.getSystemTheme(context)
                   ? AppColors.lightTextPrimary
                   : AppColors.darkTextPrimary,
-            ))
+            )
           : _FadingListViewWidget(
               dataLength: controller.activitiesData
                   .where((element) => element.typeOfActivity == status)
@@ -36,41 +34,37 @@ class _FadingListViewWidget extends StatelessWidget {
       {required this.dataLength, required this.activities});
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ShaderMask(
-        shaderCallback: (Rect rect) {
-          return const LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Colors.purple,
-              Colors.transparent,
-              Colors.transparent,
-              Colors.purple
-            ],
-            stops: [
-              0.0,
-              0.1,
-              0.9,
-              1.0
-            ], // 10% purple, 80% transparent, 10% purple
-          ).createShader(rect);
+    return ShaderMask(
+      shaderCallback: (Rect rect) {
+        return const LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Colors.purple,
+            Colors.transparent,
+            Colors.transparent,
+            Colors.purple
+          ],
+          stops: [
+            0.0,
+            0.1,
+            0.9,
+            1.0
+          ], // 10% purple, 80% transparent, 10% purple
+        ).createShader(rect);
+      },
+      blendMode: BlendMode.dstOut,
+      child: ListView.separated(
+        padding: EdgeInsets.only(top: 20.0),
+        scrollDirection: Axis.vertical,
+        itemCount: dataLength,
+        itemBuilder: (context, index) {
+          return ActivityListTileWidget(
+            activityModel: activities[index],
+            tileOnTap: () {},
+          );
         },
-        blendMode: BlendMode.dstOut,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          child: ListView.separated(
-            scrollDirection: Axis.vertical,
-            itemCount: dataLength,
-            itemBuilder: (context, index) {
-              return ActivityListTileWidget(
-                activityModel: activities[index],
-                tileOnTap: () {},
-              );
-            },
-            separatorBuilder: (context, index) => const SizedBox(height: 5),
-          ),
-        ),
+        separatorBuilder: (context, index) => const SizedBox(height: 5),
       ),
     );
   }
@@ -89,14 +83,14 @@ class _EmptyData extends StatelessWidget {
       children: [
         TextWidget(
           stringData: 'No Activity to show',
-          fontSize: 15,
+          fontSize: 23,
           boldValue: FontWeight.w800,
           color: color,
           centerAlignment: false,
         ),
         TextWidget(
           stringData: 'Start your first activity now',
-          fontSize: 10,
+          fontSize: 13,
           boldValue: FontWeight.normal,
           color: color,
           centerAlignment: false,

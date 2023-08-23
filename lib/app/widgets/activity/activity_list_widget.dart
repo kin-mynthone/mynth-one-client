@@ -85,10 +85,12 @@ class ActivityListWidget extends StatelessWidget {
             child: itemCount.isEqual(0)
                 ? Center(
                     child: _EmptyData(
-                    color: DashboardController.instance.getSystemTheme(context)
-                        ? AppColors.lightTextPrimary
-                        : AppColors.darkTextPrimary,
-                  ))
+                      color:
+                          DashboardController.instance.getSystemTheme(context)
+                              ? AppColors.lightTextPrimary
+                              : AppColors.darkTextPrimary,
+                    ),
+                  )
                 : _FadingListViewWidget(
                     dataLength: itemCount,
                     activities: activitiesData,

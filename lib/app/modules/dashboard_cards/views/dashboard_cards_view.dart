@@ -13,23 +13,27 @@ class DashboardCardView extends GetView<DashboardCardController> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SafeArea(
-        bottom: false,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: AppNumbers.screenPadding,
-                  vertical: AppNumbers.screenPadding),
-              child: _HeaderWidget(),
+      body: Column(
+        children: [
+          _HeaderWidget(),
+          SafeArea(
+            bottom: false,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: AppNumbers.screenPadding,
+                      vertical: AppNumbers.screenPadding),
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+              ],
             ),
-            SizedBox(
-              height: 40,
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
