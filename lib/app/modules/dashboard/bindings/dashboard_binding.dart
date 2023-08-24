@@ -14,7 +14,7 @@ class DashboardBinding extends Bindings {
   void dependencies() {
     Get.put(DashboardController());
     Get.put(DashboardHomeController());
-    Get.put(DashboardCardController());
+    Get.put(DashboardCardsController());
     Get.put(DashboardActivitiesController());
     Get.put(DashboardSettingsController());
 

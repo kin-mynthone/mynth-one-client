@@ -13,81 +13,55 @@ import '../controllers/dashboard_activities_controller.dart';
 part '../widgets/header_widget.dart';
 part '../widgets/activity_list_widget.dart';
 
-class DashboardActivitiesView extends GetView<DashboardActivitiesController> {
+class DashboardActivitiesView extends StatefulWidget {
   const DashboardActivitiesView({Key? key}) : super(key: key);
+
+  @override
+  State<DashboardActivitiesView> createState() =>
+      _DashboardActivitiesViewState();
+}
+
+class _DashboardActivitiesViewState extends State<DashboardActivitiesView>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        bottom: false,
-        child: DefaultTabController(
-          length: 2,
-          child: Column(
-            children: [
-              const Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: AppNumbers.screenPadding,
-                    vertical: AppNumbers.screenPadding),
-                child: _HeaderWidget(),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: AppNumbers.screenPadding,
-                ),
-                child: ButtonsTabBar(
-                  radius: AppNumbers.borderRadius,
-                  contentPadding: const EdgeInsets.symmetric(horizontal: 50),
-                  unselectedBackgroundColor: controller.getSystemTheme(context)
-                      ? AppColors.lightSecondary
-                      : AppColors.darkBackgroundVariant,
-                  decoration: BoxDecoration(
-                    color: controller.getSystemTheme(context)
-                        ? AppColors.lightPrimary
-                        : AppColors.darkPrimary,
-                  ),
-                  unselectedLabelStyle: GoogleFonts.poppins(
-                      color: controller.getSystemTheme(context)
-                          ? AppColors.lightTextHint
-                          : AppColors.darkTextHint,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 12),
-                  labelStyle: GoogleFonts.poppins(
-                      color: controller.getSystemTheme(context)
-                          ? AppColors.lightSecondaryVariant
-                          : AppColors.darkSecondaryVariant,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 12),
-                  height: 56,
-                  onTap: (index) => {},
-                  tabs: const [
-                    Tab(
-                      text: "Received",
-                    ),
-                    Tab(
-                      text: "Transferred",
-                    ),
-                  ],
-                ),
-              ),
-              const Expanded(
-                child: Padding(
-                  padding: EdgeInsets.fromLTRB(20, 10, 20, 20),
-                  child: TabBarView(
-                    children: [
-                      _ActivityListWidget(
-                        status: 'received',
-                      ),
-                      _ActivityListWidget(
-                        status: 'transfer',
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
+      body: Column(
+        children: [
+          _HeaderWidget(
+            tabController: _tabController,
           ),
-        ),
+          Expanded(
+            child: Container(
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 20),
+              child: TabBarView(
+                controller: _tabController,
+                children: const [
+                  _ActivityListWidget(
+                    status: 'received',
+                  ),
+                  _ActivityListWidget(
+                    status: 'transfer',
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

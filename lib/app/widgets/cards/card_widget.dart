@@ -30,7 +30,7 @@ class CardWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(AppNumbers.cardBorderRadius),
         ),
         child: Container(
-          height: 500,
+          height: 230,
           padding: EdgeInsets.symmetric(
             horizontal: size.width * 0.05,
             vertical: size.height * 0.022,

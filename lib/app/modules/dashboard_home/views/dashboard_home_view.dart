@@ -65,50 +65,46 @@ class DashboardHomeView extends GetView<DashboardHomeController> {
 
           SafeArea(
             bottom: false,
-            child: SingleChildScrollView(
-              physics: const AlwaysScrollableScrollPhysics(
-                parent: BouncingScrollPhysics(),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: AppNumbers.screenPadding),
-                    child: _HeaderWidget(
-                      profilePath: AppStrings.defaultImageUrl,
-                    ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: AppNumbers.screenPadding),
+                  child: _HeaderWidget(
+                    profilePath: AppStrings.defaultImageUrl,
                   ),
-                  Obx(
-                    () => SwiperWidget(
-                      itemCount: controller.cardData.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return CardWidget(
-                          cardModel: controller.cardData[index],
-                          onTap: () => {
-                            controller.goToCardInfo(controller.cardData[index])
-                          },
-                        );
-                      },
-                    ),
+                ),
+                Obx(
+                  () => SwiperWidget(
+                    itemCount: controller.cardData.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return CardWidget(
+                        cardModel: controller.cardData[index],
+                        onTap: () => {
+                          controller.goToCardInfo(controller.cardData[index])
+                        },
+                      );
+                    },
                   ),
-                  const SizedBox(height: 20),
-                  const Padding(
-                    padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
-                    child: _QuickOptionsWidget(),
-                  ),
-                  Obx(
+                ),
+                const SizedBox(height: 20),
+                const Padding(
+                  padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
+                  child: _QuickOptionsWidget(),
+                ),
+                Expanded(
+                  child: Obx(
                     () => ActivityListWidget(
-                      showViewAll: true,
                       activitiesData:
                           SnippetActivitiesController.instance.activitiesData,
                       itemCount: SnippetActivitiesController
                           .instance.activitiesData.length,
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ],

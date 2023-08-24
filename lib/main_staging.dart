@@ -68,7 +68,7 @@ flutter run -t lib/main_staging.dart  --release --flavor=staging
 flutter build appbundle -t lib/main_staging.dart  --flavor=staging
 
 # Create APK for staging flavor. Runs in release mode by default
-flutter build apk -t lib/main_staging.dart  --flavor=staging
+* flutter build apk -t lib/main_staging.dart  --flavor=staging
 
 # Create minified APK for staging flavor.
 flutter build apk -t lib/main_staging.dart  --flavor=staging --split-per-abi --no-shrink
