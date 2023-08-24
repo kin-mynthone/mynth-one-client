@@ -38,17 +38,84 @@ class _HeaderWidget extends GetView<DashboardCardsController> {
             height: 10,
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                padding: const EdgeInsets.only(
-                    top: 60, bottom: 30, left: 30, right: 30),
-                decoration: BoxDecoration(
-                    borderRadius: const BorderRadius.all(
-                        Radius.circular(AppNumbers.borderRadius)),
-                    color: controller.getSystemTheme(context)
-                        ? AppColors.lightBackground
-                        : AppColors.darkBackground),
-              )
+              Expanded(
+                child: Container(
+                  height: 60,
+                  decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.all(
+                          Radius.circular(AppNumbers.borderRadius)),
+                      color: controller.getSystemTheme(context)
+                          ? AppColors.lightBackground
+                          : AppColors.darkBackground),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      TextWidget(
+                        stringData: '4',
+                        fontSize: 25,
+                        boldValue: FontWeight.w600,
+                        color: controller.getSystemTheme(context)
+                            ? AppColors.lightTextPrimary
+                            : AppColors.darkTextPrimary,
+                        centerAlignment: false,
+                      ),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          TextWidget(
+                            stringData: 'Total',
+                            fontSize: 12,
+                            boldValue: FontWeight.w400,
+                            color: controller.getSystemTheme(context)
+                                ? AppColors.lightTextPrimary
+                                : AppColors.darkTextPrimary,
+                            centerAlignment: false,
+                          ),
+                          TextWidget(
+                            stringData: 'Cards',
+                            fontSize: 12,
+                            boldValue: FontWeight.w400,
+                            color: controller.getSystemTheme(context)
+                                ? AppColors.lightTextPrimary
+                                : AppColors.darkTextPrimary,
+                            centerAlignment: false,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              PrimaryButtonWidget(
+                buttonText: '+ New Card',
+                height: 60,
+                fontSize: 15,
+                boldValue: FontWeight.w600,
+                fontColor: controller.getSystemTheme(context)
+                    ? AppColors.lightSecondary
+                    : AppColors.darkSecondary,
+                buttonColor: controller.getSystemTheme(context)
+                    ? AppColors.lightPrimary
+                    : AppColors.darkPrimary,
+                splashColor: controller.getSystemTheme(context)
+                    ? AppColors.lightSecondary.withOpacity(0.30)
+                    : AppColors.darkSecondary.withOpacity(0.30),
+                highlightColor: controller.getSystemTheme(context)
+                    ? AppColors.lightSecondary.withOpacity(0.15)
+                    : AppColors.darkSecondary.withOpacity(0.15),
+                onTap: () => {},
+              ),
             ],
           )
         ],
