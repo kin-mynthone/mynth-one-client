@@ -12,6 +12,13 @@ class _HeaderWidget extends GetView<DashboardActivitiesController> {
       padding: const EdgeInsets.only(top: 60, bottom: 30, left: 20, right: 20),
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
+          boxShadow: const [
+            BoxShadow(
+              color: Color.fromARGB(20, 0, 0, 0),
+              blurRadius: AppNumbers.cornerHeaderRadius,
+              spreadRadius: 1,
+            ),
+          ],
           borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(AppNumbers.cornerHeaderRadius),
               bottomRight: Radius.circular(AppNumbers.cornerHeaderRadius)),

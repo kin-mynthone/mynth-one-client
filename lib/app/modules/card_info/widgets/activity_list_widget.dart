@@ -86,10 +86,10 @@ class _FadingListViewWidget extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Colors.purple,
+              Color.fromARGB(214, 0, 0, 0),
               Colors.transparent,
               Colors.transparent,
-              Colors.purple
+              Color.fromARGB(214, 0, 0, 0),
             ],
             stops: [
               0.0,

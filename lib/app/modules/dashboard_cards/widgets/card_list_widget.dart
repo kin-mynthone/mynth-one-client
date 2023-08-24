@@ -1,27 +1,19 @@
-part of '../views/dashboard_activities_view.dart';
+part of '../views/dashboard_cards_view.dart';
 
-class _ActivityListWidget extends GetView<DashboardActivitiesController> {
-  final String status;
-  const _ActivityListWidget({
-    required this.status,
-  });
+class _CardListWidget extends GetView<DashboardCardsController> {
+  const _CardListWidget();
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(bottom: 5),
-      child: controller.activitiesData.length.isEqual(0)
+      child: controller.cardData.length.isEqual(0)
           ? _EmptyData(
               color: controller.getSystemTheme(context)
                   ? AppColors.lightTextPrimary
                   : AppColors.darkTextPrimary,
             )
           : _FadingListViewWidget(
-              dataLength: controller.activitiesData
-                  .where((element) => element.typeOfActivity == status)
-                  .length,
-              activities: controller.activitiesData
-                  .where((element) => element.typeOfActivity == status)
-                  .toList(),
+              dataLength: controller.cardData.length,
+              cardData: controller.cardData.toList(),
             ),
     );
   }
@@ -29,9 +21,9 @@ class _ActivityListWidget extends GetView<DashboardActivitiesController> {
 
 class _FadingListViewWidget extends StatelessWidget {
   final int dataLength;
-  final List<Data> activities;
+  final List<Data> cardData;
   const _FadingListViewWidget(
-      {required this.dataLength, required this.activities});
+      {required this.dataLength, required this.cardData});
   @override
   Widget build(BuildContext context) {
     return ShaderMask(
@@ -47,24 +39,26 @@ class _FadingListViewWidget extends StatelessWidget {
           ],
           stops: [
             0.0,
-            0.1,
-            0.9,
-            1.0
+            0.05,
+            0.95,
+            1.04
           ], // 10% purple, 80% transparent, 10% purple
         ).createShader(rect);
       },
       blendMode: BlendMode.dstOut,
       child: ListView.separated(
-        padding: const EdgeInsets.only(top: 20.0),
+        padding: const EdgeInsets.only(top: 15.0, bottom: 30.0),
         scrollDirection: Axis.vertical,
         itemCount: dataLength,
         itemBuilder: (context, index) {
-          return ActivityListTileWidget(
-            activityModel: activities[index],
-            tileOnTap: () {},
+          return CardWidget(
+            cardModel: cardData[index],
+            onTap: () => {
+              DashboardCardsController.instance.goToCardInfo(cardData[index])
+            },
           );
         },
-        separatorBuilder: (context, index) => const SizedBox(height: 5),
+        separatorBuilder: (context, index) => const SizedBox(height: 10),
       ),
     );
   }
@@ -82,15 +76,15 @@ class _EmptyData extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         TextWidget(
-          stringData: 'No Activity to show',
-          fontSize: 23,
+          stringData: 'No Cards to show',
+          fontSize: 15,
           boldValue: FontWeight.w800,
           color: color,
           centerAlignment: false,
         ),
         TextWidget(
-          stringData: 'Start your first activity now',
-          fontSize: 13,
+          stringData: 'You can add your first card here',
+          fontSize: 10,
           boldValue: FontWeight.normal,
           color: color,
           centerAlignment: false,

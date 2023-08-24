@@ -14,7 +14,6 @@ class DashboardHomeController extends GetxController {
   final _status = DashboardHomeStatus.initial.obs;
 
   final _cardData = <Data>[].obs;
-  static RxBool isVerifying = false.obs;
 
   DashboardHomeStatus get status => _status.value;
 

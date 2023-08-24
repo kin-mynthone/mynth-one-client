@@ -1,37 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mynth_one_client/app/constants/app_numbers.dart';
+import 'package:mynth_one_client/app/models/card_model.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
+import 'package:mynth_one_client/app/widgets/cards/card_widget.dart';
 import 'package:mynth_one_client/app/widgets/text_widget.dart';
 
 import '../controllers/dashboard_cards_controller.dart';
 part '../widgets/header_widget.dart';
+part '../widgets/card_list_widget.dart';
 
-class DashboardCardView extends GetView<DashboardCardController> {
+class DashboardCardView extends GetView<DashboardCardsController> {
   const DashboardCardView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Column(
         children: [
-          _HeaderWidget(),
-          SafeArea(
-            bottom: false,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: AppNumbers.screenPadding,
-                      vertical: AppNumbers.screenPadding),
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-              ],
-            ),
+          const _HeaderWidget(),
+          Expanded(
+            child: Container(
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                child: const _CardListWidget()),
           ),
         ],
       ),
