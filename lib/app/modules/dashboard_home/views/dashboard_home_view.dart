@@ -1,20 +1,23 @@
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mynth_one_client/app/constants/app_numbers.dart';
 import 'package:mynth_one_client/app/constants/app_strings.dart';
 import 'package:mynth_one_client/app/helpers/asset_path_helper.dart';
+import 'package:mynth_one_client/app/models/activity_model.dart';
 import 'package:mynth_one_client/app/modules/dashboard_home/controllers/snippet_activities_controller.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
-import 'package:mynth_one_client/app/widgets/activity/activity_list_widget.dart';
+import 'package:mynth_one_client/app/widgets/activity_list_tile_widget.dart';
 import 'package:mynth_one_client/app/widgets/button_icon_widget.dart';
-import 'package:mynth_one_client/app/widgets/cards/card_widget.dart';
-import 'package:mynth_one_client/app/widgets/cards/swiper_widget.dart';
+import 'package:mynth_one_client/app/widgets/card_widget.dart';
 import 'package:mynth_one_client/app/widgets/primary_button_widget.dart';
 import 'package:mynth_one_client/app/widgets/text_widget.dart';
 
 import '../controllers/dashboard_home_controller.dart';
 part '../widgets/header_widget.dart';
 part '../widgets/quick_options_widget.dart';
+part '../widgets/activity_list_widget.dart';
+part '../widgets/swiper_widget.dart';
 
 class DashboardHomeView extends GetView<DashboardHomeController> {
   const DashboardHomeView({Key? key}) : super(key: key);
@@ -24,6 +27,7 @@ class DashboardHomeView extends GetView<DashboardHomeController> {
     return Scaffold(
       body: Stack(
         children: [
+          //? maybe we can use this later
           // Positioned(
           //   left: 230,
           //   top: -80,
@@ -77,7 +81,7 @@ class DashboardHomeView extends GetView<DashboardHomeController> {
                   ),
                 ),
                 Obx(
-                  () => SwiperWidget(
+                  () => _SwiperWidget(
                     itemCount: controller.cardData.length,
                     itemBuilder: (BuildContext context, int index) {
                       return CardWidget(
@@ -94,14 +98,12 @@ class DashboardHomeView extends GetView<DashboardHomeController> {
                   padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
                   child: _QuickOptionsWidget(),
                 ),
-                Expanded(
-                  child: Obx(
-                    () => ActivityListWidget(
-                      activitiesData:
-                          SnippetActivitiesController.instance.activitiesData,
-                      itemCount: SnippetActivitiesController
-                          .instance.activitiesData.length,
-                    ),
+                Obx(
+                  () => _ActivityListWidget(
+                    activitiesData:
+                        SnippetActivitiesController.instance.activitiesData,
+                    itemCount: SnippetActivitiesController
+                        .instance.activitiesData.length,
                   ),
                 ),
               ],

@@ -10,6 +10,7 @@ import 'package:mynth_one_client/app/modules/dashboard_activities/views/dashboar
 import 'package:mynth_one_client/app/modules/dashboard_cards/views/dashboard_cards_view.dart';
 import 'package:mynth_one_client/app/modules/dashboard_home/views/dashboard_home_view.dart';
 import 'package:mynth_one_client/app/modules/dashboard_settings/views/dashboard_settings_view.dart';
+import 'package:mynth_one_client/app/routes/app_pages.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
 
 part '../widgets/bottom_navigation_bar_widget.dart';

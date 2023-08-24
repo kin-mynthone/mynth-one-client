@@ -6,7 +6,7 @@ import 'package:mynth_one_client/app/constants/app_numbers.dart';
 import 'package:mynth_one_client/app/helpers/asset_path_helper.dart';
 import 'package:mynth_one_client/app/models/activity_model.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
-import 'package:mynth_one_client/app/widgets/activity/activity_list_tile_widget.dart';
+import 'package:mynth_one_client/app/widgets/activity_list_tile_widget.dart';
 import 'package:mynth_one_client/app/widgets/go_back_button_widget.dart';
 import 'package:mynth_one_client/app/widgets/primary_button_widget.dart';
 import 'package:mynth_one_client/app/widgets/text_widget.dart';

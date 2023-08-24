@@ -20,7 +20,11 @@ class _QrButtonWidget extends GetView<DashboardController> {
                   ? AppColors.lightSecondaryVariant
                   : AppColors.darkSecondaryVariant),
         ),
-        onPressed: () {},
+        onPressed: () {
+          Get.toNamed(
+            AppPages.QRSCANNER,
+          );
+        },
       )),
     );
   }

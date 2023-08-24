@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mynth_one_client/app/constants/app_numbers.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
-import 'package:mynth_one_client/app/widgets/activity/activity_list_tile_widget.dart';
+import 'package:mynth_one_client/app/widgets/activity_list_tile_widget.dart';
 import 'package:mynth_one_client/app/widgets/text_widget.dart';
 
 import '../../../models/activity_model.dart';
@@ -47,7 +47,7 @@ class _DashboardActivitiesViewState extends State<DashboardActivitiesView>
           ),
           Expanded(
             child: Container(
-              padding: const EdgeInsets.fromLTRB(20, 10, 20, 20),
+              padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
               child: TabBarView(
                 controller: _tabController,
                 children: const [

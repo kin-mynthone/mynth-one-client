@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:mynth_one_client/app/constants/app_numbers.dart';
 import 'package:mynth_one_client/app/models/card_model.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
-import 'package:mynth_one_client/app/widgets/cards/card_widget.dart';
+import 'package:mynth_one_client/app/widgets/card_widget.dart';
 import 'package:mynth_one_client/app/widgets/primary_button_widget.dart';
 import 'package:mynth_one_client/app/widgets/text_widget.dart';
 

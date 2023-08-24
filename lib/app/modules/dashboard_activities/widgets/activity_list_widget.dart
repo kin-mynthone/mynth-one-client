@@ -8,7 +8,6 @@ class _ActivityListWidget extends GetView<DashboardActivitiesController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(bottom: 5),
       child: controller.activitiesData.length.isEqual(0)
           ? _EmptyData(
               color: controller.getSystemTheme(context)
@@ -55,7 +54,7 @@ class _FadingListViewWidget extends StatelessWidget {
       },
       blendMode: BlendMode.dstOut,
       child: ListView.separated(
-        padding: const EdgeInsets.only(top: 20.0),
+        padding: const EdgeInsets.only(top: 15.0, bottom: 0.0),
         scrollDirection: Axis.vertical,
         itemCount: dataLength,
         itemBuilder: (context, index) {

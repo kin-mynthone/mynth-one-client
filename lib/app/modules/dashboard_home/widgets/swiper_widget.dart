@@ -1,11 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:card_swiper/card_swiper.dart';
+part of '../views/dashboard_home_view.dart';
 
-class SwiperWidget extends StatelessWidget {
+class _SwiperWidget extends StatelessWidget {
   final int itemCount;
   final IndexedWidgetBuilder itemBuilder;
 
-  const SwiperWidget(
+  const _SwiperWidget(
       {super.key, required this.itemCount, required this.itemBuilder});
 
   @override

@@ -11,6 +11,8 @@ import 'package:mynth_one_client/app/modules/login/bindings/login_binding.dart';
 import 'package:mynth_one_client/app/modules/login/views/login_view.dart';
 import 'package:mynth_one_client/app/modules/otp/bindings/otp_binding.dart';
 import 'package:mynth_one_client/app/modules/otp/views/otp_view.dart';
+import 'package:mynth_one_client/app/modules/qr_scanner/bindings/qr_scanner_binding.dart';
+import 'package:mynth_one_client/app/modules/qr_scanner/views/qr_scanner_view.dart';
 import 'package:mynth_one_client/app/modules/registration/bindings/registration_binding.dart';
 import 'package:mynth_one_client/app/modules/registration/views/registration_view.dart';
 
@@ -26,6 +28,8 @@ class AppPages {
   static const INTRODUCTION = Routes.INTRODUCTION;
   static const LOGIN = Routes.LOGIN;
   static const REGISTRATION = Routes.REGISTRATION;
+  static const QRSCANNER = Routes.QRSCANNER;
+
   static const OTP = Routes.OTP;
 
   static const DASHBOARD = Routes.DASHBOARD;
@@ -78,6 +82,13 @@ class AppPages {
       name: _Paths.CARDINFO,
       page: () => const CardInfoView(),
       binding: CardInfoBinding(),
+      transition: Transition.rightToLeftWithFade,
+      fullscreenDialog: true,
+    ),
+    GetPage(
+      name: _Paths.QRSCANNER,
+      page: () => const QrScannerView(),
+      binding: QrScannerBinding(),
       transition: Transition.rightToLeftWithFade,
       fullscreenDialog: true,
     ),

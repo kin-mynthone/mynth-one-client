@@ -1,22 +1,12 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:mynth_one_client/app/constants/app_numbers.dart';
+part of '../views/dashboard_home_view.dart';
 
-import 'package:mynth_one_client/app/modules/dashboard/controllers/dashboard_controller.dart';
-import 'package:mynth_one_client/app/themes/app_colors.dart';
-import 'package:mynth_one_client/app/widgets/activity/activity_list_tile_widget.dart';
-import 'package:mynth_one_client/app/widgets/text_widget.dart';
-
-import '../../models/activity_model.dart';
-
-class ActivityListWidget extends StatelessWidget {
+class _ActivityListWidget extends GetView<DashboardHomeController> {
   final int itemCount;
   final VoidCallback? ontapShowAll;
 
   final List<Data> activitiesData;
 
-  const ActivityListWidget({
+  const _ActivityListWidget({
     Key? key,
     required this.itemCount,
     this.ontapShowAll,
@@ -34,7 +24,7 @@ class ActivityListWidget extends StatelessWidget {
             borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(AppNumbers.cornerRadius),
                 topRight: Radius.circular(AppNumbers.cornerRadius)),
-            color: DashboardController.instance.getSystemTheme(context)
+            color: controller.getSystemTheme(context)
                 ? AppColors.lightBackgroundVariant
                 : AppColors.darkBackgroundVariant),
         child: Column(
@@ -51,10 +41,9 @@ class ActivityListWidget extends StatelessWidget {
                       stringData: 'Activities',
                       fontSize: 20,
                       boldValue: FontWeight.w700,
-                      color:
-                          DashboardController.instance.getSystemTheme(context)
-                              ? AppColors.lightTextPrimary
-                              : AppColors.darkTextPrimary,
+                      color: controller.getSystemTheme(context)
+                          ? AppColors.lightTextPrimary
+                          : AppColors.darkTextPrimary,
                       centerAlignment: false),
                   TextButton(
                     onPressed: () async {
@@ -65,10 +54,9 @@ class ActivityListWidget extends StatelessWidget {
                         stringData: 'View All',
                         fontSize: 13,
                         boldValue: FontWeight.w300,
-                        color:
-                            DashboardController.instance.getSystemTheme(context)
-                                ? AppColors.lightTextSecondary
-                                : AppColors.darkTextSecondary,
+                        color: controller.getSystemTheme(context)
+                            ? AppColors.lightTextSecondary
+                            : AppColors.darkTextSecondary,
                         centerAlignment: false),
                   )
                 ],
@@ -82,8 +70,7 @@ class ActivityListWidget extends StatelessWidget {
                 child: itemCount.isEqual(0)
                     ? Center(
                         child: _EmptyData(
-                          color: DashboardController.instance
-                                  .getSystemTheme(context)
+                          color: controller.getSystemTheme(context)
                               ? AppColors.lightTextPrimary
                               : AppColors.darkTextPrimary,
                         ),
@@ -129,19 +116,17 @@ class _FadingListViewWidget extends StatelessWidget {
           ).createShader(rect);
         },
         blendMode: BlendMode.dstOut,
-        child: Padding(
-          padding: const EdgeInsets.only(top: 10.0, bottom: 20.0),
-          child: ListView.separated(
-            scrollDirection: Axis.vertical,
-            itemCount: dataLength,
-            itemBuilder: (context, index) {
-              return ActivityListTileWidget(
-                activityModel: activities[index],
-                tileOnTap: () {},
-              );
-            },
-            separatorBuilder: (context, index) => const SizedBox(height: 5),
-          ),
+        child: ListView.separated(
+          padding: const EdgeInsets.only(top: 10.0, bottom: 30.0),
+          scrollDirection: Axis.vertical,
+          itemCount: dataLength,
+          itemBuilder: (context, index) {
+            return ActivityListTileWidget(
+              activityModel: activities[index],
+              tileOnTap: () {},
+            );
+          },
+          separatorBuilder: (context, index) => const SizedBox(height: 5),
         ),
       ),
     );
