@@ -7,6 +7,8 @@ class _ForgotPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
+
     return TextButton(
       onPressed: () {
         FocusScope.of(context).unfocus();
@@ -19,7 +21,7 @@ class _ForgotPassword extends StatelessWidget {
               color: LoginController.instance.getSystemTheme(context)
                   ? AppColors.lightTextPrimary
                   : AppColors.darkTextPrimary,
-              fontSize: 13,
+              fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 11,
             ),
       ),
     );

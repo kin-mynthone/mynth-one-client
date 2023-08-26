@@ -5,13 +5,15 @@ class _PageIndicatorWidget extends GetView<RegistrationPageController> {
 
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextWidget(
           stringData: 'personal info'.tr,
-          fontSize: 15,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 14,
           boldValue: FontWeight.w700,
           color: RegistrationController.instance.getSystemTheme(context)
               ? AppColors.lightTextPrimary

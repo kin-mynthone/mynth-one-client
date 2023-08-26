@@ -16,8 +16,8 @@ class FrontCardWidget extends GetView<CardInfoController> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
+    var screenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
     return Card(
       color: Colors.transparent,
       shape: RoundedRectangleBorder(
@@ -26,8 +26,8 @@ class FrontCardWidget extends GetView<CardInfoController> {
       child: Container(
         height: 500,
         padding: EdgeInsets.symmetric(
-          horizontal: size.width * 0.05,
-          vertical: size.height * 0.022,
+          horizontal: screenWidth * 0.05,
+          vertical: screenHeight * 0.022,
         ),
         decoration: BoxDecoration(
           boxShadow: const [
@@ -184,7 +184,8 @@ class BackCardWidget extends GetView<CardInfoController> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    var screenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
 
     return Card(
       color: Colors.transparent,
@@ -218,8 +219,8 @@ class BackCardWidget extends GetView<CardInfoController> {
           children: [
             Padding(
               padding: EdgeInsets.only(
-                  right: size.width * 0.05,
-                  top: size.height * 0.022,
+                  right: screenWidth * 0.05,
+                  top: screenHeight * 0.022,
                   bottom: 10),
               child: Align(
                   alignment: Alignment.topRight,
@@ -259,10 +260,10 @@ class BackCardWidget extends GetView<CardInfoController> {
             ),
             Padding(
               padding: EdgeInsets.only(
-                  right: size.width * 0.05,
-                  left: size.width * 0.05,
+                  right: screenWidth * 0.05,
+                  left: screenWidth * 0.05,
                   top: 10,
-                  bottom: size.height * 0.022),
+                  bottom: screenHeight * 0.022),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

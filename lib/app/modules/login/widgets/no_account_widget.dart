@@ -7,6 +7,8 @@ class _NoAccountWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
+
     return Center(
       child: SizedBox(
         width: MediaQuery.of(context).size.width * 0.80,
@@ -22,7 +24,7 @@ class _NoAccountWidget extends StatelessWidget {
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   fontWeight: FontWeight.w500,
                   color: AppColors.gray,
-                  fontSize: 13,
+                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 11,
                 ),
           ),
         ),

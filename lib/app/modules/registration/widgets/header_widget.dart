@@ -5,6 +5,8 @@ class _HeaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,7 +29,7 @@ class _HeaderWidget extends StatelessWidget {
         ),
         TextWidget(
           stringData: 'quick sign up'.tr,
-          fontSize: 28,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 28 : 23,
           boldValue: FontWeight.w800,
           color: RegistrationController.instance.getSystemTheme(context)
               ? AppColors.lightTextPrimary
@@ -36,7 +38,7 @@ class _HeaderWidget extends StatelessWidget {
         ),
         TextWidget(
           stringData: 'please provide all necessary information'.tr,
-          fontSize: 15,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
           boldValue: FontWeight.normal,
           color: RegistrationController.instance.getSystemTheme(context)
               ? AppColors.lightTextPrimary

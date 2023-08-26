@@ -23,8 +23,8 @@ class IntroductionView extends GetView<IntroductionController> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
+    var screenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -42,8 +42,8 @@ class IntroductionView extends GetView<IntroductionController> {
               child: Align(
                 alignment: Alignment.topCenter,
                 child: SizedBox(
-                  width: size.width * 0.95,
-                  height: size.height * 0.5,
+                  width: screenWidth * 0.95,
+                  height: screenHeight * 0.5,
                   child: CustomPaint(
                     painter: (controller.getSystemTheme(context)
                         ? _BackgroundPainterLight()
@@ -52,84 +52,91 @@ class IntroductionView extends GetView<IntroductionController> {
                 ),
               ),
             ),
+            //------------------
             Positioned.fill(
               top: 20,
-              child: Align(
-                alignment: Alignment.center,
-                child: SizedBox(
-                  width: size.width * 0.42,
-                  height: size.height * 0.5,
-                  child: Container(
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        gradient: LinearGradient(
-                            begin: Alignment.topRight,
-                            end: Alignment.bottomLeft,
-                            colors: [
-                              controller.getSystemTheme(context)
-                                  ? AppColors.darkPrimary
-                                  : AppColors.lightPurple,
-                              controller.getSystemTheme(context)
-                                  ? AppColors.darkPrimary
-                                  : AppColors.lightPurple,
-                              controller.getSystemTheme(context)
-                                  ? AppColors.darkPrimaryVariant
-                                  : AppColors.cyan,
-                              controller.getSystemTheme(context)
-                                  ? AppColors.darkPrimaryVariant
-                                  : AppColors.cyan,
-                            ],
-                            stops: const [
-                              0.1,
-                              0.3,
-                              0.8,
-                              1
-                            ])),
-                  ),
-                ),
-              ),
-            ),
-            Positioned.fill(
-              top: 20,
-              child: Align(
-                alignment: Alignment.center,
-                child: SizedBox(
-                  width: size.width * 0.42,
-                  height: size.height * 0.5,
-                  child: Container(
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      gradient: LinearGradient(
-                        begin: Alignment.bottomLeft,
-                        end: Alignment.topRight,
-                        colors: [
-                          Colors.transparent,
-                          Colors.transparent,
-                          AppColors.darkPrimary,
-                          AppColors.darkPrimary,
-                        ],
-                        stops: [0.1, 0.5, 0.9, 1],
+              child: Stack(
+                children: [
+                  Positioned(
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: SizedBox(
+                        width: screenWidth * 0.42,
+                        height: screenHeight * 0.5,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              gradient: LinearGradient(
+                                  begin: Alignment.topRight,
+                                  end: Alignment.bottomLeft,
+                                  colors: [
+                                    controller.getSystemTheme(context)
+                                        ? AppColors.darkPrimary
+                                        : AppColors.lightPurple,
+                                    controller.getSystemTheme(context)
+                                        ? AppColors.darkPrimary
+                                        : AppColors.lightPurple,
+                                    controller.getSystemTheme(context)
+                                        ? AppColors.darkPrimaryVariant
+                                        : AppColors.cyan,
+                                    controller.getSystemTheme(context)
+                                        ? AppColors.darkPrimaryVariant
+                                        : AppColors.cyan,
+                                  ],
+                                  stops: const [
+                                    0.1,
+                                    0.3,
+                                    0.8,
+                                    1
+                                  ])),
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ),
-            ),
-            Positioned.fill(
-              top: 96,
-              child: Align(
-                alignment: Alignment.topCenter,
-                child: SizedBox(
-                  width: size.width * 0.42,
-                  height: size.height * 0.5,
-                  child: const Image(
-                    image: AssetImage(AssetPath.handCard),
-                    height: 100,
-                    width: 100,
+                  Positioned(
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: SizedBox(
+                        width: screenWidth * 0.42,
+                        height: screenHeight * 0.5,
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            gradient: LinearGradient(
+                              begin: Alignment.bottomLeft,
+                              end: Alignment.topRight,
+                              colors: [
+                                Colors.transparent,
+                                Colors.transparent,
+                                AppColors.darkPrimary,
+                                AppColors.darkPrimary,
+                              ],
+                              stops: [0.1, 0.5, 0.9, 1],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
-                ),
+                  Positioned.fill(
+                    top: screenHeight * 0.101,
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: SizedBox(
+                        width: screenWidth * 0.42,
+                        height: screenHeight * 0.486,
+                        child: const Image(
+                          image: AssetImage(AssetPath.handCard),
+                          height: 100,
+                          width: 100,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
+            //------------------
             Positioned.fill(
               top: 50,
               child: Align(
@@ -146,16 +153,18 @@ class IntroductionView extends GetView<IntroductionController> {
               child: Align(
                 alignment: Alignment.center,
                 child: controller.getSystemTheme(context)
-                    ? const GradientTextLightWidget(
-                        stringData: 'The Digital wallet that connects global',
-                        fontSize: 30,
+                    ? GradientTextLightWidget(
+                        stringData: 'The Digital wallet that\nconnects global',
+                        fontSize:
+                            screenWidth <= 428 && screenWidth > 390 ? 30 : 25,
                         boldValue: FontWeight.w800,
                         heightValue: 1.2,
                         centerAlignment: true,
                       )
-                    : const GradientTextDarkWidget(
-                        stringData: 'The Digital wallet that connects global',
-                        fontSize: 30,
+                    : GradientTextDarkWidget(
+                        stringData: 'The Digital wallet that\nconnects global',
+                        fontSize:
+                            screenWidth <= 428 && screenWidth > 390 ? 30 : 25,
                         boldValue: FontWeight.w800,
                         heightValue: 1.2,
                         centerAlignment: true,
@@ -163,13 +172,13 @@ class IntroductionView extends GetView<IntroductionController> {
               ),
             ),
             Positioned.fill(
-              top: 440,
+              top: screenWidth <= 428 && screenWidth > 390 ? 430 : 410,
               child: Align(
                 alignment: Alignment.center,
                 child: TextWidget(
                   stringData:
                       'Banking Beyond, Welcome\nto the super experience',
-                  fontSize: 15,
+                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
                   boldValue: FontWeight.normal,
                   color: controller.getSystemTheme(context)
                       ? AppColors.lightTextPrimary

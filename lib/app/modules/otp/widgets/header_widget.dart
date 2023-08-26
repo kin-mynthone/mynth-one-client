@@ -5,19 +5,23 @@ class _HeaderWidget extends GetView<OtpController> {
 
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Image.asset(controller.getSystemTheme(context)
-            ? AssetPath.oIllustrationLight
-            : AssetPath.oIllustrationDark),
+        SizedBox(
+          width: screenWidth * 0.6,
+          child: Image.asset(controller.getSystemTheme(context)
+              ? AssetPath.oIllustrationLight
+              : AssetPath.oIllustrationDark),
+        ),
         const SizedBox(
           height: 20,
         ),
         TextWidget(
             stringData: 'OTP Verification',
-            fontSize: 25,
+            fontSize: screenWidth <= 428 && screenWidth > 390 ? 25 : 22,
             boldValue: FontWeight.w600,
             color: controller.getSystemTheme(context)
                 ? AppColors.lightPrimary
@@ -32,7 +36,7 @@ class _HeaderWidget extends GetView<OtpController> {
           children: [
             TextWidget(
                 stringData: 'Enter OTP code sent to ',
-                fontSize: 15,
+                fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
                 boldValue: FontWeight.normal,
                 color: controller.getSystemTheme(context)
                     ? AppColors.lightTextPrimary
@@ -40,7 +44,7 @@ class _HeaderWidget extends GetView<OtpController> {
                 centerAlignment: true),
             TextWidget(
                 stringData: ' ${controller.getphoneNumber()}',
-                fontSize: 15,
+                fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
                 boldValue: FontWeight.w600,
                 letterSpacing: 2,
                 color: controller.getSystemTheme(context)

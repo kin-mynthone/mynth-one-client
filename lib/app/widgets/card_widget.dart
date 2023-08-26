@@ -20,7 +20,8 @@ class CardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    var screenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
 
     return GestureDetector(
       onTap: onTap,
@@ -32,8 +33,8 @@ class CardWidget extends StatelessWidget {
         child: Container(
           height: 230,
           padding: EdgeInsets.symmetric(
-            horizontal: size.width * 0.05,
-            vertical: size.height * 0.022,
+            horizontal: screenWidth * 0.05,
+            vertical: screenHeight * 0.022,
           ),
           decoration: BoxDecoration(
             boxShadow: const [

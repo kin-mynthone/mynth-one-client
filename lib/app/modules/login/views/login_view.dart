@@ -24,45 +24,45 @@ class LoginView extends GetView<LoginController> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    var screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      body: Container(
-        width: size.width,
-        padding: const EdgeInsets.only(
-          top: 40,
-        ),
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(controller.getSystemTheme(context)
-                ? AssetPath.introductionBackgroundLight
-                : AssetPath.introductionBackgroundDark),
-            fit: BoxFit.cover,
+      backgroundColor: controller.getSystemTheme(context)
+          ? AppColors.lightBackgroundVariant
+          : AppColors.darkBackgroundVariant,
+      body: SingleChildScrollView(
+        child: Container(
+          width: screenWidth,
+          padding: const EdgeInsets.only(
+            top: 40,
           ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: AppNumbers.screenPadding, vertical: 10),
-              child: SizedBox(
-                width: 170,
-                child: SvgPicture.asset(
-                  controller.getSystemTheme(context)
-                      ? AssetPath.lightLogo1
-                      : AssetPath.darkLogo1,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(controller.getSystemTheme(context)
+                  ? AssetPath.introductionBackgroundLight
+                  : AssetPath.introductionBackgroundDark),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: AppNumbers.screenPadding, vertical: 10),
+                child: SizedBox(
+                  width: 170,
+                  child: SvgPicture.asset(
+                    controller.getSystemTheme(context)
+                        ? AssetPath.lightLogo1
+                        : AssetPath.darkLogo1,
+                  ),
                 ),
               ),
-            ),
-            Expanded(
-              child: Container(
-                width: size.width,
-                padding: const EdgeInsets.all(
-                  30,
-                ),
+              Container(
+                width: screenWidth,
+                padding: const EdgeInsets.all(30),
                 decoration: BoxDecoration(
                     borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(AppNumbers.cornerRadius),
@@ -103,8 +103,9 @@ class LoginView extends GetView<LoginController> {
                     PrimaryButtonWidget(
                       buttonText: 'PROCEED',
                       height: 50,
-                      fontSize: 15,
-                      boldValue: FontWeight.w800,
+                      fontSize:
+                          screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+                      boldValue: FontWeight.w700,
                       fontColor: controller.getSystemTheme(context)
                           ? AppColors.lightSecondary
                           : AppColors.darkSecondary,
@@ -127,9 +128,9 @@ class LoginView extends GetView<LoginController> {
                     ),
                   ],
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );

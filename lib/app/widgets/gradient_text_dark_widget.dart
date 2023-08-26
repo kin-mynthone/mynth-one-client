@@ -23,15 +23,18 @@ class GradientTextDarkWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GradientText(
-      stringData,
-      style: GoogleFonts.poppins(
-          height: heightValue, fontSize: fontSize, fontWeight: boldValue),
-      textAlign: centerAlignment ? TextAlign.center : TextAlign.left,
-      colors: const [
-        AppColors.cyan, AppColors.lightPurple
-        //add mroe colors here.
-      ],
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: GradientText(
+        stringData,
+        style: GoogleFonts.poppins(
+            height: heightValue, fontSize: fontSize, fontWeight: boldValue),
+        textAlign: centerAlignment ? TextAlign.center : TextAlign.left,
+        colors: const [
+          AppColors.cyan, AppColors.lightPurple
+          //add mroe colors here.
+        ],
+      ),
     );
   }
 }

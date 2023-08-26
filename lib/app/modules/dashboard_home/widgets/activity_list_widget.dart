@@ -15,11 +15,10 @@ class _ActivityListWidget extends GetView<DashboardHomeController> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
+    var screenWidth = MediaQuery.of(context).size.width;
     return Expanded(
       child: Container(
-        width: size.width,
+        width: screenWidth,
         decoration: BoxDecoration(
             borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(AppNumbers.cornerRadius),

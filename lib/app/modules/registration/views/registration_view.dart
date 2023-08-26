@@ -31,39 +31,38 @@ class RegistrationView extends GetView<RegistrationPageController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      body: _buildBody(),
-    );
-  }
-
-  Obx _buildBody() {
-    return Obx(() => SafeArea(
+      body: Obx(
+        () => SafeArea(
           bottom: false,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(AppNumbers.screenPadding),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const _HeaderWidget(),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    const _PageIndicatorWidget(),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    _views[controller.currentIndex]
-                  ],
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(AppNumbers.screenPadding),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const _HeaderWidget(),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      const _PageIndicatorWidget(),
+                      const SizedBox(
+                        height: 40,
+                      ),
+                      _views[controller.currentIndex]
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
 
@@ -71,6 +70,7 @@ class _FirstPart extends GetView<RegistrationController> {
   const _FirstPart({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -128,7 +128,7 @@ class _FirstPart extends GetView<RegistrationController> {
         PrimaryButtonWidget(
           buttonText: 'Next',
           height: 50,
-          fontSize: 15,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
           boldValue: FontWeight.w800,
           fontColor: controller.getSystemTheme(context)
               ? AppColors.lightSecondary
@@ -154,6 +154,8 @@ class _SecondPart extends GetView<RegistrationController> {
   const _SecondPart({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -185,7 +187,7 @@ class _SecondPart extends GetView<RegistrationController> {
         PrimaryButtonWidget(
           buttonText: 'FINISH',
           height: 50,
-          fontSize: 15,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
           boldValue: FontWeight.w800,
           fontColor: controller.getSystemTheme(context)
               ? AppColors.lightSecondary

@@ -5,6 +5,8 @@ class _OtpTextFieldWidget extends GetView<OtpController> {
 
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
+
     return OtpTextField(
       numberOfFields: 4,
       fillColor: controller.getSystemTheme(context)
@@ -22,7 +24,7 @@ class _OtpTextFieldWidget extends GetView<OtpController> {
       showFieldAsBox: true,
       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
       textStyle: GoogleFonts.poppins(
-        fontSize: 22,
+        fontSize: screenWidth <= 428 && screenWidth > 390 ? 22 : 20,
         color: controller.getSystemTheme(context)
             ? AppColors.lightPrimary
             : AppColors.darkPrimary,

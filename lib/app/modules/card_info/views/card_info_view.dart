@@ -22,8 +22,7 @@ class CardInfoView extends GetView<CardInfoController> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
+    var screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
         bottom: false,
@@ -42,7 +41,7 @@ class CardInfoView extends GetView<CardInfoController> {
               ),
               SizedBox(
                 height: 225,
-                width: size.width * 0.9,
+                width: screenWidth * 0.9,
                 child: const CardFlipWidget(),
               ),
               const SizedBox(

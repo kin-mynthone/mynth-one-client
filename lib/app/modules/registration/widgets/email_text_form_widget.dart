@@ -14,6 +14,7 @@ class _EmailTextFormWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
     final defaultBorder = OutlineInputBorder(
       borderRadius: BorderRadius.circular(AppNumbers.inputBorderRadius),
       borderSide: BorderSide(
@@ -28,7 +29,7 @@ class _EmailTextFormWidget extends StatelessWidget {
       children: [
         TextWidget(
           stringData: name,
-          fontSize: 15,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
           boldValue: FontWeight.normal,
           color: RegistrationController.instance.getSystemTheme(context)
               ? AppColors.lightTextPrimary
@@ -46,6 +47,7 @@ class _EmailTextFormWidget extends StatelessWidget {
             color: RegistrationController.instance.getSystemTheme(context)
                 ? AppColors.lightPrimary
                 : AppColors.darkPrimary,
+            fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
           ),
           validator: (String? value) {
             if (value == null || value.trim().isEmpty) {
@@ -61,7 +63,7 @@ class _EmailTextFormWidget extends StatelessWidget {
           decoration: InputDecoration(
             hintText: hintText.tr,
             hintStyle: GoogleFonts.poppins(
-              fontSize: 15,
+              fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
               fontWeight: FontWeight.w400,
               color: RegistrationController.instance.getSystemTheme(context)
                   ? AppColors.lightTextHint
@@ -75,7 +77,10 @@ class _EmailTextFormWidget extends StatelessWidget {
             fillColor: RegistrationController.instance.getSystemTheme(context)
                 ? AppColors.lightBackground
                 : AppColors.darkBackground,
-            errorStyle: GoogleFonts.poppins(color: AppColors.red, fontSize: 13),
+            errorStyle: GoogleFonts.poppins(
+              color: AppColors.red,
+              fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 10,
+            ),
           ),
           textInputAction: TextInputAction.next,
           textCapitalization: TextCapitalization.none,

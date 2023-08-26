@@ -41,13 +41,15 @@ class TextFormWidget extends StatelessWidget {
       borderRadius: BorderRadius.circular(AppNumbers.inputBorderRadius),
       borderSide: BorderSide(color: borderColor, width: 0.3),
     );
+    var screenWidth = MediaQuery.of(context).size.width;
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextWidget(
           stringData: name,
-          fontSize: 15,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
           boldValue: FontWeight.normal,
           color: nameColor,
           centerAlignment: false,
@@ -61,6 +63,7 @@ class TextFormWidget extends StatelessWidget {
           autofocus: false,
           style: GoogleFonts.poppins(
             color: textColor,
+            fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
           ),
           validator: (String? value) {
             if (isRequired) {
@@ -75,7 +78,7 @@ class TextFormWidget extends StatelessWidget {
           decoration: InputDecoration(
             hintText: hintText.tr,
             hintStyle: GoogleFonts.poppins(
-              fontSize: 15,
+              fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
               fontWeight: FontWeight.w400,
               color: hintColor,
             ),
@@ -85,7 +88,9 @@ class TextFormWidget extends StatelessWidget {
             focusedErrorBorder: defaultBorder,
             filled: true,
             fillColor: fillColor,
-            errorStyle: GoogleFonts.poppins(color: AppColors.red, fontSize: 13),
+            errorStyle: GoogleFonts.poppins(
+                color: AppColors.red,
+                fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 10),
           ),
           textInputAction: TextInputAction.next,
           textCapitalization: TextCapitalization.none,

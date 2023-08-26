@@ -9,18 +9,17 @@ class _SwiperWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
+    var screenWidth = MediaQuery.of(context).size.width;
     return SizedBox(
       height: 230,
-      width: size.width * 0.95,
+      width: screenWidth * 0.95,
       child: Swiper(
           itemBuilder: itemBuilder,
           itemCount: itemCount,
           axisDirection: AxisDirection.right,
-          itemWidth: size.width * 0.85,
+          itemWidth: screenWidth * 0.85,
           allowImplicitScrolling: true,
-          containerWidth: size.width,
+          containerWidth: screenWidth,
           layout: SwiperLayout.STACK),
     );
   }
