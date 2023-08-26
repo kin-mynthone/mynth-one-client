@@ -21,6 +21,8 @@ class ActivityListTileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
+
     return ListTile(
       onTap: tileOnTap,
       leading: Container(
@@ -44,27 +46,33 @@ class ActivityListTileWidget extends StatelessWidget {
           ),
         ),
       ),
-      title: TextWidget(
-          stringData: activityModel.typeOfActivity.toString() == 'received'
-              ? SnippetActivitiesController.instance
-                  .getTitle(activityModel.receiver.toString(), true)
-              : SnippetActivitiesController.instance
-                  .getTitle(activityModel.sender.toString(), false),
-          fontSize: 16,
-          boldValue: FontWeight.w500,
-          color: DashboardController.instance.getSystemTheme(context)
-              ? AppColors.lightTextPrimary
-              : AppColors.darkTextPrimary,
-          centerAlignment: false),
-      subtitle: TextWidget(
-          stringData: SnippetActivitiesController.instance
-              .getTime(activityModel.timeStamp!),
-          fontSize: 13,
-          boldValue: FontWeight.w300,
-          color: DashboardController.instance.getSystemTheme(context)
-              ? AppColors.lightTextSecondary
-              : AppColors.darkTextSecondary,
-          centerAlignment: false),
+      title: Align(
+        alignment: Alignment.centerLeft,
+        child: TextWidget(
+            stringData: activityModel.typeOfActivity.toString() == 'received'
+                ? SnippetActivitiesController.instance
+                    .getTitle(activityModel.receiver.toString(), true)
+                : SnippetActivitiesController.instance
+                    .getTitle(activityModel.sender.toString(), false),
+            fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 13,
+            boldValue: FontWeight.w500,
+            color: DashboardController.instance.getSystemTheme(context)
+                ? AppColors.lightTextPrimary
+                : AppColors.darkTextPrimary,
+            centerAlignment: false),
+      ),
+      subtitle: Align(
+        alignment: Alignment.centerLeft,
+        child: TextWidget(
+            stringData: SnippetActivitiesController.instance
+                .getTime(activityModel.timeStamp!),
+            fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 13,
+            boldValue: FontWeight.w300,
+            color: DashboardController.instance.getSystemTheme(context)
+                ? AppColors.lightTextSecondary
+                : AppColors.darkTextSecondary,
+            centerAlignment: false),
+      ),
       trailing: RichText(
         text: TextSpan(
           text: activityModel.typeOfActivity.toString() == 'received'
@@ -74,7 +82,7 @@ class ActivityListTileWidget extends StatelessWidget {
               color: activityModel.typeOfActivity.toString() == 'received'
                   ? AppColors.green
                   : AppColors.red,
-              fontSize: 16,
+              fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 13,
               fontWeight: FontWeight.w600),
           children: <TextSpan>[
             TextSpan(

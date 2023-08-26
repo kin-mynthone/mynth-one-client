@@ -74,8 +74,7 @@ class DashboardHomeView extends GetView<DashboardHomeController> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: AppNumbers.screenPadding),
+                  padding: EdgeInsets.all(AppNumbers.screenPadding),
                   child: _HeaderWidget(
                     profilePath: AppStrings.defaultImageUrl,
                   ),
@@ -104,6 +103,7 @@ class DashboardHomeView extends GetView<DashboardHomeController> {
                         SnippetActivitiesController.instance.activitiesData,
                     itemCount: SnippetActivitiesController
                         .instance.activitiesData.length,
+                    ontapShowAll: () {},
                   ),
                 ),
               ],

@@ -5,16 +5,17 @@ class _QrButtonWidget extends GetView<DashboardController> {
 
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
     return SizedBox(
-      height: 80.0,
-      width: 80.0,
+      height: screenWidth * 0.2,
+      width: screenWidth * 0.2,
       child: FittedBox(
           child: FloatingActionButton(
         elevation: 5.5,
         backgroundColor: AppColors.darkPrimary,
         child: SizedBox(
-          height: 25,
-          width: 25,
+          height: screenWidth * 0.07,
+          width: screenWidth * 0.07,
           child: SvgPicture.asset(AssetPath.dQr,
               color: controller.getSystemTheme(context)
                   ? AppColors.lightSecondaryVariant

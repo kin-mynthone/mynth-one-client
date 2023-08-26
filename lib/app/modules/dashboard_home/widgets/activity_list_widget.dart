@@ -9,7 +9,7 @@ class _ActivityListWidget extends GetView<DashboardHomeController> {
   const _ActivityListWidget({
     Key? key,
     required this.itemCount,
-    this.ontapShowAll,
+    required this.ontapShowAll,
     required this.activitiesData,
   }) : super(key: key);
 
@@ -38,7 +38,8 @@ class _ActivityListWidget extends GetView<DashboardHomeController> {
                 children: [
                   TextWidget(
                       stringData: 'Activities',
-                      fontSize: 20,
+                      fontSize:
+                          screenWidth <= 428 && screenWidth > 390 ? 20 : 17,
                       boldValue: FontWeight.w700,
                       color: controller.getSystemTheme(context)
                           ? AppColors.lightTextPrimary
@@ -51,7 +52,8 @@ class _ActivityListWidget extends GetView<DashboardHomeController> {
                     },
                     child: TextWidget(
                         stringData: 'View All',
-                        fontSize: 13,
+                        fontSize:
+                            screenWidth <= 428 && screenWidth > 390 ? 13 : 12,
                         boldValue: FontWeight.w300,
                         color: controller.getSystemTheme(context)
                             ? AppColors.lightTextSecondary
@@ -139,20 +141,22 @@ class _EmptyData extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         TextWidget(
           stringData: 'No Activity to show',
-          fontSize: 15,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
           boldValue: FontWeight.w800,
           color: color,
           centerAlignment: false,
         ),
         TextWidget(
           stringData: 'Start your first activity now',
-          fontSize: 10,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 11 : 10,
           boldValue: FontWeight.normal,
           color: color,
           centerAlignment: false,

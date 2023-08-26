@@ -11,7 +11,7 @@ class _SwiperWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width;
     return SizedBox(
-      height: 230,
+      height: screenWidth <= 428 && screenWidth > 390 ? 230 : 200,
       width: screenWidth * 0.95,
       child: Swiper(
           itemBuilder: itemBuilder,

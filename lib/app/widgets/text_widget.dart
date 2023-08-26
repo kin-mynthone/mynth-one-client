@@ -24,18 +24,15 @@ class TextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FittedBox(
-      fit: BoxFit.scaleDown,
-      child: Text(
-        stringData,
-        style: GoogleFonts.poppins(
-            fontSize: fontSize,
-            color: color,
-            letterSpacing: letterSpacing,
-            // Set the font family to 'Poppins'
-            fontWeight: boldValue),
-        textAlign: centerAlignment ? TextAlign.center : TextAlign.left,
-      ),
+    return Text(
+      stringData,
+      style: GoogleFonts.poppins(
+          fontSize: fontSize,
+          color: color,
+          letterSpacing: letterSpacing,
+          // Set the font family to 'Poppins'
+          fontWeight: boldValue),
+      textAlign: centerAlignment ? TextAlign.center : TextAlign.left,
     );
   }
 }

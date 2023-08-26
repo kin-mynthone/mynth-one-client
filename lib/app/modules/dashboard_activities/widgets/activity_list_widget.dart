@@ -76,20 +76,22 @@ class _EmptyData extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         TextWidget(
           stringData: 'No Activity to show',
-          fontSize: 23,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 23 : 20,
           boldValue: FontWeight.w800,
           color: color,
           centerAlignment: false,
         ),
         TextWidget(
           stringData: 'Start your first activity now',
-          fontSize: 13,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 12,
           boldValue: FontWeight.normal,
           color: color,
           centerAlignment: false,

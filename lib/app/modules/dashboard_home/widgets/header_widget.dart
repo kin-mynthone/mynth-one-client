@@ -6,8 +6,9 @@ class _HeaderWidget extends GetView<DashboardHomeController> {
 
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
+
     return Container(
-      padding: const EdgeInsets.only(bottom: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -50,7 +51,7 @@ class _HeaderWidget extends GetView<DashboardHomeController> {
                 children: [
                   TextWidget(
                     stringData: 'Hello 👋🏻 ',
-                    fontSize: 15,
+                    fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
                     boldValue: FontWeight.normal,
                     color: controller.getSystemTheme(context)
                         ? AppColors.lightTextPrimary
@@ -59,7 +60,7 @@ class _HeaderWidget extends GetView<DashboardHomeController> {
                   ),
                   TextWidget(
                     stringData: 'Kindred',
-                    fontSize: 22,
+                    fontSize: screenWidth <= 428 && screenWidth > 390 ? 22 : 20,
                     boldValue: FontWeight.w500,
                     color: controller.getSystemTheme(context)
                         ? AppColors.lightTextPrimary

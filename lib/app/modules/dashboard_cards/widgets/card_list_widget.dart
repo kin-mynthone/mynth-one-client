@@ -47,7 +47,7 @@ class _FadingListViewWidget extends StatelessWidget {
       },
       blendMode: BlendMode.dstOut,
       child: ListView.separated(
-        padding: const EdgeInsets.only(top: 15.0, bottom: 0.0),
+        padding: const EdgeInsets.only(top: 15.0, bottom: 30.0),
         scrollDirection: Axis.vertical,
         itemCount: dataLength,
         itemBuilder: (context, index) {
@@ -58,7 +58,7 @@ class _FadingListViewWidget extends StatelessWidget {
             },
           );
         },
-        separatorBuilder: (context, index) => const SizedBox(height: 10),
+        separatorBuilder: (context, index) => const SizedBox(height: 20),
       ),
     );
   }
@@ -71,20 +71,22 @@ class _EmptyData extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         TextWidget(
           stringData: 'No Cards to show',
-          fontSize: 15,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
           boldValue: FontWeight.w800,
           color: color,
           centerAlignment: false,
         ),
         TextWidget(
           stringData: 'You can add your first card here',
-          fontSize: 10,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 11 : 10,
           boldValue: FontWeight.normal,
           color: color,
           centerAlignment: false,

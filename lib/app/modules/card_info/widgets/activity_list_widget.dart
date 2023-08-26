@@ -30,14 +30,15 @@ class _ActivityListWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 30, left: 30, right: 20),
+              padding: const EdgeInsets.only(top: 20, left: 30, right: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   TextWidget(
                       stringData: 'Activities',
-                      fontSize: 20,
+                      fontSize:
+                          screenWidth <= 428 && screenWidth > 390 ? 20 : 17,
                       boldValue: FontWeight.w700,
                       color: CardInfoController.instance.getSystemTheme(context)
                           ? AppColors.lightTextPrimary
@@ -46,23 +47,26 @@ class _ActivityListWidget extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              height: 350,
-              padding: const EdgeInsets.only(
-                left: 10,
-                right: 10,
+            Expanded(
+              child: Container(
+                padding: const EdgeInsets.only(
+                  left: 10,
+                  right: 10,
+                  top: 10,
+                ),
+                child: itemCount.isEqual(0)
+                    ? Center(
+                        child: _EmptyData(
+                        color:
+                            CardInfoController.instance.getSystemTheme(context)
+                                ? AppColors.lightTextPrimary
+                                : AppColors.darkTextPrimary,
+                      ))
+                    : _FadingListViewWidget(
+                        dataLength: itemCount,
+                        activities: activitiesData,
+                      ),
               ),
-              child: itemCount.isEqual(0)
-                  ? Center(
-                      child: _EmptyData(
-                      color: CardInfoController.instance.getSystemTheme(context)
-                          ? AppColors.lightTextPrimary
-                          : AppColors.darkTextPrimary,
-                    ))
-                  : _FadingListViewWidget(
-                      dataLength: itemCount,
-                      activities: activitiesData,
-                    ),
             ),
           ],
         ),
@@ -99,19 +103,17 @@ class _FadingListViewWidget extends StatelessWidget {
           ).createShader(rect);
         },
         blendMode: BlendMode.dstOut,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          child: ListView.separated(
-            scrollDirection: Axis.vertical,
-            itemCount: dataLength,
-            itemBuilder: (context, index) {
-              return ActivityListTileWidget(
-                activityModel: activities[index],
-                tileOnTap: () {},
-              );
-            },
-            separatorBuilder: (context, index) => const SizedBox(height: 5),
-          ),
+        child: ListView.separated(
+          padding: const EdgeInsets.only(top: 10.0, bottom: 30.0),
+          scrollDirection: Axis.vertical,
+          itemCount: dataLength,
+          itemBuilder: (context, index) {
+            return ActivityListTileWidget(
+              activityModel: activities[index],
+              tileOnTap: () {},
+            );
+          },
+          separatorBuilder: (context, index) => const SizedBox(height: 5),
         ),
       ),
     );
@@ -125,20 +127,22 @@ class _EmptyData extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         TextWidget(
           stringData: 'No Activity to show',
-          fontSize: 15,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
           boldValue: FontWeight.w800,
           color: color,
           centerAlignment: false,
         ),
         TextWidget(
           stringData: 'Start your first activity now',
-          fontSize: 10,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 11 : 10,
           boldValue: FontWeight.normal,
           color: color,
           centerAlignment: false,

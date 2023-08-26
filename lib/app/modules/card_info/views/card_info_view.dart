@@ -32,12 +32,11 @@ class CardInfoView extends GetView<CardInfoController> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Padding(
-                padding:
-                    EdgeInsets.symmetric(horizontal: AppNumbers.screenPadding),
+                padding: EdgeInsets.all(AppNumbers.screenPadding),
                 child: _HeaderWidget(),
               ),
               const SizedBox(
-                height: 40,
+                height: 15,
               ),
               SizedBox(
                 height: 225,
@@ -45,7 +44,7 @@ class CardInfoView extends GetView<CardInfoController> {
                 child: const CardFlipWidget(),
               ),
               const SizedBox(
-                height: 40,
+                height: 30,
               ),
               controller.isBackCardShown
                   ? const _BlockThisCardWidget()
@@ -77,6 +76,8 @@ class _BlockThisCardWidget extends GetView<CardInfoController> {
 
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: AppNumbers.screenPadding),
       child: Column(
@@ -84,7 +85,7 @@ class _BlockThisCardWidget extends GetView<CardInfoController> {
           PrimaryButtonWidget(
             buttonText: 'Block THIS CARD',
             height: 50,
-            fontSize: 16,
+            fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 13,
             boldValue: FontWeight.w500,
             iconPath: AssetPath.cCross,
             fontColor: controller.getSystemTheme(context)
@@ -119,7 +120,7 @@ class _BlockThisCardWidget extends GetView<CardInfoController> {
                 child: TextWidget(
                   stringData:
                       'Once blocked, this card will no longer be accepted for online payments or for over the counter transaction. This action cannot be undone.',
-                  fontSize: 13,
+                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 11,
                   boldValue: FontWeight.w500,
                   color: controller.getSystemTheme(context)
                       ? AppColors.gray

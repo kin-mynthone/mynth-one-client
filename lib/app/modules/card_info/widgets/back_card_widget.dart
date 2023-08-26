@@ -38,8 +38,8 @@ class BackCardWidget extends GetView<CardInfoController> {
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
             colors: [
-              Color(int.parse(controller.cardInfo.startColor.toString())),
-              Color(int.parse(controller.cardInfo.endColor.toString())),
+              Color(controller.cardInfo.startColor!),
+              Color(controller.cardInfo.endColor!),
             ],
             stops: const [0.2, 1],
           ),
@@ -88,7 +88,7 @@ class BackCardWidget extends GetView<CardInfoController> {
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 20,
             ),
             Padding(
               padding: EdgeInsets.only(
@@ -108,7 +108,8 @@ class BackCardWidget extends GetView<CardInfoController> {
                               : controller.cardInfo.accountNumber
                                   .toString()
                                   .replaceRange(0, 12, '*** *** *** '),
-                          fontSize: 20,
+                          fontSize:
+                              screenWidth <= 428 && screenWidth > 390 ? 20 : 17,
                           letterSpacing: 3,
                           boldValue: FontWeight.w400,
                           color: AppColors.lightTextPrimary,
@@ -145,7 +146,10 @@ class BackCardWidget extends GetView<CardInfoController> {
                             children: [
                               TextWidget(
                                 stringData: 'Valid Thu',
-                                fontSize: 12,
+                                fontSize:
+                                    screenWidth <= 428 && screenWidth > 390
+                                        ? 12
+                                        : 11,
                                 boldValue: FontWeight.w300,
                                 color: AppColors.lightTextPrimary,
                                 centerAlignment: false,
@@ -156,7 +160,10 @@ class BackCardWidget extends GetView<CardInfoController> {
                               TextWidget(
                                 stringData:
                                     controller.cardInfo.expiration.toString(),
-                                fontSize: 13,
+                                fontSize:
+                                    screenWidth <= 428 && screenWidth > 390
+                                        ? 13
+                                        : 12,
                                 letterSpacing: 3,
                                 boldValue: FontWeight.w400,
                                 color: AppColors.lightTextPrimary,
@@ -173,7 +180,10 @@ class BackCardWidget extends GetView<CardInfoController> {
                             children: [
                               TextWidget(
                                 stringData: 'CVV',
-                                fontSize: 12,
+                                fontSize:
+                                    screenWidth <= 428 && screenWidth > 390
+                                        ? 12
+                                        : 11,
                                 boldValue: FontWeight.w300,
                                 color: AppColors.lightTextPrimary,
                                 centerAlignment: false,
@@ -194,7 +204,10 @@ class BackCardWidget extends GetView<CardInfoController> {
                                               .instance.isDetailsShown
                                           ? controller.cardInfo.cvv.toString()
                                           : '***',
-                                      fontSize: 13,
+                                      fontSize: screenWidth <= 428 &&
+                                              screenWidth > 390
+                                          ? 13
+                                          : 12,
                                       letterSpacing: 3,
                                       boldValue: FontWeight.w400,
                                       color: AppColors.lightSecondaryVariant,
@@ -210,8 +223,14 @@ class BackCardWidget extends GetView<CardInfoController> {
                           controller.cardKey.currentState?.toggleCard(),
                           controller.setIsBackCardShown(false)
                         },
-                        child: SvgPicture.asset(
-                          AssetPath.cTurn,
+                        child: SizedBox(
+                          width:
+                              screenWidth <= 428 && screenWidth > 390 ? 26 : 23,
+                          height:
+                              screenWidth <= 428 && screenWidth > 390 ? 26 : 23,
+                          child: SvgPicture.asset(
+                            AssetPath.cTurn,
+                          ),
                         ),
                       ),
                     ],

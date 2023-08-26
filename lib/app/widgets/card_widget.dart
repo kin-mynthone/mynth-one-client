@@ -31,7 +31,7 @@ class CardWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(AppNumbers.cardBorderRadius),
         ),
         child: Container(
-          height: 230,
+          height: screenWidth <= 428 && screenWidth > 390 ? 230 : 200,
           padding: EdgeInsets.symmetric(
             horizontal: screenWidth * 0.05,
             vertical: screenHeight * 0.022,
@@ -67,7 +67,7 @@ class CardWidget extends StatelessWidget {
                 children: [
                   TextWidget(
                     stringData: cardModel.accountName.toString(),
-                    fontSize: 15,
+                    fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 14,
                     boldValue: FontWeight.w500,
                     color: AppColors.lightTextPrimary,
                     centerAlignment: false,
@@ -83,7 +83,8 @@ class CardWidget extends StatelessWidget {
                     children: [
                       TextWidget(
                         stringData: 'Your balance',
-                        fontSize: 14,
+                        fontSize:
+                            screenWidth <= 428 && screenWidth > 390 ? 14 : 13,
                         boldValue: FontWeight.w300,
                         color: AppColors.lightTextPrimary,
                         centerAlignment: false,
@@ -93,7 +94,8 @@ class CardWidget extends StatelessWidget {
                       ),
                       TextWidget(
                         stringData: '€ ${cardModel.amount}',
-                        fontSize: 30,
+                        fontSize:
+                            screenWidth <= 428 && screenWidth > 390 ? 30 : 27,
                         boldValue: FontWeight.w600,
                         color: AppColors.darkPrimary,
                         centerAlignment: false,
@@ -112,7 +114,9 @@ class CardWidget extends StatelessWidget {
                         children: [
                           TextWidget(
                             stringData: 'A/c Number',
-                            fontSize: 12,
+                            fontSize: screenWidth <= 428 && screenWidth > 390
+                                ? 12
+                                : 11,
                             boldValue: FontWeight.w300,
                             color: AppColors.lightTextPrimary,
                             centerAlignment: false,
@@ -125,7 +129,9 @@ class CardWidget extends StatelessWidget {
                                 .toString()
                                 .substring(8)
                                 .replaceRange(0, 3, '***'),
-                            fontSize: 13,
+                            fontSize: screenWidth <= 428 && screenWidth > 390
+                                ? 13
+                                : 12,
                             letterSpacing: 3,
                             boldValue: FontWeight.w400,
                             color: AppColors.lightTextPrimary,
@@ -141,7 +147,9 @@ class CardWidget extends StatelessWidget {
                         children: [
                           TextWidget(
                             stringData: 'Valid Thu',
-                            fontSize: 12,
+                            fontSize: screenWidth <= 428 && screenWidth > 390
+                                ? 12
+                                : 11,
                             boldValue: FontWeight.w300,
                             color: AppColors.lightTextPrimary,
                             centerAlignment: false,
@@ -151,7 +159,9 @@ class CardWidget extends StatelessWidget {
                           ),
                           TextWidget(
                             stringData: cardModel.expiration.toString(),
-                            fontSize: 13,
+                            fontSize: screenWidth <= 428 && screenWidth > 390
+                                ? 13
+                                : 12,
                             letterSpacing: 3,
                             boldValue: FontWeight.w400,
                             color: AppColors.lightTextPrimary,

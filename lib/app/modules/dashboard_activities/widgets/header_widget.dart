@@ -8,9 +8,11 @@ class _HeaderWidget extends GetView<DashboardActivitiesController> {
 
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
+
     return Container(
       padding: const EdgeInsets.only(top: 60, bottom: 30, left: 20, right: 20),
-      width: MediaQuery.of(context).size.width,
+      width: screenWidth,
       decoration: BoxDecoration(
           boxShadow: const [
             BoxShadow(
@@ -31,7 +33,7 @@ class _HeaderWidget extends GetView<DashboardActivitiesController> {
         children: [
           TextWidget(
             stringData: 'Activities',
-            fontSize: 20,
+            fontSize: screenWidth <= 428 && screenWidth > 390 ? 20 : 17,
             boldValue: FontWeight.w500,
             color: controller.getSystemTheme(context)
                 ? AppColors.lightTextPrimary
@@ -47,7 +49,9 @@ class _HeaderWidget extends GetView<DashboardActivitiesController> {
               child: ButtonsTabBar(
                 controller: tabController,
                 radius: AppNumbers.borderRadius,
-                contentPadding: const EdgeInsets.symmetric(horizontal: 50),
+                contentPadding: EdgeInsets.symmetric(
+                    horizontal:
+                        screenWidth <= 428 && screenWidth > 390 ? 50 : 40),
                 unselectedBackgroundColor: controller.getSystemTheme(context)
                     ? AppColors.lightSecondary
                     : AppColors.darkBackgroundVariant,
@@ -61,13 +65,15 @@ class _HeaderWidget extends GetView<DashboardActivitiesController> {
                         ? AppColors.lightTextHint
                         : AppColors.darkTextHint,
                     fontWeight: FontWeight.w700,
-                    fontSize: 12),
+                    fontSize:
+                        screenWidth <= 428 && screenWidth > 390 ? 12 : 11),
                 labelStyle: GoogleFonts.poppins(
                     color: controller.getSystemTheme(context)
                         ? AppColors.lightSecondaryVariant
                         : AppColors.darkSecondaryVariant,
                     fontWeight: FontWeight.w700,
-                    fontSize: 12),
+                    fontSize:
+                        screenWidth <= 428 && screenWidth > 390 ? 12 : 11),
                 height: 56,
                 onTap: (index) => {},
                 tabs: const [

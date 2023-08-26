@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:mynth_one_client/app/modules/card_info/controllers/card_info_controller.dart';
 
 import 'front_card_widget.dart';
+import 'back_card_widget.dart';
 
 class CardFlipWidget extends GetView<CardInfoController> {
   const CardFlipWidget({
