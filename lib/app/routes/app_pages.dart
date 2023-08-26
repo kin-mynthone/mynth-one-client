@@ -11,10 +11,10 @@ import 'package:mynth_one_client/app/modules/login/bindings/login_binding.dart';
 import 'package:mynth_one_client/app/modules/login/views/login_view.dart';
 import 'package:mynth_one_client/app/modules/otp/bindings/otp_binding.dart';
 import 'package:mynth_one_client/app/modules/otp/views/otp_view.dart';
-import 'package:mynth_one_client/app/modules/qr_scanner/bindings/qr_scanner_binding.dart';
-import 'package:mynth_one_client/app/modules/qr_scanner/views/qr_scanner_view.dart';
 import 'package:mynth_one_client/app/modules/registration/bindings/registration_binding.dart';
 import 'package:mynth_one_client/app/modules/registration/views/registration_view.dart';
+import 'package:mynth_one_client/app/modules/scan_to_pay/bindings/scan_to_pay_binding.dart';
+import 'package:mynth_one_client/app/modules/scan_to_pay/views/scan_to_pay_view.dart';
 
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
@@ -87,8 +87,8 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.QRSCANNER,
-      page: () => const QrScannerView(),
-      binding: QrScannerBinding(),
+      page: () => const ScanToPayView(),
+      binding: ScanToPayBinding(),
       transition: Transition.rightToLeftWithFade,
       fullscreenDialog: true,
     ),

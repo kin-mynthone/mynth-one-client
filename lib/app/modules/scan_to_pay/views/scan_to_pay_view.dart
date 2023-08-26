@@ -1,15 +1,19 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mynth_one_client/app/constants/app_numbers.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
 import 'package:mynth_one_client/app/widgets/go_back_button_widget.dart';
 import 'package:mynth_one_client/app/widgets/text_widget.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
 
-import '../controllers/qr_scanner_controller.dart';
+import '../controllers/scan_to_pay_controller.dart';
 part '../widgets/header_widget.dart';
+part '../widgets/qr_scanner_widget.dart';
 
-class QrScannerView extends GetView<QrScannerStatus> {
-  const QrScannerView({Key? key}) : super(key: key);
+class ScanToPayView extends GetView<ScanToPayStatus> {
+  const ScanToPayView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +31,8 @@ class QrScannerView extends GetView<QrScannerStatus> {
               child: _HeaderWidget(),
             ),
             SizedBox(
-              height: 40,
+              height: 500,
+              child: _QrScannerWidget(),
             ),
           ],
         ),

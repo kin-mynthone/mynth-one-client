@@ -1,6 +1,6 @@
-part of '../views/qr_scanner_view.dart';
+part of '../views/scan_to_pay_view.dart';
 
-class _HeaderWidget extends GetView<QrScannerController> {
+class _HeaderWidget extends GetView<ScanToPayController> {
   const _HeaderWidget({Key? key}) : super(key: key);
 
   @override
@@ -21,7 +21,7 @@ class _HeaderWidget extends GetView<QrScannerController> {
           width: 20,
         ),
         TextWidget(
-          stringData: 'QR Scanner',
+          stringData: 'Scan to Pay',
           fontSize: 20,
           boldValue: FontWeight.w500,
           color: controller.getSystemTheme(context)
