@@ -1,9 +1,9 @@
 {
   "projects": {
-    "default": "afex-mobile-dev",
-    "staging": "afex-mobile-stg",
-    "production": "afex-mobile-prod",
-    "dev": "afex-mobile-dev"
+    "default": "mynth-one-client-dev",
+    "staging": "mynth-one-client-stg",
+    "production": "mynth-one-client-prod",
+    "dev": "mynth-one-client-dev"
   },
   "targets": {},
   "etags": {}

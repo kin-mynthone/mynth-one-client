@@ -5,7 +5,7 @@ class _SwiperWidget extends StatelessWidget {
   final IndexedWidgetBuilder itemBuilder;
 
   const _SwiperWidget(
-      {super.key, required this.itemCount, required this.itemBuilder});
+      {required this.itemCount, required this.itemBuilder});
 
   @override
   Widget build(BuildContext context) {

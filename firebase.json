@@ -37,9 +37,10 @@
     "singleProjectMode": true
   },
   "firestore": {
-  "rules": "firebase_firestore.rules"
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
   },
   "storage": {
-  "rules": "firebase_storage.rules"
+    "rules": "firebase_storage.rules"
   }
 }

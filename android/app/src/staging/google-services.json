@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:337509060980:android:0d9007b1428819901e5c21",
+        "mobilesdk_app_id": "1:337509060980:android:23ef2fcb6b735b8a1e5c21",
         "android_client_info": {
-          "package_name": "com.example.mynth_one_client.staging"
+          "package_name": "io.mynthchain.mynth_one_client.stg"
         }
       },
       "oauth_client": [
@@ -31,10 +31,10 @@
               "client_type": 3
             },
             {
-              "client_id": "337509060980-8mv9al7pin6oth7d35rhnbr3oqe47pe8.apps.googleusercontent.com",
+              "client_id": "337509060980-6jjsfq5g7mh2pcii2s6hfbl5f4l895ba.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.mynthOneClient.stg"
+                "bundle_id": "io.mynthchain.mynthOneClient.stg"
               }
             }
           ]

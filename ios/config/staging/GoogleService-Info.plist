@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>337509060980-8mv9al7pin6oth7d35rhnbr3oqe47pe8.apps.googleusercontent.com</string>
+	<string>337509060980-6jjsfq5g7mh2pcii2s6hfbl5f4l895ba.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.337509060980-8mv9al7pin6oth7d35rhnbr3oqe47pe8</string>
+	<string>com.googleusercontent.apps.337509060980-6jjsfq5g7mh2pcii2s6hfbl5f4l895ba</string>
 	<key>API_KEY</key>
 	<string>AIzaSyD5h5rTO3MKvq52h6hkfKtw5aWvHITXI8c</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.mynthOneClient.stg</string>
+	<string>io.mynthchain.mynthOneClient.stg</string>
 	<key>PROJECT_ID</key>
 	<string>mynth-one-client-stg</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:337509060980:ios:d4d5eb00e881acee1e5c21</string>
+	<string>1:337509060980:ios:bd64c2eae9df88c01e5c21</string>
 </dict>
 </plist>
