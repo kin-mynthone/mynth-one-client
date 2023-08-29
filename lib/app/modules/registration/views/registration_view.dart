@@ -33,7 +33,6 @@ class RegistrationView extends GetView<RegistrationPageController> {
     return Scaffold(
       body: Obx(
         () => SafeArea(
-          bottom: false,
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,

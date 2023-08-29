@@ -23,7 +23,7 @@ class _QrButtonWidget extends GetView<DashboardController> {
         ),
         onPressed: () {
           Get.toNamed(
-            AppPages.QRSCANNER,
+            AppPages.QR_SCANNER,
           );
         },
       )),

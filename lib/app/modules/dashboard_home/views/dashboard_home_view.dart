@@ -68,7 +68,6 @@ class DashboardHomeView extends GetView<DashboardHomeController> {
           // ),
 
           SafeArea(
-            bottom: false,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,

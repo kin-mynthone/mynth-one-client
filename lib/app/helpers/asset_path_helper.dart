@@ -6,6 +6,9 @@ class AssetPath {
   static const lightLogo = '$_iconMainPath/logo/logo_light.svg';
   static const darkLogo = '$_iconMainPath/logo/logo_dark.svg';
 
+  static const logoLightPrimary = '$_iconMainPath/logo/logo_light_primary.png';
+  static const logoDarkPrimary = '$_iconMainPath/logo/logo_dark_primary.png';
+
   static const lightLogo1 = '$_iconMainPath/logo/logo_light1.svg';
   static const darkLogo1 = '$_iconMainPath/logo/logo_dark1.svg';
 
@@ -48,4 +51,9 @@ class AssetPath {
   static const cTurn = '$_iconMainPath/common/turn.svg';
   static const cCross = '$_iconMainPath/common/cross.svg';
   static const cInfo = '$_iconMainPath/common/info.svg';
+  static const cLeftArrow = '$_iconMainPath/common/left_arrow.svg';
+  static const cUploadQr = '$_iconMainPath/common/upload_qr.svg';
+  static const cQrCode = '$_iconMainPath/common/qr_code.svg';
+  static const cShare = '$_iconMainPath/common/share.svg';
+  static const cDownloadQr = '$_iconMainPath/common/download_qr.svg';
 }

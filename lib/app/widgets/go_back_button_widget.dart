@@ -19,6 +19,7 @@ class GoBackButton extends StatelessWidget {
       onPressed: onPressed,
       tooltip: 'go back'.tr,
       padding: EdgeInsets.zero,
+      alignment: Alignment.center,
       constraints: const BoxConstraints(),
       icon: Icon(
         LineIcons.arrowLeft,

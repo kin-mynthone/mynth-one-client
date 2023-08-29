@@ -25,7 +25,6 @@ class OtpView extends GetView<OtpController> {
           : AppColors.darkBackgroundVariant,
       resizeToAvoidBottomInset: false,
       body: SafeArea(
-        bottom: false,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,

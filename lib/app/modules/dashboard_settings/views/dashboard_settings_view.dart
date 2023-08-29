@@ -14,7 +14,6 @@ class DashboardSettingsView extends GetView<DashboardSettingsController> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: SafeArea(
-        bottom: false,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,

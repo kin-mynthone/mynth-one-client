@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mynth_one_client/app/helpers/my_logger_helper.dart';
+import 'package:mynth_one_client/app/routes/app_pages.dart';
 
 enum ScanToPayStatus { initial, loading, succeeded, failed, error, invalid }
 
@@ -9,10 +10,10 @@ class ScanToPayController extends GetxController {
   late Worker _statusEverWorker;
 
   final _status = ScanToPayStatus.initial.obs;
-  final _stringSample = ''.obs;
+  final _scannedQr = ''.obs;
 
   ScanToPayStatus get status => _status.value;
-  String get stringSample => _stringSample.value;
+  String get scannedQr => _scannedQr.value;
 
   bool get isLoading => _status.value == ScanToPayStatus.loading;
   bool get hasSucceeded => _status.value == ScanToPayStatus.succeeded;
@@ -22,7 +23,7 @@ class ScanToPayController extends GetxController {
   final tooltipkey = GlobalKey<TooltipState>();
 
   String currentState() =>
-      'ScanToPayController(_status: ${_status.value},  _stringSample: ${_stringSample.value}, ';
+      'ScanToPayController(_status: ${_status.value},  _scannedQr: ${_scannedQr.value}, ';
 
   @override
   void onInit() {
@@ -64,8 +65,8 @@ class ScanToPayController extends GetxController {
     );
   }
 
-  void setstringSampleValue(String stringSample) {
-    _stringSample.value = stringSample.trim();
+  void setscannedQrValue(String scannedQr) {
+    _scannedQr.value = scannedQr.trim();
     MyLogger.printInfo(currentState());
   }
 
@@ -73,5 +74,11 @@ class ScanToPayController extends GetxController {
     var brightness = MediaQuery.of(context).platformBrightness;
 
     return brightness == Brightness.light;
+  }
+
+  goToPersonalQrCode() {
+    Get.toNamed(
+      AppPages.PERSONAL_QR_CODE,
+    );
   }
 }

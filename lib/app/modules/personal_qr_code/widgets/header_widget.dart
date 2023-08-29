@@ -1,6 +1,6 @@
-part of '../views/card_info_view.dart';
+part of '../views/personal_qr_code_view.dart';
 
-class _HeaderWidget extends GetView<CardInfoController> {
+class _HeaderWidget extends GetView<PersonalQrCodeController> {
   const _HeaderWidget({Key? key}) : super(key: key);
 
   @override
@@ -8,8 +8,8 @@ class _HeaderWidget extends GetView<CardInfoController> {
     var screenWidth = MediaQuery.of(context).size.width;
 
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         GoBackButton(
           iconColor: controller.getSystemTheme(context)
@@ -19,8 +19,11 @@ class _HeaderWidget extends GetView<CardInfoController> {
             Get.back(closeOverlays: true);
           },
         ),
+        const SizedBox(
+          width: 20,
+        ),
         TextWidget(
-          stringData: controller.cardInfo.accountName.toString(),
+          stringData: 'Personal Qr Code',
           fontSize: screenWidth <= 428 && screenWidth > 390 ? 20 : 17,
           boldValue: FontWeight.w500,
           color: controller.getSystemTheme(context)
@@ -28,19 +31,6 @@ class _HeaderWidget extends GetView<CardInfoController> {
               : AppColors.darkTextPrimary,
           centerAlignment: false,
         ),
-        IconButton(
-          onPressed: () {},
-          tooltip: 'edit info'.tr,
-          padding: EdgeInsets.zero,
-          constraints: const BoxConstraints(),
-          icon: Icon(
-            LineIcons.edit,
-            size: 27,
-            color: controller.getSystemTheme(context)
-                ? AppColors.lightPrimary
-                : AppColors.darkPrimary,
-          ),
-        )
       ],
     );
   }

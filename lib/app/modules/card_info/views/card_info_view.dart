@@ -25,7 +25,6 @@ class CardInfoView extends GetView<CardInfoController> {
     var screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
-        bottom: false,
         child: Obx(
           () => Column(
             mainAxisAlignment: MainAxisAlignment.start,

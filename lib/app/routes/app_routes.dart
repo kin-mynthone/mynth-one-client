@@ -13,7 +13,8 @@ abstract class Routes {
 
   static const DASHBOARD = _Paths.DASHBOARD;
   static const CARDINFO = _Paths.CARDINFO;
-  static const QRSCANNER = _Paths.QRSCANNER;
+  static const QR_SCANNER = _Paths.QR_SCANNER;
+  static const PERSONAL_QR_CODE = _Paths.PERSONAL_QR_CODE;
 }
 
 abstract class _Paths {
@@ -25,6 +26,7 @@ abstract class _Paths {
   static const OTP = '/otp';
 
   static const DASHBOARD = '/dashboard';
-  static const CARDINFO = '/cardInfo';
-  static const QRSCANNER = '/qrScanner';
+  static const CARDINFO = '/card-info';
+  static const QR_SCANNER = '/qr-scanner';
+  static const PERSONAL_QR_CODE = '/personal-qr-code';
 }
