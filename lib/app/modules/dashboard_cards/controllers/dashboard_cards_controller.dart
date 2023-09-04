@@ -96,9 +96,9 @@ class DashboardCardsController extends GetxController {
     }
   }
 
-  goToCardInfo(Data data) {
+  void goToCardInfo(Data data) {
     Get.toNamed(
-      AppPages.CARDINFO,
+      AppPages.CARD_INFO,
       arguments: data,
     );
   }

@@ -12,9 +12,10 @@ abstract class Routes {
   static const OTP = _Paths.OTP;
 
   static const DASHBOARD = _Paths.DASHBOARD;
-  static const CARDINFO = _Paths.CARDINFO;
+  static const CARD_INFO = _Paths.CARD_INFO;
   static const QR_SCANNER = _Paths.QR_SCANNER;
   static const PERSONAL_QR_CODE = _Paths.PERSONAL_QR_CODE;
+  static const TRANSFER_MONEY = _Paths.TRANSFER_MONEY;
 }
 
 abstract class _Paths {
@@ -26,7 +27,8 @@ abstract class _Paths {
   static const OTP = '/otp';
 
   static const DASHBOARD = '/dashboard';
-  static const CARDINFO = '/card-info';
+  static const CARD_INFO = '/card-info';
   static const QR_SCANNER = '/qr-scanner';
   static const PERSONAL_QR_CODE = '/personal-qr-code';
+  static const TRANSFER_MONEY = '/transfer-money';
 }

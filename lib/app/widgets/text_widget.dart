@@ -26,6 +26,7 @@ class TextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       stringData,
+      overflow: TextOverflow.ellipsis,
       style: GoogleFonts.poppins(
           fontSize: fontSize,
           color: color,

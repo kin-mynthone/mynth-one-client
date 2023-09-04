@@ -15,38 +15,23 @@ import 'package:mynth_one_client/app/themes/app_colors.dart';
 
 part '../widgets/bottom_navigation_bar_widget.dart';
 part '../widgets/qr_button_widget.dart';
+part '../widgets/body_widget.dart';
 
 class DashboardView extends GetView<DashboardController> {
   const DashboardView({Key? key}) : super(key: key);
 
-  static final _views = <Widget>[
-    const DashboardHomeView(),
-    const DashboardCardView(),
-    Container(),
-    const DashboardActivitiesView(),
-    const DashboardSettingsView(),
-  ];
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: _buildBody(),
-      floatingActionButton: const _QrButtonWidget(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: Obx(
-        () => Container(
-          color: controller.currentIndex == 0
-              ? controller.getSystemTheme(context)
-                  ? AppColors.lightBackgroundVariant
-                  : AppColors.darkBackgroundVariant
-              : Colors.transparent,
-          child: const _BottomNavigationBarWidget(),
+    return const Stack(
+      children: [
+        Scaffold(
+          body: _BodyWidget(),
+          bottomNavigationBar: _BottomNavigationBarWidget(),
+          floatingActionButton: _QrButtonWidget(),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerDocked,
         ),
-      ),
+      ],
     );
-  }
-
-  Obx _buildBody() {
-    return Obx(() => _views[controller.currentIndex]);
   }
 }

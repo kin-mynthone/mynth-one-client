@@ -30,8 +30,9 @@ class MynthOneApp extends StatelessWidget {
       enabled: false,
       builder: (context) => GetMaterialApp(
         title: '${flavor.title}MynthOne',
-        initialRoute:
-            isDoneWithOnboarding ? AppPages.SPLASH : AppPages.INTRODUCTION,
+        initialRoute: isDoneWithOnboarding
+            ? AppPages.SPLASH
+            : AppPages.DASHBOARD, //todo change to INTRODUCTION
         getPages: AppPages.routes,
         defaultTransition: Transition.rightToLeft,
         debugShowCheckedModeBanner: kDebugMode ? true : false,

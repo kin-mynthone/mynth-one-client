@@ -76,7 +76,7 @@ class ScanToPayController extends GetxController {
     return brightness == Brightness.light;
   }
 
-  goToPersonalQrCode() {
+  void goToPersonalQrCode() {
     Get.toNamed(
       AppPages.PERSONAL_QR_CODE,
     );

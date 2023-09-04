@@ -83,10 +83,16 @@ class DashboardHomeController extends GetxController {
     }
   }
 
-  goToCardInfo(Data data) {
+  void goToCardInfo(Data data) {
     Get.toNamed(
-      AppPages.CARDINFO,
+      AppPages.CARD_INFO,
       arguments: data,
+    );
+  }
+
+  void gotoTransferMoney() {
+    Get.toNamed(
+      AppPages.TRANSFER_MONEY,
     );
   }
 }

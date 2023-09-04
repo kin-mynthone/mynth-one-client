@@ -1,6 +1,4 @@
-import 'dart:io';
 import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mynth_one_client/app/constants/app_numbers.dart';
@@ -11,7 +9,6 @@ import 'package:mynth_one_client/app/widgets/go_back_button_widget.dart';
 import 'package:mynth_one_client/app/widgets/text_widget.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:screenshot/screenshot.dart';
-import 'package:share_plus/share_plus.dart';
 
 import '../controllers/personal_qr_code_controller.dart';
 part '../widgets/header_widget.dart';

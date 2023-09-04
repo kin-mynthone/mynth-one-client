@@ -40,6 +40,8 @@ class AppColors {
   static const Color lightRed = Color.fromARGB(50, 255, 116, 116);
   static const Color warning = Color(0xFFFF9384);
   static const Color gray = Color(0xFFA6ABB4);
+  static const Color orange = Color(0xFFFBB810);
+
   static const Color lightGray = Color(0xFFD9D9D9);
   static const Color primaryTranslucent = Color.fromARGB(43, 123, 116, 255);
   static const Color primaryTranslucent2 = Color.fromARGB(128, 123, 116, 255);

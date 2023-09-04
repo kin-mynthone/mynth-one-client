@@ -11,12 +11,12 @@ import 'package:mynth_one_client/app/widgets/text_widget.dart';
 
 class ActivityListTileWidget extends StatelessWidget {
   final Data activityModel;
-  final VoidCallback tileOnTap;
+  final VoidCallback onTap;
 
   const ActivityListTileWidget({
     super.key,
     required this.activityModel,
-    required this.tileOnTap,
+    required this.onTap,
   });
 
   @override
@@ -24,7 +24,7 @@ class ActivityListTileWidget extends StatelessWidget {
     var screenWidth = MediaQuery.of(context).size.width;
 
     return ListTile(
-      onTap: tileOnTap,
+      onTap: onTap,
       leading: Container(
         padding: const EdgeInsets.all(10.0),
         decoration: BoxDecoration(

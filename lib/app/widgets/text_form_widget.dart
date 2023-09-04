@@ -18,6 +18,7 @@ class TextFormWidget extends StatelessWidget {
   final Color hintColor;
   final Color fillColor;
   final TextInputType keyboardType;
+  final TextEditingController? controller;
 
   final void Function(String?)? onChanged;
 
@@ -32,7 +33,8 @@ class TextFormWidget extends StatelessWidget {
     required this.hintColor,
     required this.fillColor,
     required this.keyboardType,
-    required this.onChanged,
+    this.onChanged,
+    this.controller,
   }) : super(key: key);
 
   @override
@@ -47,13 +49,15 @@ class TextFormWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TextWidget(
-          stringData: name,
-          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
-          boldValue: FontWeight.normal,
-          color: nameColor,
-          centerAlignment: false,
-        ),
+        name.isNotEmpty
+            ? TextWidget(
+                stringData: name,
+                fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+                boldValue: FontWeight.normal,
+                color: nameColor,
+                centerAlignment: false,
+              )
+            : Container(),
         const SizedBox(
           height: 10,
         ),
@@ -61,6 +65,7 @@ class TextFormWidget extends StatelessWidget {
           name: name,
           onChanged: onChanged,
           autofocus: false,
+          controller: controller,
           style: GoogleFonts.poppins(
             color: textColor,
             fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
@@ -95,7 +100,7 @@ class TextFormWidget extends StatelessWidget {
           textInputAction: TextInputAction.next,
           textCapitalization: TextCapitalization.none,
           autovalidateMode: AutovalidateMode.onUserInteraction,
-          keyboardType: TextInputType.text,
+          keyboardType: keyboardType,
         ),
       ],
     );

@@ -1,0 +1,67 @@
+{
+    "data": [
+        {
+            "id": "0",
+            "icon": "https://via.placeholder.com/300x300",
+            "bank": "HSBC",
+            "receiver": "Kyra Inocencio",
+            "account_number": "123759392750"
+        },
+        {
+            "id": "1",
+            "icon": "https://via.placeholder.com/300x300",
+            "bank": "BNP Paribas",
+            "receiver": "Kyra Inocencio",
+            "account_number": "123759392750"
+        },
+        {
+            "id": "2",
+            "icon": "https://via.placeholder.com/300x300",
+            "bank": "Crédit Agricole",
+            "receiver": "Kyra Inocencio",
+            "account_number": "123759392750"
+        },
+        {
+            "id": "3",
+            "icon": "https://via.placeholder.com/300x300",
+            "bank": "Barclays",
+            "receiver": "Kyra Inocencio",
+            "account_number": "123759392750"
+        },
+        {
+            "id": "4",
+            "icon": "https://via.placeholder.com/300x300",
+            "bank": "Banco Santander",
+            "receiver": "Kyra Inocencio",
+            "account_number": "123759392750"
+        },
+        {
+            "id": "5",
+            "icon": "https://via.placeholder.com/300x300",
+            "bank": "Groupe BPCE",
+            "receiver": "Kyra Inocencio",
+            "account_number": "123759392750"
+        },
+        {
+            "id": "6",
+            "icon": "https://via.placeholder.com/300x300",
+            "bank": "Société Générale",
+            "receiver": "Kyra Inocencio",
+            "account_number": "123759392750"
+        },
+        {
+            "id": "7",
+            "icon": "https://via.placeholder.com/300x300",
+            "bank": "Deutsche Bank",
+            "receiver": "Kyra Inocencio",
+            "account_number": "123759392750"
+        },
+        {
+            "id": "8",
+            "icon": "https://via.placeholder.com/300x300",
+            "bank": "Crédit Mutuel",
+            "receiver": "Kyra Inocencio",
+            "account_number": "123759392750"
+        }
+    ]
+}

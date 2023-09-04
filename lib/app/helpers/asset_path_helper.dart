@@ -52,6 +52,8 @@ class AssetPath {
   static const cCross = '$_iconMainPath/common/cross.svg';
   static const cInfo = '$_iconMainPath/common/info.svg';
   static const cLeftArrow = '$_iconMainPath/common/left_arrow.svg';
+  static const cRightArrow = '$_iconMainPath/common/right_arrow.svg';
+
   static const cUploadQr = '$_iconMainPath/common/upload_qr.svg';
   static const cQrCode = '$_iconMainPath/common/qr_code.svg';
   static const cShare = '$_iconMainPath/common/share.svg';

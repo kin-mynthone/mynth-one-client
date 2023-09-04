@@ -17,6 +17,8 @@ import 'package:mynth_one_client/app/modules/registration/bindings/registration_
 import 'package:mynth_one_client/app/modules/registration/views/registration_view.dart';
 import 'package:mynth_one_client/app/modules/scan_to_pay/bindings/scan_to_pay_binding.dart';
 import 'package:mynth_one_client/app/modules/scan_to_pay/views/scan_to_pay_view.dart';
+import 'package:mynth_one_client/app/modules/transfer_money/bindings/transfer_money_binding.dart';
+import 'package:mynth_one_client/app/modules/transfer_money/views/transfer_money_view.dart';
 
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
@@ -36,7 +38,8 @@ class AppPages {
   static const OTP = Routes.OTP;
 
   static const DASHBOARD = Routes.DASHBOARD;
-  static const CARDINFO = Routes.CARDINFO;
+  static const CARD_INFO = Routes.CARD_INFO;
+  static const TRANSFER_MONEY = Routes.TRANSFER_MONEY;
 
   static final routes = [
     GetPage(
@@ -82,7 +85,7 @@ class AppPages {
       fullscreenDialog: true,
     ),
     GetPage(
-      name: _Paths.CARDINFO,
+      name: _Paths.CARD_INFO,
       page: () => const CardInfoView(),
       binding: CardInfoBinding(),
       transition: Transition.rightToLeftWithFade,
@@ -99,6 +102,13 @@ class AppPages {
       name: _Paths.PERSONAL_QR_CODE,
       page: () => const PersonalQrCodeView(),
       binding: PersonalQrCodeBinding(),
+      transition: Transition.rightToLeftWithFade,
+      fullscreenDialog: true,
+    ),
+    GetPage(
+      name: _Paths.TRANSFER_MONEY,
+      page: () => const TransferMoneyView(),
+      binding: TransferMoneyBinding(),
       transition: Transition.rightToLeftWithFade,
       fullscreenDialog: true,
     ),

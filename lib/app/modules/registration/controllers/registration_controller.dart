@@ -124,7 +124,7 @@ class RegistrationController extends GetxController {
     tooltipkey.currentState?.ensureTooltipVisible();
   }
 
-  goToDashboard() {
+  void goToDashboard() {
     Get.offAllNamed(AppPages.OTP);
   }
 

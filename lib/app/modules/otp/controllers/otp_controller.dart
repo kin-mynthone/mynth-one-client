@@ -100,7 +100,7 @@ class OtpController extends GetxController {
     );
   }
 
-  goToDashboard() {
+  void goToDashboard() {
     Get.offAllNamed(AppPages.DASHBOARD);
   }
 

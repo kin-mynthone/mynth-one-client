@@ -124,7 +124,7 @@ class _FadingListViewWidget extends StatelessWidget {
           itemBuilder: (context, index) {
             return ActivityListTileWidget(
               activityModel: activities[index],
-              tileOnTap: () {},
+              onTap: () {},
             );
           },
           separatorBuilder: (context, index) => const SizedBox(height: 5),

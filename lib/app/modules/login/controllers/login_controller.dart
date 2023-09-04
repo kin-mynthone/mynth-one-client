@@ -99,12 +99,12 @@ class LoginController extends GetxController {
     tooltipkey.currentState?.ensureTooltipVisible();
   }
 
-  goToForgotPassword() {}
+  void goToForgotPassword() {}
   goToRegistration() {
     Get.toNamed(AppPages.REGISTRATION);
   }
 
-  goToOtp() {
+  void goToOtp() {
     Get.offAllNamed(AppPages.OTP);
   }
 

@@ -27,6 +27,7 @@ class CardWidget extends StatelessWidget {
       onTap: onTap,
       child: Card(
         color: Colors.transparent,
+        shadowColor: Colors.transparent,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppNumbers.cardBorderRadius),
         ),

@@ -1,0 +1,49 @@
+{
+    "data": [
+        {
+            "id": "0",
+            "icon": "https://via.placeholder.com/300x300",
+            "title": "HSBC"
+        },
+        {
+            "id": "1",
+            "icon": "https://via.placeholder.com/300x300",
+            "title": "BNP Paribas"
+        },
+        {
+            "id": "2",
+            "icon": "https://via.placeholder.com/300x300",
+            "title": "Crédit Agricole"
+        },
+        {
+            "id": "3",
+            "icon": "https://via.placeholder.com/300x300",
+            "title": "Barclays"
+        },
+        {
+            "id": "4",
+            "icon": "https://via.placeholder.com/300x300",
+            "title": "Banco Santander"
+        },
+        {
+            "id": "5",
+            "icon": "https://via.placeholder.com/300x300",
+            "title": "Groupe BPCE"
+        },
+        {
+            "id": "6",
+            "icon": "https://via.placeholder.com/300x300",
+            "title": "Société Générale"
+        },
+        {
+            "id": "7",
+            "icon": "https://via.placeholder.com/300x300",
+            "title": "Deutsche Bank"
+        },
+        {
+            "id": "8",
+            "icon": "https://via.placeholder.com/300x300",
+            "title": "Crédit Mutuel"
+        }
+    ]
+}

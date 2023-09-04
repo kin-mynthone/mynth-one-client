@@ -58,7 +58,7 @@ class _QuickOptionsWidget extends GetView<DashboardHomeController> {
               highlightColor: controller.getSystemTheme(context)
                   ? AppColors.red.withOpacity(0.15)
                   : AppColors.red.withOpacity(0.15),
-              onTap: () => {},
+              onTap: () => {controller.gotoTransferMoney()},
             ),
             const SizedBox(
               width: 10,
