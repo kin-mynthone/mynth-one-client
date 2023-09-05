@@ -16,16 +16,12 @@ class DashboardCardView extends GetView<DashboardCardsController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       resizeToAvoidBottomInset: false,
       body: Column(
         children: [
-          const _HeaderWidget(),
-          Expanded(
-            child: Container(
-                padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                child: const _CardListWidget()),
-          ),
+          _HeaderWidget(),
+          Expanded(child: _CardListWidget()),
         ],
       ),
     );

@@ -61,15 +61,15 @@ class FavoriteListTileWidget extends StatelessWidget {
                 ),
               ),
               TextWidget(
-                  overflow: false,
+                  overflow: true,
                   stringData: favoriteReceiverModel.receiver.toString(),
-                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 10,
+                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
                   boldValue: FontWeight.w500,
                   color: FavoriteReceiverController.instance
                           .getSystemTheme(context)
                       ? AppColors.lightTextPrimary
                       : AppColors.darkTextPrimary,
-                  centerAlignment: false),
+                  centerAlignment: true),
             ],
           ),
         ),

@@ -51,8 +51,6 @@ class _ActivityListWidget extends StatelessWidget {
             Expanded(
               child: Container(
                 padding: const EdgeInsets.only(
-                  left: 10,
-                  right: 10,
                   top: 10,
                 ),
                 child: itemCount.isEqual(0)
@@ -105,7 +103,8 @@ class _FadingListViewWidget extends StatelessWidget {
         },
         blendMode: BlendMode.dstOut,
         child: ListView.separated(
-          padding: const EdgeInsets.only(top: 10.0, bottom: 30.0),
+          padding: const EdgeInsets.only(
+              top: 10.0, bottom: 30.0, left: 10, right: 10),
           scrollDirection: Axis.vertical,
           itemCount: dataLength,
           itemBuilder: (context, index) {

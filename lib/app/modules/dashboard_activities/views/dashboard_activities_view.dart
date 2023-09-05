@@ -47,19 +47,16 @@ class _DashboardActivitiesViewState extends State<DashboardActivitiesView>
             tabController: _tabController,
           ),
           Expanded(
-            child: Container(
-              padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-              child: TabBarView(
-                controller: _tabController,
-                children: const [
-                  _ActivityListWidget(
-                    status: 'received',
-                  ),
-                  _ActivityListWidget(
-                    status: 'transfer',
-                  ),
-                ],
-              ),
+            child: TabBarView(
+              controller: _tabController,
+              children: const [
+                _ActivityListWidget(
+                  status: 'received',
+                ),
+                _ActivityListWidget(
+                  status: 'transfer',
+                ),
+              ],
             ),
           ),
         ],

@@ -66,23 +66,18 @@ class _ActivityListWidget extends GetView<DashboardHomeController> {
               ),
             ),
             Expanded(
-              child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 10,
-                ),
-                child: itemCount.isEqual(0)
-                    ? Center(
-                        child: _EmptyData(
-                          color: controller.getSystemTheme(context)
-                              ? AppColors.lightTextPrimary
-                              : AppColors.darkTextPrimary,
-                        ),
-                      )
-                    : _FadingListViewWidget(
-                        dataLength: itemCount,
-                        activities: activitiesData,
+              child: itemCount.isEqual(0)
+                  ? Center(
+                      child: _EmptyData(
+                        color: controller.getSystemTheme(context)
+                            ? AppColors.lightTextPrimary
+                            : AppColors.darkTextPrimary,
                       ),
-              ),
+                    )
+                  : _FadingListViewWidget(
+                      dataLength: itemCount,
+                      activities: activitiesData,
+                    ),
             ),
           ],
         ),
@@ -120,7 +115,8 @@ class _FadingListViewWidget extends StatelessWidget {
         },
         blendMode: BlendMode.dstOut,
         child: ListView.separated(
-          padding: const EdgeInsets.only(top: 10.0, bottom: 30.0),
+          padding: const EdgeInsets.only(
+              top: 10.0, bottom: 30.0, left: 10, right: 10),
           scrollDirection: Axis.vertical,
           itemCount: dataLength,
           itemBuilder: (context, index) {

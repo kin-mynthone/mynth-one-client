@@ -12,8 +12,8 @@ class CardListWidget extends GetView<CardsController> {
   const CardListWidget({super.key});
   @override
   Widget build(BuildContext context) {
-    return Obx(
-      () => Container(
+    return Expanded(
+      child: Container(
         child: controller.cardData.length.isEqual(0)
             ? _EmptyData(
                 color: controller.getSystemTheme(context)
@@ -57,7 +57,8 @@ class _FadingListViewWidget extends StatelessWidget {
       },
       blendMode: BlendMode.dstOut,
       child: ListView.separated(
-        padding: const EdgeInsets.only(top: 15.0, bottom: 30.0),
+        padding:
+            const EdgeInsets.only(top: 15.0, bottom: 30.0, left: 20, right: 20),
         scrollDirection: Axis.vertical,
         itemCount: dataLength,
         itemBuilder: (context, index) {
