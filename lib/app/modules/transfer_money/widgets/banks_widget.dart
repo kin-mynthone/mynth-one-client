@@ -28,6 +28,7 @@ class _BanksWidget extends GetView<TransferMoneyController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TextWidget(
+                overflow: false,
                 stringData: 'Banks',
                 fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
                 boldValue: FontWeight.w500,

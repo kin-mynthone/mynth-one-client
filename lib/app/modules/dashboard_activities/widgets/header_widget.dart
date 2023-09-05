@@ -32,6 +32,7 @@ class _HeaderWidget extends GetView<DashboardActivitiesController> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           TextWidget(
+            overflow: false,
             stringData: 'Activities',
             fontSize: screenWidth <= 428 && screenWidth > 390 ? 20 : 17,
             boldValue: FontWeight.w500,

@@ -9,7 +9,7 @@ import 'package:mynth_one_client/app/themes/app_colors.dart';
 import 'package:mynth_one_client/app/widgets/text_widget.dart';
 
 class CardWidget extends StatelessWidget {
-  final Data cardModel;
+  final Cards cardModel;
   final VoidCallback? onTap;
 
   const CardWidget({
@@ -67,6 +67,7 @@ class CardWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   TextWidget(
+                    overflow: false,
                     stringData: cardModel.accountName.toString(),
                     fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 14,
                     boldValue: FontWeight.w500,
@@ -83,6 +84,7 @@ class CardWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       TextWidget(
+                        overflow: false,
                         stringData: 'Your balance',
                         fontSize:
                             screenWidth <= 428 && screenWidth > 390 ? 14 : 13,
@@ -94,6 +96,7 @@ class CardWidget extends StatelessWidget {
                         height: 1,
                       ),
                       TextWidget(
+                        overflow: false,
                         stringData: '€ ${cardModel.amount}',
                         fontSize:
                             screenWidth <= 428 && screenWidth > 390 ? 30 : 27,
@@ -114,6 +117,7 @@ class CardWidget extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           TextWidget(
+                            overflow: false,
                             stringData: 'A/c Number',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 12
@@ -126,6 +130,7 @@ class CardWidget extends StatelessWidget {
                             height: 5,
                           ),
                           TextWidget(
+                            overflow: false,
                             stringData: cardModel.accountNumber
                                 .toString()
                                 .substring(8)
@@ -147,6 +152,7 @@ class CardWidget extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           TextWidget(
+                            overflow: false,
                             stringData: 'Valid Thu',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 12
@@ -159,6 +165,7 @@ class CardWidget extends StatelessWidget {
                             height: 5,
                           ),
                           TextWidget(
+                            overflow: false,
                             stringData: cardModel.expiration.toString(),
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 13

@@ -8,6 +8,6 @@ class ProfileView extends GetView<ProfileController> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: Placeholder());
+    return const Scaffold(resizeToAvoidBottomInset: false, body: Placeholder());
   }
 }

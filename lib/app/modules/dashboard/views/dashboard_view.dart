@@ -25,6 +25,7 @@ class DashboardView extends GetView<DashboardController> {
     return const Stack(
       children: [
         Scaffold(
+          resizeToAvoidBottomInset: false,
           body: _BodyWidget(),
           bottomNavigationBar: _BottomNavigationBarWidget(),
           floatingActionButton: _QrButtonWidget(),

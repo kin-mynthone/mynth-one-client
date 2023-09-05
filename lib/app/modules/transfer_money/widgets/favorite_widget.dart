@@ -15,6 +15,7 @@ class _FavoriteWidget extends GetView<TransferMoneyController> {
           padding:
               const EdgeInsets.only(left: AppNumbers.screenPadding, bottom: 10),
           child: TextWidget(
+            overflow: false,
             stringData: 'Favorites',
             fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
             boldValue: FontWeight.w500,

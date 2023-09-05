@@ -86,7 +86,7 @@ class _FirstPart extends GetView<RegistrationController> {
               : AppColors.darkTextPrimary,
           textColor: controller.getSystemTheme(context)
               ? AppColors.lightPrimary
-              : AppColors.darkPrimary,
+              : AppColors.darkTextPrimary,
           hintColor: controller.getSystemTheme(context)
               ? AppColors.lightTextHint
               : AppColors.darkTextHint,
@@ -111,7 +111,7 @@ class _FirstPart extends GetView<RegistrationController> {
               : AppColors.darkTextPrimary,
           textColor: controller.getSystemTheme(context)
               ? AppColors.lightPrimary
-              : AppColors.darkPrimary,
+              : AppColors.darkTextPrimary,
           hintColor: controller.getSystemTheme(context)
               ? AppColors.lightTextHint
               : AppColors.darkTextHint,

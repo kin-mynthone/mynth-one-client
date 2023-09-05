@@ -8,6 +8,7 @@ class TextWidget extends StatelessWidget {
   final String stringData;
   final FontWeight boldValue;
   final double fontSize;
+  final bool overflow;
   double? letterSpacing = 10;
   final Color color;
   final bool centerAlignment;
@@ -19,14 +20,15 @@ class TextWidget extends StatelessWidget {
       required this.boldValue,
       required this.color,
       required this.centerAlignment,
-      this.letterSpacing})
+      this.letterSpacing,
+      required this.overflow})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Text(
       stringData,
-      overflow: TextOverflow.ellipsis,
+      overflow: overflow ? TextOverflow.ellipsis : null,
       style: GoogleFonts.poppins(
           fontSize: fontSize,
           color: color,

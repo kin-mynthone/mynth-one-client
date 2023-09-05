@@ -22,6 +22,7 @@ class PersonalQrCodeView extends GetView<PersonalQrCodeController> {
     var screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -65,7 +66,8 @@ class PersonalQrCodeView extends GetView<PersonalQrCodeController> {
                       height: 30,
                     ),
                     TextWidget(
-                        stringData: 'Kindred Inocencio',
+                        overflow: false,
+                        stringData: 'Howie Valino',
                         fontSize:
                             screenWidth <= 428 && screenWidth > 390 ? 23 : 20,
                         boldValue: FontWeight.w700,

@@ -28,6 +28,7 @@ class _PhoneNumberTextFormWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextWidget(
+          overflow: false,
           stringData: name,
           fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
           boldValue: FontWeight.normal,
@@ -46,7 +47,7 @@ class _PhoneNumberTextFormWidget extends StatelessWidget {
           style: GoogleFonts.poppins(
             color: RegistrationController.instance.getSystemTheme(context)
                 ? AppColors.lightPrimary
-                : AppColors.darkPrimary,
+                : AppColors.darkTextPrimary,
             fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
           ),
           validator: (String? value) {

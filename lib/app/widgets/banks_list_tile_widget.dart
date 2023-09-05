@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mynth_one_client/app/constants/app_strings.dart';
 import 'package:mynth_one_client/app/helpers/asset_path_helper.dart';
 import 'package:mynth_one_client/app/models/banks_model.dart';
 import 'package:mynth_one_client/app/modules/dashboard/controllers/dashboard_controller.dart';
@@ -50,6 +49,7 @@ class BanksListTileWidget extends StatelessWidget {
       title: Align(
         alignment: Alignment.centerLeft,
         child: TextWidget(
+            overflow: false,
             stringData: banksModel.title.toString(),
             fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 13,
             boldValue: FontWeight.w500,

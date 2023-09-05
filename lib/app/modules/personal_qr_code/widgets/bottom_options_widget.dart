@@ -87,6 +87,7 @@ class _BottomOptionsWidget extends GetView<PersonalQrCodeController> {
       useSafeArea: false,
       context: context,
       builder: (context) => Scaffold(
+        resizeToAvoidBottomInset: false,
         body: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -112,6 +113,7 @@ class _BottomOptionsWidget extends GetView<PersonalQrCodeController> {
                         width: 20,
                       ),
                       TextWidget(
+                        overflow: false,
                         stringData: 'Captured',
                         fontSize:
                             screenWidth <= 428 && screenWidth > 390 ? 20 : 17,

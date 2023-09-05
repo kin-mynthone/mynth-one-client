@@ -25,6 +25,7 @@ class DashboardHomeView extends GetView<DashboardHomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           //? maybe we can use this later

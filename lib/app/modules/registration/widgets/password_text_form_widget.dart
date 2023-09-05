@@ -28,6 +28,7 @@ class _PasswordTextFormWidget extends GetView<RegistrationController> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextWidget(
+          overflow: false,
           stringData: name,
           fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
           boldValue: FontWeight.normal,
@@ -47,7 +48,7 @@ class _PasswordTextFormWidget extends GetView<RegistrationController> {
               style: GoogleFonts.poppins(
                 color: controller.getSystemTheme(context)
                     ? AppColors.lightPrimary
-                    : AppColors.darkPrimary,
+                    : AppColors.darkTextPrimary,
                 fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
               ),
               autocorrect: false,

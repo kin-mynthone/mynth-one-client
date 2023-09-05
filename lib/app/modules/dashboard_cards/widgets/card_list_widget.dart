@@ -4,24 +4,26 @@ class _CardListWidget extends GetView<DashboardCardsController> {
   const _CardListWidget();
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: controller.cardData.length.isEqual(0)
-          ? _EmptyData(
-              color: controller.getSystemTheme(context)
-                  ? AppColors.lightTextPrimary
-                  : AppColors.darkTextPrimary,
-            )
-          : _FadingListViewWidget(
-              dataLength: controller.cardData.length,
-              cardData: controller.cardData.toList(),
-            ),
+    return Obx(
+      () => Container(
+        child: controller.cardData.length.isEqual(0)
+            ? _EmptyData(
+                color: controller.getSystemTheme(context)
+                    ? AppColors.lightTextPrimary
+                    : AppColors.darkTextPrimary,
+              )
+            : _FadingListViewWidget(
+                dataLength: controller.cardData.length,
+                cardData: controller.cardData.toList(),
+              ),
+      ),
     );
   }
 }
 
 class _FadingListViewWidget extends StatelessWidget {
   final int dataLength;
-  final List<Data> cardData;
+  final List<Cards> cardData;
   const _FadingListViewWidget(
       {required this.dataLength, required this.cardData});
   @override
@@ -78,6 +80,7 @@ class _EmptyData extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         TextWidget(
+          overflow: false,
           stringData: 'No Cards to show',
           fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
           boldValue: FontWeight.w800,
@@ -85,6 +88,7 @@ class _EmptyData extends StatelessWidget {
           centerAlignment: false,
         ),
         TextWidget(
+          overflow: false,
           stringData: 'You can add your first card here',
           fontSize: screenWidth <= 428 && screenWidth > 390 ? 11 : 10,
           boldValue: FontWeight.normal,

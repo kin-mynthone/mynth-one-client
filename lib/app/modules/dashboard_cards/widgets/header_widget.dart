@@ -28,6 +28,7 @@ class _HeaderWidget extends GetView<DashboardCardsController> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           TextWidget(
+            overflow: false,
             stringData: 'Cards',
             fontSize: screenWidth <= 428 && screenWidth > 390 ? 20 : 18,
             boldValue: FontWeight.w500,
@@ -57,6 +58,7 @@ class _HeaderWidget extends GetView<DashboardCardsController> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       TextWidget(
+                        overflow: false,
                         stringData: '4',
                         fontSize:
                             screenWidth <= 428 && screenWidth > 390 ? 25 : 22,
@@ -74,6 +76,7 @@ class _HeaderWidget extends GetView<DashboardCardsController> {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           TextWidget(
+                            overflow: false,
                             stringData: 'Total',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 12
@@ -85,6 +88,7 @@ class _HeaderWidget extends GetView<DashboardCardsController> {
                             centerAlignment: false,
                           ),
                           TextWidget(
+                            overflow: false,
                             stringData: 'Cards',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 12

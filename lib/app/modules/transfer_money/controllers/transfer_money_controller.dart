@@ -28,8 +28,8 @@ class TransferMoneyController extends GetxController {
   final _amountController = TextEditingController();
   final _receiverEmailController = TextEditingController();
 
-  final _accountNumberSender = '123123'.obs;
-  final _accountNameSender = 'kindred'.obs;
+  final _accountNumberSender = ''.obs;
+  final _accountNameSender = ''.obs;
   final _transferFee = 1.obs;
 
   final _status = TransferMoneyStatus.initial.obs;
@@ -133,5 +133,18 @@ class TransferMoneyController extends GetxController {
     var brightness = MediaQuery.of(context).platformBrightness;
 
     return brightness == Brightness.light;
+  }
+
+  String insertSpaceAfterEvery4thCharacter(String input) {
+    StringBuffer buffer = StringBuffer();
+
+    for (int i = 0; i < input.length; i++) {
+      buffer.write(input[i]);
+      if ((i + 1) % 4 == 0 && (i + 1) != input.length) {
+        buffer.write(' ');
+      }
+    }
+
+    return buffer.toString();
   }
 }

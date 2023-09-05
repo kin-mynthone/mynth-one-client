@@ -56,6 +56,7 @@ class FrontCardWidget extends GetView<CardInfoController> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 TextWidget(
+                  overflow: false,
                   stringData: controller.cardInfo.accountName.toString(),
                   fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
                   boldValue: FontWeight.w500,
@@ -72,6 +73,7 @@ class FrontCardWidget extends GetView<CardInfoController> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TextWidget(
+                      overflow: false,
                       stringData: 'Your balance',
                       fontSize:
                           screenWidth <= 428 && screenWidth > 390 ? 14 : 13,
@@ -83,6 +85,7 @@ class FrontCardWidget extends GetView<CardInfoController> {
                       height: 1,
                     ),
                     TextWidget(
+                      overflow: false,
                       stringData: '€ ${controller.cardInfo.amount}',
                       fontSize:
                           screenWidth <= 428 && screenWidth > 390 ? 30 : 27,
@@ -107,6 +110,7 @@ class FrontCardWidget extends GetView<CardInfoController> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             TextWidget(
+                              overflow: false,
                               stringData: 'A/c Number',
                               fontSize: screenWidth <= 428 && screenWidth > 390
                                   ? 12
@@ -119,6 +123,7 @@ class FrontCardWidget extends GetView<CardInfoController> {
                               height: 5,
                             ),
                             TextWidget(
+                              overflow: false,
                               stringData: controller.cardInfo.accountNumber
                                   .toString()
                                   .substring(8)
@@ -140,6 +145,7 @@ class FrontCardWidget extends GetView<CardInfoController> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             TextWidget(
+                              overflow: false,
                               stringData: 'Valid Thu',
                               fontSize: screenWidth <= 428 && screenWidth > 390
                                   ? 12
@@ -152,6 +158,7 @@ class FrontCardWidget extends GetView<CardInfoController> {
                               height: 5,
                             ),
                             TextWidget(
+                              overflow: false,
                               stringData:
                                   controller.cardInfo.expiration.toString(),
                               fontSize: screenWidth <= 428 && screenWidth > 390

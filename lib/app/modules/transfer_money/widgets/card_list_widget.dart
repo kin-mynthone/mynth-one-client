@@ -1,27 +1,28 @@
-part of '../views/dashboard_activities_view.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:mynth_one_client/app/models/card_model.dart';
+import 'package:mynth_one_client/app/modules/transfer_money/controllers/transfer_money_controller.dart';
+import 'package:mynth_one_client/app/themes/app_colors.dart';
+import 'package:mynth_one_client/app/widgets/card_widget.dart';
+import 'package:mynth_one_client/app/widgets/text_widget.dart';
 
-class _ActivityListWidget extends GetView<DashboardActivitiesController> {
-  final String status;
-  const _ActivityListWidget({
-    required this.status,
-  });
+import '../controllers/cards_controller.dart';
+
+class CardListWidget extends GetView<CardsController> {
+  const CardListWidget({super.key});
   @override
   Widget build(BuildContext context) {
     return Obx(
       () => Container(
-        child: controller.activitiesData.length.isEqual(0)
+        child: controller.cardData.length.isEqual(0)
             ? _EmptyData(
                 color: controller.getSystemTheme(context)
                     ? AppColors.lightTextPrimary
                     : AppColors.darkTextPrimary,
               )
             : _FadingListViewWidget(
-                dataLength: controller.activitiesData
-                    .where((element) => element.typeOfActivity == status)
-                    .length,
-                activities: controller.activitiesData
-                    .where((element) => element.typeOfActivity == status)
-                    .toList(),
+                dataLength: controller.cardData.length,
+                cardData: controller.cardData.toList(),
               ),
       ),
     );
@@ -30,9 +31,9 @@ class _ActivityListWidget extends GetView<DashboardActivitiesController> {
 
 class _FadingListViewWidget extends StatelessWidget {
   final int dataLength;
-  final List<Data> activities;
+  final List<Cards> cardData;
   const _FadingListViewWidget(
-      {required this.dataLength, required this.activities});
+      {required this.dataLength, required this.cardData});
   @override
   Widget build(BuildContext context) {
     return ShaderMask(
@@ -48,24 +49,31 @@ class _FadingListViewWidget extends StatelessWidget {
           ],
           stops: [
             0.0,
-            0.1,
-            0.9,
-            1.0
+            0.05,
+            0.95,
+            1.04
           ], // 10% purple, 80% transparent, 10% purple
         ).createShader(rect);
       },
       blendMode: BlendMode.dstOut,
       child: ListView.separated(
-        padding: const EdgeInsets.only(top: 15.0, bottom: 0.0),
+        padding: const EdgeInsets.only(top: 15.0, bottom: 30.0),
         scrollDirection: Axis.vertical,
         itemCount: dataLength,
         itemBuilder: (context, index) {
-          return ActivityListTileWidget(
-            activityModel: activities[index],
-            onTap: () {},
+          return CardWidget(
+            cardModel: cardData[index],
+            onTap: () {
+              TransferMoneyController.instance.setAccountNameSenderValue(
+                  cardData[index].accountName.toString());
+              TransferMoneyController.instance.setAccountNumberSenderValue(
+                  cardData[index].accountNumber.toString());
+              FocusScope.of(context).unfocus();
+              Navigator.of(context).pop();
+            },
           );
         },
-        separatorBuilder: (context, index) => const SizedBox(height: 5),
+        separatorBuilder: (context, index) => const SizedBox(height: 20),
       ),
     );
   }
@@ -86,16 +94,16 @@ class _EmptyData extends StatelessWidget {
       children: [
         TextWidget(
           overflow: false,
-          stringData: 'No Activity to show',
-          fontSize: screenWidth <= 428 && screenWidth > 390 ? 23 : 20,
+          stringData: 'No Cards to show',
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
           boldValue: FontWeight.w800,
           color: color,
           centerAlignment: false,
         ),
         TextWidget(
           overflow: false,
-          stringData: 'Start your first activity now',
-          fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 12,
+          stringData: 'You can add your first card here',
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 11 : 10,
           boldValue: FontWeight.normal,
           color: color,
           centerAlignment: false,

@@ -29,6 +29,7 @@ class _EmailTextFormWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextWidget(
+          overflow: false,
           stringData: name,
           fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
           boldValue: FontWeight.normal,
@@ -47,7 +48,7 @@ class _EmailTextFormWidget extends StatelessWidget {
           style: GoogleFonts.poppins(
               color: LoginController.instance.getSystemTheme(context)
                   ? AppColors.lightPrimary
-                  : AppColors.darkPrimary,
+                  : AppColors.darkTextPrimary,
               fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12),
           validator: (String? value) {
             if (value == null || value.trim().isEmpty) {

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mynth_one_client/app/constants/app_numbers.dart';
-import 'package:mynth_one_client/app/constants/app_strings.dart';
 import 'package:mynth_one_client/app/models/favorite_receiver_model.dart';
 import 'package:mynth_one_client/app/modules/transfer_money/controllers/favorite_receiver_controller.dart';
 import 'package:mynth_one_client/app/themes/app_colors.dart';
@@ -62,6 +61,7 @@ class FavoriteListTileWidget extends StatelessWidget {
                 ),
               ),
               TextWidget(
+                  overflow: false,
                   stringData: favoriteReceiverModel.receiver.toString(),
                   fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 10,
                   boldValue: FontWeight.w500,

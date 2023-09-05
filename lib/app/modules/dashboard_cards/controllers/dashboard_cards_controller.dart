@@ -20,14 +20,14 @@ class DashboardCardsController extends GetxController {
   GlobalKey<FormBuilderState> get formKey => _formKey;
   String get stringSample => _stringSample.value;
 
-  final _cardData = <Data>[].obs;
+  final _cardData = <Cards>[].obs;
 
   bool get isLoading => _status.value == DashboardCardStatus.loading;
   bool get hasSucceeded => _status.value == DashboardCardStatus.succeeded;
   bool get hasFailed => _status.value == DashboardCardStatus.failed;
   bool get isInvalid => _status.value == DashboardCardStatus.invalid;
 
-  List<Data> get cardData => _cardData;
+  List<Cards> get cardData => _cardData;
 
   String currentState() =>
       'DashboardCardsController(_status: ${_status.value},  _stringSample: ${_stringSample.value}, ';
@@ -96,7 +96,7 @@ class DashboardCardsController extends GetxController {
     }
   }
 
-  void goToCardInfo(Data data) {
+  void goToCardInfo(Cards data) {
     Get.toNamed(
       AppPages.CARD_INFO,
       arguments: data,

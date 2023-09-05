@@ -24,6 +24,7 @@ class CardInfoView extends GetView<CardInfoController> {
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Obx(
           () => Column(
@@ -117,6 +118,7 @@ class _BlockThisCardWidget extends GetView<CardInfoController> {
               ),
               Flexible(
                 child: TextWidget(
+                  overflow: false,
                   stringData:
                       'Once blocked, this card will no longer be accepted for online payments or for over the counter transaction. This action cannot be undone.',
                   fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 11,

@@ -13,6 +13,7 @@ class DashboardSettingsView extends GetView<DashboardSettingsController> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

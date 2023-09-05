@@ -10,6 +10,7 @@ class _HeaderWidget extends GetView<LoginController> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextWidget(
+          overflow: false,
           stringData: 'Sign In',
           fontSize: 20,
           boldValue: FontWeight.w800,
@@ -44,6 +45,7 @@ class _HeaderWidget extends GetView<LoginController> {
           ),
         ),
         TextWidget(
+          overflow: false,
           stringData: 'Please sign in to continue',
           fontSize: 15,
           boldValue: FontWeight.normal,

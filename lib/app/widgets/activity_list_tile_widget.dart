@@ -49,6 +49,7 @@ class ActivityListTileWidget extends StatelessWidget {
       title: Align(
         alignment: Alignment.centerLeft,
         child: TextWidget(
+            overflow: false,
             stringData: activityModel.typeOfActivity.toString() == 'received'
                 ? SnippetActivitiesController.instance
                     .getTitle(activityModel.receiver.toString(), true)
@@ -64,6 +65,7 @@ class ActivityListTileWidget extends StatelessWidget {
       subtitle: Align(
         alignment: Alignment.centerLeft,
         child: TextWidget(
+            overflow: false,
             stringData: SnippetActivitiesController.instance
                 .getTime(activityModel.timeStamp!),
             fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 13,

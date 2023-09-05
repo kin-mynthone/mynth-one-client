@@ -49,6 +49,7 @@ class _HeaderWidget extends GetView<DashboardHomeController> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 TextWidget(
+                  overflow: false,
                   stringData: 'Hello 👋🏻 ',
                   fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
                   boldValue: FontWeight.normal,
@@ -58,6 +59,7 @@ class _HeaderWidget extends GetView<DashboardHomeController> {
                   centerAlignment: false,
                 ),
                 TextWidget(
+                  overflow: false,
                   stringData: 'Howie V.',
                   fontSize: screenWidth <= 428 && screenWidth > 390 ? 22 : 20,
                   boldValue: FontWeight.w500,

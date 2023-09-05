@@ -51,6 +51,7 @@ class TextFormWidget extends StatelessWidget {
       children: [
         name.isNotEmpty
             ? TextWidget(
+                overflow: false,
                 stringData: name,
                 fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
                 boldValue: FontWeight.normal,

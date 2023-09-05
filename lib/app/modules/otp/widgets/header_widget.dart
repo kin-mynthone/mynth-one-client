@@ -20,6 +20,7 @@ class _HeaderWidget extends GetView<OtpController> {
           height: 20,
         ),
         TextWidget(
+            overflow: false,
             stringData: 'OTP Verification',
             fontSize: screenWidth <= 428 && screenWidth > 390 ? 25 : 22,
             boldValue: FontWeight.w600,
@@ -35,6 +36,7 @@ class _HeaderWidget extends GetView<OtpController> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             TextWidget(
+                overflow: false,
                 stringData: 'Enter OTP code sent to ',
                 fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
                 boldValue: FontWeight.normal,
@@ -43,6 +45,7 @@ class _HeaderWidget extends GetView<OtpController> {
                     : AppColors.darkTextPrimary,
                 centerAlignment: true),
             TextWidget(
+                overflow: false,
                 stringData: ' ${controller.getphoneNumber()}',
                 fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
                 boldValue: FontWeight.w600,

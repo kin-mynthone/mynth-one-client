@@ -8,6 +8,6 @@ class NotificationView extends GetView<NotificationController> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: Placeholder());
+    return const Scaffold(resizeToAvoidBottomInset: false, body: Placeholder());
   }
 }

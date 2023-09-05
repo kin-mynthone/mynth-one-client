@@ -10,6 +10,7 @@ class _HeaderWidget extends GetView<DashboardSettingsController> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         TextWidget(
+          overflow: false,
           stringData: 'Settings',
           fontSize: 20,
           boldValue: FontWeight.w500,

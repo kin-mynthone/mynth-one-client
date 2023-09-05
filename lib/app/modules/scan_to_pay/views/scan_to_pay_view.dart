@@ -22,6 +22,7 @@ class ScanToPayView extends GetView<ScanToPayController> {
     var screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         alignment: Alignment.center,
         children: [
@@ -43,6 +44,7 @@ class ScanToPayView extends GetView<ScanToPayController> {
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 400),
                   child: TextWidget(
+                      overflow: false,
                       stringData: 'Point the camera at the qr code',
                       fontSize:
                           screenWidth <= 428 && screenWidth > 390 ? 15 : 12,

@@ -26,6 +26,7 @@ class IntroductionView extends GetView<IntroductionController> {
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -176,6 +177,7 @@ class IntroductionView extends GetView<IntroductionController> {
               child: Align(
                 alignment: Alignment.center,
                 child: TextWidget(
+                  overflow: false,
                   stringData:
                       'Banking Beyond, Welcome\nto the super experience',
                   fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,

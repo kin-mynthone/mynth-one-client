@@ -12,6 +12,7 @@ class _ResendWidget extends GetView<OtpController> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         TextWidget(
+            overflow: false,
             stringData: 'Didn’t receive OTP code?',
             fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
             boldValue: FontWeight.normal,
@@ -34,6 +35,7 @@ class _ResendWidget extends GetView<OtpController> {
                   child: Column(
                     children: [
                       TextWidget(
+                          overflow: false,
                           stringData: 'Resend OTP',
                           fontSize:
                               screenWidth <= 428 && screenWidth > 390 ? 18 : 15,
@@ -54,6 +56,7 @@ class _ResendWidget extends GetView<OtpController> {
                 ),
               )
             : TextWidget(
+                overflow: false,
                 stringData: _timeFormater(controller.secondsRemaining),
                 fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
                 boldValue: FontWeight.w800,

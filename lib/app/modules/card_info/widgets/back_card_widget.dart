@@ -103,6 +103,7 @@ class BackCardWidget extends GetView<CardInfoController> {
                     children: [
                       Obx(
                         () => TextWidget(
+                          overflow: false,
                           stringData: controller.isDetailsShown
                               ? controller.cardInfo.accountNumber.toString()
                               : controller.cardInfo.accountNumber
@@ -145,6 +146,7 @@ class BackCardWidget extends GetView<CardInfoController> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               TextWidget(
+                                overflow: false,
                                 stringData: 'Valid Thu',
                                 fontSize:
                                     screenWidth <= 428 && screenWidth > 390
@@ -158,6 +160,7 @@ class BackCardWidget extends GetView<CardInfoController> {
                                 width: 5,
                               ),
                               TextWidget(
+                                overflow: false,
                                 stringData:
                                     controller.cardInfo.expiration.toString(),
                                 fontSize:
@@ -179,6 +182,7 @@ class BackCardWidget extends GetView<CardInfoController> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               TextWidget(
+                                overflow: false,
                                 stringData: 'CVV',
                                 fontSize:
                                     screenWidth <= 428 && screenWidth > 390
@@ -200,6 +204,7 @@ class BackCardWidget extends GetView<CardInfoController> {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 10, vertical: 5),
                                 child: Obx(() => TextWidget(
+                                      overflow: false,
                                       stringData: CardInfoController
                                               .instance.isDetailsShown
                                           ? controller.cardInfo.cvv.toString()

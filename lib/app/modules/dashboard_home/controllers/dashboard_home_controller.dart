@@ -13,7 +13,7 @@ class DashboardHomeController extends GetxController {
 
   final _status = DashboardHomeStatus.initial.obs;
 
-  final _cardData = <Data>[].obs;
+  final _cardData = <Cards>[].obs;
 
   DashboardHomeStatus get status => _status.value;
 
@@ -21,7 +21,7 @@ class DashboardHomeController extends GetxController {
   bool get hasSucceeded => _status.value == DashboardHomeStatus.succeeded;
   bool get hasFailed => _status.value == DashboardHomeStatus.failed;
 
-  List<Data> get cardData => _cardData;
+  List<Cards> get cardData => _cardData;
 
   String currentState() =>
       'DashboardHomeController(_status: ${_status.value}, ';
@@ -83,7 +83,7 @@ class DashboardHomeController extends GetxController {
     }
   }
 
-  void goToCardInfo(Data data) {
+  void goToCardInfo(Cards data) {
     Get.toNamed(
       AppPages.CARD_INFO,
       arguments: data,

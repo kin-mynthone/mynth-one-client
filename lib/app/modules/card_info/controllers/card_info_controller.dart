@@ -11,7 +11,7 @@ class CardInfoController extends GetxController {
 
   GlobalKey<FlipCardState> cardKey = GlobalKey<FlipCardState>();
 
-  final _cardInfo = Get.arguments as Data;
+  final _cardInfo = Get.arguments as Cards;
   late Worker _statusEverWorker;
 
   final _status = CardInfoStatus.initial.obs;
@@ -27,7 +27,7 @@ class CardInfoController extends GetxController {
   bool get isDetailsShown => _isDetailsShown.value;
   bool get isBackCardShown => _isBackCardShown.value;
 
-  Data get cardInfo => _cardInfo;
+  Cards get cardInfo => _cardInfo;
 
   final tooltipkey = GlobalKey<TooltipState>();
 

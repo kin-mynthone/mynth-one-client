@@ -90,14 +90,16 @@ class _EmptyData extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         TextWidget(
-          stringData: 'No Cards to show',
+          overflow: false,
+          stringData: 'No Banks to show',
           fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
           boldValue: FontWeight.w800,
           color: color,
           centerAlignment: false,
         ),
         TextWidget(
-          stringData: 'You can add your first card here',
+          overflow: false,
+          stringData: 'Please try again later',
           fontSize: screenWidth <= 428 && screenWidth > 390 ? 11 : 10,
           boldValue: FontWeight.normal,
           color: color,

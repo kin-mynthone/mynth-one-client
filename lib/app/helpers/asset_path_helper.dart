@@ -58,4 +58,5 @@ class AssetPath {
   static const cQrCode = '$_iconMainPath/common/qr_code.svg';
   static const cShare = '$_iconMainPath/common/share.svg';
   static const cDownloadQr = '$_iconMainPath/common/download_qr.svg';
+  static const cSuccess = '$_iconMainPath/common/success.svg';
 }

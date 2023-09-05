@@ -28,6 +28,7 @@ class _HeaderWidget extends StatelessWidget {
           height: 15,
         ),
         TextWidget(
+          overflow: false,
           stringData: 'quick sign up'.tr,
           fontSize: screenWidth <= 428 && screenWidth > 390 ? 28 : 23,
           boldValue: FontWeight.w800,
@@ -37,6 +38,7 @@ class _HeaderWidget extends StatelessWidget {
           centerAlignment: false,
         ),
         TextWidget(
+          overflow: false,
           stringData: 'please provide all necessary information'.tr,
           fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
           boldValue: FontWeight.normal,

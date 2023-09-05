@@ -12,6 +12,7 @@ class _PageIndicatorWidget extends GetView<RegistrationPageController> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextWidget(
+          overflow: false,
           stringData: 'personal info'.tr,
           fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 14,
           boldValue: FontWeight.w700,

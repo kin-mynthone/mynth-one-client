@@ -36,6 +36,7 @@ class _ActivityListWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   TextWidget(
+                      overflow: false,
                       stringData: 'Activities',
                       fontSize:
                           screenWidth <= 428 && screenWidth > 390 ? 20 : 17,
@@ -134,6 +135,7 @@ class _EmptyData extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         TextWidget(
+          overflow: false,
           stringData: 'No Activity to show',
           fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
           boldValue: FontWeight.w800,
@@ -141,6 +143,7 @@ class _EmptyData extends StatelessWidget {
           centerAlignment: false,
         ),
         TextWidget(
+          overflow: false,
           stringData: 'Start your first activity now',
           fontSize: screenWidth <= 428 && screenWidth > 390 ? 11 : 10,
           boldValue: FontWeight.normal,
