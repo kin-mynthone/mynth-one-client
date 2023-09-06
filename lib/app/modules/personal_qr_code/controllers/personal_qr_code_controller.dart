@@ -68,11 +68,12 @@ class PersonalQrCodeController extends GetxController {
             break;
           case PersonalQrCodeStatus.succeeded:
             MyLogger.printInfo(currentState());
-            //TODO: add event here
             break;
           case PersonalQrCodeStatus.failed:
+            MyLogger.printInfo(currentState());
             break;
           case PersonalQrCodeStatus.invalid:
+            MyLogger.printInfo(currentState());
             break;
         }
       },

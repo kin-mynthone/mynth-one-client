@@ -105,7 +105,7 @@ class LoginView extends GetView<LoginController> {
                       height: 50,
                       fontSize:
                           screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
-                      boldValue: FontWeight.w700,
+                      boldValue: FontWeight.w500,
                       fontColor: controller.getSystemTheme(context)
                           ? AppColors.lightSecondary
                           : AppColors.darkSecondary,

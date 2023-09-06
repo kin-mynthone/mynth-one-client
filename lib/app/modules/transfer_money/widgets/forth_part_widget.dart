@@ -1,7 +1,44 @@
 part of '../views/transfer_money_view.dart';
 
-class _ForthPartWidget extends GetView<TransferMoneyController> {
+class _ForthPartWidget extends StatefulWidget {
   const _ForthPartWidget({Key? key}) : super(key: key);
+
+  @override
+  State<_ForthPartWidget> createState() => _ForthPartWidgetState();
+}
+
+class _ForthPartWidgetState extends State<_ForthPartWidget> {
+  late Worker _statusListener;
+  final transferMoneyController = TransferMoneyController.instance;
+  final localAuthController = Get.put(LocalAuthController());
+
+  @override
+  void initState() {
+    super.initState();
+    _setUpStatusListener();
+  }
+
+  @override
+  void dispose() {
+    _statusListener.dispose();
+    super.dispose();
+  }
+
+  void _setUpStatusListener() {
+    final statusRx = localAuthController.statusRx;
+    _statusListener = ever(
+      statusRx,
+      (value) {
+        if (value == LocalAuthStatus.noAuthSetup) {}
+        if (value == LocalAuthStatus.authenticated) {
+          transferMoneyController.setCurrentIndexValue(4);
+        }
+        if (value == LocalAuthStatus.failed) {}
+        if (value == LocalAuthStatus.error) {}
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width;
@@ -17,7 +54,7 @@ class _ForthPartWidget extends GetView<TransferMoneyController> {
             Container(
               padding: const EdgeInsets.only(bottom: 20),
               decoration: BoxDecoration(
-                color: controller.getSystemTheme(context)
+                color: transferMoneyController.getSystemTheme(context)
                     ? AppColors.lightBackgroundVariant
                     : AppColors.darkBackgroundVariant,
                 borderRadius: BorderRadius.circular(10),
@@ -53,7 +90,8 @@ class _ForthPartWidget extends GetView<TransferMoneyController> {
                                   ? 13
                                   : 10,
                               boldValue: FontWeight.w600,
-                              color: controller.getSystemTheme(context)
+                              color: transferMoneyController
+                                      .getSystemTheme(context)
                                   ? AppColors.lightTextPrimary
                                   : AppColors.lightTextPrimary,
                               centerAlignment: false),
@@ -70,10 +108,12 @@ class _ForthPartWidget extends GetView<TransferMoneyController> {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(10),
                                   child: Image.network(
-                                    controller.isBankSelected
-                                        ? controller.selectedBank.icon
+                                    transferMoneyController.isBankSelected
+                                        ? transferMoneyController
+                                            .selectedBank.icon
                                             .toString()
-                                        : controller.selectedFavorite.icon
+                                        : transferMoneyController
+                                            .selectedFavorite.icon
                                             .toString(),
                                     loadingBuilder:
                                         (context, child, loadingProgress) {
@@ -109,22 +149,23 @@ class _ForthPartWidget extends GetView<TransferMoneyController> {
                                 children: [
                                   TextWidget(
                                       overflow: false,
-                                      stringData:
-                                          controller.accountNameController.text,
+                                      stringData: transferMoneyController
+                                          .accountNameController.text,
                                       fontSize: screenWidth <= 428 &&
                                               screenWidth > 390
                                           ? 20
                                           : 17,
                                       boldValue: FontWeight.w500,
-                                      color: controller.getSystemTheme(context)
+                                      color: transferMoneyController
+                                              .getSystemTheme(context)
                                           ? AppColors.lightTextPrimary
                                           : AppColors.lightTextPrimary,
                                       centerAlignment: false),
                                   TextWidget(
                                       overflow: false,
-                                      stringData: controller
+                                      stringData: transferMoneyController
                                           .insertSpaceAfterEvery4thCharacter(
-                                              controller
+                                              transferMoneyController
                                                   .accountNumberReceiverController
                                                   .text),
                                       fontSize: screenWidth <= 428 &&
@@ -133,7 +174,8 @@ class _ForthPartWidget extends GetView<TransferMoneyController> {
                                           : 12,
                                       letterSpacing: 3,
                                       boldValue: FontWeight.w400,
-                                      color: controller.getSystemTheme(context)
+                                      color: transferMoneyController
+                                              .getSystemTheme(context)
                                           ? AppColors.lightTextPrimary
                                           : AppColors.lightTextPrimary,
                                       centerAlignment: false),
@@ -162,9 +204,10 @@ class _ForthPartWidget extends GetView<TransferMoneyController> {
                                 ? 16
                                 : 13,
                             boldValue: FontWeight.w500,
-                            color: controller.getSystemTheme(context)
-                                ? AppColors.orange
-                                : AppColors.orange,
+                            color:
+                                transferMoneyController.getSystemTheme(context)
+                                    ? AppColors.orange
+                                    : AppColors.orange,
                             centerAlignment: false),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -172,12 +215,14 @@ class _ForthPartWidget extends GetView<TransferMoneyController> {
                           children: [
                             TextWidget(
                               overflow: false,
-                              stringData: controller.accountNameSender,
+                              stringData:
+                                  transferMoneyController.accountNameSender,
                               fontSize: screenWidth <= 428 && screenWidth > 390
                                   ? 16
                                   : 13,
                               boldValue: FontWeight.w600,
-                              color: controller.getSystemTheme(context)
+                              color: transferMoneyController
+                                      .getSystemTheme(context)
                                   ? AppColors.lightTextPrimary
                                   : AppColors.darkTextPrimary,
                               centerAlignment: false,
@@ -187,7 +232,8 @@ class _ForthPartWidget extends GetView<TransferMoneyController> {
                             ),
                             TextWidget(
                               overflow: false,
-                              stringData: controller.accountNumberSender
+                              stringData: transferMoneyController
+                                  .accountNumberSender
                                   .toString()
                                   .substring(8)
                                   .replaceRange(0, 3, '***'),
@@ -196,7 +242,8 @@ class _ForthPartWidget extends GetView<TransferMoneyController> {
                                   : 13,
                               letterSpacing: 3,
                               boldValue: FontWeight.w400,
-                              color: controller.getSystemTheme(context)
+                              color: transferMoneyController
+                                      .getSystemTheme(context)
                                   ? AppColors.lightTextPrimary
                                   : AppColors.darkTextPrimary,
                               centerAlignment: false,
@@ -234,21 +281,23 @@ class _ForthPartWidget extends GetView<TransferMoneyController> {
                                 ? 16
                                 : 13,
                             boldValue: FontWeight.w500,
-                            color: controller.getSystemTheme(context)
-                                ? AppColors.orange
-                                : AppColors.orange,
+                            color:
+                                transferMoneyController.getSystemTheme(context)
+                                    ? AppColors.orange
+                                    : AppColors.orange,
                             centerAlignment: false),
                         TextWidget(
                             overflow: false,
                             stringData:
-                                '€  ${controller.amountController.text}',
+                                '€  ${transferMoneyController.amountController.text}',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 16
                                 : 13,
                             boldValue: FontWeight.w500,
-                            color: controller.getSystemTheme(context)
-                                ? AppColors.gray
-                                : AppColors.gray,
+                            color:
+                                transferMoneyController.getSystemTheme(context)
+                                    ? AppColors.gray
+                                    : AppColors.gray,
                             centerAlignment: false),
                       ],
                     ),
@@ -270,20 +319,23 @@ class _ForthPartWidget extends GetView<TransferMoneyController> {
                                 ? 16
                                 : 13,
                             boldValue: FontWeight.w500,
-                            color: controller.getSystemTheme(context)
-                                ? AppColors.orange
-                                : AppColors.orange,
+                            color:
+                                transferMoneyController.getSystemTheme(context)
+                                    ? AppColors.orange
+                                    : AppColors.orange,
                             centerAlignment: false),
                         TextWidget(
                             overflow: false,
-                            stringData: '€ ${controller.transferFee}',
+                            stringData:
+                                '€ ${transferMoneyController.transferFee}',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 16
                                 : 13,
                             boldValue: FontWeight.w500,
-                            color: controller.getSystemTheme(context)
-                                ? AppColors.gray
-                                : AppColors.gray,
+                            color:
+                                transferMoneyController.getSystemTheme(context)
+                                    ? AppColors.gray
+                                    : AppColors.gray,
                             centerAlignment: false),
                       ],
                     ),
@@ -319,21 +371,23 @@ class _ForthPartWidget extends GetView<TransferMoneyController> {
                                 ? 16
                                 : 13,
                             boldValue: FontWeight.w500,
-                            color: controller.getSystemTheme(context)
-                                ? AppColors.orange
-                                : AppColors.orange,
+                            color:
+                                transferMoneyController.getSystemTheme(context)
+                                    ? AppColors.orange
+                                    : AppColors.orange,
                             centerAlignment: false),
                         TextWidget(
                             overflow: false,
                             stringData:
-                                '€ ${int.parse(controller.amountController.text) + controller.transferFee}',
+                                '€ ${int.parse(transferMoneyController.amountController.text) + transferMoneyController.transferFee}',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 16
                                 : 13,
                             boldValue: FontWeight.w500,
-                            color: controller.getSystemTheme(context)
-                                ? AppColors.gray
-                                : AppColors.gray,
+                            color:
+                                transferMoneyController.getSystemTheme(context)
+                                    ? AppColors.gray
+                                    : AppColors.gray,
                             centerAlignment: false),
                       ],
                     ),
@@ -351,7 +405,7 @@ class _ForthPartWidget extends GetView<TransferMoneyController> {
                         fontSize:
                             screenWidth <= 428 && screenWidth > 390 ? 13 : 10,
                         boldValue: FontWeight.w500,
-                        color: controller.getSystemTheme(context)
+                        color: transferMoneyController.getSystemTheme(context)
                             ? AppColors.orange
                             : AppColors.orange,
                         centerAlignment: false),
@@ -364,23 +418,24 @@ class _ForthPartWidget extends GetView<TransferMoneyController> {
             ),
             PrimaryButtonWidget(
               buttonText:
-                  'Pay "€ ${int.parse(controller.amountController.text) + controller.transferFee}"',
+                  'Pay "€ ${int.parse(transferMoneyController.amountController.text) + transferMoneyController.transferFee}"',
               height: 50,
               fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 13,
-              boldValue: FontWeight.w800,
-              fontColor: controller.getSystemTheme(context)
+              boldValue: FontWeight.w500,
+              fontColor: transferMoneyController.getSystemTheme(context)
                   ? AppColors.lightSecondary
                   : AppColors.darkSecondary,
-              buttonColor: controller.getSystemTheme(context)
+              buttonColor: transferMoneyController.getSystemTheme(context)
                   ? AppColors.lightPrimary
                   : AppColors.darkPrimary,
-              splashColor: controller.getSystemTheme(context)
+              splashColor: transferMoneyController.getSystemTheme(context)
                   ? AppColors.lightSecondary.withOpacity(0.30)
                   : AppColors.darkSecondary.withOpacity(0.30),
-              highlightColor: controller.getSystemTheme(context)
+              highlightColor: transferMoneyController.getSystemTheme(context)
                   ? AppColors.lightSecondary.withOpacity(0.15)
                   : AppColors.darkSecondary.withOpacity(0.15),
-              onTap: () => {controller.setCurrentIndexValue(4)},
+              onTap: () =>
+                  {LocalAuthController.instance.authenticateUser(context)},
             ),
           ],
         ),

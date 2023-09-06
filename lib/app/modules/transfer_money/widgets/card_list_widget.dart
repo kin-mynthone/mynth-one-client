@@ -109,6 +109,7 @@ class _EmptyData extends StatelessWidget {
           color: color,
           centerAlignment: false,
         ),
+        //todo add button where user can add new card
       ],
     );
   }

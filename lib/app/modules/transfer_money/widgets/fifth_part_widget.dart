@@ -371,7 +371,7 @@ class _FifthPartWidget extends GetView<TransferMoneyController> {
               buttonText: 'Get a Copy',
               height: 50,
               fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 13,
-              boldValue: FontWeight.w800,
+              boldValue: FontWeight.w500,
               fontColor: controller.getSystemTheme(context)
                   ? AppColors.lightSecondary
                   : AppColors.darkSecondary,

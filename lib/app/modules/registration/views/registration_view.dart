@@ -128,7 +128,7 @@ class _FirstPart extends GetView<RegistrationController> {
           buttonText: 'Next',
           height: 50,
           fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
-          boldValue: FontWeight.w800,
+          boldValue: FontWeight.w500,
           fontColor: controller.getSystemTheme(context)
               ? AppColors.lightSecondary
               : AppColors.darkSecondary,
@@ -187,7 +187,7 @@ class _SecondPart extends GetView<RegistrationController> {
           buttonText: 'FINISH',
           height: 50,
           fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
-          boldValue: FontWeight.w800,
+          boldValue: FontWeight.w500,
           fontColor: controller.getSystemTheme(context)
               ? AppColors.lightSecondary
               : AppColors.darkSecondary,

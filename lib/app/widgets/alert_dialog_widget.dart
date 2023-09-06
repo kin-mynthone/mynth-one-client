@@ -84,7 +84,7 @@ class AlertDialogWidget extends StatelessWidget {
                 buttonText: buttonText,
                 height: 50,
                 fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
-                boldValue: FontWeight.w700,
+                boldValue: FontWeight.w500,
                 fontColor: DashboardController.instance.getSystemTheme(context)
                     ? AppColors.lightSecondary
                     : AppColors.darkSecondary,

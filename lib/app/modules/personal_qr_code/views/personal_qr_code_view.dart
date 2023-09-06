@@ -67,7 +67,7 @@ class PersonalQrCodeView extends GetView<PersonalQrCodeController> {
                     ),
                     TextWidget(
                         overflow: false,
-                        stringData: 'Howie Valino',
+                        stringData: 'Howie Ross Valino',
                         fontSize:
                             screenWidth <= 428 && screenWidth > 390 ? 23 : 20,
                         boldValue: FontWeight.w700,
