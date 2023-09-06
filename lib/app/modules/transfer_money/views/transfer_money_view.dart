@@ -14,7 +14,6 @@ import 'package:mynth_one_client/app/modules/transfer_money/widgets/bank_list_wi
 import 'package:mynth_one_client/app/themes/app_colors.dart';
 import 'package:mynth_one_client/app/widgets/alert_dialog_widget.dart';
 import 'package:mynth_one_client/app/widgets/go_back_button_widget.dart';
-import 'package:mynth_one_client/app/widgets/loading_overlay_widget.dart';
 import 'package:mynth_one_client/app/widgets/primary_button_widget.dart';
 import 'package:mynth_one_client/app/widgets/text_form_widget.dart';
 import 'package:mynth_one_client/app/widgets/text_widget.dart';
