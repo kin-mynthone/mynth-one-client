@@ -49,7 +49,7 @@ class _HeaderWidget extends GetView<TransferMoneyController> {
           TextWidget(
             overflow: false,
             stringData: 'Transfer Money',
-            fontSize: screenWidth <= 428 && screenWidth > 390 ? 20 : 17,
+            fontSize: screenWidth <= 428 && screenWidth > 390 ? 20 : 23,
             boldValue: FontWeight.w500,
             color: controller.getSystemTheme(context)
                 ? AppColors.lightTextPrimary

@@ -76,7 +76,7 @@ class _FirstPart extends GetView<RegistrationController> {
       children: [
         TextFormWidget(
           name: 'given name'.tr,
-          hintText: 'enter your given name',
+          hintText: 'Enter your given name',
           isRequired: true,
           borderColor: controller.getSystemTheme(context)
               ? AppColors.lightPrimary
@@ -101,7 +101,7 @@ class _FirstPart extends GetView<RegistrationController> {
         ),
         TextFormWidget(
           name: 'surname'.tr,
-          hintText: 'enter your surname',
+          hintText: 'Enter your surname',
           isRequired: true,
           borderColor: controller.getSystemTheme(context)
               ? AppColors.lightPrimary
@@ -127,7 +127,7 @@ class _FirstPart extends GetView<RegistrationController> {
         PrimaryButtonWidget(
           buttonText: 'Next',
           height: 50,
-          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 18,
           boldValue: FontWeight.w500,
           fontColor: controller.getSystemTheme(context)
               ? AppColors.lightSecondary
@@ -161,7 +161,7 @@ class _SecondPart extends GetView<RegistrationController> {
       children: [
         _EmailTextFormWidget(
           name: 'Email',
-          hintText: 'enter your email',
+          hintText: 'Enter your email',
           onChanged: (value) => controller.setEmailValue(value!),
         ),
         const SizedBox(
@@ -169,7 +169,7 @@ class _SecondPart extends GetView<RegistrationController> {
         ),
         _PhoneNumberTextFormWidget(
           name: 'phone number'.tr,
-          hintText: 'enter your phone number',
+          hintText: 'Enter your phone number',
           onChanged: (value) => controller.setPasswordValue(value!),
         ),
         const SizedBox(
@@ -177,7 +177,7 @@ class _SecondPart extends GetView<RegistrationController> {
         ),
         _PasswordTextFormWidget(
           name: 'Password',
-          hintText: 'enter your password',
+          hintText: 'Enter your password',
           onChanged: (value) => controller.setPasswordValue(value!),
         ),
         const SizedBox(
@@ -186,7 +186,7 @@ class _SecondPart extends GetView<RegistrationController> {
         PrimaryButtonWidget(
           buttonText: 'FINISH',
           height: 50,
-          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 18,
           boldValue: FontWeight.w500,
           fontColor: controller.getSystemTheme(context)
               ? AppColors.lightSecondary

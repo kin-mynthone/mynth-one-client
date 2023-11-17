@@ -92,11 +92,8 @@ class DashboardHomeView extends GetView<DashboardHomeController> {
                     },
                   ),
                 ),
-                const SizedBox(height: 20),
-                const Padding(
-                  padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
-                  child: _QuickOptionsWidget(),
-                ),
+                const SizedBox(height: 30),
+                const _QuickOptionsWidget(),
                 Obx(
                   () => _ActivityListWidget(
                     activitiesData:

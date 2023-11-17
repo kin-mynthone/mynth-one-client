@@ -30,7 +30,7 @@ class _EmailTextFormWidget extends StatelessWidget {
         TextWidget(
           overflow: false,
           stringData: name,
-          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 18,
           boldValue: FontWeight.normal,
           color: RegistrationController.instance.getSystemTheme(context)
               ? AppColors.lightTextPrimary
@@ -48,7 +48,7 @@ class _EmailTextFormWidget extends StatelessWidget {
             color: RegistrationController.instance.getSystemTheme(context)
                 ? AppColors.lightPrimary
                 : AppColors.darkTextPrimary,
-            fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+            fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 18,
           ),
           validator: (String? value) {
             if (value == null || value.trim().isEmpty) {
@@ -64,7 +64,7 @@ class _EmailTextFormWidget extends StatelessWidget {
           decoration: InputDecoration(
             hintText: hintText.tr,
             hintStyle: GoogleFonts.poppins(
-              fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+              fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 18,
               fontWeight: FontWeight.w400,
               color: RegistrationController.instance.getSystemTheme(context)
                   ? AppColors.lightTextHint
@@ -80,7 +80,7 @@ class _EmailTextFormWidget extends StatelessWidget {
                 : AppColors.darkBackground,
             errorStyle: GoogleFonts.poppins(
               color: AppColors.red,
-              fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 10,
+              fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 16,
             ),
           ),
           textInputAction: TextInputAction.next,

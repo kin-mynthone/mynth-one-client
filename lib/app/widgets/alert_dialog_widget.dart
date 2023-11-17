@@ -45,7 +45,7 @@ class AlertDialogWidget extends StatelessWidget {
             children: [
               GradientTextDarkWidget(
                 stringData: emoji,
-                fontSize: screenWidth <= 428 && screenWidth > 390 ? 20 : 17,
+                fontSize: screenWidth <= 428 && screenWidth > 390 ? 20 : 23,
                 boldValue: FontWeight.w800,
                 heightValue: 1.2,
                 centerAlignment: true,
@@ -55,7 +55,7 @@ class AlertDialogWidget extends StatelessWidget {
                   ? GradientTextLightWidget(
                       stringData: title,
                       fontSize:
-                          screenWidth <= 428 && screenWidth > 390 ? 23 : 20,
+                          screenWidth <= 428 && screenWidth > 390 ? 23 : 26,
                       boldValue: FontWeight.w700,
                       heightValue: 1.2,
                       centerAlignment: true,
@@ -63,7 +63,7 @@ class AlertDialogWidget extends StatelessWidget {
                   : GradientTextDarkWidget(
                       stringData: title,
                       fontSize:
-                          screenWidth <= 428 && screenWidth > 390 ? 23 : 20,
+                          screenWidth <= 428 && screenWidth > 390 ? 23 : 26,
                       boldValue: FontWeight.w800,
                       heightValue: 1.2,
                       centerAlignment: true,
@@ -72,7 +72,7 @@ class AlertDialogWidget extends StatelessWidget {
               TextWidget(
                 overflow: false,
                 stringData: message,
-                fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+                fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 18,
                 boldValue: FontWeight.w500,
                 color: DashboardController.instance.getSystemTheme(context)
                     ? AppColors.lightTextPrimary
@@ -83,7 +83,7 @@ class AlertDialogWidget extends StatelessWidget {
               PrimaryButtonWidget(
                 buttonText: buttonText,
                 height: 50,
-                fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+                fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 18,
                 boldValue: FontWeight.w500,
                 fontColor: DashboardController.instance.getSystemTheme(context)
                     ? AppColors.lightSecondary

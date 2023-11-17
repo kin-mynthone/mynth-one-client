@@ -25,7 +25,7 @@ class _HeaderWidget extends GetView<PersonalQrCodeController> {
         TextWidget(
           overflow: false,
           stringData: 'Personal Qr Code',
-          fontSize: screenWidth <= 428 && screenWidth > 390 ? 20 : 17,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 20 : 23,
           boldValue: FontWeight.w500,
           color: controller.getSystemTheme(context)
               ? AppColors.lightTextPrimary

@@ -116,7 +116,7 @@ class _BottomOptionsWidget extends GetView<PersonalQrCodeController> {
                         overflow: false,
                         stringData: 'Captured',
                         fontSize:
-                            screenWidth <= 428 && screenWidth > 390 ? 20 : 17,
+                            screenWidth <= 428 && screenWidth > 390 ? 20 : 23,
                         boldValue: FontWeight.w500,
                         color: controller.getSystemTheme(context)
                             ? AppColors.lightTextPrimary

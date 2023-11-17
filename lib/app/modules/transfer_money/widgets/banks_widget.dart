@@ -30,7 +30,7 @@ class _BanksWidget extends GetView<TransferMoneyController> {
               TextWidget(
                 overflow: false,
                 stringData: 'Banks',
-                fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+                fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 18,
                 boldValue: FontWeight.w500,
                 color: controller.getSystemTheme(context)
                     ? AppColors.lightTextPrimary
@@ -48,13 +48,13 @@ class _BanksWidget extends GetView<TransferMoneyController> {
                   color: controller.getSystemTheme(context)
                       ? AppColors.lightTextPrimary
                       : AppColors.darkTextPrimary,
-                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 18,
                 ),
                 autocorrect: false,
                 decoration: InputDecoration(
                   hintText: 'Search',
                   hintStyle: GoogleFonts.poppins(
-                    fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+                    fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 18,
                     fontWeight: FontWeight.w400,
                     color: controller.getSystemTheme(context)
                         ? AppColors.lightTextHint

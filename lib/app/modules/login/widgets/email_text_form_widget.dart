@@ -31,7 +31,7 @@ class _EmailTextFormWidget extends StatelessWidget {
         TextWidget(
           overflow: false,
           stringData: name,
-          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 16,
           boldValue: FontWeight.normal,
           color: LoginController.instance.getSystemTheme(context)
               ? AppColors.lightTextPrimary
@@ -49,14 +49,14 @@ class _EmailTextFormWidget extends StatelessWidget {
               color: LoginController.instance.getSystemTheme(context)
                   ? AppColors.lightPrimary
                   : AppColors.darkTextPrimary,
-              fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12),
+              fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 16),
           validator: (String? value) {
             if (value == null || value.trim().isEmpty) {
-              return 'email is required'.tr;
+              return 'Email is required'.tr;
             } else if (value.isNotEmpty) {
               final isEmailValid =
                   RegExp(AppStrings.emailRegExp).hasMatch(value);
-              return isEmailValid ? null : 'invalid email format'.tr;
+              return isEmailValid ? null : 'Invalid email format'.tr;
             }
             return null;
           },
@@ -64,7 +64,7 @@ class _EmailTextFormWidget extends StatelessWidget {
           decoration: InputDecoration(
             hintText: hintText.tr,
             hintStyle: GoogleFonts.poppins(
-              fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+              fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 16,
               fontWeight: FontWeight.w400,
               color: LoginController.instance.getSystemTheme(context)
                   ? AppColors.lightTextHint
@@ -80,7 +80,7 @@ class _EmailTextFormWidget extends StatelessWidget {
                 : AppColors.darkBackground,
             errorStyle: GoogleFonts.poppins(
                 color: AppColors.red,
-                fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 10),
+                fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 14),
           ),
           textInputAction: TextInputAction.next,
           textCapitalization: TextCapitalization.none,

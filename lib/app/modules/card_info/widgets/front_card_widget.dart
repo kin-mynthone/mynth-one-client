@@ -58,7 +58,7 @@ class FrontCardWidget extends GetView<CardInfoController> {
                 TextWidget(
                   overflow: false,
                   stringData: controller.cardInfo.accountName.toString(),
-                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 18,
                   boldValue: FontWeight.w500,
                   color: AppColors.lightTextPrimary,
                   centerAlignment: false,
@@ -76,7 +76,7 @@ class FrontCardWidget extends GetView<CardInfoController> {
                       overflow: false,
                       stringData: 'Your balance',
                       fontSize:
-                          screenWidth <= 428 && screenWidth > 390 ? 14 : 13,
+                          screenWidth <= 428 && screenWidth > 390 ? 14 : 15,
                       boldValue: FontWeight.w300,
                       color: AppColors.lightTextPrimary,
                       centerAlignment: false,
@@ -88,7 +88,7 @@ class FrontCardWidget extends GetView<CardInfoController> {
                       overflow: false,
                       stringData: '€ ${controller.cardInfo.amount}',
                       fontSize:
-                          screenWidth <= 428 && screenWidth > 390 ? 30 : 27,
+                          screenWidth <= 428 && screenWidth > 390 ? 30 : 33,
                       boldValue: FontWeight.w600,
                       color: AppColors.darkPrimary,
                       centerAlignment: false,
@@ -114,7 +114,7 @@ class FrontCardWidget extends GetView<CardInfoController> {
                               stringData: 'A/c Number',
                               fontSize: screenWidth <= 428 && screenWidth > 390
                                   ? 12
-                                  : 11,
+                                  : 13,
                               boldValue: FontWeight.w300,
                               color: AppColors.lightTextPrimary,
                               centerAlignment: false,
@@ -130,7 +130,7 @@ class FrontCardWidget extends GetView<CardInfoController> {
                                   .replaceRange(0, 3, '***'),
                               fontSize: screenWidth <= 428 && screenWidth > 390
                                   ? 13
-                                  : 12,
+                                  : 14,
                               letterSpacing: 3,
                               boldValue: FontWeight.w400,
                               color: AppColors.lightTextPrimary,
@@ -149,7 +149,7 @@ class FrontCardWidget extends GetView<CardInfoController> {
                               stringData: 'Valid Thu',
                               fontSize: screenWidth <= 428 && screenWidth > 390
                                   ? 12
-                                  : 11,
+                                  : 13,
                               boldValue: FontWeight.w300,
                               color: AppColors.lightTextPrimary,
                               centerAlignment: false,
@@ -163,7 +163,7 @@ class FrontCardWidget extends GetView<CardInfoController> {
                                   controller.cardInfo.expiration.toString(),
                               fontSize: screenWidth <= 428 && screenWidth > 390
                                   ? 12
-                                  : 11,
+                                  : 13,
                               letterSpacing: 3,
                               boldValue: FontWeight.w400,
                               color: AppColors.lightTextPrimary,

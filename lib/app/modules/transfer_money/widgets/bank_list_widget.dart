@@ -92,7 +92,7 @@ class _EmptyData extends StatelessWidget {
         TextWidget(
           overflow: false,
           stringData: 'No Banks to show',
-          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 18,
           boldValue: FontWeight.w800,
           color: color,
           centerAlignment: false,
@@ -100,7 +100,7 @@ class _EmptyData extends StatelessWidget {
         TextWidget(
           overflow: false,
           stringData: 'Please try again later',
-          fontSize: screenWidth <= 428 && screenWidth > 390 ? 11 : 10,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 11 : 12,
           boldValue: FontWeight.normal,
           color: color,
           centerAlignment: false,

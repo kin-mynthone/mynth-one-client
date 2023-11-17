@@ -88,7 +88,7 @@ class _EmptyData extends StatelessWidget {
         TextWidget(
           overflow: false,
           stringData: 'No Activity to show',
-          fontSize: screenWidth <= 428 && screenWidth > 390 ? 23 : 20,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 23 : 26,
           boldValue: FontWeight.w800,
           color: color,
           centerAlignment: false,
@@ -96,7 +96,7 @@ class _EmptyData extends StatelessWidget {
         TextWidget(
           overflow: false,
           stringData: 'Start your first activity now',
-          fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 12,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 14,
           boldValue: FontWeight.normal,
           color: color,
           centerAlignment: false,

@@ -24,7 +24,7 @@ class _NoAccountWidget extends StatelessWidget {
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   fontWeight: FontWeight.w500,
                   color: AppColors.gray,
-                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 11,
+                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 15,
                 ),
           ),
         ),

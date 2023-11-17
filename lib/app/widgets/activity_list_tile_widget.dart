@@ -55,7 +55,7 @@ class ActivityListTileWidget extends StatelessWidget {
                     .getTitle(activityModel.receiver.toString(), true)
                 : SnippetActivitiesController.instance
                     .getTitle(activityModel.sender.toString(), false),
-            fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 13,
+            fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 19,
             boldValue: FontWeight.w500,
             color: DashboardController.instance.getSystemTheme(context)
                 ? AppColors.lightTextPrimary
@@ -68,7 +68,7 @@ class ActivityListTileWidget extends StatelessWidget {
             overflow: false,
             stringData: SnippetActivitiesController.instance
                 .getTime(activityModel.timeStamp!),
-            fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 13,
+            fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 19,
             boldValue: FontWeight.w300,
             color: DashboardController.instance.getSystemTheme(context)
                 ? AppColors.lightTextSecondary
@@ -84,7 +84,7 @@ class ActivityListTileWidget extends StatelessWidget {
               color: activityModel.typeOfActivity.toString() == 'received'
                   ? AppColors.green
                   : AppColors.red,
-              fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 13,
+              fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 19,
               fontWeight: FontWeight.w600),
           children: <TextSpan>[
             TextSpan(

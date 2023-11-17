@@ -26,7 +26,7 @@ class _ThirdPartWidget extends GetView<TransferMoneyController> {
                           overflow: false,
                           stringData: 'Card',
                           fontSize:
-                              screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+                              screenWidth <= 428 && screenWidth > 390 ? 15 : 18,
                           boldValue: FontWeight.normal,
                           color: controller.getSystemTheme(context)
                               ? AppColors.lightTextPrimary
@@ -63,7 +63,7 @@ class _ThirdPartWidget extends GetView<TransferMoneyController> {
                                       fontSize: screenWidth <= 428 &&
                                               screenWidth > 390
                                           ? 18
-                                          : 15,
+                                          : 21,
                                       boldValue: FontWeight.w600,
                                       color: controller.getSystemTheme(context)
                                           ? AppColors.lightTextPrimary
@@ -82,7 +82,7 @@ class _ThirdPartWidget extends GetView<TransferMoneyController> {
                                       fontSize: screenWidth <= 428 &&
                                               screenWidth > 390
                                           ? 15
-                                          : 12,
+                                          : 18,
                                       letterSpacing: 3,
                                       boldValue: FontWeight.w400,
                                       color: controller.getSystemTheme(context)
@@ -120,7 +120,7 @@ class _ThirdPartWidget extends GetView<TransferMoneyController> {
                                       fontSize: screenWidth <= 428 &&
                                               screenWidth > 390
                                           ? 15
-                                          : 12,
+                                          : 18,
                                       boldValue: FontWeight.normal,
                                       color: controller.getSystemTheme(context)
                                           ? AppColors.lightTextPrimary
@@ -175,7 +175,7 @@ class _ThirdPartWidget extends GetView<TransferMoneyController> {
               PrimaryButtonWidget(
                 buttonText: 'Next',
                 height: 50,
-                fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+                fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 18,
                 boldValue: FontWeight.w500,
                 fontColor: controller.getSystemTheme(context)
                     ? AppColors.lightSecondary

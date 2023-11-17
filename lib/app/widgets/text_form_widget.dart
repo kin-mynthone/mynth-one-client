@@ -53,8 +53,8 @@ class TextFormWidget extends StatelessWidget {
             ? TextWidget(
                 overflow: false,
                 stringData: name,
-                fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
-                boldValue: FontWeight.normal,
+                fontSize: screenWidth <= 428 && screenWidth > 390 ? 14 : 15,
+                boldValue: FontWeight.w600,
                 color: nameColor,
                 centerAlignment: false,
               )
@@ -69,7 +69,7 @@ class TextFormWidget extends StatelessWidget {
           controller: controller,
           style: GoogleFonts.poppins(
             color: textColor,
-            fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+            fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 17,
           ),
           validator: (String? value) {
             if (isRequired) {
@@ -84,7 +84,7 @@ class TextFormWidget extends StatelessWidget {
           decoration: InputDecoration(
             hintText: hintText.tr,
             hintStyle: GoogleFonts.poppins(
-              fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+              fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 16,
               fontWeight: FontWeight.w400,
               color: hintColor,
             ),
@@ -96,7 +96,7 @@ class TextFormWidget extends StatelessWidget {
             fillColor: fillColor,
             errorStyle: GoogleFonts.poppins(
                 color: AppColors.red,
-                fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 10),
+                fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 14),
           ),
           textInputAction: TextInputAction.next,
           textCapitalization: TextCapitalization.none,

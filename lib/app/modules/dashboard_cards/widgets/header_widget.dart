@@ -30,7 +30,7 @@ class _HeaderWidget extends GetView<DashboardCardsController> {
           TextWidget(
             overflow: false,
             stringData: 'Cards',
-            fontSize: screenWidth <= 428 && screenWidth > 390 ? 20 : 18,
+            fontSize: screenWidth <= 428 && screenWidth > 390 ? 20 : 22,
             boldValue: FontWeight.w500,
             color: controller.getSystemTheme(context)
                 ? AppColors.lightTextPrimary
@@ -61,7 +61,7 @@ class _HeaderWidget extends GetView<DashboardCardsController> {
                         overflow: false,
                         stringData: '4',
                         fontSize:
-                            screenWidth <= 428 && screenWidth > 390 ? 25 : 22,
+                            screenWidth <= 428 && screenWidth > 390 ? 25 : 28,
                         boldValue: FontWeight.w600,
                         color: controller.getSystemTheme(context)
                             ? AppColors.lightTextPrimary
@@ -80,7 +80,7 @@ class _HeaderWidget extends GetView<DashboardCardsController> {
                             stringData: 'Total',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 12
-                                : 11,
+                                : 13,
                             boldValue: FontWeight.w400,
                             color: controller.getSystemTheme(context)
                                 ? AppColors.lightTextPrimary
@@ -92,7 +92,7 @@ class _HeaderWidget extends GetView<DashboardCardsController> {
                             stringData: 'Cards',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 12
-                                : 11,
+                                : 13,
                             boldValue: FontWeight.w400,
                             color: controller.getSystemTheme(context)
                                 ? AppColors.lightTextPrimary
@@ -111,7 +111,7 @@ class _HeaderWidget extends GetView<DashboardCardsController> {
               PrimaryButtonWidget(
                 buttonText: '+ New Card',
                 height: 60,
-                fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+                fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 16,
                 boldValue: FontWeight.w600,
                 fontColor: controller.getSystemTheme(context)
                     ? AppColors.lightSecondary

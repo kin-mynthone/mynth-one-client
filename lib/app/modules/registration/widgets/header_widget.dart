@@ -30,7 +30,7 @@ class _HeaderWidget extends StatelessWidget {
         TextWidget(
           overflow: false,
           stringData: 'quick sign up'.tr,
-          fontSize: screenWidth <= 428 && screenWidth > 390 ? 28 : 23,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 28 : 30,
           boldValue: FontWeight.w800,
           color: RegistrationController.instance.getSystemTheme(context)
               ? AppColors.lightTextPrimary
@@ -40,7 +40,7 @@ class _HeaderWidget extends StatelessWidget {
         TextWidget(
           overflow: false,
           stringData: 'please provide all necessary information'.tr,
-          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 16,
           boldValue: FontWeight.normal,
           color: RegistrationController.instance.getSystemTheme(context)
               ? AppColors.lightTextPrimary

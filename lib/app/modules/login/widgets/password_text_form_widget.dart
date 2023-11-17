@@ -31,7 +31,7 @@ class _PasswordTextFormWidget extends GetView<LoginController> {
         TextWidget(
           overflow: false,
           stringData: name,
-          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 16,
           boldValue: FontWeight.normal,
           color: controller.getSystemTheme(context)
               ? AppColors.lightTextPrimary
@@ -71,7 +71,7 @@ class _PasswordTextFormWidget extends GetView<LoginController> {
                 ),
                 hintText: hintText.tr,
                 hintStyle: GoogleFonts.poppins(
-                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 16,
                   fontWeight: FontWeight.w400,
                   color: controller.getSystemTheme(context)
                       ? AppColors.lightTextHint
@@ -88,7 +88,7 @@ class _PasswordTextFormWidget extends GetView<LoginController> {
                 errorStyle: GoogleFonts.poppins(
                     color: AppColors.red,
                     fontSize:
-                        screenWidth <= 428 && screenWidth > 390 ? 13 : 10),
+                        screenWidth <= 428 && screenWidth > 390 ? 13 : 14),
               ),
               textInputAction: TextInputAction.next,
               textCapitalization: TextCapitalization.none,

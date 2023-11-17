@@ -23,7 +23,7 @@ class BanksListTileWidget extends StatelessWidget {
     return ListTile(
       onTap: onTap,
       leading: Container(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(8.0),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(10),
           child: Image.network(
@@ -51,7 +51,7 @@ class BanksListTileWidget extends StatelessWidget {
         child: TextWidget(
             overflow: false,
             stringData: banksModel.title.toString(),
-            fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 13,
+            fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 19,
             boldValue: FontWeight.w500,
             color: DashboardController.instance.getSystemTheme(context)
                 ? AppColors.lightTextPrimary

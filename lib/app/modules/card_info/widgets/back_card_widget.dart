@@ -110,7 +110,7 @@ class BackCardWidget extends GetView<CardInfoController> {
                                   .toString()
                                   .replaceRange(0, 12, '*** *** *** '),
                           fontSize:
-                              screenWidth <= 428 && screenWidth > 390 ? 20 : 17,
+                              screenWidth <= 428 && screenWidth > 390 ? 20 : 23,
                           letterSpacing: 3,
                           boldValue: FontWeight.w400,
                           color: AppColors.lightTextPrimary,
@@ -151,7 +151,7 @@ class BackCardWidget extends GetView<CardInfoController> {
                                 fontSize:
                                     screenWidth <= 428 && screenWidth > 390
                                         ? 12
-                                        : 11,
+                                        : 13,
                                 boldValue: FontWeight.w300,
                                 color: AppColors.lightTextPrimary,
                                 centerAlignment: false,
@@ -166,7 +166,7 @@ class BackCardWidget extends GetView<CardInfoController> {
                                 fontSize:
                                     screenWidth <= 428 && screenWidth > 390
                                         ? 13
-                                        : 12,
+                                        : 14,
                                 letterSpacing: 3,
                                 boldValue: FontWeight.w400,
                                 color: AppColors.lightTextPrimary,
@@ -187,7 +187,7 @@ class BackCardWidget extends GetView<CardInfoController> {
                                 fontSize:
                                     screenWidth <= 428 && screenWidth > 390
                                         ? 12
-                                        : 11,
+                                        : 13,
                                 boldValue: FontWeight.w300,
                                 color: AppColors.lightTextPrimary,
                                 centerAlignment: false,
@@ -212,7 +212,7 @@ class BackCardWidget extends GetView<CardInfoController> {
                                       fontSize: screenWidth <= 428 &&
                                               screenWidth > 390
                                           ? 13
-                                          : 12,
+                                          : 14,
                                       letterSpacing: 3,
                                       boldValue: FontWeight.w400,
                                       color: AppColors.lightSecondaryVariant,

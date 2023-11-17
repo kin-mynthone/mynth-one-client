@@ -26,6 +26,7 @@ class CardInfoView extends GetView<CardInfoController> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(
+        bottom: false,
         child: Obx(
           () => Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -39,7 +40,7 @@ class CardInfoView extends GetView<CardInfoController> {
                 height: 15,
               ),
               SizedBox(
-                height: 225,
+                height: screenWidth <= 428 && screenWidth > 390 ? 230 : 250,
                 width: screenWidth * 0.9,
                 child: const CardFlipWidget(),
               ),
@@ -83,9 +84,9 @@ class _BlockThisCardWidget extends GetView<CardInfoController> {
       child: Column(
         children: [
           PrimaryButtonWidget(
-            buttonText: 'Block THIS CARD',
-            height: 50,
-            fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 13,
+            buttonText: 'BLOCK THIS CARD',
+            height: screenWidth <= 428 && screenWidth > 390 ? 50 : 60,
+            fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 18,
             boldValue: FontWeight.w500,
             iconPath: AssetPath.cCross,
             fontColor: controller.getSystemTheme(context)
@@ -121,7 +122,7 @@ class _BlockThisCardWidget extends GetView<CardInfoController> {
                   overflow: false,
                   stringData:
                       'Once blocked, this card will no longer be accepted for online payments or for over the counter transaction. This action cannot be undone.',
-                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 11,
+                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 15,
                   boldValue: FontWeight.w500,
                   color: controller.getSystemTheme(context)
                       ? AppColors.gray
