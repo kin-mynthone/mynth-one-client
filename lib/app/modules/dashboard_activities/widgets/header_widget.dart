@@ -34,7 +34,7 @@ class _HeaderWidget extends GetView<DashboardActivitiesController> {
           TextWidget(
             overflow: false,
             stringData: 'Activities',
-            fontSize: screenWidth <= 428 && screenWidth > 390 ? 20 : 17,
+            fontSize: screenWidth <= 428 && screenWidth > 390 ? 20 : 23,
             boldValue: FontWeight.w500,
             color: controller.getSystemTheme(context)
                 ? AppColors.lightTextPrimary
@@ -52,7 +52,7 @@ class _HeaderWidget extends GetView<DashboardActivitiesController> {
                 radius: AppNumbers.borderRadius,
                 contentPadding: EdgeInsets.symmetric(
                     horizontal:
-                        screenWidth <= 428 && screenWidth > 390 ? 50 : 40),
+                        screenWidth <= 428 && screenWidth > 390 ? 50 : 60),
                 unselectedBackgroundColor: controller.getSystemTheme(context)
                     ? AppColors.lightSecondary
                     : AppColors.darkBackgroundVariant,
@@ -67,14 +67,14 @@ class _HeaderWidget extends GetView<DashboardActivitiesController> {
                         : AppColors.darkTextHint,
                     fontWeight: FontWeight.w700,
                     fontSize:
-                        screenWidth <= 428 && screenWidth > 390 ? 12 : 11),
+                        screenWidth <= 428 && screenWidth > 390 ? 12 : 13),
                 labelStyle: GoogleFonts.poppins(
                     color: controller.getSystemTheme(context)
                         ? AppColors.lightSecondaryVariant
                         : AppColors.darkSecondaryVariant,
                     fontWeight: FontWeight.w700,
                     fontSize:
-                        screenWidth <= 428 && screenWidth > 390 ? 12 : 11),
+                        screenWidth <= 428 && screenWidth > 390 ? 12 : 13),
                 height: 56,
                 onTap: (index) => {},
                 tabs: const [

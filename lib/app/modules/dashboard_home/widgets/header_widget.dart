@@ -17,8 +17,8 @@ class _HeaderWidget extends GetView<DashboardHomeController> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
-              width: 45,
-              height: 45,
+              width: screenWidth <= 428 && screenWidth > 390 ? 45 : 55,
+              height: screenWidth <= 428 && screenWidth > 390 ? 45 : 55,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(AppNumbers.borderRadius),
                 child: Image.network(
@@ -42,7 +42,7 @@ class _HeaderWidget extends GetView<DashboardHomeController> {
               ),
             ),
             const SizedBox(
-              width: 5,
+              width: 10,
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -51,7 +51,7 @@ class _HeaderWidget extends GetView<DashboardHomeController> {
                 TextWidget(
                   overflow: false,
                   stringData: 'Hello 👋🏻 ',
-                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 16,
                   boldValue: FontWeight.normal,
                   color: controller.getSystemTheme(context)
                       ? AppColors.lightTextPrimary
@@ -61,7 +61,7 @@ class _HeaderWidget extends GetView<DashboardHomeController> {
                 TextWidget(
                   overflow: false,
                   stringData: 'Howie V.',
-                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 22 : 20,
+                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 22 : 23,
                   boldValue: FontWeight.w500,
                   color: controller.getSystemTheme(context)
                       ? AppColors.lightTextPrimary
@@ -74,7 +74,7 @@ class _HeaderWidget extends GetView<DashboardHomeController> {
         ),
         ButtonIconWidget(
           onPressed: () => {},
-          size: 50,
+          size: screenWidth <= 428 && screenWidth > 390 ? 45 : 55,
           buttonColor: controller.getSystemTheme(context)
               ? AppColors.primaryTranslucent
               : AppColors.primaryTranslucent,

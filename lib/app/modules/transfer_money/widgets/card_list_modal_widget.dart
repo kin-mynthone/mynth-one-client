@@ -85,7 +85,7 @@ class CardListModalWidget extends GetView<TransferMoneyController> {
                                 fontSize:
                                     screenWidth <= 428 && screenWidth > 390
                                         ? 20
-                                        : 17,
+                                        : 23,
                                 boldValue: FontWeight.w500,
                                 color: controller.getSystemTheme(context)
                                     ? AppColors.lightTextPrimary
@@ -98,7 +98,7 @@ class CardListModalWidget extends GetView<TransferMoneyController> {
                                 fontSize:
                                     screenWidth <= 428 && screenWidth > 390
                                         ? 15
-                                        : 12,
+                                        : 18,
                                 boldValue: FontWeight.w500,
                                 color: controller.getSystemTheme(context)
                                     ? AppColors.lightTextPrimary

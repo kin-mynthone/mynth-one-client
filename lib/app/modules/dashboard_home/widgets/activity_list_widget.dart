@@ -40,7 +40,7 @@ class _ActivityListWidget extends GetView<DashboardHomeController> {
                       overflow: false,
                       stringData: 'Activities',
                       fontSize:
-                          screenWidth <= 428 && screenWidth > 390 ? 20 : 17,
+                          screenWidth <= 428 && screenWidth > 390 ? 20 : 23,
                       boldValue: FontWeight.w700,
                       color: controller.getSystemTheme(context)
                           ? AppColors.lightTextPrimary
@@ -55,7 +55,7 @@ class _ActivityListWidget extends GetView<DashboardHomeController> {
                         overflow: false,
                         stringData: 'View All',
                         fontSize:
-                            screenWidth <= 428 && screenWidth > 390 ? 13 : 12,
+                            screenWidth <= 428 && screenWidth > 390 ? 13 : 16,
                         boldValue: FontWeight.w300,
                         color: controller.getSystemTheme(context)
                             ? AppColors.lightTextSecondary
@@ -148,7 +148,7 @@ class _EmptyData extends StatelessWidget {
         TextWidget(
           overflow: false,
           stringData: 'No Activity to show',
-          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 18,
           boldValue: FontWeight.w800,
           color: color,
           centerAlignment: false,
@@ -156,7 +156,7 @@ class _EmptyData extends StatelessWidget {
         TextWidget(
           overflow: false,
           stringData: 'Start your first activity now',
-          fontSize: screenWidth <= 428 && screenWidth > 390 ? 11 : 10,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 11 : 12,
           boldValue: FontWeight.normal,
           color: color,
           centerAlignment: false,

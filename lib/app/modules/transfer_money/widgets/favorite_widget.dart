@@ -17,7 +17,7 @@ class _FavoriteWidget extends GetView<TransferMoneyController> {
           child: TextWidget(
             overflow: false,
             stringData: 'Favorites',
-            fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+            fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 18,
             boldValue: FontWeight.w500,
             color: controller.getSystemTheme(context)
                 ? AppColors.lightTextPrimary

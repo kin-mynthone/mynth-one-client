@@ -30,7 +30,7 @@ class FavoriteListTileWidget extends StatelessWidget {
         ),
         shadowColor: Colors.transparent,
         child: Container(
-          width: screenWidth <= 428 && screenWidth > 390 ? 120 : 90,
+          width: screenWidth <= 428 && screenWidth > 390 ? 120 : 100,
           // ignore: prefer_const_constructors
           padding: EdgeInsets.symmetric(
             horizontal: 12,
@@ -63,7 +63,7 @@ class FavoriteListTileWidget extends StatelessWidget {
               TextWidget(
                   overflow: true,
                   stringData: favoriteReceiverModel.receiver.toString(),
-                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 16,
                   boldValue: FontWeight.w500,
                   color: FavoriteReceiverController.instance
                           .getSystemTheme(context)

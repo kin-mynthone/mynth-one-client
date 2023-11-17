@@ -157,7 +157,7 @@ class IntroductionView extends GetView<IntroductionController> {
                     ? GradientTextLightWidget(
                         stringData: 'The Digital wallet that\nconnects global',
                         fontSize:
-                            screenWidth <= 428 && screenWidth > 390 ? 30 : 25,
+                            screenWidth <= 428 && screenWidth > 390 ? 30 : 28,
                         boldValue: FontWeight.w800,
                         heightValue: 1.2,
                         centerAlignment: true,
@@ -165,7 +165,7 @@ class IntroductionView extends GetView<IntroductionController> {
                     : GradientTextDarkWidget(
                         stringData: 'The Digital wallet that\nconnects global',
                         fontSize:
-                            screenWidth <= 428 && screenWidth > 390 ? 30 : 25,
+                            screenWidth <= 428 && screenWidth > 390 ? 30 : 28,
                         boldValue: FontWeight.w800,
                         heightValue: 1.2,
                         centerAlignment: true,
@@ -173,14 +173,14 @@ class IntroductionView extends GetView<IntroductionController> {
               ),
             ),
             Positioned.fill(
-              top: screenWidth <= 428 && screenWidth > 390 ? 430 : 410,
+              top: screenWidth <= 428 && screenWidth > 390 ? 430 : 440,
               child: Align(
                 alignment: Alignment.center,
                 child: TextWidget(
                   overflow: false,
                   stringData:
                       'Banking Beyond, Welcome\nto the super experience',
-                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+                  fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 16,
                   boldValue: FontWeight.normal,
                   color: controller.getSystemTheme(context)
                       ? AppColors.lightTextPrimary

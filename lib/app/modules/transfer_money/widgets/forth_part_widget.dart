@@ -88,7 +88,7 @@ class _ForthPartWidgetState extends State<_ForthPartWidget> {
                               stringData: 'Recipient:',
                               fontSize: screenWidth <= 428 && screenWidth > 390
                                   ? 13
-                                  : 10,
+                                  : 16,
                               boldValue: FontWeight.w600,
                               color: transferMoneyController
                                       .getSystemTheme(context)
@@ -154,7 +154,7 @@ class _ForthPartWidgetState extends State<_ForthPartWidget> {
                                       fontSize: screenWidth <= 428 &&
                                               screenWidth > 390
                                           ? 20
-                                          : 17,
+                                          : 23,
                                       boldValue: FontWeight.w500,
                                       color: transferMoneyController
                                               .getSystemTheme(context)
@@ -171,7 +171,7 @@ class _ForthPartWidgetState extends State<_ForthPartWidget> {
                                       fontSize: screenWidth <= 428 &&
                                               screenWidth > 390
                                           ? 13
-                                          : 12,
+                                          : 14,
                                       letterSpacing: 3,
                                       boldValue: FontWeight.w400,
                                       color: transferMoneyController
@@ -202,7 +202,7 @@ class _ForthPartWidgetState extends State<_ForthPartWidget> {
                             stringData: 'Will be deducted to',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 16
-                                : 13,
+                                : 19,
                             boldValue: FontWeight.w500,
                             color:
                                 transferMoneyController.getSystemTheme(context)
@@ -218,8 +218,8 @@ class _ForthPartWidgetState extends State<_ForthPartWidget> {
                               stringData:
                                   transferMoneyController.accountNameSender,
                               fontSize: screenWidth <= 428 && screenWidth > 390
-                                  ? 16
-                                  : 13,
+                                  ? 15
+                                  : 18,
                               boldValue: FontWeight.w600,
                               color: transferMoneyController
                                       .getSystemTheme(context)
@@ -238,8 +238,8 @@ class _ForthPartWidgetState extends State<_ForthPartWidget> {
                                   .substring(8)
                                   .replaceRange(0, 3, '***'),
                               fontSize: screenWidth <= 428 && screenWidth > 390
-                                  ? 16
-                                  : 13,
+                                  ? 15
+                                  : 18,
                               letterSpacing: 3,
                               boldValue: FontWeight.w400,
                               color: transferMoneyController
@@ -279,7 +279,7 @@ class _ForthPartWidgetState extends State<_ForthPartWidget> {
                             stringData: 'Your about to send',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 16
-                                : 13,
+                                : 19,
                             boldValue: FontWeight.w500,
                             color:
                                 transferMoneyController.getSystemTheme(context)
@@ -292,7 +292,7 @@ class _ForthPartWidgetState extends State<_ForthPartWidget> {
                                 '€  ${transferMoneyController.amountController.text}',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 16
-                                : 13,
+                                : 19,
                             boldValue: FontWeight.w500,
                             color:
                                 transferMoneyController.getSystemTheme(context)
@@ -317,7 +317,7 @@ class _ForthPartWidgetState extends State<_ForthPartWidget> {
                             stringData: 'Transfer fee',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 16
-                                : 13,
+                                : 19,
                             boldValue: FontWeight.w500,
                             color:
                                 transferMoneyController.getSystemTheme(context)
@@ -330,7 +330,7 @@ class _ForthPartWidgetState extends State<_ForthPartWidget> {
                                 '€ ${transferMoneyController.transferFee}',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 16
-                                : 13,
+                                : 19,
                             boldValue: FontWeight.w500,
                             color:
                                 transferMoneyController.getSystemTheme(context)
@@ -369,7 +369,7 @@ class _ForthPartWidgetState extends State<_ForthPartWidget> {
                             stringData: 'Total',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 16
-                                : 13,
+                                : 19,
                             boldValue: FontWeight.w500,
                             color:
                                 transferMoneyController.getSystemTheme(context)
@@ -382,7 +382,7 @@ class _ForthPartWidgetState extends State<_ForthPartWidget> {
                                 '€ ${int.parse(transferMoneyController.amountController.text) + transferMoneyController.transferFee}',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 16
-                                : 13,
+                                : 19,
                             boldValue: FontWeight.w500,
                             color:
                                 transferMoneyController.getSystemTheme(context)
@@ -403,7 +403,7 @@ class _ForthPartWidgetState extends State<_ForthPartWidget> {
                         stringData:
                             'Please make sure the information above is correct. Submitted transaction cannot be reversed.',
                         fontSize:
-                            screenWidth <= 428 && screenWidth > 390 ? 13 : 10,
+                            screenWidth <= 428 && screenWidth > 390 ? 13 : 13,
                         boldValue: FontWeight.w500,
                         color: transferMoneyController.getSystemTheme(context)
                             ? AppColors.orange
@@ -420,7 +420,7 @@ class _ForthPartWidgetState extends State<_ForthPartWidget> {
               buttonText:
                   'Pay "€ ${int.parse(transferMoneyController.amountController.text) + transferMoneyController.transferFee}"',
               height: 50,
-              fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 13,
+              fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 19,
               boldValue: FontWeight.w500,
               fontColor: transferMoneyController.getSystemTheme(context)
                   ? AppColors.lightSecondary

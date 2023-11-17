@@ -47,7 +47,7 @@ class ScanToPayView extends GetView<ScanToPayController> {
                       overflow: false,
                       stringData: 'Point the camera at the qr code',
                       fontSize:
-                          screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+                          screenWidth <= 428 && screenWidth > 390 ? 15 : 18,
                       boldValue: FontWeight.w300,
                       color: controller.getSystemTheme(context)
                           ? AppColors.lightSecondaryVariant

@@ -80,7 +80,7 @@ class LoginView extends GetView<LoginController> {
                     ),
                     _EmailTextFormWidget(
                       name: 'Email',
-                      hintText: 'enter your email',
+                      hintText: 'Enter your email',
                       onChanged: (value) => controller.setEmailValue(value!),
                     ),
                     const SizedBox(
@@ -88,7 +88,7 @@ class LoginView extends GetView<LoginController> {
                     ),
                     _PasswordTextFormWidget(
                       name: 'Password',
-                      hintText: 'enter your password',
+                      hintText: 'Enter your password',
                       onChanged: (value) => controller.setPasswordValue(value!),
                     ),
                     Align(
@@ -102,9 +102,9 @@ class LoginView extends GetView<LoginController> {
                     ),
                     PrimaryButtonWidget(
                       buttonText: 'PROCEED',
-                      height: 50,
+                      height: screenWidth <= 428 && screenWidth > 390 ? 50 : 58,
                       fontSize:
-                          screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+                          screenWidth <= 428 && screenWidth > 390 ? 15 : 18,
                       boldValue: FontWeight.w500,
                       fontColor: controller.getSystemTheme(context)
                           ? AppColors.lightSecondary

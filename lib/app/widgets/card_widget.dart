@@ -32,7 +32,7 @@ class CardWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(AppNumbers.cardBorderRadius),
         ),
         child: Container(
-          height: screenWidth <= 428 && screenWidth > 390 ? 230 : 200,
+          height: screenWidth <= 428 && screenWidth > 390 ? 230 : 250,
           padding: EdgeInsets.symmetric(
             horizontal: screenWidth * 0.05,
             vertical: screenHeight * 0.022,
@@ -69,7 +69,7 @@ class CardWidget extends StatelessWidget {
                   TextWidget(
                     overflow: false,
                     stringData: cardModel.accountName.toString(),
-                    fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 14,
+                    fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 16,
                     boldValue: FontWeight.w500,
                     color: AppColors.lightTextPrimary,
                     centerAlignment: false,
@@ -87,7 +87,7 @@ class CardWidget extends StatelessWidget {
                         overflow: false,
                         stringData: 'Your balance',
                         fontSize:
-                            screenWidth <= 428 && screenWidth > 390 ? 14 : 13,
+                            screenWidth <= 428 && screenWidth > 390 ? 14 : 15,
                         boldValue: FontWeight.w300,
                         color: AppColors.lightTextPrimary,
                         centerAlignment: false,
@@ -99,7 +99,7 @@ class CardWidget extends StatelessWidget {
                         overflow: false,
                         stringData: '€ ${cardModel.amount}',
                         fontSize:
-                            screenWidth <= 428 && screenWidth > 390 ? 30 : 27,
+                            screenWidth <= 428 && screenWidth > 390 ? 30 : 33,
                         boldValue: FontWeight.w600,
                         color: AppColors.darkPrimary,
                         centerAlignment: false,
@@ -121,7 +121,7 @@ class CardWidget extends StatelessWidget {
                             stringData: 'A/c Number',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 12
-                                : 11,
+                                : 13,
                             boldValue: FontWeight.w300,
                             color: AppColors.lightTextPrimary,
                             centerAlignment: false,
@@ -137,7 +137,7 @@ class CardWidget extends StatelessWidget {
                                 .replaceRange(0, 3, '***'),
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 13
-                                : 12,
+                                : 14,
                             letterSpacing: 3,
                             boldValue: FontWeight.w400,
                             color: AppColors.lightTextPrimary,
@@ -156,7 +156,7 @@ class CardWidget extends StatelessWidget {
                             stringData: 'Valid Thu',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 12
-                                : 11,
+                                : 13,
                             boldValue: FontWeight.w300,
                             color: AppColors.lightTextPrimary,
                             centerAlignment: false,
@@ -169,7 +169,7 @@ class CardWidget extends StatelessWidget {
                             stringData: cardModel.expiration.toString(),
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 13
-                                : 12,
+                                : 14,
                             letterSpacing: 3,
                             boldValue: FontWeight.w400,
                             color: AppColors.lightTextPrimary,

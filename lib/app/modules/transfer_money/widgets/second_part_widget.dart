@@ -71,7 +71,7 @@ class _SecondPartWidget extends GetView<TransferMoneyController> {
                               ? controller.selectedBank.title.toString()
                               : controller.selectedFavorite.bank.toString(),
                           fontSize:
-                              screenWidth <= 428 && screenWidth > 390 ? 20 : 17,
+                              screenWidth <= 428 && screenWidth > 390 ? 20 : 23,
                           boldValue: FontWeight.w500,
                           color: controller.getSystemTheme(context)
                               ? AppColors.lightTextPrimary
@@ -159,7 +159,7 @@ class _SecondPartWidget extends GetView<TransferMoneyController> {
               PrimaryButtonWidget(
                 buttonText: 'Next',
                 height: 50,
-                fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+                fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 18,
                 boldValue: FontWeight.w500,
                 fontColor: controller.getSystemTheme(context)
                     ? AppColors.lightSecondary

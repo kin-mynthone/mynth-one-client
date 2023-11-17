@@ -22,7 +22,7 @@ class _HeaderWidget extends GetView<OtpController> {
         TextWidget(
             overflow: false,
             stringData: 'OTP Verification',
-            fontSize: screenWidth <= 428 && screenWidth > 390 ? 25 : 22,
+            fontSize: screenWidth <= 428 && screenWidth > 390 ? 25 : 28,
             boldValue: FontWeight.w600,
             color: controller.getSystemTheme(context)
                 ? AppColors.lightPrimary
@@ -38,7 +38,7 @@ class _HeaderWidget extends GetView<OtpController> {
             TextWidget(
                 overflow: false,
                 stringData: 'Enter OTP code sent to ',
-                fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+                fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 18,
                 boldValue: FontWeight.normal,
                 color: controller.getSystemTheme(context)
                     ? AppColors.lightTextPrimary
@@ -47,7 +47,7 @@ class _HeaderWidget extends GetView<OtpController> {
             TextWidget(
                 overflow: false,
                 stringData: ' ${controller.getphoneNumber()}',
-                fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+                fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 18,
                 boldValue: FontWeight.w600,
                 letterSpacing: 2,
                 color: controller.getSystemTheme(context)

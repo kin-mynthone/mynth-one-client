@@ -100,7 +100,7 @@ class _FifthPartWidget extends GetView<TransferMoneyController> {
                                       fontSize: screenWidth <= 428 &&
                                               screenWidth > 390
                                           ? 20
-                                          : 17,
+                                          : 23,
                                       boldValue: FontWeight.w500,
                                       color: controller.getSystemTheme(context)
                                           ? AppColors.lightTextPrimary
@@ -116,7 +116,7 @@ class _FifthPartWidget extends GetView<TransferMoneyController> {
                                       fontSize: screenWidth <= 428 &&
                                               screenWidth > 390
                                           ? 13
-                                          : 12,
+                                          : 14,
                                       letterSpacing: 3,
                                       boldValue: FontWeight.w400,
                                       color: controller.getSystemTheme(context)
@@ -149,7 +149,7 @@ class _FifthPartWidget extends GetView<TransferMoneyController> {
                             stringData: 'Deducted to',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 16
-                                : 13,
+                                : 19,
                             boldValue: FontWeight.w500,
                             color: controller.getSystemTheme(context)
                                 ? AppColors.orange
@@ -164,7 +164,7 @@ class _FifthPartWidget extends GetView<TransferMoneyController> {
                               stringData: controller.accountNameSender,
                               fontSize: screenWidth <= 428 && screenWidth > 390
                                   ? 16
-                                  : 13,
+                                  : 19,
                               boldValue: FontWeight.w600,
                               color: controller.getSystemTheme(context)
                                   ? AppColors.lightTextPrimary
@@ -182,7 +182,7 @@ class _FifthPartWidget extends GetView<TransferMoneyController> {
                                   .replaceRange(0, 3, '***'),
                               fontSize: screenWidth <= 428 && screenWidth > 390
                                   ? 16
-                                  : 13,
+                                  : 19,
                               letterSpacing: 3,
                               boldValue: FontWeight.w400,
                               color: controller.getSystemTheme(context)
@@ -221,7 +221,7 @@ class _FifthPartWidget extends GetView<TransferMoneyController> {
                             stringData: 'Transferred amount',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 16
-                                : 13,
+                                : 19,
                             boldValue: FontWeight.w500,
                             color: controller.getSystemTheme(context)
                                 ? AppColors.orange
@@ -233,7 +233,7 @@ class _FifthPartWidget extends GetView<TransferMoneyController> {
                                 '€  ${controller.amountController.text}',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 16
-                                : 13,
+                                : 19,
                             boldValue: FontWeight.w500,
                             color: controller.getSystemTheme(context)
                                 ? AppColors.gray
@@ -257,7 +257,7 @@ class _FifthPartWidget extends GetView<TransferMoneyController> {
                             stringData: 'Transfer fee',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 16
-                                : 13,
+                                : 19,
                             boldValue: FontWeight.w500,
                             color: controller.getSystemTheme(context)
                                 ? AppColors.orange
@@ -268,7 +268,7 @@ class _FifthPartWidget extends GetView<TransferMoneyController> {
                             stringData: '€ ${controller.transferFee}',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 16
-                                : 13,
+                                : 19,
                             boldValue: FontWeight.w500,
                             color: controller.getSystemTheme(context)
                                 ? AppColors.gray
@@ -306,7 +306,7 @@ class _FifthPartWidget extends GetView<TransferMoneyController> {
                             stringData: 'Total',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 16
-                                : 13,
+                                : 19,
                             boldValue: FontWeight.w500,
                             color: controller.getSystemTheme(context)
                                 ? AppColors.orange
@@ -318,7 +318,7 @@ class _FifthPartWidget extends GetView<TransferMoneyController> {
                                 '€ ${int.parse(controller.amountController.text) + controller.transferFee}',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 16
-                                : 13,
+                                : 19,
                             boldValue: FontWeight.w500,
                             color: controller.getSystemTheme(context)
                                 ? AppColors.gray
@@ -341,7 +341,7 @@ class _FifthPartWidget extends GetView<TransferMoneyController> {
                             stringData: 'Ref No. 1283 285 246295',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 13
-                                : 10,
+                                : 16,
                             boldValue: FontWeight.w500,
                             color: controller.getSystemTheme(context)
                                 ? AppColors.lightTextPrimary
@@ -352,7 +352,7 @@ class _FifthPartWidget extends GetView<TransferMoneyController> {
                             stringData: 'Apr 01, 2023  2:48PM',
                             fontSize: screenWidth <= 428 && screenWidth > 390
                                 ? 13
-                                : 10,
+                                : 16,
                             boldValue: FontWeight.w500,
                             color: controller.getSystemTheme(context)
                                 ? AppColors.lightTextPrimary
@@ -370,7 +370,7 @@ class _FifthPartWidget extends GetView<TransferMoneyController> {
             PrimaryButtonWidget(
               buttonText: 'Get a Copy',
               height: 50,
-              fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 13,
+              fontSize: screenWidth <= 428 && screenWidth > 390 ? 16 : 19,
               boldValue: FontWeight.w500,
               fontColor: controller.getSystemTheme(context)
                   ? AppColors.lightSecondary

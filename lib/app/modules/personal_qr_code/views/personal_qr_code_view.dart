@@ -69,7 +69,7 @@ class PersonalQrCodeView extends GetView<PersonalQrCodeController> {
                         overflow: false,
                         stringData: 'Howie Ross Valino',
                         fontSize:
-                            screenWidth <= 428 && screenWidth > 390 ? 23 : 20,
+                            screenWidth <= 428 && screenWidth > 390 ? 23 : 26,
                         boldValue: FontWeight.w700,
                         color: controller.getSystemTheme(context)
                             ? AppColors.lightTextPrimary

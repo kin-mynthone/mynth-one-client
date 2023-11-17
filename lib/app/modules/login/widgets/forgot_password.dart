@@ -21,7 +21,7 @@ class _ForgotPassword extends StatelessWidget {
               color: LoginController.instance.getSystemTheme(context)
                   ? AppColors.lightTextPrimary
                   : AppColors.darkTextPrimary,
-              fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 11,
+              fontSize: screenWidth <= 428 && screenWidth > 390 ? 13 : 15,
             ),
       ),
     );

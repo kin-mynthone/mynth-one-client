@@ -22,7 +22,7 @@ class _HeaderWidget extends GetView<CardInfoController> {
         TextWidget(
           overflow: false,
           stringData: controller.cardInfo.accountName.toString(),
-          fontSize: screenWidth <= 428 && screenWidth > 390 ? 20 : 17,
+          fontSize: screenWidth <= 428 && screenWidth > 390 ? 20 : 23,
           boldValue: FontWeight.w500,
           color: controller.getSystemTheme(context)
               ? AppColors.lightTextPrimary

@@ -32,7 +32,7 @@ class MynthOneApp extends StatelessWidget {
         title: '${flavor.title}MynthOne',
         initialRoute: isDoneWithOnboarding
             ? AppPages.SPLASH
-            : AppPages.DASHBOARD, //todo change to INTRODUCTION
+            : AppPages.INTRODUCTION, //todo change to INTRODUCTION
         getPages: AppPages.routes,
         defaultTransition: Transition.rightToLeft,
         debugShowCheckedModeBanner: kDebugMode ? true : false,

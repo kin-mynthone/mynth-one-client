@@ -14,7 +14,7 @@ class _ResendWidget extends GetView<OtpController> {
         TextWidget(
             overflow: false,
             stringData: 'Didn’t receive OTP code?',
-            fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+            fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 16,
             boldValue: FontWeight.normal,
             color: controller.getSystemTheme(context)
                 ? AppColors.lightTextPrimary
@@ -38,7 +38,7 @@ class _ResendWidget extends GetView<OtpController> {
                           overflow: false,
                           stringData: 'Resend OTP',
                           fontSize:
-                              screenWidth <= 428 && screenWidth > 390 ? 18 : 15,
+                              screenWidth <= 428 && screenWidth > 390 ? 18 : 20,
                           boldValue: FontWeight.w800,
                           letterSpacing: 2,
                           color: controller.getSystemTheme(context)
@@ -58,7 +58,7 @@ class _ResendWidget extends GetView<OtpController> {
             : TextWidget(
                 overflow: false,
                 stringData: _timeFormater(controller.secondsRemaining),
-                fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 12,
+                fontSize: screenWidth <= 428 && screenWidth > 390 ? 15 : 18,
                 boldValue: FontWeight.w800,
                 letterSpacing: 2,
                 color: controller.getSystemTheme(context)

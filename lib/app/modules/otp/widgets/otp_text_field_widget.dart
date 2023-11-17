@@ -13,7 +13,7 @@ class _OtpTextFieldWidget extends GetView<OtpController> {
           ? AppColors.lightBackground
           : AppColors.darkBackground,
       filled: true,
-      fieldWidth: 50,
+      fieldWidth: screenWidth <= 428 && screenWidth > 390 ? 50 : 55,
       focusedBorderColor: controller.getSystemTheme(context)
           ? AppColors.lightPrimary
           : AppColors.darkPrimary,
@@ -24,7 +24,7 @@ class _OtpTextFieldWidget extends GetView<OtpController> {
       showFieldAsBox: true,
       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
       textStyle: GoogleFonts.poppins(
-        fontSize: screenWidth <= 428 && screenWidth > 390 ? 22 : 20,
+        fontSize: screenWidth <= 428 && screenWidth > 390 ? 22 : 25,
         color: controller.getSystemTheme(context)
             ? AppColors.lightPrimary
             : AppColors.darkPrimary,
